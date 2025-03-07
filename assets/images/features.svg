@@ -1,0 +1,25 @@
+<!-- assets/images/features.svg -->
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 36px 'Poppins', sans-serif; fill: #ff9d00; }
+    .subtitle { font: 24px 'Poppins', sans-serif; fill: #ffffff; }
+    .shape { fill: #5a1f67; }
+    .highlight { fill: #bb5e2f; }
+  </style>
+  <rect width="800" height="400" fill="#1a102f"/>
+  
+  <!-- Title -->
+  <text x="50%" y="20%" text-anchor="middle" class="title">Features</text>
+  
+  <!-- Subtitle / Explanation -->
+  <text x="50%" y="30%" text-anchor="middle" class="subtitle">
+    Key Highlights of Shanios
+  </text>
+  
+  <!-- Decorative shapes -->
+  <circle cx="200" cy="250" r="70" class="shape"/>
+  <rect x="400" y="180" width="120" height="120" class="highlight" rx="15"/>
+  <polygon points="600,180 680,300 520,300" fill="#ff7f50"/>
+  
+  <!-- Additional text or shapes can go here -->
+</svg>

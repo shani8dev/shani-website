@@ -1,0 +1,29 @@
+<!-- assets/images/og-image.svg -->
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #1a102f; }
+    .title { font: bold 60px 'Poppins', sans-serif; fill: #ffffff; }
+    .subtitle { font: 40px 'Poppins', sans-serif; fill: #ff9d00; }
+  </style>
+  
+  <!-- Background -->
+  <rect class="bg" width="1200" height="630" />
+  
+  <!-- Title -->
+  <text
+    x="50%" y="45%" 
+    dominant-baseline="middle"
+    text-anchor="middle"
+    class="title"
+  >
+    Shanios
+  </text>
+  
+  <!-- Subtitle -->
+  <text
+    x="50%" y="60%"
+    text-anchor="middle"
+    class="subtitle"
+  >
+  </text>
+</svg>
