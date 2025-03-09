@@ -99,169 +99,198 @@
       <div class="hero-overlay"></div>
     </section>
 
-    <!-- Features & Architecture Section (Merged, Toggleable Cards) -->
-    <section id="features" class="section features-section">
-      <div class="container">
-        <h2 class="section-title">Features & Architecture</h2>
-        <p>
-           Shanios is crafted to ensure your system stays fresh and unbreakable, even after major updates. Our key pillars:
-         </p>
-        <div class="feature-grid">
-          <!-- Card 1: Btrfs Dual-Root Architecture -->
-          <article class="feature-card">
-            <i class="fas fa-database feature-icon"></i>
-            <h3>Btrfs Dual-Root Architecture</h3>
-            <p class="feature-snippet">
-              Two independent roots (blue & green) ensure atomic, reliable upgrades.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Shanios uses a dual-root setup on Btrfs. While you’re running on one root, 
-                the other is updated in the background. This guarantees upgrades are fully 
-                validated before switching and provides an instant rollback option if needed.
-              </p>
-            </div>
-          </article>
+<!-- Features & Architecture Section (Final Consolidated with Key Software Names) -->
+<section id="features" class="section features-section">
+  <div class="container">
+    <h2 class="section-title">Features & Architecture</h2>
+    <p>
+      Shanios is engineered to deliver an immutable, secure, and high-performance OS experience. Its innovative design blends a rock-solid, read-only core with a dynamic blue/green update system, advanced container integration, and an intuitive user environment—ideal for OEM deployments and everyday use.
+    </p>
 
-          <!-- Card 2: Read-Only Root & Overlays -->
-          <article class="feature-card">
-            <i class="fas fa-shield-alt feature-icon"></i>
-            <h3>Read-Only Root & Overlays</h3>
-            <p class="feature-snippet">
-              Immutable base plus writable overlays for configuration and runtime data.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Shanios is a read-only Arch Linux pacstrap image. Key directories like 
-                <code>/etc</code> are handled with overlays, and <code>/var</code> uses tmpfs, 
-                ensuring no unauthorized writes can compromise system integrity.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 3: Atomic & Blue/Green Updates -->
-          <article class="feature-card">
-            <i class="fas fa-sync-alt feature-icon"></i>
-            <h3>Atomic & Blue/Green Updates</h3>
-            <p class="feature-snippet">
-              Zero downtime upgrades with instant rollback capabilities.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Thanks to the dual-root approach, Shanios performs updates on the inactive slot. 
-                If the new slot boots successfully, you continue seamlessly. If not, you revert 
-                to the old slot—ensuring system stability with no partial upgrades.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 4: Minimal GNOME Environment -->
-          <article class="feature-card">
-            <i class="fas fa-desktop feature-icon"></i>
-            <h3>Minimal GNOME Environment</h3>
-            <p class="feature-snippet">
-              A sleek GNOME desktop with minimal overhead or bloat, OEM-ready.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                After installation, Shanios defaults to GNOME with 
-                <code>gnome-initial-setup</code>—perfect for OEM use or personal 
-                customization. You get a modern desktop that’s minimal yet functional, 
-                ideal for both newcomers and power users.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 5: Sway-Powered Live ISO & Installer -->
-          <article class="feature-card">
-            <i class="fas fa-tv feature-icon"></i>
-            <h3>Sway-Powered Live ISO & Installer</h3>
-            <p class="feature-snippet">
-              Modern, minimal environment for quick, user-friendly installation.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Our live ISO runs Sway—a lightweight tiling window manager—ensuring a resource-friendly 
-                and responsive installer session. The ISO also includes a Flatpak filesystem and 
-                everything needed for thorough testing, making it larger but comprehensive.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 6: Flatpak Integration -->
-          <article class="feature-card">
-            <i class="fas fa-boxes feature-icon"></i>
-            <h3>Flatpak Integration</h3>
-            <p class="feature-snippet">
-              All user apps run in isolated containers for consistent updates 🪐
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                By distributing user software as Flatpak packages, Shanios ensures apps remain 
-                sandboxed from the immutable core. This simplifies updates and preserves system 
-                integrity while offering a broad range of software.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 7: Swapfile & Encryption -->
-          <article class="feature-card">
-            <i class="fas fa-lock feature-icon"></i>
-            <h3>Swapfile & Encryption</h3>
-            <p class="feature-snippet">
-              Built-in hibernation and full disk encryption for data protection.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Shanios includes a dedicated swapfile for hibernation, letting you save sessions 
-                easily. Optional full disk encryption secures your data from unauthorized access.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 8: NVIDIA-Open Drivers -->
-          <article class="feature-card">
-            <i class="fas fa-video feature-icon"></i>
-            <h3>NVIDIA-Open Drivers</h3>
-            <p class="feature-snippet">
-              Preinstalled support for NVIDIA hardware—no extra setup needed.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Shanios ships with open-source NVIDIA drivers out of the box, ensuring smooth 
-                performance and compatibility on NVIDIA GPUs from day one.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 9: High Performance -->
-          <article class="feature-card">
-            <i class="fas fa-tachometer-alt feature-icon"></i>
-            <h3>High Performance</h3>
-            <p class="feature-snippet">
-              Optimized for modern hardware and cloud-based environments.
-            </p>
-            <button class="toggle-details btn-more">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                By leveraging advanced caching, streamlined Btrfs subvolumes, and minimal overhead, 
-                Shanios is well-suited for desktops, servers, and cloud VMs where speed 
-                and efficiency matter.
-              </p>
-            </div>
-          </article>
-
+    <!-- Group 1: Core Architecture & Blue/Green Updates -->
+    <h3 class="group-title">Core Architecture & Blue/Green Updates</h3>
+    <div class="feature-grid">
+      <!-- Card 1: Dual-Root Architecture -->
+      <article class="feature-card">
+        <i class="fas fa-database feature-icon"></i>
+        <h3>Dual-Root Architecture</h3>
+        <p class="feature-snippet">
+          Two complete system roots for atomic upgrades and immediate rollback.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios maintains two independent roots on a modern copy-on-write filesystem. While one root is active, the other is updated in the background—ensuring that every upgrade is fully validated before switching. If any issues occur, the system can instantly revert.
+          </p>
+          <p>
+            Automated maintenance routines keep the filesystem balanced and performing at its best.
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- Card 2: Read-Only Core & Dynamic Overlays -->
+      <article class="feature-card">
+        <i class="fas fa-shield-alt feature-icon"></i>
+        <h3>Immutable Base & Dynamic Overlays</h3>
+        <p class="feature-snippet">
+          A secure, unmodifiable core with flexible overlays for configuration.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            The core system is built as a read-only image to protect critical components from accidental changes. Dynamic overlays manage configuration and volatile data, preserving system integrity while allowing necessary customizations.
+          </p>
+          <p>
+            Optional full disk encryption during installation further secures your data.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3: Blue/Green Updates with shani-deploy -->
+      <article class="feature-card">
+        <i class="fas fa-sync-alt feature-icon"></i>
+        <h3>Blue/Green Updates (<code>shani-deploy</code>)</h3>
+        <p class="feature-snippet">
+          Automated, zero-downtime updates with seamless rollback.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios uses a robust blue/green update strategy where the inactive root is updated in the background using the <code>shani-deploy</code> command. Once the new version is validated, a seamless switch occurs. If any issues arise, an instant rollback ensures continuous stability.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Group 2: Installation, OEM & Desktop Environment -->
+    <h3 class="group-title">Installation, OEM & Desktop Environment</h3>
+    <div class="feature-grid">
+      <!-- Card 4: Modern Live ISO, os-installer & Swapfile -->
+      <article class="feature-card">
+        <i class="fas fa-tv feature-icon"></i>
+        <h3>Modern Live ISO & <code>os-installer</code></h3>
+        <p class="feature-snippet">
+          Fast, efficient installation with automatic swapfile and optional encryption.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            The live ISO boots into an installer powered by a lightweight tiling window manager for a swift, resource-friendly setup. Our integrated <code>os-installer</code> provides a complete testing ground across various hardware platforms.
+          </p>
+          <p>
+            During installation, a swapfile for hibernation is automatically created (dynamically sized up to 16GB) to support seamless session resumption. You also have the option to enable full disk encryption for enhanced security.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 5: Minimal GNOME Desktop & OEM Readiness -->
+      <article class="feature-card">
+        <i class="fas fa-desktop feature-icon"></i>
+        <h3>Minimal GNOME Desktop & OEM Ready</h3>
+        <p class="feature-snippet">
+          A sleek, customizable desktop designed for premium OEM deployment.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            After installation, Shanios launches with a minimal GNOME desktop that is both clean and highly responsive. The intuitive initial setup enables effortless personalization, making it perfect for OEM partners and individual users.
+          </p>
+          <p>
+            A polished boot splash and optimized resource usage deliver a modern, premium desktop experience.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Group 3: Application Delivery & Container Integration -->
+    <h3 class="group-title">Application Delivery & Container Integration</h3>
+    <div class="feature-grid">
+      <!-- Card 6: Flatpak Application Delivery -->
+      <article class="feature-card">
+        <i class="fas fa-boxes feature-icon"></i>
+        <h3>Flatpak Integration</h3>
+        <p class="feature-snippet">
+          Secure, sandboxed applications with seamless updates.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios delivers applications as Flatpak packages, ensuring they run in isolated environments that are separate from the immutable core. This simplifies the update process and protects the system from potential software conflicts.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 7: Intuitive Container Management (Pods & BoxBuddy) -->
+      <article class="feature-card">
+        <i class="fas fa-layer-group feature-icon"></i>
+        <h3>Intuitive Container Management (<strong>Pods</strong> &amp; <strong>BoxBuddy</strong>)</h3>
+        <p class="feature-snippet">
+          Visual tools streamline container orchestration for both OCI containers and distro management.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios integrates advanced graphical interfaces to simplify container management. <strong>Pods</strong> offers an intuitive GUI for managing OCI containers, while <strong>BoxBuddy</strong> provides a seamless way to create, upgrade, and integrate containerized Linux distributions alongside your host system.
+          </p>
+          <p>
+            These tools eliminate the need for complex command-line operations, making container orchestration accessible to all users.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Group 4: Performance, Security & Productivity Enhancements -->
+    <h3 class="group-title">Performance, Security & Productivity</h3>
+    <div class="feature-grid">
+      <!-- Card 8: Advanced Resource Optimization -->
+      <article class="feature-card">
+        <i class="fas fa-tachometer-alt feature-icon"></i>
+        <h3>Advanced Resource Optimization</h3>
+        <p class="feature-snippet">
+          Intelligent process and resource management for smooth performance.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios continuously monitors and adjusts process priorities, balancing tasks across CPU cores to minimize latency and maximize responsiveness. Efficient management of memory and disk operations—including dynamic swap space—ensures peak performance even under heavy workloads.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 9: Enhanced NVIDIA GPU Support -->
+      <article class="feature-card">
+        <i class="fas fa-video feature-icon"></i>
+        <h3>Enhanced NVIDIA GPU Support</h3>
+        <p class="feature-snippet">
+          Preconfigured support for NVIDIA GPUs for superior graphics performance.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios is designed to work seamlessly with NVIDIA hardware, providing out-of-the-box driver support that ensures smooth, reliable graphics performance. This built-in capability delivers an optimal experience for gamers and professionals alike.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 10: Enhanced Terminal Experience -->
+      <article class="feature-card">
+        <i class="fas fa-terminal feature-icon"></i>
+        <h3>Enhanced Terminal & Shell Experience</h3>
+        <p class="feature-snippet">
+          A powerful, customizable command-line environment for boosted productivity.
+        </p>
+        <button class="toggle-details btn-more">Learn More</button>
+        <div class="feature-details hidden">
+          <p>
+            Shanios offers a refined terminal interface with advanced auto-completion, real-time syntax highlighting, and intuitive history search. Customizable prompts and efficient navigation tools streamline your workflow, making daily command-line operations faster and more enjoyable.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Installation Section (Hidden by default) -->
     <section id="installation" class="section install-section hidden">
