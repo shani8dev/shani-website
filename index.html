@@ -3,81 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Shanios is an immutable OS built for reliability, security, and seamless updates." />
+  <meta name="description" content="Shanios: Immutable OS built for reliability, security, and seamless updates." />
+  
+  <!-- Open Graph & Twitter Cards -->
   <meta property="og:title" content="Shanios - Immutable OS" />
-  <meta property="og:description" content="Embrace the future of computing with Shanios – an immutable OS designed for robust security, effortless rollbacks, and unstoppable reliability." />
-  <meta property="og:image" content="assets/images/og-image.svg" />
-  <title>Shanios - Immutable OS</title>
+  <meta property="og:description" content="Immutable OS for robust security, effortless rollbacks, and unstoppable reliability." />
+  <meta property="og:image" content="https://shanios.com/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://shanios.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicons & Manifest (Multi-Icon Setup) -->
-  <!-- Apple Touch Icon -->
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Favicons & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
-  <!-- Android Chrome Icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png" />
-  <!-- Standard Favicon Sizes -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
-  <!-- ICO Fallback -->
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-  <!-- Web App Manifest -->
   <link rel="manifest" href="assets/images/site.webmanifest" />
-  <!-- Optional: Theme color for mobile browsers -->
   <meta name="theme-color" content="#1a102f" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome 6.4.0 (Updated) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <!-- Font Awesome (6.4.0) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <title>Shanios - Immutable OS</title>
 </head>
 <body>
-  <!-- Skip to main content for accessibility -->
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
+  <!-- Top Blessing -->
+  <div class="top-blessing">|| श्री ||</div>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link sr-only" href="#main-content">Skip to main content</a>
+
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
-      <div class="logo">
-        <a href="#hero" aria-label="Go to Home section">
-          <img src="assets/images/logo.svg" alt="Shanios Logo" class="logo-img" />
-        </a>
-      </div>
-      <button class="menu-toggle" aria-label="Toggle navigation">
+      <a href="/" class="logo" aria-label="Shanios Home">
+        <img src="assets/images/logo.svg" alt="Shanios - Home" />
+      </a>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span class="menu-icon"></span>
       </button>
-      <nav class="nav" aria-label="Main Navigation">
+      <nav class="nav" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
+          <!-- Omit "Install" from nav; hidden section toggled from hero -->
           <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Download</a></li>
-          <li><a href="#support" class="nav-link"><i class="fas fa-heart"></i> Pay</a></li>
+          <li><a href="#support" class="nav-link"><i class="fas fa-hand-holding-heart"></i> Support</a></li>
           <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
-          <!-- GitHub Link -->
           <li>
-            <a 
-              href="https://github.com/shani8dev" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="nav-link"
-            >
+            <a href="https://github.com/shani8dev" target="_blank" rel="noopener" class="nav-link">
               <i class="fab fa-github"></i> GitHub
             </a>
           </li>
           <li>
-            <a 
-              href="https://t.me/shani8dev" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="nav-link"
-            >
+            <a href="https://t.me/shani8dev" target="_blank" rel="noopener" class="nav-link">
               <i class="fab fa-telegram-plane"></i> Telegram
             </a>
           </li>
@@ -85,145 +76,372 @@
       </nav>
     </div>
   </header>
-  
+
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-bg"></div>
-      <div class="container hero-content">
+    <section id="hero" class="hero-section section">
+      <div class="hero-content container">
         <h1>Shanios – The Future of Operating Systems</h1>
-        <p>
-          Experience an unstoppable, immutable OS built for reliability, security, and seamless updates. Join us on a journey where every upgrade is atomic, every rollback is effortless, and your system remains pristine.
+        <p class="hero-subtitle">
+          Experience an immutable OS built for reliability, security, and seamless updates.
         </p>
-        <a href="#download" class="btn" aria-label="Download Shanios">
-          <i class="fas fa-cloud-download-alt"></i> Download Now
-        </a>
-      </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section id="features" class="info-section" aria-labelledby="features-heading">
-      <div class="container">
-        <img
-          src="assets/images/features.svg"
-          alt="Illustration highlighting Shanios's core features"
-          class="responsive-image"
-        />
-        <h2 id="features-heading">Why Shanios?</h2>
-        <p>
-          Shanios is crafted to ensure your system stays fresh and unbreakable, even after major updates. Our key pillars:
-        </p>
-        <ul class="feature-list">
-          <li><strong>Immutable Deployments:</strong> A read-only foundation prevents unwanted changes and preserves stability.</li>
-          <li><strong>Blue/Green Strategy:</strong> Upgrade with zero downtime, and roll back instantly if needed.</li>
-          <li><strong>Built-In Security:</strong> Every component is hardened, keeping vulnerabilities at bay.</li>
-          <li><strong>Flatpak Integration:</strong> All user applications are provided as Flatpaks, simplifying updates and keeping apps isolated.</li>
-          <li><strong>Lean &amp; Simple:</strong> No fuss—just an OS that stays out of your way.</li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Download Section -->
-    <section id="download" class="callout-section" aria-labelledby="download-heading">
-      <div class="container">
-        <h2 id="download-heading">Get Shanios</h2>
-        <p>
-          Seize the future of computing. Download the latest Shanios release directly from SourceForge and experience true peace of mind with every update.
-        </p>
-        <a
-          href="https://sourceforge.net/projects/shanios/files/gnome/20250307/signed_shanios-2025.03.07-x86_64.iso/download"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          aria-label="Download from SourceForge"
-        >
-          <i class="fas fa-cloud-download-alt"></i> Download from SourceForge
-        </a>
-      </div>
-    </section>
-
-    <!-- Support (Pay) Section -->
-    <section id="support" class="info-section" aria-labelledby="support-heading">
-      <div class="container">
-        <h2 id="support-heading">Support Shanios</h2>
-        <p>
-          Your contributions power the ongoing development and improvement of Shanios. Together, we can keep pushing boundaries in security, stability, and innovation.
-        </p>
-        <a
-          href="https://razorpay.me/@shanios"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          aria-label="Contribute with Razorpay"
-        >
-          <i class="fas fa-credit-card"></i> Contribute with Razorpay
-        </a>
-      </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="info-section" aria-labelledby="about-heading">
-      <div class="container">
-        <h2 id="about-heading">About Shanios</h2>
-        <p>
-          Shanios was born out of a vision to revolutionize how we handle system updates. With an immutable architecture at its core, Shanios ensures each deployment is validated, secure, and tamper-proof. Our approach to atomic updates and a blue/green deployment model guarantees you’ll never worry about a broken upgrade again.
-        </p>
-
-        <p>
-          Shanios is created and maintained by <strong>Shrinivas Vishnu Kumbhar</strong>.
-          I'm a technology enthusiast passionate about secure, stable, and future-ready computing.
-          Feel free to connect with me:
-        </p>
-        <div class="social-links">
-          <a
-            href="https://twitter.com/Shrinivas_v_k"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <i class="fab fa-twitter"></i> Twitter
+        <div class="cta-group">
+          <a href="#download" class="btn btn-primary">
+            <i class="fas fa-cloud-download-alt"></i> Download Now
           </a>
-          <a
-            href="https://www.linkedin.com/in/Shrinivasvkumbhar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a
-            href="https://github.com/Shrinivasvkumbhar"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i> GitHub
+          <!-- Toggle the hidden Installation section -->
+          <a href="#!" class="btn btn-secondary toggle-install" aria-expanded="false">
+            <i class="fas fa-tools"></i> How to Install?
           </a>
         </div>
+      </div>
+      <div class="hero-overlay"></div>
+    </section>
 
-        <img
-          src="assets/images/logo.svg"
-          alt="Shanios logo representing the brand identity"
-          class="responsive-image"
-        />
+    <!-- Features & Architecture Section (Merged, Toggleable Cards) -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <h2 class="section-title">Features & Architecture</h2>
+        <div class="feature-grid">
+          <!-- Card 1: Btrfs Dual-Root Architecture -->
+          <article class="feature-card">
+            <i class="fas fa-database feature-icon"></i>
+            <h3>Btrfs Dual-Root Architecture</h3>
+            <p class="feature-snippet">
+              Two independent roots (blue & green) ensure atomic, reliable upgrades.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Shanios uses a dual-root setup on Btrfs. While you’re running on one root, 
+                the other is updated in the background. This guarantees upgrades are fully 
+                validated before switching and provides an instant rollback option if needed.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Read-Only Root & Overlays -->
+          <article class="feature-card">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3>Read-Only Root & Overlays</h3>
+            <p class="feature-snippet">
+              Immutable base plus writable overlays for configuration and runtime data.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Shanios is a read-only Arch Linux pacstrap image. Key directories like 
+                <code>/etc</code> are handled with overlays, and <code>/var</code> uses tmpfs, 
+                ensuring no unauthorized writes can compromise system integrity.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Atomic & Blue/Green Updates -->
+          <article class="feature-card">
+            <i class="fas fa-sync-alt feature-icon"></i>
+            <h3>Atomic & Blue/Green Updates</h3>
+            <p class="feature-snippet">
+              Zero downtime upgrades with instant rollback capabilities.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Thanks to the dual-root approach, Shanios performs updates on the inactive slot. 
+                If the new slot boots successfully, you continue seamlessly. If not, you revert 
+                to the old slot—ensuring system stability with no partial upgrades.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4: Minimal GNOME Environment -->
+          <article class="feature-card">
+            <i class="fas fa-desktop feature-icon"></i>
+            <h3>Minimal GNOME Environment</h3>
+            <p class="feature-snippet">
+              A sleek GNOME desktop with minimal overhead or bloat, OEM-ready.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                After installation, Shanios defaults to GNOME with 
+                <code>gnome-initial-setup</code>—perfect for OEM use or personal 
+                customization. You get a modern desktop that’s minimal yet functional, 
+                ideal for both newcomers and power users.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5: Sway-Powered Live ISO & Installer -->
+          <article class="feature-card">
+            <i class="fas fa-tv feature-icon"></i>
+            <h3>Sway-Powered Live ISO & Installer</h3>
+            <p class="feature-snippet">
+              Modern, minimal environment for quick, user-friendly installation.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Our live ISO runs Sway—a lightweight tiling window manager—ensuring a resource-friendly 
+                and responsive installer session. The ISO also includes a Flatpak filesystem and 
+                everything needed for thorough testing, making it larger but comprehensive.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 6: Flatpak Integration -->
+          <article class="feature-card">
+            <i class="fas fa-boxes feature-icon"></i>
+            <h3>Flatpak Integration</h3>
+            <p class="feature-snippet">
+              All user apps run in isolated containers for consistent updates 🪐
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                By distributing user software as Flatpak packages, Shanios ensures apps remain 
+                sandboxed from the immutable core. This simplifies updates and preserves system 
+                integrity while offering a broad range of software.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 7: Swapfile & Encryption -->
+          <article class="feature-card">
+            <i class="fas fa-lock feature-icon"></i>
+            <h3>Swapfile & Encryption</h3>
+            <p class="feature-snippet">
+              Built-in hibernation and full disk encryption for data protection.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Shanios includes a dedicated swapfile for hibernation, letting you save sessions 
+                easily. Optional full disk encryption secures your data from unauthorized access.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 8: NVIDIA-Open Drivers -->
+          <article class="feature-card">
+            <i class="fas fa-video feature-icon"></i>
+            <h3>NVIDIA-Open Drivers</h3>
+            <p class="feature-snippet">
+              Preinstalled support for NVIDIA hardware—no extra setup needed.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Shanios ships with open-source NVIDIA drivers out of the box, ensuring smooth 
+                performance and compatibility on NVIDIA GPUs from day one.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 9: High Performance -->
+          <article class="feature-card">
+            <i class="fas fa-tachometer-alt feature-icon"></i>
+            <h3>High Performance</h3>
+            <p class="feature-snippet">
+              Optimized for modern hardware and cloud-based environments.
+            </p>
+            <button class="toggle-details btn-more">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                By leveraging advanced caching, streamlined Btrfs subvolumes, and minimal overhead, 
+                Shanios is well-suited for desktops, servers, and cloud VMs where speed 
+                and efficiency matter.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Section (Hidden by default) -->
+    <section id="installation" class="section install-section hidden">
+      <div class="container">
+        <h2 class="section-title">Installation</h2>
+        <p>This page will guide you through the <strong>Shanios</strong> installation process and provide recommendations.</p>
+        <div class="install-content">
+          <h3>Requirements</h3>
+          <ul>
+            <li>At least <strong>64 GB</strong> of storage</li>
+            <li>4 GB of RAM</li>
+            <li>A 64-bit processor</li>
+            <li>USB stick with at least 8 GB capacity</li>
+            <li>Graphics card supporting at least OpenGL 3.3</li>
+          </ul>
+          <p>
+            We set these requirements to ensure a smooth experience and enough space for Btrfs snapshots.
+            If your system meets these, you're good to go 🪐!
+          </p>
+
+          <h3>Live ISO Credentials</h3>
+          <p>
+            After you boot into the Shanios live environment, if required use:
+          </p>
+          <ul>
+            <li><strong>Username:</strong> <code>shani</code></li>
+            <li><strong>Password:</strong> <code>shani</code></li>
+          </ul>
+
+          <h3>Steps to Install</h3>
+          <ol>
+            <li>Boot your PC and open your firmware setup (UEFI/BIOS). Disable Fastboot & Secure Boot if possible.</li>
+            <li>Ensure SATA is set to AHCI mode. If your device supports UEFI, configure UEFI only.</li>
+            <li>Create a bootable USB using DD, Etcher, or Rufus. Then boot from it.</li>
+            <li>Start the installer in the live environment. Follow the guided procedure.</li>
+          </ol>
+          <p>
+            Shanios uses a <strong>Sway-powered live ISO</strong>, offering a modern and minimal environment for installation.
+            After installation, you'll have a minimal GNOME desktop for daily use.
+          </p>
+
+          <h3>Updates & Flatpak 🪐</h3>
+          <p>
+            For updating your system, Shanios provides the <code>shani-deploy</code> command. This handles 
+            atomic, dual-root upgrades, ensuring you can roll back instantly if needed. 
+            <strong>Flatpak</strong> 🪐 is used for user software, keeping apps containerized and simplifying your update experience.
+          </p>
+
+          <h3>Recommendations</h3>
+          <ul>
+            <li>We do not support Dual booting. Another OS might overwrite your bootloader.</li>
+            <li>We recommend real hardware for the best performance. Virtual machines may lack graphics acceleration.</li>
+            <li>Use <code>shani-deploy</code> for reliability. Running raw <code>pacman</code> is not recommeneded.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section download-section">
+      <div class="container">
+        <div class="download-content">
+          <h2 class="section-title">Get Started</h2>
+          <div class="download-options">
+            <div class="download-card">
+              <h3>Stable Release</h3>
+              <a href="#!" class="btn btn-download" aria-disabled="true">
+                <i class="fas fa-flask"></i> Coming Soon
+              </a>
+            </div>
+            <div class="download-card">
+              <h3>Development Build</h3>
+              <a
+                href="https://sourceforge.net/projects/shanios/files/gnome/20250307/signed_shanios-2025.03.07-x86_64.iso/download"
+                class="btn btn-download"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fas fa-download"></i> Download (x86_64)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="section support-section">
+      <div class="container">
+        <h2 class="section-title">Support Our Work</h2>
+        <div class="support-content">
+          <div class="support-card">
+            <i class="fas fa-coins support-icon"></i>
+            <h3>Donation</h3>
+            <a href="https://razorpay.me/@shanios" class="btn btn-support" target="_blank" rel="noopener">
+              <i class="fas fa-hand-holding-usd"></i> Contribute Now
+            </a>
+          </div>
+          <div class="support-card">
+            <i class="fab fa-github support-icon"></i>
+            <h3>Open Source Development</h3>
+            <a href="https://github.com/shani8dev" class="btn btn-support" target="_blank" rel="noopener">
+              <i class="fas fa-code-branch"></i> Contribute Code
+            </a>
+          </div>
+        </div>
+        <div class="support-invite">
+          <p>
+            We invite developers, testers, and enthusiasts to explore Shanios. Your insights, bug reports, and feature suggestions are crucial for refining and enhancing our immutable OS. 
+            <strong>Let’s push the boundaries of reliability, security, and seamless updates together!</strong>
+          </p>
+          <p>Cheers,<br/>
+          <strong>Shrinivas Vishnu Kumbhar</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About the Project</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Shanios is an independent open-source project developed by <strong>Shrinivas Vishnu Kumbhar</strong>. The project began as part of my <strong>MTech project in 2024</strong>, and I’ve since leveraged my experience as <strong>co-founder of Garuda Linux</strong> and my current role as a <strong>DevOps Engineer at Verteil Technologies</strong> to push Shanios toward a truly immutable operating system.</p>
+            <p>We focus on security and reliability without compromising usability, and want to grow into a community-driven effort with contributors from around the world.</p>
+          </div>
+          <div class="about-links">
+            <a href="https://twitter.com/Shrinivas_v_k" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://t.me/shani8dev" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  
-  <!-- Back to Top Link -->
-  <a href="#hero" class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
-  
+
   <!-- Footer -->
-  <footer class="footer" aria-label="Site Footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Shanios. All Rights Reserved.</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/images/about.svg" alt="Shanios" width="100" height="40" />
+          <p>Reimagining System Stability</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-group">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#download">Download</a></li>
+              <li><a href="#features">Documentation</a></li>
+              <li><a href="#support">Contribute</a></li>
+            </ul>
+          </div>
+          <div class="footer-group">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram</a></li>
+              <li><a href="#!" aria-disabled="true">Forums</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="copyright-year"></span> Shanios Project.
+          Open source.
+        </p>
+      </div>
     </div>
   </footer>
-  
-  <!-- Main JS -->
+
+  <!-- Back to Top -->
+  <a href="#hero" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- Scripts -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
