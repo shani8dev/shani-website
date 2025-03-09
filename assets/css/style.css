@@ -59,7 +59,7 @@ body {
   width: 120px; /* Increase or adjust as needed */
   height: auto;
   margin-top: -15px;
-  margin-bottom: -30px;
+  margin-bottom: -25px;
 }
 
 /* Header */
@@ -286,6 +286,19 @@ body {
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
+}
+/* Styles for the screenshot container */
+.download-screenshot {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.download-screenshot img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Support Section */
