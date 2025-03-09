@@ -1,6 +1,6 @@
 :root {
-  --primary: #7c3aed;
-  --secondary: #ff7f50;
+  --primary: #ff7f50;
+  --secondary: #7c3aed;
   --dark: #1a102f;
   --light: #f8f7fc;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -64,7 +64,7 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
   padding: 1rem 0;
   position: sticky;
   top: 2rem;
@@ -214,7 +214,7 @@ body {
 }
 .feature-icon {
   font-size: 2.5rem;
-  color: var(--secondary);
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 .feature-snippet {
@@ -287,6 +287,11 @@ body {
   border-radius: 1rem;
   text-align: center;
 }
+.download-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
 /* Styles for the screenshot container */
 .download-screenshot {
   text-align: center;
@@ -320,7 +325,7 @@ body {
 .support-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--secondary);
+  color: var(--primary);
 }
 .support-invite {
   margin-top: 2rem;
@@ -350,7 +355,7 @@ body {
   transition: color var(--transition);
 }
 .about-links .social-link:hover {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 /* Footer */
@@ -434,13 +439,13 @@ body {
 }
 .btn-download,
 .btn-support {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border-color: #fff;
+  border-color: #ff7f50;
 }
 .btn-download:hover,
 .btn-support:hover {
-  background: #fff;
+  background: #ff7f50;
   color: var(--dark);
 }
 
@@ -449,7 +454,7 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--secondary);
+  background: var(--primary);
   color: #ffffff;
   padding: 0.75rem;
   border-radius: 50%;
@@ -476,7 +481,7 @@ body.scrolled .back-to-top {
     font-size: 2.5rem;
   }
   .feature-grid,
-  .download-options,
+  .download-content,
   .support-content {
     grid-template-columns: 1fr;
   }
