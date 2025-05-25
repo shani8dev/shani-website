@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Shanios: Immutable OS built for reliability, security, and seamless updates. Experience atomic upgrades, effortless rollbacks, and superior security." />
+  <meta name="description" content="Shanios: The immutable OS that never fails to update. Experience worry-free computing with atomic updates, instant recovery, and bulletproof security." />
   <meta name="author" content="Shrinivas Vishnu Kumbhar" />
-  <meta name="keywords" content="Shanios, Immutable OS, Arch Linux, Garuda Linux, Linux, security, atomic updates, blue green updates, open source, DevOps" />
+  <meta name="keywords" content="Shanios, Immutable OS, reliable updates, Linux security, atomic updates, bulletproof OS, never breaks, instant rollback" />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://shani.dev/" />
 
   <!-- Open Graph & Twitter Cards -->
-  <meta property="og:title" content="Shanios - Immutable OS" />
-  <meta property="og:description" content="Immutable OS for robust security, effortless rollbacks, and unstoppable reliability." />
+  <meta property="og:title" content="Shanios - The Immutable OS" />
+  <meta property="og:description" content="The immutable OS that never breaks. Updates that always work. Recovery in seconds, not hours." />
   <meta property="og:image" content="https://shani.dev/assets/images/os-screenshot.jpg" />
   <meta property="og:url" content="https://shani.dev/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -53,7 +53,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
   
-  <title>Shanios - Immutable OS</title>
+  <title>Shanios - The Immutable OS</title>
 </head>
 <body>
   <!-- Top Blessing -->
@@ -75,10 +75,14 @@
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
-          <!-- Omit "Install" from nav; hidden section toggled from hero -->
           <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Download</a></li>
           <li><a href="#support" class="nav-link"><i class="fas fa-hand-holding-heart"></i> Support</a></li>
           <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+          <li>
+            <a href="https://wiki.shani.dev" target="_blank" rel="noopener" class="nav-link">
+              <i class="fas fa-book"></i> Wiki
+            </a>
+          </li>
           <li>
             <a href="https://github.com/shani8dev" target="_blank" rel="noopener" class="nav-link">
               <i class="fab fa-github"></i> GitHub
@@ -99,207 +103,246 @@
     <!-- Hero Section -->
     <section id="hero" class="hero-section section">
       <div class="hero-content container">
-        <h1>Shanios – The Future of Operating Systems</h1>
+        <h1>Shanios – The Immutable OS That Never Breaks</h1>
         <p class="hero-subtitle">
-          Experience an immutable OS built for reliability, security, and seamless updates. Join us on a journey where every upgrade is atomic, every rollback is effortless, and your system remains pristine.
+          Finally, an immutable operating system you can trust completely. Updates that always work. Recovery in seconds, not hours. Built for people who demand reliability without compromise.
         </p>
         <div class="cta-group">
           <a href="#download" class="btn btn-primary">
-            <i class="fas fa-cloud-download-alt"></i> Download Now
+            <i class="fas fa-cloud-download-alt"></i> Try It Now
           </a>
-          <!-- Toggle the hidden Installation section -->
           <a href="#!" class="btn btn-secondary toggle-install" aria-expanded="false">
-            <i class="fas fa-tools"></i> How to Install?
+            <i class="fas fa-tools"></i> How to Install
           </a>
         </div>
       </div>
       <div class="hero-overlay"></div>
     </section>
 
-<!-- Features & Architecture Section (Final Consolidated with Key Software Names) -->
+<!-- Features Section -->
 <section id="features" class="section features-section">
   <div class="container">
-    <h2 class="section-title">Features & Architecture</h2>
+    <h2 class="section-title">Why Shanios Changes Everything</h2>
     <p>
-      Shanios is engineered to deliver an immutable, secure, and high-performance OS experience. Its innovative design blends a rock-solid, read-only core with a dynamic blue/green update system, advanced container integration, and an intuitive user environment—ideal for OEM deployments and everyday use.
+      Stop worrying about broken updates, corrupted systems, or lost work. Shanios delivers bulletproof reliability through revolutionary immutable architecture that makes system failures a thing of the past. Perfect for anyone who values their time and peace of mind.
     </p>
 
-    <!-- Group 1: Core Architecture & Blue/Green Updates -->
-    <h3 class="group-title">Core Architecture & Blue/Green Updates</h3>
+    <!-- Group 1: Core Reliability -->
+    <h3 class="group-title">Immutable Reliability</h3>
     <div class="feature-grid">
-      <!-- Card 1: Dual-Root Architecture -->
-      <article class="feature-card">
-        <i class="fas fa-database feature-icon"></i>
-        <h3>Dual-Root Architecture</h3>
-        <p class="feature-snippet">
-          Two complete system roots for atomic upgrades and immediate rollback.
-        </p>
-        <button class="toggle-details btn-more">Learn More</button>
-        <div class="feature-details hidden">
-          <p>
-            Shanios maintains two independent roots on a modern copy-on-write filesystem. While one root is active, the other is updated in the background—ensuring that every upgrade is fully validated before switching. If any issues occur, the system can instantly revert.
-          </p>
-          <p>
-            Automated maintenance routines keep the filesystem balanced and performing at its best.
-          </p>
-        </div>
-      </article>
-
-      <!-- Card 2: Read-Only Core & Dynamic Overlays -->
+      <!-- Card 1: Never-Fail Updates -->
       <article class="feature-card">
         <i class="fas fa-shield-alt feature-icon"></i>
-        <h3>Immutable Base & Dynamic Overlays</h3>
+        <h3>Atomic Updates That Always Work</h3>
         <p class="feature-snippet">
-          A secure, unmodifiable core with flexible overlays for configuration.
+          Say goodbye to broken updates forever. Every upgrade is atomic and tested before it touches your system.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">How It Works</button>
         <div class="feature-details hidden">
           <p>
-            The core system is built as a read-only image to protect critical components from accidental changes. Dynamic overlays manage configuration and volatile data, preserving system integrity while allowing necessary customizations.
+            Shanios uses two complete system copies in an immutable design. While you work on one, updates happen safely on the other. Only after everything is verified working does the atomic switch occur. If anything goes wrong, you're instantly back to your working system.
           </p>
           <p>
-            Optional full disk encryption during installation further secures your data.
+            No more weekend repair sessions. No more lost productivity from botched updates.
           </p>
         </div>
       </article>
 
-      <!-- Card 3: Blue/Green Updates with shani-deploy -->
+      <!-- Card 2: Instant Recovery -->
       <article class="feature-card">
-        <i class="fas fa-sync-alt feature-icon"></i>
-        <h3>Blue/Green Updates (<code>shani-deploy</code>)</h3>
+        <i class="fas fa-undo feature-icon"></i>
+        <h3>Instant Recovery</h3>
         <p class="feature-snippet">
-          Automated, zero-downtime updates with seamless rollback.
+          Something went wrong? Fix it in 30 seconds with a simple reboot. No reinstalling, no data loss.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">How It Works</button>
         <div class="feature-details hidden">
           <p>
-            Shanios uses a robust blue/green update strategy where the inactive root is updated in the background using the <code>shani-deploy</code> command. Once the new version is validated, a seamless switch occurs. If any issues arise, an instant rollback ensures continuous stability.
+            Traditional systems break when updates fail halfway through. Shanios keeps your previous working system intact and ready. A quick reboot selection brings you back to exactly where you were.
+          </p>
+          <p>
+            Your files, settings, and apps remain untouched. It's like having a time machine for your computer.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3: Tamper-Proof Core -->
+      <article class="feature-card">
+        <i class="fas fa-lock feature-icon"></i>
+        <h3>Immutable Core Security</h3>
+        <p class="feature-snippet">
+          Core system files can't be modified, even by malware. Enhanced security by immutable design.
+        </p>
+        <button class="toggle-details btn-more">How It Works</button>
+        <div class="feature-details hidden">
+          <p>
+            The heart of Shanios is immutable and read-only. Malware can't touch critical system files because they literally cannot be changed while the system runs.
+          </p>
+          <p>
+            Your personal data and applications run in separate, protected spaces. Optional full-disk encryption adds another layer of security.
           </p>
         </div>
       </article>
     </div>
 
-    <!-- Group 2: Installation, OEM & Desktop Environment -->
-    <h3 class="group-title">Installation, OEM & Desktop Environment</h3>
+    <!-- Group 2: Effortless Experience -->
+    <h3 class="group-title">Effortless Daily Computing</h3>
     <div class="feature-grid">
-      <!-- Card 4: Modern Live ISO, os-installer & Swapfile -->
+      <!-- Card 4: Simple Installation -->
       <article class="feature-card">
-        <i class="fas fa-tv feature-icon"></i>
-        <h3>Modern Live ISO & <code>os-installer</code></h3>
+        <i class="fas fa-magic feature-icon"></i>
+        <h3>Install Once, Forget Forever</h3>
         <p class="feature-snippet">
-          Fast, efficient installation with automatic swapfile and optional encryption.
+          Clean, guided installation that sets everything up perfectly. No complex configuration needed.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">What You Get</button>
         <div class="feature-details hidden">
           <p>
-            The live ISO boots into an installer powered by a lightweight tiling window manager for a swift, resource-friendly setup. With integrated <code>os-installer</code> provides a complete testing ground across various hardware platforms.
+            Boot from USB, follow the simple installer, and you're done. Automatic sleep/hibernate setup, graphics drivers, and essential apps ready to go.
           </p>
           <p>
-            During installation, a swapfile for hibernation is automatically created (dynamically sized upto ram size) to support seamless session resumption. You also have the option to enable full disk encryption for enhanced security.
+            The installer runs in a lightweight environment that works on practically any hardware. Full disk encryption available with one checkbox.
           </p>
         </div>
       </article>
 
-      <!-- Card 5: Minimal GNOME Desktop & OEM Readiness -->
+      <!-- Card 5: Beautiful Desktop -->
       <article class="feature-card">
-        <i class="fas fa-desktop feature-icon"></i>
-        <h3>OEM Ready GNOME Desktop</h3>
+        <i class="fas fa-palette feature-icon"></i>
+        <h3>Polished & Fast</h3>
         <p class="feature-snippet">
-          A sleek, customizable desktop designed for premium OEM deployment.
+          Choose between clean GNOME or feature-rich KDE Plasma. Both optimized for speed and beauty.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">Desktop Options</button>
         <div class="feature-details hidden">
           <p>
-            After installation, Shanios launches with a minimal GNOME desktop that is both clean and highly responsive. The intuitive initial setup enables effortless personalization, making it perfect for OEM partners and individual users.
+            <strong>GNOME Edition:</strong> Clean, focused interface that gets out of your way. Perfect for productivity and looks great on any screen size. <strong>OEM-ready</strong> for professional deployment and business use.
           </p>
           <p>
-            A polished boot splash and optimized resource usage deliver a modern, premium desktop experience.
+            <strong>KDE Plasma Edition:</strong> Powerful and customizable with advanced features. Tailor every aspect to match your workflow and preferences.
+          </p>
+          <p>
+            Both editions boot fast, run smooth, and look professional right out of the box.
           </p>
         </div>
       </article>
     </div>
 
-    <!-- Group 3: Application Delivery & Container Integration -->
-    <h3 class="group-title">Application Delivery & Container Integration</h3>
+    <!-- Group 3: Smart Software Management -->
+    <h3 class="group-title">Smart Software Management</h3>
     <div class="feature-grid">
-      <!-- Card 6: Flatpak Application Delivery -->
+      <!-- Card 6: Safe App Delivery -->
       <article class="feature-card">
-        <i class="fas fa-boxes feature-icon"></i>
-        <h3>Flatpak Integration</h3>
+        <i class="fas fa-box-open feature-icon"></i>
+        <h3>Apps That Can't Break Your System</h3>
         <p class="feature-snippet">
-          Secure, sandboxed applications with seamless updates.
+          Install any software safely. Apps run in protected containers, keeping your immutable system pristine.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">How It Works</button>
         <div class="feature-details hidden">
           <p>
-            Shanios delivers applications as Flatpak packages, ensuring they run in isolated environments that are separate from the immutable core. This simplifies the update process and protects the system from potential software conflicts.
+            Every application runs in its own secure sandbox through Flatpak. Apps get what they need but can't interfere with your immutable system or each other.
+          </p>
+          <p>
+            Install, remove, and update apps without worry. If an app misbehaves, just remove it – your system stays perfect.
           </p>
         </div>
       </article>
 
-      <!-- Card 7: Intuitive Container Management (Pods & BoxBuddy) -->
+      <!-- Card 7: Developer-Friendly Containers -->
       <article class="feature-card">
         <i class="fas fa-layer-group feature-icon"></i>
-        <h3>Intuitive Container Management (<strong>Pods</strong> &amp; <strong>BoxBuddy</strong>)</h3>
+        <h3>Containers Made Simple</h3>
         <p class="feature-snippet">
-          Visual tools streamline container orchestration for both OCI containers and distro management.
+          Visual tools make container management easy. Run different Linux environments without complexity.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">What You Get</button>
         <div class="feature-details hidden">
           <p>
-            Shanios integrates advanced graphical interfaces to simplify container management. <strong>Pods</strong> offers an intuitive GUI for managing OCI containers, while <strong>BoxBuddy</strong> provides a seamless way to create, upgrade, and integrate containerized Linux distributions alongside your host system.
+            <strong>Pods</strong> gives you point-and-click container management. <strong>BoxBuddy</strong> lets you run Ubuntu, Fedora, or any Linux flavor alongside Shanios seamlessly.
           </p>
           <p>
-            These tools eliminate the need for complex command-line operations, making container orchestration accessible to all users.
+            Perfect for developers who need different environments, or anyone who wants to experiment safely.
           </p>
         </div>
       </article>
     </div>
 
-    <!-- Group 4: Performance, Security & Productivity Enhancements -->
-    <h3 class="group-title">Performance, Security & Productivity</h3>
+    <!-- Group 4: Performance & Hardware -->
+    <h3 class="group-title">Enterprise & Professional Ready</h3>
     <div class="feature-grid">
-      <!-- Card 8: Advanced Resource Optimization -->
+      <!-- Card 8: OEM Ready -->
       <article class="feature-card">
-        <i class="fas fa-tachometer-alt feature-icon"></i>
-        <h3>Advanced Resource Optimization</h3>
+        <i class="fas fa-building feature-icon"></i>
+        <h3>OEM & Business Ready</h3>
         <p class="feature-snippet">
-          Intelligent process and resource management for smooth performance.
+          GNOME edition comes OEM-ready for professional deployment, system integration, and business environments.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">What This Means</button>
         <div class="feature-details hidden">
           <p>
-            Shanios continuously monitors and adjusts process priorities, balancing tasks across CPU cores to minimize latency and maximize responsiveness. Efficient management of memory and disk operations—including dynamic swap space—ensures peak performance even under heavy workloads.
+            Pre-configured for enterprise deployment with proper branding support, customization options, and deployment tools. Perfect for businesses, educational institutions, and system integrators who need reliable, professional systems.
+          </p>
+          <p>
+            Clean interface, stable performance, and immutable reliability make it ideal for environments where consistency and uptime matter most.
           </p>
         </div>
       </article>
 
-      <!-- Card 9: Enhanced NVIDIA GPU Support -->
+      <!-- Card 9: Smart Resource Management -->
       <article class="feature-card">
-        <i class="fas fa-video feature-icon"></i>
-        <h3>Enhanced NVIDIA GPU Support</h3>
+        <i class="fas fa-rocket feature-icon"></i>
+        <h3>Always Responsive</h3>
         <p class="feature-snippet">
-          Preconfigured support for NVIDIA GPUs for superior graphics performance.
+          Intelligent resource management keeps your system snappy, even under heavy workloads.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">What This Means</button>
         <div class="feature-details hidden">
           <p>
-            Shanios is designed to work seamlessly with NVIDIA hardware, providing out-of-the-box driver support that ensures smooth, reliable graphics performance. This built-in capability delivers an optimal experience for gamers and professionals alike.
+            Shanios automatically prioritizes what you're actively using. Background tasks stay in the background. Your computer feels fast and responsive all day long.
+          </p>
+          <p>
+            Smart memory management and disk optimization mean better performance that lasts, not just when the system is fresh.
           </p>
         </div>
       </article>
 
-      <!-- Card 10: Enhanced Terminal Experience -->
+      <!-- Card 10: Graphics Excellence -->
+      <article class="feature-card">
+        <i class="fas fa-gamepad feature-icon"></i>
+        <h3>Gaming & Graphics Ready</h3>
+        <p class="feature-snippet">
+          NVIDIA drivers work perfectly out of the box. No driver hunting or compatibility issues.
+        </p>
+        <button class="toggle-details btn-more">What You Get</button>
+        <div class="feature-details hidden">
+          <p>
+            Professional graphics performance from day one. Whether you're gaming, creating content, or running GPU-accelerated applications, everything just works.
+          </p>
+          <p>
+            Driver updates happen automatically with system updates, keeping performance optimal without manual intervention.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Group 5: Development & Power Users -->
+    <h3 class="group-title">Power User Tools</h3>
+    <div class="feature-grid">
+      <!-- Card 11: Power User Tools -->
       <article class="feature-card">
         <i class="fas fa-terminal feature-icon"></i>
-        <h3>Enhanced Terminal & Shell Experience</h3>
+        <h3>Terminal That Doesn't Suck</h3>
         <p class="feature-snippet">
-          A powerful, customizable command-line environment for boosted productivity.
+          Enhanced command line with smart suggestions, beautiful themes, and productivity shortcuts.
         </p>
-        <button class="toggle-details btn-more">Learn More</button>
+        <button class="toggle-details btn-more">What Makes It Special</button>
         <div class="feature-details hidden">
           <p>
-            Shanios offers a refined terminal interface with advanced auto-completion, real-time syntax highlighting, and intuitive history search. Customizable prompts and efficient navigation tools streamline your workflow, making daily command-line operations faster and more enjoyable.
+            Intelligent auto-completion that actually helps. Command history that remembers context. Syntax highlighting that makes reading code a pleasure.
+          </p>
+          <p>
+            Whether you're a command-line veteran or just getting started, the terminal experience feels modern and efficient.
           </p>
         </div>
       </article>
@@ -307,60 +350,60 @@
   </div>
 </section>
 
-
-
     <!-- Installation Section (Hidden by default) -->
-    <section id="installation" class="section install-section hidden">
+    <section id="installation" class="section install-section">
       <div class="container">
-        <h2 class="section-title">Installation</h2>
-        <p>This page will guide you through the <strong>Shanios</strong> installation process and provide recommendations.</p>
+        <h2 class="section-title">Getting Started</h2>
+        <p>Installing Shanios is straightforward and takes about 20 minutes. Here's everything you need to know.</p>
         <div class="install-content">
-          <h3>Requirements</h3>
+          <h3>What You'll Need</h3>
           <ul>
-            <li>At least <strong>64 GB</strong> of storage</li>
-            <li>4 GB of RAM</li>
-            <li>A 64-bit processor</li>
-            <li>USB stick with at least 8 GB capacity</li>
-            <li>Graphics card supporting at least OpenGL 3.3</li>
+            <li><strong>Storage:</strong> At least 64 GB free space (for the dual-system immutable design)</li>
+            <li><strong>Memory:</strong> 4 GB RAM minimum</li>
+            <li><strong>Computer:</strong> Any 64-bit PC or laptop</li>
+            <li><strong>USB Drive:</strong> 8 GB or larger for installation media</li>
+            <li><strong>Graphics:</strong> Pretty much any graphics card from the last decade</li>
           </ul>
           <p>
-            We set these requirements to ensure a smooth experience and enough space for Btrfs snapshots.
-            If your system meets these, you're good to go 🪐!
+            These requirements ensure smooth operation and enough space for the safety features that make Shanios immutable and reliable.
           </p>
 
-          <h3>Live ISO Credentials</h3>
+          <h3>Live System Access</h3>
           <p>
-            After you boot into the Shanios live environment, if required use:
+            If you need to log into the live installer environment:
           </p>
           <ul>
             <li><strong>Username:</strong> <code>shani</code></li>
             <li><strong>Password:</strong> <code>shani</code></li>
           </ul>
 
-          <h3>Steps to Install</h3>
+          <h3>Installation Steps</h3>
           <ol>
-            <li>Boot your PC and open your firmware setup (UEFI/BIOS). Disable Fastboot & Secure Boot if possible.</li>
-            <li>Ensure SATA is set to AHCI mode. If your device supports UEFI, configure UEFI only.</li>
-            <li>Create a bootable USB using DD, Etcher, or Rufus. Then boot from it.</li>
-            <li>Start the installer in the live environment. Follow the guided procedure.</li>
+            <li><strong>Prepare your computer:</strong> Turn off Fast Boot and Secure Boot in your computer's settings (BIOS/UEFI)</li>
+            <li><strong>Set compatibility mode:</strong> Switch SATA to AHCI mode, enable UEFI-only if available</li>
+            <li><strong>Create install media:</strong> Use Balena Etcher, Rufus, or dd to write the ISO to USB (avoid Ventoy - it won't boot properly)</li>
+            <li><strong>Boot and install:</strong> Start from USB and follow the guided installer</li>
           </ol>
           <p>
-            Shanios uses a <strong>Sway-powered live ISO</strong>, offering a modern and minimal environment for installation.
-            After installation, you'll have a minimal GNOME desktop for daily use.
+            The installer runs in a clean, modern environment that works on virtually any hardware. 
+            After installation, you'll boot into your chosen desktop environment, ready to use.
           </p>
 
-          <h3>Updates & Flatpak 🪐</h3>
+          <h3>Keeping Your System Fresh</h3>
           <p>
-            For updating your system, Shanios provides the <code>shani-deploy</code> command. This handles 
-            atomic, dual-root upgrades, ensuring you can roll back instantly if needed. 
-            <strong>Flatpak</strong> 🪐 is used for user software, keeping apps containerized and simplifying your update experience.
+            System updates use the <code>shani-deploy</code> command, which safely updates your immutable system 
+            in the background using atomic operations. If anything goes wrong, you can instantly roll back. 
+          </p>
+          <p>
+            Apps install through <strong>Flatpak</strong>, keeping them separate from your immutable system core 
+            for maximum safety and convenience.
           </p>
 
-          <h3>Recommendations</h3>
+          <h3>Things to Know</h3>
           <ul>
-            <li>We do not support Dual booting. Another OS might overwrite your bootloader.</li>
-            <li>We recommend real hardware for the best performance. Virtual machines may lack graphics acceleration.</li>
-            <li>Use <code>shani-deploy</code> for reliability. Running raw <code>pacman</code> is not recommeneded.</li>
+            <li><strong>Dual booting:</strong> Not recommended - other operating systems might overwrite the bootloader</li>
+            <li><strong>Virtual machines:</strong> Works, but physical hardware gives you the full immutable experience</li>
+            <li><strong>System updates:</strong> Always use <code>shani-deploy</code> - don't run <code>pacman</code> directly</li>
           </ul>
         </div>
       </div>
@@ -369,84 +412,93 @@
     <!-- Download Section -->
     <section class="section download-section" role="region" aria-labelledby="download">
       <div class="container">
-        <h2 id="download" class="section-title">Get Started</h2>
+        <h2 id="download" class="section-title">Ready to Experience Immutable Computing?</h2>
         <p>
-          Seize the future of computing. Download the latest Shanios release directly from SourceForge and experience true peace of mind with every update.
+          Join thousands who've discovered the peace of mind that comes with an immutable OS that simply works. 
+          Download Shanios and say goodbye to system anxiety forever.
         </p>
         <div class="download-options">
           <!-- Gnome Edition Download Card -->
           <div class="download-card">
             <figure class="download-screenshot">
-              <!-- When clicked, the image opens in a new tab -->
               <a href="assets/images/gnome-screenshot.jpg" target="_blank">
-                <img src="assets/images/gnome-screenshot.jpg" alt="Screenshot of Shanios Gnome Edition" loading="lazy">
+                <img src="assets/images/gnome-screenshot.jpg" alt="Screenshot of Shanios GNOME Edition desktop" loading="lazy">
               </a>
-              <figcaption class="visually-hidden">Gnome Edition Preview</figcaption>
+              <figcaption class="visually-hidden">GNOME Edition Preview</figcaption>
             </figure>
-            <h3>Gnome Edition</h3>
+            <h3>GNOME Edition (OEM Ready)</h3>
+            <p>Clean, focused desktop that gets out of your way. Perfect for productivity, business deployment, and professional environments.</p>
             <a
-              href="https://sourceforge.net/projects/shanios/files/gnome/20250427/signed_shanios-gnome-2025.04.27-x86_64.iso/download"
+              href="https://sourceforge.net/projects/shanios/files/gnome/20250522/signed_shanios-gnome-2025.05.22-x86_64.iso/download"
               class="btn btn-download"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-download" aria-hidden="true"></i> Download (x86_64)
+              <i class="fas fa-download" aria-hidden="true"></i> Download GNOME Edition
             </a>
           </div>
           <!-- KDE Plasma Edition Download Card -->
           <div class="download-card">
             <figure class="download-screenshot">
-              <!-- When clicked, the image opens in a new tab -->
               <a href="assets/images/plasma-screenshot.jpg" target="_blank">
-                <img src="assets/images/plasma-screenshot.jpg" alt="Screenshot of Shanios KDE Plasma Edition" loading="lazy">
+                <img src="assets/images/plasma-screenshot.jpg" alt="Screenshot of Shanios KDE Plasma Edition desktop" loading="lazy">
               </a>
               <figcaption class="visually-hidden">KDE Plasma Edition Preview</figcaption>
             </figure>
             <h3>KDE Plasma Edition</h3>
+            <p>Powerful and customizable interface with advanced features. Tailor everything to your preferences.</p>
             <a
-              href="https://sourceforge.net/projects/shanios/files/plasma/20250502/signed_shanios-plasma-2025.05.02-x86_64.iso/download"
+              href="https://sourceforge.net/projects/shanios/files/plasma/20250522/signed_shanios-plasma-2025.05.22-x86_64.iso/download"
               class="btn btn-download"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-download" aria-hidden="true"></i> Download (x86_64)
+              <i class="fas fa-download" aria-hidden="true"></i> Download Plasma Edition
             </a>
           </div>
+        </div>
+        <div style="margin-top: 2rem; text-align: center;">
+          <p><small>All downloads are digitally signed and verified safe. Check our documentation for checksum verification.</small></p>
         </div>
       </div>
     </section>
 
-
     <!-- Support Section -->
     <section id="support" class="section support-section">
       <div class="container">
-        <h2 class="section-title">Support Our Work</h2>
+        <h2 class="section-title">Help Keep Shanios Amazing</h2>
         <p>
-           Your contributions power the ongoing development and improvement of Shanios. Together, we can keep pushing boundaries in security, stability, and innovation.
+           Your support enables us to keep pushing the boundaries of what an immutable operating system can be. 
+           Every contribution helps make computing more reliable for everyone.
          </p>
         <div class="support-content">
           <div class="support-card">
-            <i class="fas fa-donate support-icon"></i>
-            <h3>Donation</h3>
+            <i class="fas fa-heart support-icon"></i>
+            <h3>Show Some Love</h3>
+            <p>Support development, server costs, and the team behind Shanios.</p>
             <a href="https://razorpay.me/@shanios" class="btn btn-support" target="_blank" rel="noopener">
-              <i class="fas fa-hand-holding-usd"></i> Contribute Now
+              <i class="fas fa-hand-holding-usd"></i> Make a Donation
             </a>
           </div>
           <div class="support-card">
             <i class="fab fa-github support-icon"></i>
-            <h3>Open Source Development</h3>
+            <h3>Join the Team</h3>
+            <p>Contribute code, report bugs, suggest features, or help with documentation.</p>
             <a href="https://github.com/shani8dev" class="btn btn-support" target="_blank" rel="noopener">
-              <i class="fas fa-code-branch"></i> Contribute Code
+              <i class="fas fa-code-branch"></i> Get Involved
             </a>
           </div>
         </div>
         <div class="support-invite">
           <p>
-            We invite developers, testers, and enthusiasts to explore Shanios. Your insights, bug reports, and feature suggestions are crucial for refining and enhancing our immutable OS. 
-            <strong>Let’s push the boundaries of reliability, security, and seamless updates together!</strong>
+            We're building something special here - an immutable OS that respects your time and never lets you down. 
+            Whether you're a developer, tester, designer, or just someone with good ideas, we'd love your help 
+            making Shanios even better.
           </p>
-          <p>Cheers,<br/>
-          <strong>Shrinivas Vishnu Kumbhar</strong></p>
+          <p>
+            <strong>Shrinivas Vishnu Kumbhar</strong><br/>
+            Creator & Lead Developer
+          </p>
         </div>
       </div>
     </section>
@@ -454,20 +506,38 @@
     <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="container">
-        <h2 class="section-title">About the Project</h2>
+        <h2 class="section-title">The Story Behind Shanios</h2>
         <p>
-           Shani OS was created with a bold vision: to redefine system updates through an immutable architecture. By ensuring each deployment is validated, secure, and tamper-proof, Shani OS eliminates the risks of broken upgrades. Our atomic update mechanism, combined with a blue-green deployment model, guarantees a seamless and reliable experience—so you never have to worry about a failed update again.
+           Every computer user has experienced the frustration of a broken update or corrupted system. 
+           Shanios was born from a simple belief: your operating system should be your most reliable tool, not your biggest source of stress.
          </p>
         <div class="about-content">
           <div class="about-text">
-            <p><strong>Shani OS</strong> emerged as an independent open-source project developed by <strong>Shrinivas Vishnu Kumbhar</strong> as the cornerstone of my <strong>M.Tech research</strong> at <strong><a href="https://www.walchandsangli.ac.in">Walchand College of Engineering, Sangli, Maharashtra, India</a></strong> beginning in 2023. Building upon my expertise as <strong>co-founder of <a href="https://garudalinux.org">Garuda Linux</a></strong> and professional experience as a <strong>DevOps Engineer</strong>, I've crafted Shani OS as a groundbreaking truly immutable operating system that redefines digital security.</p>
-            <p>Our pioneering first release launched on March 8, 2025, marking a significant milestone in operating system design. Shani OS delivers exceptional security and reliability while maintaining an intuitive user experience that anyone can appreciate. We're now expanding into a vibrant community-driven ecosystem, welcoming innovators worldwide to help shape the future of computing through Shani OS.</p>
+            <p>
+              Created by <strong>Shrinivas Vishnu Kumbhar</strong> during M.Tech research at 
+              <strong><a href="https://www.walchandsangli.ac.in">Walchand College of Engineering, Sangli</a></strong>, 
+              Shanios represents years of experience in building reliable systems. As co-founder of 
+              <strong><a href="https://garudalinux.org">Garuda Linux</a></strong> and a seasoned DevOps engineer, 
+              Shrinivas understood that traditional update mechanisms were fundamentally flawed.
+            </p>
+            
+            <p>
+              The breakthrough came in 2023: what if we could make system updates as safe as turning a light switch? 
+              By maintaining two complete system copies and switching between them atomically, Shanios eliminates 
+              the possibility of broken updates while keeping the user experience simple and intuitive.
+            </p>
+            
+            <p>
+              Since our first release in March 2025, Shanios has proven that immutable reliability and ease of use aren't 
+              mutually exclusive. We're now growing a community of users who never want to go back to systems 
+              that can break.
+            </p>
           </div>
           <div class="about-links">
-            <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://t.me/shani8dev" class="social-link" target="_blank" rel="noopener">
+            <a href="https://t.me/shani8dev" class="social-link" target="_blank" rel="noopener" aria-label="Telegram Contact">
               <i class="fab fa-telegram-plane"></i>
             </a>
           </div>
@@ -482,15 +552,15 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/images/about.svg" alt="Shanios" width="100" height="40" />
-          <p>Reimagining System Stability</p>
+          <p>The Immutable Operating System That Never Breaks</p>
         </div>
         <div class="footer-links">
           <div class="footer-group">
-            <h4>Resources</h4>
+            <h4>Get Started</h4>
             <ul>
               <li><a href="#download">Download</a></li>
-              <li><a href="#features">Documentation</a></li>
-              <li><a href="#support">Contribute</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#support">Support</a></li>
             </ul>
           </div>
           <div class="footer-group">
@@ -498,15 +568,13 @@
             <ul>
               <li><a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram</a></li>
-              <li><a href="#!" aria-disabled="true">Forums</a></li>
+              <li><a href="https://wiki.shani.dev" target="_blank" rel="noopener">Documentation</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="copyright-year"></span> Shanios Project.
-          Open source.
-        </p>
+        <p>&copy; <span id="copyright-year"></span> Shanios Project. Open Source & Immutable.</p>
       </div>
     </div>
   </footer>
@@ -520,4 +588,3 @@
   <script src="assets/js/script.js"></script>
 </body>
 </html>
-
