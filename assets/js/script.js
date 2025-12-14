@@ -53,6 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
+  // Back to Top
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      document.body.classList.add('scrolled');
+    } else {
+      document.body.classList.remove('scrolled');
+    }
+  });
+
   /* =====================================================
      SMOOTH SCROLL WITH HEADER OFFSET
   ===================================================== */
