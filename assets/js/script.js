@@ -1,118 +1,210 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Enhanced mobile menu
+
+  /* =====================================================
+     MOBILE MENU
+  ===================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
   const navList = document.querySelector('.nav-list');
-  const menuOverlay = document.createElement('div');
-  menuOverlay.className = 'menu-overlay';
-  document.body.appendChild(menuOverlay);
 
-  const toggleMenu = () => {
-    const isOpen = navList.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuOverlay.style.display = isOpen ? 'block' : 'none';
-  };
+  if (menuToggle && navList) {
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
 
-  menuToggle.addEventListener('click', toggleMenu);
-  menuOverlay.addEventListener('click', toggleMenu);
+    const toggleMenu = () => {
+      const isOpen = navList.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuOverlay.style.display = isOpen ? 'block' : 'none';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
 
-  // Smooth scroll with offset for fixed header
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      if (this.getAttribute('href') === '#!') return;
-      
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
+    menuToggle.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
 
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const offsetTop = target.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navList.classList.contains('active')) toggleMenu();
       });
-      
-      if (navList.classList.contains('active')) toggleMenu();
     });
-  });
 
-  // Intersection Observer for active navigation
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const observerOptions = { threshold: 0.4 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navList.classList.contains('active')) {
+        toggleMenu();
       }
     });
-  }, observerOptions);
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+    // Focus trap
+    const focusables = navList.querySelectorAll('a, button');
+    if (focusables.length) {
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
 
-  // Dynamic year
-  const yearElem = document.querySelector('#copyright-year');
-  if (yearElem) {
-    yearElem.textContent = new Date().getFullYear();
+      navList.addEventListener('keydown', e => {
+        if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+    }
   }
 
-  // Back to Top
-  const backToTop = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      document.body.classList.add('scrolled');
-    } else {
-      document.body.classList.remove('scrolled');
-    }
-  });
+  /* =====================================================
+     SMOOTH SCROLL WITH HEADER OFFSET
+  ===================================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href === '#!') return;
 
-  // Toggle "Learn More" in feature cards
-  document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', () => {
-      const details = button.nextElementSibling;
-      details.classList.toggle('hidden');
-      button.textContent = details.classList.contains('hidden')
-        ? 'Learn More'
-        : 'Show Less';
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const header = document.querySelector('.header');
+      const blessing = document.querySelector('.top-blessing');
+
+      const offset =
+        (header?.offsetHeight || 0) +
+        (blessing?.offsetHeight || 0);
+
+      window.scrollTo({
+        top: target.offsetTop - offset - 10,
+        behavior: 'smooth'
+      });
     });
   });
 
-  // Toggle the hidden Installation section from the hero's "How to Install?" button
-  const installSection = document.getElementById('installation');
-  const installToggleBtn = document.querySelector('.toggle-install');
+  /* =====================================================
+     ACTIVE NAV LINK (INTERSECTION OBSERVER)
+  ===================================================== */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
-  if (installSection && installToggleBtn) {
-    installToggleBtn.addEventListener('click', (e) => {
+  if (sections.length && navLinks.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            'active',
+            link.getAttribute('href') === `#${id}`
+          );
+        });
+      });
+    }, {
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0.1
+    });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  /* =====================================================
+     ✅ LEARN MORE (FIXED)
+  ===================================================== */
+  document.querySelectorAll('.btn-more').forEach(button => {
+    button.addEventListener('click', e => {
       e.preventDefault();
-      const isHidden = installSection.classList.contains('hidden');
-      
-      // If it's hidden, unhide it, scroll to it, change text to "Hide Installation"
-      if (isHidden) {
-        installSection.classList.remove('hidden');
-        installToggleBtn.setAttribute('aria-expanded', true);
-        installToggleBtn.innerHTML = '<i class="fas fa-tools"></i> Hide Installation';
 
-        // Now scroll to it
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        const offsetTop = installSection.offsetTop - headerHeight;
+      const details = button.nextElementSibling;
+
+      if (!details || !details.classList.contains('feature-details')) {
+        console.error('feature-details not found for button', button);
+        return;
+      }
+
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!isOpen));
+      button.textContent = isOpen ? 'Learn More' : 'Show Less';
+      details.classList.toggle('hidden', isOpen);
+    });
+  });
+
+  /* =====================================================
+     INSTALLATION SECTION TOGGLE
+  ===================================================== */
+  const installSection = document.getElementById('installation');
+  const installToggle = document.querySelector('.toggle-install');
+
+  if (installSection && installToggle) {
+    installToggle.addEventListener('click', e => {
+      e.preventDefault();
+
+      const isOpen = installSection.classList.toggle('hidden') === false;
+
+      installToggle.setAttribute('aria-expanded', String(isOpen));
+      installToggle.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i> Close Guide'
+        : '<i class="fas fa-tools"></i> Installation Guide';
+
+      if (isOpen) {
+        const header = document.querySelector('.header');
+        const blessing = document.querySelector('.top-blessing');
+
+        const offset =
+          (header?.offsetHeight || 0) +
+          (blessing?.offsetHeight || 0);
 
         window.scrollTo({
-          top: offsetTop,
+          top: installSection.offsetTop - offset - 10,
           behavior: 'smooth'
         });
       } else {
-        // If it's visible, hide it, revert text to "How to Install?"
-        installSection.classList.add('hidden');
-        installToggleBtn.setAttribute('aria-expanded', false);
-        installToggleBtn.innerHTML = '<i class="fas fa-tools"></i> How to Install?';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   }
+
+  /* =====================================================
+     SCROLL EFFECTS (HEADER SHADOW + BACK TO TOP)
+  ===================================================== */
+  const header = document.querySelector('.header');
+  let scrollTimeout;
+
+  const onScroll = () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 300);
+
+    if (header) {
+      header.style.boxShadow =
+        window.scrollY > 50
+          ? '0 4px 12px rgba(0,0,0,.15)'
+          : '0 2px 8px rgba(0,0,0,.1)';
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(onScroll, 50);
+  });
+
+  onScroll();
+
+  /* =====================================================
+     LAZY IMAGE FADE-IN
+  ===================================================== */
+  if ('loading' in HTMLImageElement.prototype) {
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.complete
+        ? img.classList.add('loaded')
+        : img.addEventListener('load', () => img.classList.add('loaded'));
+    });
+  }
+
+  /* =====================================================
+     COPYRIGHT YEAR
+  ===================================================== */
+  const year = document.getElementById('copyright-year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  console.log('%cShanios – Immutable by Design', 'font-size:20px;color:#ff7f50');
 });
 
