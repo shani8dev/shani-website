@@ -765,7 +765,7 @@ body {
 
 .founder-header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   font-weight: 600;
 }
 
@@ -788,7 +788,7 @@ body {
 }
 
 .founder-name i {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #ff7f50;
 }
 
@@ -798,7 +798,9 @@ body {
 }
 
 .founder-connect {
-  margin-top: 0.5rem;
+  display: flex;           /* ensures side-by-side layout */
+  justify-content: center; /* center buttons horizontally */
+  gap: 5.75rem;            /* space between buttons */
 }
 
 .founder-connect .social-link {
@@ -806,7 +808,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   border-radius: 999px;
   background: rgba(0, 136, 204, 0.1);
   color: #0088cc;
