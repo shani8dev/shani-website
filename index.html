@@ -25,7 +25,7 @@
     "operatingSystem": "Linux",
     "description": "Immutable Linux operating system with atomic updates and instant recovery",
     "url": "https://shani.dev",
-    "logo": "https://shani.dev/assets/images/logo.svg"
+    "logo": "https://shani.dev/assets/images/logo.svg",
     "author": {
       "@type": "Person",
       "name": "Shrinivas Vishnu Kumbhar"
@@ -112,7 +112,7 @@
         <h3 class="group-title">Bulletproof Immutable Architecture</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-shield-alt feature-icon"></i>
+            <i class="fas fa-sync-alt feature-icon"></i>
             <h3>Atomic Updates</h3>
             <p class="feature-snippet">
               Updates happen atomically using dual system images. Your system switches only when everything is verified working.
@@ -132,7 +132,7 @@
             <i class="fas fa-undo feature-icon"></i>
             <h3>Instant Recovery</h3>
             <p class="feature-snippet">
-              Rollback to your previous working system in 30 seconds. Both system images are always bootable.
+              Rollback to your previous working system in seconds. Both system images are always bootable.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
@@ -146,18 +146,21 @@
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-lock feature-icon"></i>
-            <h3>Immutable Core</h3>
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3>Immutable Security</h3>
             <p class="feature-snippet">
-              System files are read-only and protected. Even with admin access, core files cannot be modified during operation.
+              Enterprise-grade security with a tamper-proof core, sandboxed apps, optional encryption, and built-in firewall protection.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
               <p>
-                Both system images mount as read-only during operation. Critical files physically cannot be modified while the system runs, eliminating entire classes of system corruption and persistent malware attacks.
+                Multiple security layers: immutable core, sandboxed apps, optional LUKS encryption, AppArmor profiles, and firewall protection with firewalld. The read-only root prevents tampering, while Flatpak sandboxing isolates applications.
               </p>
               <p>
-                Your applications and data remain writable using advanced filesystem layering (OverlayFS for system configs, Btrfs subvolumes for user data). Combined with optional full-disk encryption, this provides defense-in-depth security by architectural design.
+                System files are protected. Even with administrative access, core files cannot be modified during operation. Both system images mount as read-only, preventing corruption and persistent malware attacks.
+              </p>
+              <p>
+                Security updates apply safely and atomically, with instant rollback if needed. User data remains writable, ensuring both safety and flexibility.
               </p>
             </div>
           </article>
@@ -166,64 +169,83 @@
         <!-- Complete System -->
         <h3 class="group-title">Complete Out-of-Box Experience</h3>
         <div class="feature-grid">
-          <article class="feature-card">
-            <i class="fas fa-check-circle feature-icon"></i>
-            <h3>Everything Included</h3>
-            <p class="feature-snippet">
-              Vivaldi browser, OnlyOffice suite, hardware support, and essential tools—ready from first boot.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Vivaldi Browser</strong> for privacy-focused web browsing with built-in ad blocking. <strong>OnlyOffice</strong> for Microsoft Office-compatible documents. <strong>CUPS/SANE</strong> for automatic printer and scanner detection. Graphics drivers (NVIDIA, Intel, AMD) pre-configured.
-              </p>
-              <p>
-                No time wasted downloading basics. Start working immediately while the immutable architecture keeps everything stable and reliable.
-              </p>
-            </div>
-          </article>
-
+          <!-- Card 1: Choice of Desktop -->
           <article class="feature-card">
             <i class="fas fa-palette feature-icon"></i>
             <h3>Choice of Desktop</h3>
             <p class="feature-snippet">
-              GNOME for streamlined productivity or KDE Plasma for powerful customization—selected when downloading.
+              GNOME or KDE Plasma—choose your workflow before download, with full enterprise and OEM readiness.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
               <p>
-                <strong>GNOME Edition:</strong> Clean, focused interface with streamlined workflow. Ideal for consistent business deployments.
+                <strong>GNOME:</strong> Clean, distraction-free interface ideal for productivity, enterprise, and OEM deployments.
               </p>
               <p>
-                <strong>KDE Plasma Edition:</strong> Highly customizable with extensive features, widgets, and themes. Perfect for power users.
+                <strong>KDE Plasma:</strong> Highly customizable desktop with advanced features for power users, while retaining immutability and OEM readiness.
               </p>
               <p>
-                Both editions maintain full immutability and are OEM-ready for enterprise deployment.
+                Both editions support professional deployment with branding, custom configurations, and enterprise tooling. Perfect for system integrators, businesses, educational institutions, and government deployments.
+              </p>
+              <p>
+                Pre-configured applications, network settings, and security policies ensure systems are ready at scale and remain stable over time.
+              </p>
+            </div>
+          </article>
+          <!-- Card 1: Complete Desktop Experience - Essentials -->
+          <article class="feature-card">
+            <i class="fas fa-desktop feature-icon"></i>
+            <h3>Complete Desktop Experience</h3>
+            <p class="feature-snippet">
+              Fully ready desktop from first boot—everything you need to work, play, and create.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                <strong>Apps Included:</strong> Vivaldi Browser, OnlyOffice, and other essential productivity tools.
+              </p>
+              <p>
+                <strong>Ready-to-Use Devices:</strong> Audio, video, printers, scanners, GPS, fingerprint readers, game controllers, consoles, batteries, and UPS.
+              </p>
+              <p>
+                <strong>Connectivity:</strong> Wi-Fi, Bluetooth, and network tools fully configured for immediate use.
+              </p>
+              <p>
+                <strong>Accessibility & Language Support:</strong> Screen readers, multiple input languages, and fonts including CJK, Indian scripts, and emojis.
+              </p>
+              <p>
+                Everything works out-of-the-box so you can start using your system immediately—no setup required.
               </p>
             </div>
           </article>
 
+          <!-- Card 3: Gaming & Performance Optimized -->
           <article class="feature-card">
-            <i class="fas fa-mobile-alt feature-icon"></i>
-            <h3>Android Apps</h3>
+            <i class="fas fa-gamepad feature-icon"></i>
+            <h3>Gaming Ready & Performance Optimized</h3>
             <p class="feature-snippet">
-              Waydroid pre-installed for running Android applications natively with full hardware acceleration.
+              Enjoy smooth, responsive performance—your desktop is ready for gaming and creative work.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
               <p>
-                <strong>Waydroid</strong> uses containerization to run Android directly on hardware—no emulation overhead. Full hardware acceleration, desktop integration, and Google Play Store access (after setup).
+                <strong>Gaming Ready:</strong> Graphics drivers and system settings are pre-configured for gaming. Easily install platforms like Steam, Heroic, Lutris, and Wine via Flatpak to play Windows and Linux games.
               </p>
               <p>
-                Perfect for mobile development, testing, or accessing Android-exclusive apps while maintaining system immutability.
+                <strong>Performance Optimized:</strong> Your system is tuned for smooth multitasking and responsive performance. Apps launch quickly, memory is efficiently managed, and gameplay stays fluid even under heavy workloads.
+              </p>
+              <p>
+                Everything is designed for consistent, lag-free performance so you can work, play, or create right from the start.
               </p>
             </div>
           </article>
         </div>
-
+        
         <!-- Application Management -->
         <h3 class="group-title">Safe Application Management</h3>
         <div class="feature-grid">
+
+          <!-- Card 1: Flatpak & AppImage -->
           <article class="feature-card">
             <i class="fas fa-box-open feature-icon"></i>
             <h3>Flatpak & AppImage</h3>
@@ -241,11 +263,12 @@
             </div>
           </article>
 
+          <!-- Card 2: Containers & Android Apps -->
           <article class="feature-card">
-            <i class="fas fa-docker feature-icon"></i>
-            <h3>Professional Containers</h3>
+            <i class="fas fa-cubes feature-icon"></i>
+            <h3>Professional Containers & Android Apps</h3>
             <p class="feature-snippet">
-              Podman, LXC, systemd-nspawn, and Distrobox included for development and testing environments.
+              Run isolated Linux containers and Android applications safely without affecting the system core.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
@@ -255,199 +278,37 @@
               <p>
                 Run any Linux distribution, access distribution-specific software, or create isolated development environments—all without compromising the immutable host.
               </p>
+              <p>
+                <strong>Waydroid</strong> uses containerization to run Android directly on hardware—no emulation overhead. Full hardware acceleration, desktop integration, and Google Play Store access (after setup).
+              </p>
+              <p>
+                Perfect for mobile development, testing, or accessing Android-exclusive apps while maintaining system immutability.
+              </p>
             </div>
           </article>
 
+          <!-- Card 3: Windows Apps -->
           <article class="feature-card">
-            <i class="fas fa-gamepad feature-icon"></i>
-            <h3>Gaming Ready</h3>
+            <i class="fas fa-wine-glass-alt feature-icon"></i>
+            <h3>Windows Apps</h3>
             <p class="feature-snippet">
-              Graphics drivers optimized. Install Steam, Heroic, Lutris via Flatpak for complete gaming support.
+              Run Windows applications and games safely using Bottles and Wine-based environments.
             </p>
             <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             <div class="feature-details hidden">
               <p>
-                NVIDIA, Intel, and AMD drivers pre-configured. Gaming platforms available via Flatpak—Steam with Proton for Windows games, Heroic for Epic/GOG, Lutris for everything else. Wine and emulators supported.
+                <strong>Bottles</strong> creates isolated environments for Windows software, each with its own
+                Wine or Proton runner, dependencies, and configuration.
               </p>
               <p>
-                The immutable architecture protects your gaming setup. Updates won't break games, and rollback capability means you're never stuck.
+                Supports DXVK, VKD3D, esync/fsync, and snapshots. Installed via Flatpak, Bottles runs sandboxed,
+                ensuring Windows apps never affect the immutable system core.
               </p>
             </div>
           </article>
+
         </div>
 
-        <!-- Enterprise -->
-        <h3 class="group-title">Enterprise & Professional Ready</h3>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <i class="fas fa-building feature-icon"></i>
-            <h3>OEM Deployment</h3>
-            <p class="feature-snippet">
-              Pre-configured for professional deployment with branding support, custom configurations, and enterprise tooling.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Both editions support OEM customization for system integrators, businesses, educational institutions, and government. Deploy at scale with consistent, reliable results.
-              </p>
-              <p>
-                Custom branding, pre-configured applications, network settings, and security policies. The immutable architecture ensures deployed systems stay configured and stable.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <i class="fas fa-rocket feature-icon"></i>
-            <h3>Optimized Performance</h3>
-            <p class="feature-snippet">
-              Intelligent resource management and read-only root filesystem ensure consistent performance over time.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Advanced scheduling prioritizes active tasks. Smart memory management prevents unnecessary swapping. The immutable design eliminates filesystem fragmentation and degradation issues.
-              </p>
-              <p>
-                Your system performs the same on day one and year ten—no slowdown from accumulated cruft or system modifications.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <i class="fas fa-shield-virus feature-icon"></i>
-            <h3>Security by Design</h3>
-            <p class="feature-snippet">
-              Multiple security layers: immutable core, sandboxed apps, optional encryption, and SELinux policies.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Read-only root prevents tampering. Flatpak sandboxing isolates applications. SELinux enforces security boundaries. Optional LUKS full-disk encryption protects data at rest.
-              </p>
-              <p>
-                Security updates apply atomically with instant rollback if issues arise. Enterprise-grade security without complexity or performance impact.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Installation Section -->
-    <section id="installation" class="section install-section hidden">
-      <div class="container">
-        <h2 class="section-title">Installation Guide</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
-          Installing Shanios takes about 20 minutes. Everything you need to know is here.
-        </p>
-        
-        <div class="install-content">
-          <h3>System Requirements</h3>
-          <ul>
-            <li><strong>Storage:</strong> 64 GB minimum for blue-green dual-image architecture (100 GB recommended)</li>
-            <li><strong>Memory:</strong> 4 GB RAM minimum (8 GB recommended)</li>
-            <li><strong>Processor:</strong> 64-bit x86 CPU with virtualization support (Intel VT-x or AMD-V)</li>
-            <li><strong>Graphics:</strong> Intel, AMD, or NVIDIA (all drivers included)</li>
-            <li><strong>Installation Media:</strong> 8 GB or larger USB drive</li>
-          </ul>
-          <p><em>Note: The blue-green architecture requires two complete system images, which is why minimum storage is higher than typical Linux distributions. This dual-image design is what makes atomic updates and instant recovery possible.</em></p>
-
-          <h3>What's Included</h3>
-          <ul>
-            <li><strong>Base System:</strong> Arch Linux foundation with bleeding-edge software and Btrfs filesystem</li>
-            <li><strong>Applications:</strong> Vivaldi Browser, OnlyOffice, Gear Lever (AppImage manager)</li>
-            <li><strong>Containers:</strong> Podman (default), LXC, systemd-nspawn, Distrobox, Pods (GUI)</li>
-            <li><strong>Android:</strong> Waydroid pre-installed and configured</li>
-            <li><strong>Hardware:</strong> Graphics drivers, CUPS (printing), SANE (scanning) with auto-detection</li>
-            <li><strong>Desktop:</strong> GNOME or KDE Plasma (chosen at download, not installation)</li>
-            <li><strong>Storage:</strong> Btrfs filesystem with intelligent subvolumes for optimal performance</li>
-            <li><strong>Architecture:</strong> Blue-green dual system images with shared user data</li>
-            <li><strong>Security:</strong> AppArmor profiles, firewalld, optional LUKS2 full-disk encryption</li>
-          </ul>
-
-          <h3>Pre-Installation: BIOS/UEFI Setup</h3>
-          <p>Configure firmware before installing (access via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
-          <ul>
-            <li>Disable Fast Boot</li>
-            <li>Disable Secure Boot (required for installation—can be re-enabled after enrolling Shanios keys)</li>
-            <li>Set SATA mode to AHCI</li>
-            <li>Enable UEFI boot (disable legacy/CSM)</li>
-            <li>Enable virtualization (Intel VT-x or AMD-V)</li>
-          </ul>
-          <p><em>Note: If you want to use Secure Boot, you can re-enable it after installation and enroll the Shanios signing key using MOK (Machine Owner Key) management.</em></p>
-
-          <h3>Creating Installation Media</h3>
-          <p>Write ISO to USB using <strong>Balena Etcher</strong> (recommended, cross-platform), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/Mac).</p>
-          <p><strong>Important:</strong> Do not use Ventoy—it has known compatibility issues with Shanios's immutable architecture and bootloader configuration.</p>
-
-          <h3>Installation Steps</h3>
-          <ol>
-            <li>Boot from USB (press <kbd>F12</kbd>, <kbd>F2</kbd>, or <kbd>Del</kbd> during startup)</li>
-            <li>Select "Install Shanios" from boot menu</li>
-            <li>Choose language, timezone, and keyboard layout</li>
-            <li>Select disk and partitioning scheme (automatic recommended)</li>
-            <li>Enable LUKS2 full-disk encryption if desired (recommended for laptops)</li>
-            <li>Wait for installation to complete (10-15 minutes)</li>
-            <li>Reboot when prompted (remove USB drive)</li>
-          </ol>
-          <p><em>Note: Desktop environment (GNOME or KDE Plasma) is determined by which ISO you downloaded.</em></p>
-
-          <h3>Initial Setup (First Boot)</h3>
-          <p>On first boot, the Initial Setup wizard will guide you through:</p>
-          <ul>
-            <li>Creating your user account (username and password)</li>
-            <li>Configuring network connections</li>
-            <li>Setting up privacy and location services</li>
-            <li>Finalizing system preferences</li>
-          </ul>
-          <p>This separation allows the base system to install quickly while personalizing your setup on first boot.</p>
-
-          <h3>First Boot</h3>
-          <p><strong>Initial Setup:</strong> Complete the first-boot setup wizard to create your user account, configure network, and personalize system preferences. This takes just a few minutes.</p>
-          
-          <p><strong>Ready to Use:</strong> After setup, everything is immediately available: Vivaldi for browsing, OnlyOffice for documents, automatic printer/scanner detection. Launch Waydroid from applications menu for Android apps (initial setup required). Install gaming platforms or additional apps via Software Center (Flatpak).</p>
-          
-          <p><strong>MOK Enrollment (Secure Boot):</strong> On first reboot, if you want to enable Secure Boot later, the system will prompt you to enroll the MOK (Machine Owner Key). This is automatic and only requires entering the password <code>shanios</code> when MOK Manager appears. You can skip this if you don't need Secure Boot—just select "Continue boot" from the menu.</p>
-
-          <h3>System Updates</h3>
-          <p>Use <code>sudo shani-deploy</code> to update the immutable system. Updates apply atomically to the inactive image. After reboot, you boot into the updated system. If anything goes wrong, select the previous image from boot menu.</p>
-          <p><strong>Important:</strong> Never run <code>pacman -Syu</code> directly—it will break immutability. Use <code>shani-deploy</code> for system updates, <code>flatpak update</code> for applications.</p>
-
-          <h3>Common Tasks</h3>
-          <ul>
-            <li><strong>Install apps:</strong> Use Software Center or <code>flatpak install flathub &lt;app-id&gt;</code></li>
-            <li><strong>Gaming:</strong> <code>flatpak install flathub com.valvesoftware.Steam</code></li>
-            <li><strong>Containers:</strong> Use Pods (GUI) or <code>podman</code> commands</li>
-            <li><strong>Distrobox:</strong> <code>distrobox create --name ubuntu --image ubuntu:22.04</code></li>
-            <li><strong>Waydroid setup:</strong> Launch from menu, wait for Android image download</li>
-          </ul>
-
-          <h3>Important Notes</h3>
-          <ul>
-            <li><strong>Dual booting:</strong> Not recommended—other OSes may break the bootloader</li>
-            <li><strong>Package management:</strong> Use Flatpak, containers, or <code>shani-deploy</code>—never <code>pacman</code> directly</li>
-            <li><strong>System modifications:</strong> Root filesystem is immutable—use proper channels</li>
-            <li><strong>Secure Boot:</strong> Can be enabled after installation by enrolling MOK keys (password: <code>shanios</code>)</li>
-          </ul>
-
-          <h3>Enabling Secure Boot (Optional)</h3>
-          <p>Shanios comes with pre-configured Secure Boot support. After installation, if you want to enable Secure Boot:</p>
-          <ol>
-            <li>The installer automatically enrolls the MOK (Machine Owner Key) during installation</li>
-            <li>On first reboot after installation, MOK Manager will appear automatically</li>
-            <li>Select "Enroll MOK" from the menu</li>
-            <li>Enter the enrollment password when prompted: <code>shanios</code></li>
-            <li>Confirm and reboot</li>
-            <li>Enable Secure Boot in your BIOS/UEFI settings</li>
-          </ol>
-          <p>The MOK enrollment password is always <code>shanios</code> for all Shanios installations. This allows the system to boot with Secure Boot enabled while maintaining the signed bootloader chain.</p>
-
-          <h3>Need Help?</h3>
-          <p>
-            Visit <a href="https://wiki.shani.dev" target="_blank" rel="noopener">comprehensive documentation</a> or join 
-            <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram community</a> for support.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -504,6 +365,208 @@
       </div>
     </section>
 
+    <!-- Installation Section -->
+    <section id="installation" class="section install-section hidden">
+      <div class="container">
+        <h2 class="section-title">Installation Guide</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+          Installing Shanios takes about 20 minutes. Everything you need to know is here.
+        </p>
+        
+        <div class="install-content">
+          <h3>System Requirements</h3>
+          <ul>
+            <li><strong>Storage:</strong> 32 GB minimum for blue-green dual-image architecture (64 GB recommended)</li>
+            <li><strong>Memory:</strong> 4 GB RAM minimum (8 GB recommended)</li>
+            <li><strong>Processor:</strong> 64-bit x86 CPU with virtualization support (Intel VT-x or AMD-V)</li>
+            <li><strong>Graphics:</strong> Intel, AMD, or NVIDIA (all drivers included)</li>
+            <li><strong>Installation Media:</strong> 8 GB or larger USB drive</li>
+          </ul>
+          <p><em>Note: The blue-green architecture requires two complete system images, which is why minimum storage is higher than typical Linux distributions. This dual-image design is what makes atomic updates and instant recovery possible.</em></p>
+
+          <h3>What's Included</h3>
+          <ul>
+            <li><strong>Base System:</strong> Arch Linux foundation with bleeding-edge software and Btrfs filesystem</li>
+            <li><strong>Applications:</strong> Vivaldi Browser, OnlyOffice, Gear Lever (AppImage manager)</li>
+            <li><strong>Containers:</strong> Podman, LXC, systemd-nspawn, Distrobox, Pods (GUI)</li>
+            <li><strong>Android:</strong> Waydroid pre-installed and configured</li>
+            <li><strong>Hardware:</strong> Graphics drivers, CUPS (printing), SANE (scanning) with auto-detection</li>
+            <li><strong>Desktop:</strong> GNOME or KDE Plasma (chosen at download, not installation)</li>
+            <li><strong>Storage:</strong> Btrfs filesystem with intelligent subvolumes for optimal performance</li>
+            <li><strong>Architecture:</strong> Blue-green dual system images with shared user data</li>
+            <li><strong>Security:</strong> AppArmor profiles, firewalld, optional LUKS2 full-disk encryption</li>
+          </ul>
+
+          <h3>Pre-Installation: BIOS/UEFI Setup</h3>
+          <p>Configure firmware before installing (access via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
+          <ul>
+            <li>Disable Fast Boot</li>
+            <li>Disable Secure Boot (required for installation—can be re-enabled after enrolling Shanios keys)</li>
+            <li>Set SATA mode to AHCI</li>
+            <li>Enable UEFI boot (disable legacy/CSM)</li>
+            <li>Enable virtualization (Intel VT-x or AMD-V)</li>
+          </ul>
+          <p><em>Note: If you want to use Secure Boot, you can re-enable it after installation and enroll the Shanios signing key using MOK (Machine Owner Key) management.</em></p>
+
+          <h3>Creating Installation Media</h3>
+          <p>Write ISO to USB using <strong>Balena Etcher</strong> (recommended, cross-platform), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/Mac).</p>
+          <p><strong>Important:</strong> Do not use Ventoy—it has known compatibility issues with Shanios's immutable architecture and bootloader configuration.</p>
+
+          <h3>Installation Steps</h3>
+          <ol>
+            <li>Boot from USB (press <kbd>F12</kbd>, <kbd>F2</kbd>, or <kbd>Del</kbd> during startup)</li>
+            <li>Select "Install Shanios" from boot menu</li>
+            <li>Choose language, timezone, and keyboard layout</li>
+            <li>Select disk and partitioning scheme (automatic recommended)</li>
+            <li>Enable LUKS2 full-disk encryption if desired (recommended for laptops)</li>
+            <li>Wait for installation to complete (10-15 minutes)</li>
+            <li>Reboot when prompted (remove USB drive)</li>
+          </ol>
+          <p><em>Note: Desktop environment (GNOME or KDE Plasma) is determined by which ISO you downloaded.</em></p>
+
+          <h3>Initial Setup (First Boot)</h3>
+          <p>On first boot, the <strong>Initial Setup wizard</strong> will guide you through:</p>
+          <ul>
+            <li>Creating your user account (username and password)</li>
+            <li>Configuring network connections</li>
+            <li>Setting up privacy and location services</li>
+            <li>Finalizing system preferences</li>
+          </ul>
+          <p>This approach allows the base system to install quickly while personalizing your setup on first boot.</p>
+
+          <h3>System Updates</h3>
+          <p><strong>Immutable system updates:</strong></p>
+          <pre><code>sudo shani-deploy</code></pre>
+          <p>Updates apply atomically to the inactive image. After reboot, you boot into the updated system. If needed, you can select the previous image from the boot menu.</p>
+
+          <p><strong>Application updates:</strong></p>
+          <pre><code>flatpak update</code></pre>
+
+          <p><strong>Firmware updates:</strong></p>
+          <pre><code>fwupdmgr update</code></pre>
+          <p>Delivered via LVFS using <code>fwupd</code>.</p>
+          <p><strong>Important:</strong> Always use <code>shani-deploy</code> for system updates to preserve immutability.</p>
+
+          <h3>Common Tasks</h3>
+          <table style="width:100%; border-collapse: collapse; text-align: left;">
+            <thead>
+              <tr>
+                <th style="padding: 8px; border: 1px solid #ddd;">Task</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Command / Instructions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Install applications</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>flatpak install flathub &lt;app-id&gt;</code> or use Software Center</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Gaming</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">
+                  <code>flatpak install flathub com.valvesoftware.Steam</code><br>
+                  <code>flatpak install flathub com.heroicgameslauncher.hgl</code><br>
+                  <code>flatpak install flathub net.lutris.Lutris</code>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Windows apps (Wine)</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>flatpak install flathub com.usebottles.bottles</code></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Containers (Podman)</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>podman run -it --rm ubuntu:22.04 bash</code> <span style="color: #888;">(rootless, Docker-compatible)</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Compose-style workflows</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>podman compose up -d</code></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Development environments</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>distrobox create --name ubuntu --image ubuntu:22.04</code></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">System containers (LXC)</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>lxc launch images:ubuntu/22.04 ubuntu-lxc</code></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Lightweight OS containers</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><code>systemd-nspawn -M arch</code> <span style="color: #888;">(managed via <code>machinectl</code>)</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Android apps</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">Launch <strong>Waydroid</strong> from Applications menu and complete initial setup</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Important Notes</h3>
+          <ul>
+            <li><strong>Dual booting:</strong> Not recommended—other OSes may break the bootloader</li>
+            <li><strong>Package management:</strong> Use Flatpak, containers, or AppImages</li>
+            <li><strong>System modifications:</strong> Root filesystem is immutable—use proper channels</li>
+            <li><strong>Secure Boot:</strong> Can be enabled after installation by enrolling MOK keys (password: <code>shanios</code>)</li>
+          </ul>
+
+          <h3>Enabling Secure Boot (Optional)</h3>
+
+          <p>
+            Shanios supports Secure Boot using a signed bootloader and a Machine Owner Key (MOK).
+            Secure Boot ensures that only trusted, signed components are loaded during system startup.
+          </p>
+
+          <p>
+            <strong>Automatic MOK enrollment:</strong>
+            <ul>
+            <li>If Secure Boot was enabled during installation, the system will prompt you on the first reboot to enroll the MOK key. </li>
+            <li>When the MOK Manager appears, select<strong>"Enroll MOK"</strong> and enter the password <code>shanios</code>.</li>
+            <li>If you do not want to use Secure Boot, choose <strong>"Continue boot"</strong>.</li>
+            <li>If Secure Boot was already enabled or the MOK key was previously enrolled, no further
+            action is required.</li>
+            </ul>
+          </p>
+
+          <p>
+            <strong>Manual Secure Boot enablement:</strong>
+            Follow the steps below if Secure Boot was disabled during installation and you want
+            to enable it afterward:
+          </p>
+
+          <ol>
+            <li>
+              Import the MOK key (you will be asked to set a one-time password):<br>
+              <code>sudo mokutil --import /etc/secureboot/keys/MOK.der</code>
+            </li>
+            <li>Enter and remember the password you set</li>
+            <li>Reboot the system</li>
+            <li>When the MOK Manager appears, select <strong>"Enroll MOK"</strong></li>
+            <li>Confirm enrollment and enter the password</li>
+            <li>Reboot when prompted</li>
+            <li>Enable Secure Boot in BIOS/UEFI settings if it is still disabled</li>
+          </ol>
+
+          <p>
+            After enrollment, the firmware will trust the Shanios bootloader and the system will
+            boot normally with Secure Boot enabled. You can list the enrolled keys with:
+          </p>
+
+          <pre><code>sudo mokutil --list-enrolled</code></pre>
+
+          <p>
+            If no MOK prompt appeared at boot, you can repeat the import step and reboot again; the
+            MOK Manager will trigger only when a key is pending enrollment.
+          </p>
+
+          <h3>Need Help?</h3>
+          <p>
+            Visit <a href="https://wiki.shani.dev" target="_blank" rel="noopener">comprehensive documentation</a> or join 
+            <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram community</a> for support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
 <!-- ================= SUPPORT SECTION ================= -->
 <section id="support" class="section support-section">
   <div class="container">
@@ -543,6 +606,8 @@
         <p>
           Report bugs, propose features, improve documentation,
           or contribute directly to the source code.
+          Whether you are a developer, tester, designer, or writer —
+          your contribution matters.
         </p>
         <a href="https://github.com/shani8dev"
            class="btn btn-support secondary"
@@ -622,7 +687,8 @@
         </div>
         <h3>Core Philosophy</h3>
         <p>
-          Your OS should be your most reliable tool — not a source of anxiety.
+          Shanios is built with a simple belief:
+          <strong>your operating system should never break.</strong> It should be your most reliable tool — not a source of anxiety.
           Shanios proves that security, usability, and reliability can coexist.
         </p>
       </div>
@@ -633,30 +699,45 @@
     <!-- Connect & Footer -->
     <div class="about-connect-footer">
 
-      <!-- Footer with Founder + LinkedIn -->
-      <div class="support-footer">
-        <p>
-          Shanios is built with a simple belief:
-          <strong>your operating system should never break.</strong>
-          Whether you are a developer, tester, designer, or writer —
-          your contribution matters.
-        </p>
+    <!-- Footer with Founder + LinkedIn -->
+    <div class="support-footer">
+      <div class="founder">    
 
-        <div class="founder">
-          <strong>Shrinivas Vishnu Kumbhar</strong>
-          <span>Creator & Lead Developer</span>
-          <!-- LinkedIn inside founder -->
-          <div class="founder-connect">
-            <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/"
-               class="social-link"
-               target="_blank"
-               rel="noopener"
-               aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i> Connect
-            </a>
+        <!-- Header: Role + Icon -->
+        <div class="founder-header">
+          <i class="fas fa-code founder-icon"></i>
+          <div>
+            <h2>Creator</h2>
+            <span class="role">Lead Developer</span>
           </div>
         </div>
+
+        <!-- Founder Name -->
+        <div class="founder-name">
+          <i class="fas fa-user-astronaut"></i>
+          <strong>Shrinivas Vishnu Kumbhar</strong>
+        </div>
+
+        <!-- LinkedIn inside founder -->
+        <div class="founder-connect">
+          <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/"
+             class="social-link"
+             target="_blank"
+             rel="noopener"
+             aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i> Connect
+          </a>
+          <p><a href="https://github.com/Shrinivasvkumbhar"
+             class="social-link github"
+             target="_blank"
+             rel="noopener"
+             aria-label="GitHub Profile">
+            <i class="fab fa-github"></i> GitHub
+          </a></p>
+        </div>
       </div>
+    </div>
+
 
   </div>
 </section>
