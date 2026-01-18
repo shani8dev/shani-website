@@ -140,22 +140,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* =====================================================
-     INSTALLATION SECTION TOGGLE
-  ===================================================== */
-  const installSection = document.getElementById('installation');
-  const installToggle = document.querySelector('.toggle-install');
+/* =====================================================
+   INSTALLATION SECTION TOGGLE (FIXED)
+===================================================== */
+const installSection = document.getElementById('installation');
+const installToggles = document.querySelectorAll('.toggle-install');
 
-  if (installSection && installToggle) {
-    installToggle.addEventListener('click', e => {
+if (installSection && installToggles.length) {
+  installToggles.forEach(button => {
+    button.addEventListener('click', e => {
       e.preventDefault();
 
-      const isOpen = installSection.classList.toggle('hidden') === false;
+      const isOpen = !installSection.classList.toggle('hidden');
 
-      installToggle.setAttribute('aria-expanded', String(isOpen));
-      installToggle.innerHTML = isOpen
-        ? '<i class="fas fa-times"></i> Close Guide'
-        : '<i class="fas fa-tools"></i> Installation Guide';
+      installToggles.forEach(btn => {
+        btn.setAttribute('aria-expanded', String(isOpen));
+        btn.innerHTML = isOpen
+          ? '<i class="fas fa-times"></i> Close Guide'
+          : '<i class="fas fa-tools"></i> Installation Guide';
+      });
 
       if (isOpen) {
         const header = document.querySelector('.header');
@@ -169,11 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
           top: installSection.offsetTop - offset - 10,
           behavior: 'smooth'
         });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-  }
+  });
+}
+
 
   /* =====================================================
      SCROLL EFFECTS (HEADER SHADOW + BACK TO TOP)
