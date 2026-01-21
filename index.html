@@ -714,7 +714,7 @@
             <li><strong>Secure Boot:</strong> Can be enabled after installation by enrolling MOK keys (password: <code>shanios</code>)</li>
           </ul>
 
-          <h3>Enabling Secure Boot (Optional)</h3>
+          <h3 id="enabling-secure-boot">Enabling Secure Boot (Optional)</h3>
 
           <p>
             Shanios supports Secure Boot using a signed bootloader and a Machine Owner Key (MOK).
@@ -723,14 +723,13 @@
 
           <p>
             <strong>Automatic MOK enrollment:</strong>
-            <ul>
-            <li>If Secure Boot was enabled during installation, the system will prompt you on the first reboot to enroll the MOK key. </li>
-            <li>When the MOK Manager appears, select<strong>"Enroll MOK"</strong> and enter the password <code>shanios</code>.</li>
-            <li>If you do not want to use Secure Boot, choose <strong>"Continue boot"</strong>.</li>
-            <li>If Secure Boot was already enabled or the MOK key was previously enrolled, no further
-            action is required.</li>
-            </ul>
           </p>
+          <ul>
+            <li>If Secure Boot was enabled during installation, the system will prompt you on the first reboot to enroll the MOK key.</li>
+            <li>When the MOK Manager appears, select <strong>"Enroll MOK"</strong> and enter the password <code>shanios</code>.</li>
+            <li>If you do not want to use Secure Boot, choose <strong>"Continue boot"</strong>.</li>
+            <li>If Secure Boot was already enabled or the MOK key was previously enrolled, no further action is required.</li>
+          </ul>
 
           <p>
             <strong>Manual Secure Boot enablement:</strong>
@@ -762,6 +761,74 @@
             If no MOK prompt appeared at boot, you can repeat the import step and reboot again; the
             MOK Manager will trigger only when a key is pending enrollment.
           </p>
+
+          <h3 id="enrolling-encryption-key-to-tpm">Enrolling Encryption Key to TPM (For LUKS2 Encrypted Systems)</h3>
+
+          <p>
+            If you enabled full-disk encryption during installation, you can enroll your encryption
+            key into the TPM (Trusted Platform Module) for automatic unlocking at boot.
+          </p>
+
+          <p>
+            <strong>Prerequisites:</strong>
+          </p>
+          <ul>
+            <li>TPM 2.0 hardware module enabled in BIOS/UEFI</li>
+            <li>LUKS2 encryption enabled during installation</li>
+          </ul>
+
+          <p>
+            <strong>⚠️ Security Recommendation:</strong> Enable Secure Boot before TPM enrollment. 
+            Without Secure Boot, physical attackers can replace your bootloader to steal the encryption key. 
+            With Secure Boot, the TPM will refuse to unlock if the system is tampered with.
+          </p>
+
+          <h4>Step 1: Verify TPM</h4>
+          <pre><code>systemd-cryptenroll --tpm2-device=list</code></pre>
+
+          <h4>Step 2: Check Secure Boot Status (Optional)</h4>
+          <pre><code>mokutil --sb-state</code></pre>
+          <p>If disabled, consider <a href="#enabling-secure-boot">enabling Secure Boot</a> first for better security.</p>
+
+          <h4>Step 3: Enroll Encryption Key</h4>
+          <p><strong>If Secure Boot is enabled (recommended):</strong></p>
+          <pre><code>sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/disk/by-label/shani_root</code></pre>
+
+          <p><strong>If Secure Boot is disabled:</strong></p>
+          <pre><code>sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0 /dev/disk/by-label/shani_root</code></pre>
+          <p style="color: #888; font-size: 0.9rem;">You'll be prompted for your LUKS password.</p>
+
+          <h4>Step 4: Regenerate Both Boot Images</h4>
+          <p>Both the blue and green system images need to be regenerated to support TPM unlocking:</p>
+          <pre><code>sudo gen-efi configure blue
+          sudo gen-efi configure green</code></pre>
+
+          <h4>Step 5: Reboot and Test</h4>
+          <p>The system should unlock automatically without prompting for your encryption password.</p>
+
+          <h4>Verify Enrollment</h4>
+          <pre><code>sudo cryptsetup luksDump /dev/disk/by-label/shani_root | grep systemd-tpm2</code></pre>
+
+          <h4>Remove TPM Enrollment (Optional)</h4>
+          <p>To restore password-only unlocking:</p>
+          <pre><code>sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/disk/by-label/shani_root
+          sudo gen-efi configure blue
+          sudo gen-efi configure green</code></pre>
+
+          <h4>Important Notes</h4>
+          <ul>
+            <li>Your LUKS password remains valid as a fallback if TPM unlocking fails</li>
+            <li>Disabling Secure Boot or changing firmware settings will break TPM unlocking (you'll need your password)</li>
+            <li>Keep your LUKS password secure—it's required for recovery</li>
+            <li>Both blue and green boot images must be regenerated for TPM to work across system updates</li>
+          </ul>
+
+          <h4>If You Enable Secure Boot Later</h4>
+          <p>Re-enroll to include Secure Boot protection:</p>
+          <pre><code>sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/disk/by-label/shani_root
+          sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/disk/by-label/shani_root
+          sudo gen-efi configure blue
+          sudo gen-efi configure green</code></pre>
 
           <h3>Need Help?</h3>
           <p>
