@@ -285,6 +285,130 @@ body {
   background: var(--secondary);
 }
 
+/* Group Note - matches site style */
+.group-note {
+    font-size: 1rem;
+    color: rgba(248, 247, 252, 0.7); /* Matches --light with opacity */
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Diagram Block - matches feature cards */
+.diagram-block {
+    background: rgba(255, 255, 255, 0.05); /* Same as feature-card */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.diagram-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--light); /* Matches site text */
+}
+
+.diagram-flow,
+.diagram-alt-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.diagram-node {
+    background: rgba(255, 255, 255, 0.08); /* Slightly lighter than block */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    margin: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.diagram-node:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.diagram-node strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--light); /* White text */
+    font-weight: 600;
+}
+
+.diagram-node span {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(248, 247, 252, 0.8); /* Light text with opacity */
+    margin-bottom: 0.2rem;
+}
+
+.diagram-node small {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(248, 247, 252, 0.6); /* More transparent */
+}
+
+/* Node Types - accent colors on dark background */
+.diagram-node.local { 
+    border-color: #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+}
+
+.diagram-node.firewall { 
+    border-color: #F44336;
+    box-shadow: 0 0 15px rgba(244, 67, 54, 0.2);
+}
+
+.diagram-node.tunnel { 
+    border-color: #2196F3;
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.2);
+}
+
+.diagram-node.internet { 
+    border-color: #FF9800;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.2);
+}
+
+.diagram-node.private { 
+    border-color: #9C27B0;
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.2);
+}
+
+.diagram-node.devices { 
+    border-color: #607D8B;
+    box-shadow: 0 0 15px rgba(96, 125, 139, 0.2);
+}
+
+/* Arrows */
+.diagram-arrow {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: var(--primary); /* Uses site primary color (orange) */
+    font-weight: bold;
+}
+
+/* Diagram Note */
+.diagram-note {
+    font-size: 0.9rem;
+    color: rgba(248, 247, 252, 0.75);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.diagram-note strong {
+    color: var(--primary); /* Highlight important text */
+}
 /* Feature Grid */
 .feature-grid {
   display: grid;

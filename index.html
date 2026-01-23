@@ -108,8 +108,8 @@
           A next-generation immutable operating system built on Arch Linux that truly never breaks. Revolutionary blue-green deployment with Btrfs subvolumes ensures atomic updates and instant rollback. The custom shani-deploy tool orchestrates updates with military precision—downloading verified images, applying configurations, generating unified kernel images, and validating everything before switching. Professional tools included, but the real innovation is the architecture that makes system failures literally impossible.
         </p>
 
-        <!-- Immutable Architecture -->
-        <h3 class="group-title">Revolutionary Blue-Green Architecture</h3>
+        <!-- CORE ARCHITECTURE -->
+        <h3 class="group-title">Core Architecture - The Foundation</h3>
         <div class="feature-grid">
           <article class="feature-card">
             <i class="fas fa-sync-alt feature-icon"></i>
@@ -127,26 +127,6 @@
               </p>
               <p>
                 This dual-image design eliminates mid-update failures entirely. If verification fails, the update never applies. Your active system remains untouched and fully functional throughout the entire update process. This brings datacenter-grade reliability to the desktop.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <i class="fas fa-undo feature-icon"></i>
-            <h3>Instant Recovery & Zero Downtime</h3>
-            <p class="feature-snippet">
-              Rollback in under a minute. System updates happen in the background. If anything goes wrong, reboot to instantly return to your previous working state.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Both system images (blue and green) remain intact and bootable at all times. If anything goes wrong after an update, select the previous image from the boot menu. The switch is instant—rollback completes in under a minute, just a reboot away.
-              </p>
-              <p>
-                <strong>Zero downtime updates:</strong> System updates happen in the background on the inactive partition. Reboot to switch partitions, and if anything goes wrong, reboot again to instantly return to your previous working state. No interruption to your workflow.
-              </p>
-              <p>
-                Your personal files, settings, and applications persist across both images using shared storage. Only the system core rolls back, giving you the best of both worlds: instant recovery without losing your work or data.
               </p>
             </div>
           </article>
@@ -170,11 +150,51 @@
               </p>
             </div>
           </article>
+
+          <article class="feature-card">
+            <i class="fas fa-undo feature-icon"></i>
+            <h3>Instant Recovery & Zero Downtime</h3>
+            <p class="feature-snippet">
+              Rollback in under a minute. System updates happen in the background. If anything goes wrong, reboot to instantly return to your previous working state.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Both system images (blue and green) remain intact and bootable at all times. If anything goes wrong after an update, select the previous image from the boot menu. The switch is instant—rollback completes in under a minute, just a reboot away.
+              </p>
+              <p>
+                <strong>Zero downtime updates:</strong> System updates happen in the background on the inactive partition. Reboot to switch partitions, and if anything goes wrong, reboot again to instantly return to your previous working state. No interruption to your workflow.
+              </p>
+              <p>
+                Your personal files, settings, and applications persist across both images using shared storage. Only the system core rolls back, giving you the best of both worlds: instant recovery without losing your work or data.
+              </p>
+            </div>
+          </article>
         </div>
 
-        <!-- Performance & Security -->
-        <h3 class="group-title">Performance & Security</h3>
+        <!-- SYSTEM FOUNDATION -->
+        <h3 class="group-title">System Foundation</h3>
         <div class="feature-grid">
+          <article class="feature-card">
+            <i class="fas fa-server feature-icon"></i>
+            <h3>Arch Linux Foundation</h3>
+            <p class="feature-snippet">
+              Built on Arch Linux with bleeding-edge software, cutting-edge tools and libraries, combined with image-based stability traditional distributions can't match.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                <strong>Arch Linux default kernel</strong> for maximum stability and hardware compatibility. Access to the latest software and libraries through Arch's rolling release model, but with the safety of immutable deployment.
+              </p>
+              <p>
+                <strong>Developer friendly:</strong> Cutting-edge tools and libraries from Arch repositories, combined with image-based system stability that traditional package-managed distributions can't match. Get the best of both worlds—newest software with bulletproof reliability.
+              </p>
+              <p>
+                The comprehensive container support makes it perfect for multi-distribution development workflows, allowing developers to work in any environment they need without compromising the host system.
+              </p>
+            </div>
+          </article>
+
           <article class="feature-card">
             <i class="fas fa-tachometer-alt feature-icon"></i>
             <h3>Battle-Tested Optimizations</h3>
@@ -214,30 +234,10 @@
               </p>
             </div>
           </article>
-
-          <article class="feature-card">
-            <i class="fas fa-server feature-icon"></i>
-            <h3>Arch Linux Foundation</h3>
-            <p class="feature-snippet">
-              Built on Arch Linux with bleeding-edge software, cutting-edge tools and libraries, combined with image-based stability traditional distributions can't match.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Arch Linux default kernel</strong> for maximum stability and hardware compatibility. Access to the latest software and libraries through Arch's rolling release model, but with the safety of immutable deployment.
-              </p>
-              <p>
-                <strong>Developer friendly:</strong> Cutting-edge tools and libraries from Arch repositories, combined with image-based system stability that traditional package-managed distributions can't match. Get the best of both worlds—newest software with bulletproof reliability.
-              </p>
-              <p>
-                The comprehensive container support makes it perfect for multi-distribution development workflows, allowing developers to work in any environment they need without compromising the host system.
-              </p>
-            </div>
-          </article>
         </div>
 
-        <!-- Complete System -->
-        <h3 class="group-title">Complete Hardware Support Out-of-the-Box</h3>
+        <!-- DESKTOP EXPERIENCE -->
+        <h3 class="group-title">Desktop Experience</h3>
         <div class="feature-grid">
           <article class="feature-card">
             <i class="fas fa-palette feature-icon"></i>
@@ -306,32 +306,9 @@
           </article>
         </div>
 
-        <!-- Gaming & Productivity -->
-        <h3 class="group-title">Gaming & Productivity Ready</h3>
+        <!-- PRODUCTIVITY & APPLICATIONS -->
+        <h3 class="group-title">Productivity & Applications</h3>
         <div class="feature-grid">
-          <article class="feature-card">
-            <i class="fas fa-gamepad feature-icon"></i>
-            <h3>Complete Gaming Setup</h3>
-            <p class="feature-snippet">
-              Pre-configured gaming optimizations with Steam, Heroic, Bottles, and RetroArch. Performance tools like MangoHud and GameScope included for the best experience.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Gaming Platforms (KDE Plasma):</strong> Steam for native Linux and Windows games via Proton. Heroic Games Launcher for Epic Games Store and GOG titles. Bottles for Windows applications and games. RetroArch for retro gaming emulation—all pre-installed and ready to play.
-              </p>
-              <p>
-                <strong>Gaming Peripherals:</strong> Configure racing wheels and flight sticks with Oversteer, remap controllers with AntiMicroX, and customize RGB lighting with OpenRGB and Piper—all included out of the box.
-              </p>
-              <p>
-                <strong>Performance Tools:</strong> Monitor FPS and system stats with MangoHud and GOverlay, optimize visuals with vkBasalt post-processing, and run games in GameScope for better frame pacing and HDR support.
-              </p>
-              <p>
-                <strong>Optimized for gaming:</strong> Custom kernel parameters for low latency, proper graphics driver setup, and system-wide performance tuning ensure responsive performance, smooth multitasking, and lag-free gameplay.
-              </p>
-            </div>
-          </article>
-
           <article class="feature-card">
             <i class="fas fa-briefcase feature-icon"></i>
             <h3>Productivity Suite Included</h3>
@@ -353,50 +330,6 @@
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-rocket feature-icon"></i>
-
-            <h3>Enterprise Meets Desktop</h3>
-
-            <p class="feature-snippet">
-              DevOps-proven blue-green deployment strategies adapted for desktop Linux.
-              Enterprise reliability, without enterprise complexity.
-            </p>
-
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-
-            <div class="feature-details hidden">
-              <p>
-                Shanios brings deployment and update models traditionally used in
-                enterprise servers and cloud infrastructure to the desktop,
-                delivering stability without sacrificing usability.
-              </p>
-
-              <p>
-                <strong>Enterprise-grade reliability:</strong> System updates are deployed
-                using a blue-green strategy, ensuring the active system is never modified.
-                If an update fails, a simple reboot instantly restores the previous
-                working state — no downtime, no recovery steps.
-              </p>
-
-              <p>
-                Developed through academic research and strengthened by real-world
-                Linux and DevOps experience, Shanios is built for long-term stability,
-                predictability, and system integrity.
-              </p>
-
-              <p>
-                Ideal for enterprises, educational institutions, government deployments,
-                and OEM-preinstalled systems where reliability and easy recovery are
-                critical requirements.
-              </p>
-            </div>
-          </article>
-        </div>
-       
-        <!-- Application Management -->
-        <h3 class="group-title">Safe Application Management</h3>
-        <div class="feature-grid">
-          <article class="feature-card">
             <i class="fas fa-box-open feature-icon"></i>
             <h3>Flatpak & AppImage</h3>
             <p class="feature-snippet">
@@ -412,29 +345,6 @@
               </p>
               <p>
                 This separation between OS and applications is fundamental to Shanios's reliability. Install, remove, experiment—your system core stays perfect. No dependency conflicts, no system bloat, no breakage.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <i class="fas fa-cubes feature-icon"></i>
-            <h3>Professional Container Technologies</h3>
-            <p class="feature-snippet">
-              Comprehensive container support: Podman, LXC, systemd-nspawn, Distrobox with BoxBuddy GUI. Run any Linux distribution safely.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Podman with pods GUI:</strong> Docker-compatible, rootless container runtime for application containers. Run containerized apps without root privileges or compromising security.<strong>Pods:</strong> GUI for easy container management.
-              </p>
-              <p>
-                <strong>LXC:</strong> System containers for running complete Linux distributions. <strong>systemd-nspawn:</strong> Lightweight containerization for isolated environments. 
-              </p>
-              <p>
-                <strong>Distrobox with BoxBuddy GUI:</strong> Desktop-integrated container environments with an intuitive graphical interface. Run any Linux distribution, access distribution-specific software, or create isolated development environments without compromising the immutable host.
-              </p>
-              <p>
-                Perfect for developers needing multiple distribution environments, testing software, or accessing packages not available as Flatpaks. Complete isolation keeps your system safe.
               </p>
             </div>
           </article>
@@ -462,6 +372,226 @@
             </div>
           </article>
         </div>
+
+        <!-- GAMING, DEVELOPMENT & CONTAINERS -->
+        <h3 class="group-title">Gaming, Development & Containers</h3>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <i class="fas fa-gamepad feature-icon"></i>
+            <h3>Complete Gaming Setup</h3>
+            <p class="feature-snippet">
+              Pre-configured gaming optimizations with Steam, Heroic, Bottles, and RetroArch. Performance tools like MangoHud and GameScope included for the best experience.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                <strong>Gaming Platforms (KDE Plasma):</strong> Steam for native Linux and Windows games via Proton. Heroic Games Launcher for Epic Games Store and GOG titles. Bottles for Windows applications and games. RetroArch for retro gaming emulation—all pre-installed and ready to play.
+              </p>
+              <p>
+                <strong>Gaming Peripherals:</strong> Configure racing wheels and flight sticks with Oversteer, remap controllers with AntiMicroX, and customize RGB lighting with OpenRGB and Piper—all included out of the box.
+              </p>
+              <p>
+                <strong>Performance Tools:</strong> Monitor FPS and system stats with MangoHud and GOverlay, optimize visuals with vkBasalt post-processing, and run games in GameScope for better frame pacing and HDR support.
+              </p>
+              <p>
+                <strong>Optimized for gaming:</strong> Custom kernel parameters for low latency, proper graphics driver setup, and system-wide performance tuning ensure responsive performance, smooth multitasking, and lag-free gameplay.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-cubes feature-icon"></i>
+            <h3>Professional Container Technologies</h3>
+            <p class="feature-snippet">
+              Comprehensive container support: Podman, LXC, systemd-nspawn, Distrobox with BoxBuddy GUI. Run any Linux distribution safely.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                <strong>Podman with pods GUI:</strong> Docker-compatible, rootless container runtime for application containers. Run containerized apps without root privileges or compromising security.<strong>Pods:</strong> GUI for easy container management.
+              </p>
+              <p>
+                <strong>LXC:</strong> System containers for running complete Linux distributions. <strong>systemd-nspawn:</strong> Lightweight containerization for isolated environments. 
+              </p>
+              <p>
+                <strong>Distrobox with BoxBuddy GUI:</strong> Desktop-integrated container environments with an intuitive graphical interface. Run any Linux distribution, access distribution-specific software, or create isolated development environments without compromising the immutable host.
+              </p>
+              <p>
+                Perfect for developers needing multiple distribution environments, testing software, or accessing packages not available as Flatpaks. Complete isolation keeps your system safe.
+              </p>
+            </div>
+          </article>
+          
+          <!-- CLI, Scripting & System Tools -->
+          <article class="feature-card">
+            <i class="fas fa-terminal feature-icon"></i>
+            <h3>CLI, Scripting & System Tools</h3>
+            <p class="feature-snippet">
+              Zsh as the default shell, with pre-installed editors, networking tools, and essential utilities—ready for developers and sysadmins out of the box.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+
+              <!-- Shells -->
+              <h4>Shells & Search</h4>
+              <p>
+                Zsh (default, with Starship), Bash, Fish; Zsh plugins for autosuggestions, completions, syntax highlighting, and history substring search; Bash completion; McFly; FZF.
+              </p>
+
+              <!-- Editors & Utilities -->
+              <h4>Editors</h4>
+              <p>Vim, Vi, Nano, Micro, Tmux, Ed, Less</p>
+
+              <h4>Core CLI Utilities</h4>
+              <p>Coreutils, Findutils, Grep, Gawk, BC, Diffutils, Patch, Time, Which</p>
+
+              <h4>System & Monitoring Tools</h4>
+              <p>Words, BSD-games, Man-db, Gnupg, Plocate, Inxi, Dmidecode, Strace, Lsof, Ncdu, Sysstat, Cronie, PV, JQ, Expect, Dialog</p>
+
+              <!-- Networking & Version Control -->
+              <h4>Version Control</h4>
+              <p>Git, Subversion, Mercurial</p>
+
+              <h4>Networking Tools</h4>
+              <p>Iftop, Ethtool, Net-tools, Nmap, Traceroute, Tcpdump, Wireless Tools, Inetutils, USB Utilities, Bridge-utils, OpenBSD Netcat, Nbd, Zsync, Rsync, Iperf3, MTR, Tailscale, Cloudflared, Caddy</p>
+
+              <h4>Internet Utilities</h4>
+              <p>Curl, Wget, Aria2, Bind, Whois</p>
+
+            </div>
+          </article>
+        </div>
+
+        <!-- SELF-HOSTING & NETWORKING -->
+        <h3 class="group-title">Desktop Web Hosting & Secure Access</h3>
+
+        <p class="group-note">
+          Shani OS lets you host websites and services directly from your desktop or laptop —
+          even on home internet connections without a static IP.
+          All tools listed here are <strong>installed for convenience</strong> and are
+          <strong>not enabled or running by default</strong>.
+        </p>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <i class="fas fa-server feature-icon"></i>
+            <h3>Caddy Web Server</h3>
+            <p class="feature-snippet">
+              Modern, lightweight web server for hosting websites or services from your desktop
+              with automatic HTTPS.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Caddy makes it easy to host personal websites, dashboards, or file servers with
+                automatic HTTPS. It is <strong>not active by default</strong> and runs only when you
+                start and configure it.
+              </p>
+              <p>
+                Ideal for self-hosting directly from your desktop, without needing a dedicated server.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-cloud feature-icon"></i>
+            <h3>Cloudflared</h3>
+            <p class="feature-snippet">
+              Securely expose locally hosted websites to the internet —
+              no static IP, no port forwarding.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Cloudflared creates an encrypted tunnel to Cloudflare, allowing public HTTPS access
+                to services running on your desktop. It is <strong>disabled by default</strong> and
+                requires manual setup.
+              </p>
+              <p>
+                Perfect for hosting websites on home connections or behind NAT and CGNAT,
+                without exposing your real IP address.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-network-wired feature-icon"></i>
+            <h3>Tailscale</h3>
+            <p class="feature-snippet">
+              Private, secure access to your self-hosted services across your own devices.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Tailscale creates a private encrypted network between your devices using WireGuard.
+                It is <strong>not active unless you sign in and enable it</strong>.
+              </p>
+              <p>
+                Use it to access your hosted websites and services privately,
+                without making them public on the internet.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-terminal feature-icon"></i>
+            <h3>OpenSSH</h3>
+            <p class="feature-snippet">
+              Secure remote access for managing your hosted services when you choose to enable it.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                OpenSSH provides industry-standard encrypted remote access and file transfer
+                (SSH, SCP, SFTP). The SSH server is <strong>not enabled by default</strong>.
+              </p>
+              <p>
+                Useful for managing your desktop-hosted websites locally, over Tailscale,
+                or through secure tunnels.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3>Fail2ban</h3>
+            <p class="feature-snippet">
+              Optional intrusion protection for exposed services and remote access.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                Fail2ban monitors authentication logs and temporarily blocks abusive IP addresses
+                using firewall rules. It is <strong>not enabled by default</strong>.
+              </p>
+              <p>
+                Recommended when exposing services such as SSH or web applications to the public,
+                adding an extra layer of protection.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <i class="fas fa-fire feature-icon"></i>
+            <h3>firewalld</h3>
+            <p class="feature-snippet">
+              Manage network traffic and secure your desktop-hosted services with an easy firewall.
+            </p>
+            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            <div class="feature-details hidden">
+              <p>
+                firewalld provides a dynamic firewall with zones and services to control inbound and outbound
+                network traffic. It is <strong>not active by default</strong>.
+              </p>
+              <p>
+                Use it to restrict access to your hosted websites, SSH, and other services, ensuring that
+                only allowed connections reach your desktop.
+              </p>
+            </div>
+          </article>
+        </div>
+
+
 
       </div>
     </section>
@@ -548,19 +678,6 @@
           </ul>
           <p><em>Note: The blue-green architecture requires two complete system images, which is why minimum storage is higher than typical Linux distributions. This dual-image design is what makes atomic updates and instant recovery possible.</em></p>
 
-          <h3>What's Included</h3>
-          <ul>
-            <li><strong>Base System:</strong> Arch Linux foundation with bleeding-edge software and Btrfs filesystem</li>
-            <li><strong>Applications:</strong> Vivaldi Browser, OnlyOffice, Gear Lever (AppImage manager)</li>
-            <li><strong>Containers:</strong> Podman, LXC, systemd-nspawn, Distrobox, Pods (GUI)</li>
-            <li><strong>Android:</strong> Waydroid pre-installed and configured</li>
-            <li><strong>Hardware:</strong> Graphics drivers, CUPS (printing), SANE (scanning) with auto-detection</li>
-            <li><strong>Desktop:</strong> GNOME or KDE Plasma (chosen at download, not installation)</li>
-            <li><strong>Storage:</strong> Btrfs filesystem with intelligent subvolumes for optimal performance</li>
-            <li><strong>Architecture:</strong> Blue-green dual system images with shared user data</li>
-            <li><strong>Security:</strong> AppArmor profiles, firewalld, optional LUKS2 full-disk encryption</li>
-          </ul>
-
           <h3>Pre-Installation: BIOS/UEFI Setup</h3>
           <p>Configure firmware before installing (access via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
           <ul>
@@ -611,101 +728,6 @@
           <p>Delivered via LVFS using <code>fwupd</code>.</p>
           <p><strong>Important:</strong> Always use <code>shani-deploy</code> for system updates to preserve immutability.</p>
 
-          <h3>Common Tasks</h3>
-          <table style="width:100%; border-collapse: collapse; text-align: left;">
-            <thead>
-              <tr>
-                <th style="padding: 8px; border: 1px solid #ddd;">Task</th>
-                <th style="padding: 8px; border: 1px solid #ddd;">Command / Instructions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Install applications</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>flatpak install flathub &lt;app-id&gt;</code>
-                  <span style="color: #888;">or use the Software Center</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Gaming</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <strong>Launchers &amp; Emulation</strong><br>
-                  <code>flatpak install flathub com.valvesoftware.Steam</code><br>
-                  <code>flatpak install flathub com.heroicgameslauncher.hgl</code><br>
-                  <code>flatpak install flathub org.libretro.RetroArch</code><br>
-                  <code>flatpak install flathub net.lutris.Lutris</code>
-                  <br><br>
-
-                  <strong>Controllers &amp; Peripherals</strong><br>
-                  <code>flatpak install flathub io.github.antimicrox.antimicrox</code><br>
-                  <code>flatpak install flathub io.github.berarma.Oversteer</code><br>
-                  <code>flatpak install flathub org.freedesktop.Piper</code><br>
-                  <code>flatpak install flathub org.openrgb.OpenRGB</code>
-                  <br><br>
-
-                  <strong>Performance, Overlays &amp; Tuning</strong><br>
-                  <code>flatpak install flathub io.github.benjamimgois.goverlay</code><br>
-                  <code>flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud</code><br>
-                  <code>flatpak install flathub org.freedesktop.Platform.VulkanLayer.gamescope</code><br>
-                  <code>flatpak install flathub org.freedesktop.Platform.VulkanLayer.vkBasalt</code>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Windows apps (Wine)</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>flatpak install flathub com.usebottles.bottles</code>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Containers (Podman)</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>podman run -it --rm ubuntu:22.04 bash</code>
-                  <span style="color: #888;">(rootless, Docker-compatible)</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Compose-style workflows</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>podman compose up -d</code>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Development environments</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>distrobox create --name ubuntu --image ubuntu:22.04</code>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">System containers (LXC)</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>lxc launch images:ubuntu/22.04 ubuntu-lxc</code>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Lightweight OS containers</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  <code>systemd-nspawn -M arch</code>
-                  <span style="color: #888;">(managed via <code>machinectl</code>)</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;">Android apps</td>
-                <td style="padding: 8px; border: 1px solid #ddd;">
-                  Launch <strong>Waydroid</strong> from the Applications menu and complete the initial setup
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
           <h3>Important Notes</h3>
           <ul>
             <li><strong>Dual booting:</strong> Not recommended—other OSes may break the bootloader</li>
@@ -714,121 +736,6 @@
             <li><strong>Secure Boot:</strong> Can be enabled after installation by enrolling MOK keys (password: <code>shanios</code>)</li>
           </ul>
 
-          <h3 id="enabling-secure-boot">Enabling Secure Boot (Optional)</h3>
-
-          <p>
-            Shanios supports Secure Boot using a signed bootloader and a Machine Owner Key (MOK).
-            Secure Boot ensures that only trusted, signed components are loaded during system startup.
-          </p>
-
-          <p>
-            <strong>Automatic MOK enrollment:</strong>
-          </p>
-          <ul>
-            <li>If Secure Boot was enabled during installation, the system will prompt you on the first reboot to enroll the MOK key.</li>
-            <li>When the MOK Manager appears, select <strong>"Enroll MOK"</strong> and enter the password <code>shanios</code>.</li>
-            <li>If you do not want to use Secure Boot, choose <strong>"Continue boot"</strong>.</li>
-            <li>If Secure Boot was already enabled or the MOK key was previously enrolled, no further action is required.</li>
-          </ul>
-
-          <p>
-            <strong>Manual Secure Boot enablement:</strong>
-            Follow the steps below if Secure Boot was disabled during installation and you want
-            to enable it afterward:
-          </p>
-
-          <ol>
-            <li>
-              Import the MOK key (you will be asked to set a one-time password):<br>
-              <code>sudo mokutil --import /etc/secureboot/keys/MOK.der</code>
-            </li>
-            <li>Enter and remember the password you set</li>
-            <li>Reboot the system</li>
-            <li>When the MOK Manager appears, select <strong>"Enroll MOK"</strong></li>
-            <li>Confirm enrollment and enter the password</li>
-            <li>Reboot when prompted</li>
-            <li>Enable Secure Boot in BIOS/UEFI settings if it is still disabled</li>
-          </ol>
-
-          <p>
-            After enrollment, the firmware will trust the Shanios bootloader and the system will
-            boot normally with Secure Boot enabled. You can list the enrolled keys with:
-          </p>
-
-          <pre><code>sudo mokutil --list-enrolled</code></pre>
-
-          <p>
-            If no MOK prompt appeared at boot, you can repeat the import step and reboot again; the
-            MOK Manager will trigger only when a key is pending enrollment.
-          </p>
-
-          <h3 id="enrolling-encryption-key-to-tpm">Enrolling Encryption Key to TPM (For LUKS2 Encrypted Systems)</h3>
-
-          <p>
-            If you enabled full-disk encryption during installation, you can enroll your encryption
-            key into the TPM (Trusted Platform Module) for automatic unlocking at boot.
-          </p>
-
-          <p>
-            <strong>Prerequisites:</strong>
-          </p>
-          <ul>
-            <li>TPM 2.0 hardware module enabled in BIOS/UEFI</li>
-            <li>LUKS2 encryption enabled during installation</li>
-          </ul>
-
-          <p>
-            <strong>⚠️ Security Recommendation:</strong> Enable Secure Boot before TPM enrollment. 
-            Without Secure Boot, physical attackers can replace your bootloader to steal the encryption key. 
-            With Secure Boot, the TPM will refuse to unlock if the system is tampered with.
-          </p>
-
-          <h4>Step 1: Verify TPM</h4>
-          <pre><code>systemd-cryptenroll --tpm2-device=list</code></pre>
-
-          <h4>Step 2: Check Secure Boot Status (Optional)</h4>
-          <pre><code>mokutil --sb-state</code></pre>
-          <p>If disabled, consider <a href="#enabling-secure-boot">enabling Secure Boot</a> first for better security.</p>
-
-          <h4>Step 3: Enroll Encryption Key</h4>
-          <p><strong>If Secure Boot is enabled (recommended):</strong></p>
-          <pre><code>sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/disk/by-label/shani_root</code></pre>
-
-          <p><strong>If Secure Boot is disabled:</strong></p>
-          <pre><code>sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0 /dev/disk/by-label/shani_root</code></pre>
-          <p style="color: #888; font-size: 0.9rem;">You'll be prompted for your LUKS password.</p>
-
-          <h4>Step 4: Regenerate Both Boot Images</h4>
-          <p>Both the blue and green system images need to be regenerated to support TPM unlocking:</p>
-          <pre><code>sudo gen-efi configure blue
-          sudo gen-efi configure green</code></pre>
-
-          <h4>Step 5: Reboot and Test</h4>
-          <p>The system should unlock automatically without prompting for your encryption password.</p>
-
-          <h4>Verify Enrollment</h4>
-          <pre><code>sudo cryptsetup luksDump /dev/disk/by-label/shani_root | grep systemd-tpm2</code></pre>
-
-          <h4>Remove TPM Enrollment (Optional)</h4>
-          <p>To restore password-only unlocking:</p>
-          <pre><code>sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/disk/by-label/shani_root
-          sudo gen-efi configure blue
-          sudo gen-efi configure green</code></pre>
-
-          <h4>Important Notes</h4>
-          <ul>
-            <li>Your LUKS password remains valid as a fallback if TPM unlocking fails</li>
-            <li>Disabling Secure Boot or changing firmware settings will break TPM unlocking (you'll need your password)</li>
-            <li>Keep your LUKS password secure—it's required for recovery</li>
-            <li>Both blue and green boot images must be regenerated for TPM to work across system updates</li>
-          </ul>
-
-          <h4>If You Enable Secure Boot Later</h4>
-          <p>Re-enroll to include Secure Boot protection:</p>
-          <pre><code>sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/disk/by-label/shani_root
-          sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/disk/by-label/shani_root
-          sudo gen-efi configure blue
-          sudo gen-efi configure green</code></pre>
 
           <h3>Need Help?</h3>
           <p>
