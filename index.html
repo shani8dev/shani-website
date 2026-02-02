@@ -112,62 +112,80 @@
         <h3 class="group-title">Core Architecture - The Foundation</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-sync-alt feature-icon"></i>
-            <h3>Blue-Green Deployment</h3>
-            <p class="feature-snippet">
-              Two complete system images (@blue and @green) using Btrfs subvolumes. Updates apply to the inactive image while you work. DevOps-proven strategy adapted for desktop use.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Shanios uses <strong>blue-green deployment architecture</strong> with two complete system images (@blue and @green) implemented as Btrfs subvolumes. While you use one image, updates install to the other. After verification, a simple reboot switches to the updated image atomically.
+            <div class="feature-card-front">
+              <i class="fas fa-sync-alt feature-icon"></i>
+              <h3>Blue-Green Deployment</h3>
+              <p class="feature-snippet">
+                Two complete system images (@blue and @green) using Btrfs subvolumes. Updates apply to the inactive image while you work. DevOps-proven strategy adapted for desktop use.
               </p>
-              <p>
-                The custom <strong>shani-deploy tool</strong> orchestrates the entire process—downloading verified images, applying configurations via overlays, generating new unified kernel images, updating the bootloader, and validating everything before switching. Updates are applied to the inactive system copy, meaning your current working environment is never at risk.
-              </p>
-              <p>
-                This dual-image design eliminates mid-update failures entirely. If verification fails, the update never applies. Your active system remains untouched and fully functional throughout the entire update process. This brings datacenter-grade reliability to the desktop.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Shanios uses <strong>blue-green deployment architecture</strong> with two complete system images (@blue and @green) implemented as Btrfs subvolumes. While you use one image, updates install to the other. After verification, a simple reboot switches to the updated image atomically.
+                </p>
+                <p>
+                  The custom <strong>shani-deploy tool</strong> orchestrates the entire process—downloading verified images, applying configurations via overlays, generating new unified kernel images, updating the bootloader, and validating everything before switching. Updates are applied to the inactive system copy, meaning your current working environment is never at risk.
+                </p>
+                <p>
+                  This dual-image design eliminates mid-update failures entirely. If verification fails, the update never applies. Your active system remains untouched and fully functional throughout the entire update process. This brings datacenter-grade reliability to the desktop.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-layer-group feature-icon"></i>
-            <h3>Intelligent Layering System</h3>
-            <p class="feature-snippet">
-              Sophisticated architecture balancing immutability and flexibility. Read-only root with smart overlays for configuration persistence.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Immutable system core:</strong> Root filesystem (/) mounted read-only, preventing system corruption, malware modifications, and configuration drift while maintaining maximum performance. The system partition ensures absolute stability.
+            <div class="feature-card-front">
+              <i class="fas fa-layer-group feature-icon"></i>
+              <h3>Intelligent Layering System</h3>
+              <p class="feature-snippet">
+                Sophisticated architecture balancing immutability and flexibility. Read-only root with smart overlays for configuration persistence.
               </p>
-              <p>
-                <strong>/etc as overlay filesystem:</strong> Persistent configuration changes without breaking immutability. <strong>/var managed with systemd.volatile=state</strong> for optimized state management. <strong>User applications via Flatpak</strong> for complete isolation. <strong>Mutable /home</strong> for user data and configurations.
-              </p>
-              <p>
-                This sophisticated architecture provides the perfect balance of immutability and flexibility, allowing necessary customization while keeping the core system protected and reliable.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Immutable system core:</strong> Root filesystem (/) mounted read-only, preventing system corruption, malware modifications, and configuration drift while maintaining maximum performance. The system partition ensures absolute stability.
+                </p>
+                <p>
+                  <strong>/etc as overlay filesystem:</strong> Persistent configuration changes without breaking immutability. <strong>/var managed with systemd.volatile=state</strong> for optimized state management. <strong>User applications via Flatpak</strong> for complete isolation. <strong>Mutable /home</strong> for user data and configurations.
+                </p>
+                <p>
+                  This sophisticated architecture provides the perfect balance of immutability and flexibility, allowing necessary customization while keeping the core system protected and reliable.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-undo feature-icon"></i>
-            <h3>Instant Recovery & Zero Downtime</h3>
-            <p class="feature-snippet">
-              Rollback in under a minute. System updates happen in the background. If anything goes wrong, reboot to instantly return to your previous working state.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Both system images (blue and green) remain intact and bootable at all times. If anything goes wrong after an update, select the previous image from the boot menu. The switch is instant—rollback completes in under a minute, just a reboot away.
+            <div class="feature-card-front">
+              <i class="fas fa-undo feature-icon"></i>
+              <h3>Instant Recovery & Zero Downtime</h3>
+              <p class="feature-snippet">
+                Rollback in under a minute. System updates happen in the background. If anything goes wrong, reboot to instantly return to your previous working state.
               </p>
-              <p>
-                <strong>Zero downtime updates:</strong> System updates happen in the background on the inactive partition. Reboot to switch partitions, and if anything goes wrong, reboot again to instantly return to your previous working state. No interruption to your workflow.
-              </p>
-              <p>
-                Your personal files, settings, and applications persist across both images using shared storage. Only the system core rolls back, giving you the best of both worlds: instant recovery without losing your work or data.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Both system images (blue and green) remain intact and bootable at all times. If anything goes wrong after an update, select the previous image from the boot menu. The switch is instant—rollback completes in under a minute, just a reboot away.
+                </p>
+                <p>
+                  <strong>Zero downtime updates:</strong> System updates happen in the background on the inactive partition. Reboot to switch partitions, and if anything goes wrong, reboot again to instantly return to your previous working state. No interruption to your workflow.
+                </p>
+                <p>
+                  Your personal files, settings, and applications persist across both images using shared storage. Only the system core rolls back, giving you the best of both worlds: instant recovery without losing your work or data.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -176,62 +194,80 @@
         <h3 class="group-title">System Foundation</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-server feature-icon"></i>
-            <h3>Arch Linux Foundation</h3>
-            <p class="feature-snippet">
-              Built on Arch Linux with bleeding-edge software, cutting-edge tools and libraries, combined with image-based stability traditional distributions can't match.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Arch Linux default kernel</strong> for maximum stability and hardware compatibility. Access to the latest software and libraries through Arch's rolling release model, but with the safety of immutable deployment.
+            <div class="feature-card-front">
+              <i class="fas fa-server feature-icon"></i>
+              <h3>Arch Linux Foundation</h3>
+              <p class="feature-snippet">
+                Built on Arch Linux with bleeding-edge software, cutting-edge tools and libraries, combined with image-based stability traditional distributions can't match.
               </p>
-              <p>
-                <strong>Developer friendly:</strong> Cutting-edge tools and libraries from Arch repositories, combined with image-based system stability that traditional package-managed distributions can't match. Get the best of both worlds—newest software with bulletproof reliability.
-              </p>
-              <p>
-                The comprehensive container support makes it perfect for multi-distribution development workflows, allowing developers to work in any environment they need without compromising the host system.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Arch Linux default kernel</strong> for maximum stability and hardware compatibility. Access to the latest software and libraries through Arch's rolling release model, but with the safety of immutable deployment.
+                </p>
+                <p>
+                  <strong>Developer friendly:</strong> Cutting-edge tools and libraries from Arch repositories, combined with image-based system stability that traditional package-managed distributions can't match. Get the best of both worlds—newest software with bulletproof reliability.
+                </p>
+                <p>
+                  The comprehensive container support makes it perfect for multi-distribution development workflows, allowing developers to work in any environment they need without compromising the host system.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-tachometer-alt feature-icon"></i>
-            <h3>Battle-Tested Optimizations</h3>
-            <p class="feature-snippet">
-              Advanced performance optimizations that squeeze every drop of performance from your hardware. Years of Linux optimization experience built in.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Filesystem optimizations:</strong> Btrfs with zstd compression for optimal storage efficiency and speed. Intelligent subvolume management for snapshots and rollbacks without performance penalty.
+            <div class="feature-card-front">
+              <i class="fas fa-tachometer-alt feature-icon"></i>
+              <h3>Battle-Tested Optimizations</h3>
+              <p class="feature-snippet">
+                Advanced performance optimizations that squeeze every drop of performance from your hardware. Years of Linux optimization experience built in.
               </p>
-              <p>
-                <strong>Memory management tweaks:</strong> zram for compressed swap in RAM, transparent hugepages for reduced memory overhead. <strong>Custom-configured schedulers</strong> and <strong>I/O optimizations</strong> for responsive multitasking and low latency.
-              </p>
-              <p>
-                <strong>Gaming optimizations:</strong> Pre-configured with custom kernel parameters for low latency, proper Vulkan/OpenGL setup, and system-wide performance tuning that benefits both work and play.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Filesystem optimizations:</strong> Btrfs with zstd compression for optimal storage efficiency and speed. Intelligent subvolume management for snapshots and rollbacks without performance penalty.
+                </p>
+                <p>
+                  <strong>Memory management tweaks:</strong> zram for compressed swap in RAM, transparent hugepages for reduced memory overhead. <strong>Custom-configured schedulers</strong> and <strong>I/O optimizations</strong> for responsive multitasking and low latency.
+                </p>
+                <p>
+                  <strong>Gaming optimizations:</strong> Pre-configured with custom kernel parameters for low latency, proper Vulkan/OpenGL setup, and system-wide performance tuning that benefits both work and play.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-shield-alt feature-icon"></i>
-            <h3>Multi-Layered Security</h3>
-            <p class="feature-snippet">
-              Enterprise-grade security with hardened kernel, AppArmor profiles, firewall protection, and full-disk encryption. Immutable design prevents many attack vectors.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Security layers:</strong> Immutable core prevents persistent malware, <strong>hardened kernel</strong> with security patches, <strong>AppArmor profiles</strong> for mandatory access control, <strong>firewalld configurations</strong> for network protection, optional <strong>LUKS full-disk encryption</strong>, and sandboxed applications via Flatpak.
+            <div class="feature-card-front">
+              <i class="fas fa-shield-alt feature-icon"></i>
+              <h3>Multi-Layered Security</h3>
+              <p class="feature-snippet">
+                Enterprise-grade security with hardened kernel, AppArmor profiles, firewall protection, and full-disk encryption. Immutable design prevents many attack vectors.
               </p>
-              <p>
-                The read-only root filesystem prevents tampering. Even with administrative access, core files cannot be modified during operation. Both system images mount as read-only, preventing corruption and persistent malware attacks.
-              </p>
-              <p>
-                Security updates apply safely and atomically with instant rollback capability. The immutable design inherently prevents many attack vectors that traditional distributions are vulnerable to. User data remains writable, ensuring both safety and flexibility.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Security layers:</strong> Immutable core prevents persistent malware, <strong>hardened kernel</strong> with security patches, <strong>AppArmor profiles</strong> for mandatory access control, <strong>firewalld configurations</strong> for network protection, optional <strong>LUKS full-disk encryption</strong>, and sandboxed applications via Flatpak.
+                </p>
+                <p>
+                  The read-only root filesystem prevents tampering. Even with administrative access, core files cannot be modified during operation. Both system images mount as read-only, preventing corruption and persistent malware attacks.
+                </p>
+                <p>
+                  Security updates apply safely and atomically with instant rollback capability. The immutable design inherently prevents many attack vectors that traditional distributions are vulnerable to. User data remains writable, ensuring both safety and flexibility.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -240,68 +276,86 @@
         <h3 class="group-title">Desktop Experience</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-palette feature-icon"></i>
-            <h3>Choice of Desktop</h3>
-            <p class="feature-snippet">
-              GNOME or KDE Plasma—heavily optimized builds with custom theming, performance tweaks, and carefully curated applications. Choose your workflow before download.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>GNOME:</strong> Clean, distraction-free interface ideal for productivity, enterprise, and OEM deployments. Streamlined workflow with essential tools.
+            <div class="feature-card-front">
+              <i class="fas fa-palette feature-icon"></i>
+              <h3>Choice of Desktop</h3>
+              <p class="feature-snippet">
+                GNOME or KDE Plasma—heavily optimized builds with custom theming, performance tweaks, and carefully curated applications. Choose your workflow before download.
               </p>
-              <p>
-                <strong>KDE Plasma:</strong> Highly customizable desktop with advanced features for power users. Comes with Steam, Heroic Games Launcher (for Epic Games Store and GOG), and RetroArch (for retro gaming emulation) pre-installed and ready to play.
-              </p>
-              <p>
-                Both editions support professional deployment with branding, custom configurations, and enterprise tooling. <strong>OEM Initial Setup:</strong> Professional OEM-style first-boot configuration experience that allows users to personalize their system (language, timezone, user accounts, preferences) on first launch, making Shanios perfect for pre-installed systems and enterprise deployment.
-              </p>
-              <p>
-                Pre-configured applications, network settings, and security policies ensure systems are ready at scale and remain stable over time.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>GNOME:</strong> Clean, distraction-free interface ideal for productivity, enterprise, and OEM deployments. Streamlined workflow with essential tools.
+                </p>
+                <p>
+                  <strong>KDE Plasma:</strong> Highly customizable desktop with advanced features for power users. Comes with Steam, Heroic Games Launcher (for Epic Games Store and GOG), and RetroArch (for retro gaming emulation) pre-installed and ready to play.
+                </p>
+                <p>
+                  Both editions support professional deployment with branding, custom configurations, and enterprise tooling. <strong>OEM Initial Setup:</strong> Professional OEM-style first-boot configuration experience that allows users to personalize their system (language, timezone, user accounts, preferences) on first launch, making Shanios perfect for pre-installed systems and enterprise deployment.
+                </p>
+                <p>
+                  Pre-configured applications, network settings, and security policies ensure systems are ready at scale and remain stable over time.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-desktop feature-icon"></i>
-            <h3>Everything Just Works</h3>
-            <p class="feature-snippet">
-              Complete hardware support from first boot. No hunting for drivers—printers, scanners, graphics, networking, and peripherals work immediately.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Graphics:</strong> Intel, AMD, and NVIDIA open drivers pre-installed with proper Vulkan/OpenGL configuration for optimal performance and compatibility.
+            <div class="feature-card-front">
+              <i class="fas fa-desktop feature-icon"></i>
+              <h3>Everything Just Works</h3>
+              <p class="feature-snippet">
+                Complete hardware support from first boot. No hunting for drivers—printers, scanners, graphics, networking, and peripherals work immediately.
               </p>
-              <p>
-                <strong>Printers & Scanners:</strong> Complete printer driver support with CUPS and manufacturer-specific drivers. Scanner support via SANE with auto-detection. Just plug in and print or scan.
-              </p>
-              <p>
-                <strong>Peripherals:</strong> Audio, video, GPS, fingerprint readers, game controllers, consoles, batteries, and UPS—all peripheral drivers pre-configured and ready to use.
-              </p>
-              <p>
-                <strong>Connectivity:</strong> Wi-Fi, Bluetooth, and network tools fully configured for immediate use. No manual driver installation required.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Graphics:</strong> Intel, AMD, and NVIDIA open drivers pre-installed with proper Vulkan/OpenGL configuration for optimal performance and compatibility.
+                </p>
+                <p>
+                  <strong>Printers & Scanners:</strong> Complete printer driver support with CUPS and manufacturer-specific drivers. Scanner support via SANE with auto-detection. Just plug in and print or scan.
+                </p>
+                <p>
+                  <strong>Peripherals:</strong> Audio, video, GPS, fingerprint readers, game controllers, consoles, batteries, and UPS—all peripheral drivers pre-configured and ready to use.
+                </p>
+                <p>
+                  <strong>Connectivity:</strong> Wi-Fi, Bluetooth, and network tools fully configured for immediate use. No manual driver installation required.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-globe feature-icon"></i>
-            <h3>True Internationalization</h3>
-            <p class="feature-snippet">
-              Comprehensive font support for global users. Indian language fonts, CJK (Chinese, Japanese, Korean), emojis, and IBus input method pre-configured.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Comprehensive font support:</strong> Indian language fonts for Devanagari, Tamil, Telugu, and more. Complete CJK (Chinese, Japanese, Korean) font coverage for proper text rendering. Full emoji support for modern communication.
+            <div class="feature-card-front">
+              <i class="fas fa-globe feature-icon"></i>
+              <h3>True Internationalization</h3>
+              <p class="feature-snippet">
+                Comprehensive font support for global users. Indian language fonts, CJK (Chinese, Japanese, Korean), emojis, and IBus input method pre-configured.
               </p>
-              <p>
-                <strong>IBus as default input method:</strong> Seamless multilingual input with support for dozens of languages and input methods. Switch between languages effortlessly while typing.
-              </p>
-              <p>
-                <strong>Accessibility & Language Support:</strong> Screen readers, multiple input languages, proper text rendering across all supported scripts. Shanios is ready for users worldwide, ensuring diverse linguistic needs are met from day one.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Comprehensive font support:</strong> Indian language fonts for Devanagari, Tamil, Telugu, and more. Complete CJK (Chinese, Japanese, Korean) font coverage for proper text rendering. Full emoji support for modern communication.
+                </p>
+                <p>
+                  <strong>IBus as default input method:</strong> Seamless multilingual input with support for dozens of languages and input methods. Switch between languages effortlessly while typing.
+                </p>
+                <p>
+                  <strong>Accessibility & Language Support:</strong> Screen readers, multiple input languages, proper text rendering across all supported scripts. Shanios is ready for users worldwide, ensuring diverse linguistic needs are met from day one.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -310,65 +364,83 @@
         <h3 class="group-title">Productivity & Applications</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-briefcase feature-icon"></i>
-            <h3>Productivity Suite Included</h3>
-            <p class="feature-snippet">
-              Vivaldi Browser, OnlyOffice, and essential productivity tools pre-installed. Start working immediately without hunting for software.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Apps Included:</strong> Vivaldi Browser for web browsing with advanced features and privacy controls. OnlyOffice for full-featured document editing compatible with Microsoft Office formats. Essential productivity tools ready from first boot.
+            <div class="feature-card-front">
+              <i class="fas fa-briefcase feature-icon"></i>
+              <h3>Productivity Suite Included</h3>
+              <p class="feature-snippet">
+                Vivaldi Browser, OnlyOffice, and essential productivity tools pre-installed. Start working immediately without hunting for software.
               </p>
-              <p>
-                <strong>Professional workflow:</strong> Pre-configured applications and tools for immediate productivity. No time wasted on setup—everything you need to work is already installed and configured.
-              </p>
-              <p>
-                Everything works out-of-the-box so you can start using your system immediately—no setup required. Focus on your work, not on configuring your operating system.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Apps Included:</strong> Vivaldi Browser for web browsing with advanced features and privacy controls. OnlyOffice for full-featured document editing compatible with Microsoft Office formats. Essential productivity tools ready from first boot.
+                </p>
+                <p>
+                  <strong>Professional workflow:</strong> Pre-configured applications and tools for immediate productivity. No time wasted on setup—everything you need to work is already installed and configured.
+                </p>
+                <p>
+                  Everything works out-of-the-box so you can start using your system immediately—no setup required. Focus on your work, not on configuring your operating system.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-box-open feature-icon"></i>
-            <h3>Flatpak & AppImage</h3>
-            <p class="feature-snippet">
-              Install applications via Flatpak (sandboxed) or AppImage (portable). Neither can compromise the immutable core. Install, remove, experiment freely.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Flatpak</strong> provides sandboxed applications with controlled permissions—apps cannot modify system files. Complete isolation ensures security while maintaining functionality.
+            <div class="feature-card-front">
+              <i class="fas fa-box-open feature-icon"></i>
+              <h3>Flatpak & AppImage</h3>
+              <p class="feature-snippet">
+                Install applications via Flatpak (sandboxed) or AppImage (portable). Neither can compromise the immutable core. Install, remove, experiment freely.
               </p>
-              <p>
-                <strong>Gear Lever</strong> manages AppImages with automatic desktop integration. Portable applications that run without installation, perfect for trying new software without system changes.
-              </p>
-              <p>
-                This separation between OS and applications is fundamental to Shanios's reliability. Install, remove, experiment—your system core stays perfect. No dependency conflicts, no system bloat, no breakage.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Flatpak</strong> provides sandboxed applications with controlled permissions—apps cannot modify system files. Complete isolation ensures security while maintaining functionality.
+                </p>
+                <p>
+                  <strong>Gear Lever</strong> manages AppImages with automatic desktop integration. Portable applications that run without installation, perfect for trying new software without system changes.
+                </p>
+                <p>
+                  This separation between OS and applications is fundamental to Shanios's reliability. Install, remove, experiment—your system core stays perfect. No dependency conflicts, no system bloat, no breakage.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-mobile-alt feature-icon"></i>
-            <h3>Android Apps & Windows Compatibility</h3>
-            <p class="feature-snippet">
-              Run Android applications with Waydroid (full hardware acceleration) and Windows apps with Bottles. Mobile development, testing, or daily use—all supported.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Waydroid:</strong> Run Android applications directly using containerization with full hardware acceleration—no emulation overhead. Desktop integration and Google Play Store access (after setup) for thousands of Android apps.
+            <div class="feature-card-front">
+              <i class="fas fa-mobile-alt feature-icon"></i>
+              <h3>Android Apps & Windows Compatibility</h3>
+              <p class="feature-snippet">
+                Run Android applications with Waydroid (full hardware acceleration) and Windows apps with Bottles. Mobile development, testing, or daily use—all supported.
               </p>
-              <p>
-                Perfect for mobile development, testing, or accessing Android-exclusive apps while maintaining system immutability. Native performance with complete isolation from the host system.
-              </p>
-              <p>
-                <strong>Bottles:</strong> Advanced Windows application compatibility layer using Wine. Run Windows applications and games with easy prefix management, dependency installation, and per-application configurations in sandboxed environments.
-              </p>
-              <p>
-                Supports DXVK, VKD3D, esync/fsync, and snapshots. Installed via Flatpak, Bottles runs completely sandboxed, ensuring Windows apps never affect the immutable system core. Each bottle is isolated for maximum stability.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Waydroid:</strong> Run Android applications directly using containerization with full hardware acceleration—no emulation overhead. Desktop integration and Google Play Store access (after setup) for thousands of Android apps.
+                </p>
+                <p>
+                  Perfect for mobile development, testing, or accessing Android-exclusive apps while maintaining system immutability. Native performance with complete isolation from the host system.
+                </p>
+                <p>
+                  <strong>Bottles:</strong> Advanced Windows application compatibility layer using Wine. Run Windows applications and games with easy prefix management, dependency installation, and per-application configurations in sandboxed environments.
+                </p>
+                <p>
+                  Supports DXVK, VKD3D, esync/fsync, and snapshots. Installed via Flatpak, Bottles runs completely sandboxed, ensuring Windows apps never affect the immutable system core. Each bottle is isolated for maximum stability.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -377,87 +449,100 @@
         <h3 class="group-title">Gaming, Development & Containers</h3>
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-gamepad feature-icon"></i>
-            <h3>Complete Gaming Setup</h3>
-            <p class="feature-snippet">
-              Pre-configured gaming optimizations with Steam, Heroic, Bottles, and RetroArch. Performance tools like MangoHud and GameScope included for the best experience.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Gaming Platforms (KDE Plasma):</strong> Steam for native Linux and Windows games via Proton. Heroic Games Launcher for Epic Games Store and GOG titles. Bottles for Windows applications and games. RetroArch for retro gaming emulation—all pre-installed and ready to play.
+            <div class="feature-card-front">
+              <i class="fas fa-gamepad feature-icon"></i>
+              <h3>Complete Gaming Setup</h3>
+              <p class="feature-snippet">
+                Pre-configured gaming optimizations with Steam, Heroic, Bottles, and RetroArch. Performance tools like MangoHud and GameScope included for the best experience.
               </p>
-              <p>
-                <strong>Gaming Peripherals:</strong> Configure racing wheels and flight sticks with Oversteer, remap controllers with AntiMicroX, and customize RGB lighting with OpenRGB and Piper—all included out of the box.
-              </p>
-              <p>
-                <strong>Performance Tools:</strong> Monitor FPS and system stats with MangoHud and GOverlay, optimize visuals with vkBasalt post-processing, and run games in GameScope for better frame pacing and HDR support.
-              </p>
-              <p>
-                <strong>Optimized for gaming:</strong> Custom kernel parameters for low latency, proper graphics driver setup, and system-wide performance tuning ensure responsive performance, smooth multitasking, and lag-free gameplay.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Gaming Platforms (KDE Plasma):</strong> Steam for native Linux and Windows games via Proton. Heroic Games Launcher for Epic Games Store and GOG titles. Bottles for Windows applications and games. RetroArch for retro gaming emulation—all pre-installed and ready to play.
+                </p>
+                <p>
+                  <strong>Gaming Peripherals:</strong> Configure racing wheels and flight sticks with Oversteer, remap controllers with AntiMicroX, and customize RGB lighting with OpenRGB and Piper—all included out of the box.
+                </p>
+                <p>
+                  <strong>Performance Tools:</strong> Monitor FPS and system stats with MangoHud and GOverlay, optimize visuals with vkBasalt post-processing, and run games in GameScope for better frame pacing and HDR support.
+                </p>
+                <p>
+                  <strong>Optimized for gaming:</strong> Custom kernel parameters for low latency, proper graphics driver setup, and system-wide performance tuning ensure responsive performance, smooth multitasking, and lag-free gameplay.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-cubes feature-icon"></i>
-            <h3>Professional Container Technologies</h3>
-            <p class="feature-snippet">
-              Comprehensive container support: Podman, LXC, systemd-nspawn, Distrobox with BoxBuddy GUI. Run any Linux distribution safely.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                <strong>Podman with pods GUI:</strong> Docker-compatible, rootless container runtime for application containers. Run containerized apps without root privileges or compromising security.<strong>Pods:</strong> GUI for easy container management.
+            <div class="feature-card-front">
+              <i class="fas fa-cubes feature-icon"></i>
+              <h3>Professional Container Technologies</h3>
+              <p class="feature-snippet">
+                Comprehensive container support: Podman, LXC, systemd-nspawn, Distrobox with BoxBuddy GUI. Run any Linux distribution safely.
               </p>
-              <p>
-                <strong>LXC:</strong> System containers for running complete Linux distributions. <strong>systemd-nspawn:</strong> Lightweight containerization for isolated environments. 
-              </p>
-              <p>
-                <strong>Distrobox with BoxBuddy GUI:</strong> Desktop-integrated container environments with an intuitive graphical interface. Run any Linux distribution, access distribution-specific software, or create isolated development environments without compromising the immutable host.
-              </p>
-              <p>
-                Perfect for developers needing multiple distribution environments, testing software, or accessing packages not available as Flatpaks. Complete isolation keeps your system safe.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  <strong>Podman with pods GUI:</strong> Docker-compatible, rootless container runtime for application containers. Run containerized apps without root privileges or compromising security.<strong>Pods:</strong> GUI for easy container management.
+                </p>
+                <p>
+                  <strong>LXC:</strong> System containers for running complete Linux distributions. <strong>systemd-nspawn:</strong> Lightweight containerization for isolated environments. 
+                </p>
+                <p>
+                  <strong>Distrobox with BoxBuddy GUI:</strong> Desktop-integrated container environments with an intuitive graphical interface. Run any Linux distribution, access distribution-specific software, or create isolated development environments without compromising the immutable host.
+                </p>
+                <p>
+                  Perfect for developers needing multiple distribution environments, testing software, or accessing packages not available as Flatpaks. Complete isolation keeps your system safe.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
           
           <!-- CLI, Scripting & System Tools -->
           <article class="feature-card">
-            <i class="fas fa-terminal feature-icon"></i>
-            <h3>CLI, Scripting & System Tools</h3>
-            <p class="feature-snippet">
-              Zsh as the default shell, with pre-installed editors, networking tools, and essential utilities—ready for developers and sysadmins out of the box.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-
-              <!-- Shells -->
-              <h4>Shells & Search</h4>
-              <p>
-                Zsh (default, with Starship), Bash, Fish; Zsh plugins for autosuggestions, completions, syntax highlighting, and history substring search; Bash completion; McFly; FZF.
+            <div class="feature-card-front">
+              <i class="fas fa-terminal feature-icon"></i>
+              <h3>CLI, Scripting & System Tools</h3>
+              <p class="feature-snippet">
+                Zsh as the default shell, with pre-installed editors, networking tools, and essential utilities—ready for developers and sysadmins out of the box.
               </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <h4>Shells & Search</h4>
+                <p>
+                  Zsh (default, with Starship), Bash, Fish; Zsh plugins for autosuggestions, completions, syntax highlighting, and history substring search; Bash completion; McFly; FZF.
+                </p>
 
-              <!-- Editors & Utilities -->
-              <h4>Editors</h4>
-              <p>Vim, Vi, Nano, Micro, Tmux, Ed, Less</p>
+                <h4>Editors</h4>
+                <p>Vim, Vi, Nano, Micro, Tmux, Ed, Less</p>
 
-              <h4>Core CLI Utilities</h4>
-              <p>Coreutils, Findutils, Grep, Gawk, BC, Diffutils, Patch, Time, Which</p>
+                <h4>Core CLI Utilities</h4>
+                <p>Coreutils, Findutils, Grep, Gawk, BC, Diffutils, Patch, Time, Which</p>
 
-              <h4>System & Monitoring Tools</h4>
-              <p>Words, BSD-games, Man-db, Gnupg, Plocate, Inxi, Dmidecode, Strace, Lsof, Ncdu, Sysstat, Cronie, PV, JQ, Expect, Dialog</p>
+                <h4>System & Monitoring Tools</h4>
+                <p>Words, BSD-games, Man-db, Gnupg, Plocate, Inxi, Dmidecode, Strace, Lsof, Ncdu, Sysstat, Cronie, PV, JQ, Expect, Dialog</p>
 
-              <!-- Networking & Version Control -->
-              <h4>Version Control</h4>
-              <p>Git, Subversion, Mercurial</p>
+                <h4>Version Control</h4>
+                <p>Git, Subversion, Mercurial</p>
 
-              <h4>Networking Tools</h4>
-              <p>Iftop, Ethtool, Net-tools, Nmap, Traceroute, Tcpdump, Wireless Tools, Inetutils, USB Utilities, Bridge-utils, OpenBSD Netcat, Nbd, Zsync, Rsync, Iperf3, MTR, Tailscale, Cloudflared, Caddy</p>
+                <h4>Networking Tools</h4>
+                <p>Iftop, Ethtool, Net-tools, Nmap, Traceroute, Tcpdump, Wireless Tools, Inetutils, USB Utilities, Bridge-utils, OpenBSD Netcat, Nbd, Zsync, Rsync, Iperf3, MTR, Tailscale, Cloudflared, Caddy</p>
 
-              <h4>Internet Utilities</h4>
-              <p>Curl, Wget, Aria2, Bind, Whois</p>
-
+                <h4>Internet Utilities</h4>
+                <p>Curl, Wget, Aria2, Bind, Whois</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -474,119 +559,156 @@
 
         <div class="feature-grid">
           <article class="feature-card">
-            <i class="fas fa-server feature-icon"></i>
-            <h3>Caddy Web Server</h3>
-            <p class="feature-snippet">
-              Modern, lightweight web server for hosting websites or services from your desktop
-              with automatic HTTPS.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Caddy makes it easy to host personal websites, dashboards, or file servers with
-                automatic HTTPS. It is <strong>not active by default</strong> and runs only when you
-                start and configure it.
+            <div class="feature-card-front">
+              <i class="fas fa-server feature-icon"></i>
+              <h3>Caddy Web Server</h3>
+              <p class="feature-snippet">
+                Modern, lightweight web server for hosting websites or services from your desktop
+                with automatic HTTPS.
               </p>
-              <p>
-                Ideal for self-hosting directly from your desktop, without needing a dedicated server.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Caddy makes it easy to host personal websites, dashboards, or file servers with
+                  automatic HTTPS. It is <strong>not active by default</strong> and runs only when you
+                  start and configure it.
+                </p>
+                <p>
+                  Ideal for self-hosting directly from your desktop, without needing a dedicated server.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-cloud feature-icon"></i>
-            <h3>Cloudflared</h3>
-            <p class="feature-snippet">
-              Securely expose locally hosted websites to the internet —
-              no static IP, no port forwarding.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Cloudflared creates an encrypted tunnel to Cloudflare, allowing public HTTPS access
-                to services running on your desktop. It is <strong>disabled by default</strong> and
-                requires manual setup.
+            <div class="feature-card-front">
+              <i class="fas fa-cloud feature-icon"></i>
+              <h3>Cloudflared</h3>
+              <p class="feature-snippet">
+                Securely expose locally hosted websites to the internet —
+                no static IP, no port forwarding.
               </p>
-              <p>
-                Perfect for hosting websites on home connections or behind NAT and CGNAT,
-                without exposing your real IP address.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Cloudflared creates an encrypted tunnel to Cloudflare, allowing public HTTPS access
+                  to services running on your desktop. It is <strong>disabled by default</strong> and
+                  requires manual setup.
+                </p>
+                <p>
+                  Perfect for hosting websites on home connections or behind NAT and CGNAT,
+                  without exposing your real IP address.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-network-wired feature-icon"></i>
-            <h3>Tailscale</h3>
-            <p class="feature-snippet">
-              Private, secure access to your self-hosted services across your own devices.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Tailscale creates a private encrypted network between your devices using WireGuard.
-                It is <strong>not active unless you sign in and enable it</strong>.
+            <div class="feature-card-front">
+              <i class="fas fa-network-wired feature-icon"></i>
+              <h3>Tailscale</h3>
+              <p class="feature-snippet">
+                Private, secure access to your self-hosted services across your own devices.
               </p>
-              <p>
-                Use it to access your hosted websites and services privately,
-                without making them public on the internet.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Tailscale creates a private encrypted network between your devices using WireGuard.
+                  It is <strong>not active unless you sign in and enable it</strong>.
+                </p>
+                <p>
+                  Use it to access your hosted websites and services privately,
+                  without making them public on the internet.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-terminal feature-icon"></i>
-            <h3>OpenSSH</h3>
-            <p class="feature-snippet">
-              Secure remote access for managing your hosted services when you choose to enable it.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                OpenSSH provides industry-standard encrypted remote access and file transfer
-                (SSH, SCP, SFTP). The SSH server is <strong>not enabled by default</strong>.
+            <div class="feature-card-front">
+              <i class="fas fa-terminal feature-icon"></i>
+              <h3>OpenSSH</h3>
+              <p class="feature-snippet">
+                Secure remote access for managing your hosted services when you choose to enable it.
               </p>
-              <p>
-                Useful for managing your desktop-hosted websites locally, over Tailscale,
-                or through secure tunnels.
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  OpenSSH provides industry-standard encrypted remote access and file transfer
+                  (SSH, SCP, SFTP). The SSH server is <strong>not enabled by default</strong>.
+                </p>
+                <p>
+                  Useful for managing your desktop-hosted websites locally, over Tailscale,
+                  or through secure tunnels.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-shield-alt feature-icon"></i>
+              <h3>Fail2ban</h3>
+              <p class="feature-snippet">
+                Optional intrusion protection for exposed services and remote access.
               </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  Fail2ban monitors authentication logs and temporarily blocks abusive IP addresses
+                  using firewall rules. It is <strong>not enabled by default</strong>.
+                </p>
+                <p>
+                  Recommended when exposing services such as SSH or web applications to the public,
+                  adding an extra layer of protection.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
           <article class="feature-card">
-            <i class="fas fa-shield-alt feature-icon"></i>
-            <h3>Fail2ban</h3>
-            <p class="feature-snippet">
-              Optional intrusion protection for exposed services and remote access.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                Fail2ban monitors authentication logs and temporarily blocks abusive IP addresses
-                using firewall rules. It is <strong>not enabled by default</strong>.
+            <div class="feature-card-front">
+              <i class="fas fa-fire feature-icon"></i>
+              <h3>firewalld</h3>
+              <p class="feature-snippet">
+                Manage network traffic and secure your desktop-hosted services with an easy firewall.
               </p>
-              <p>
-                Recommended when exposing services such as SSH or web applications to the public,
-                adding an extra layer of protection.
-              </p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-          </article>
-
-          <article class="feature-card">
-            <i class="fas fa-fire feature-icon"></i>
-            <h3>firewalld</h3>
-            <p class="feature-snippet">
-              Manage network traffic and secure your desktop-hosted services with an easy firewall.
-            </p>
-            <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            <div class="feature-details hidden">
-              <p>
-                firewalld provides a dynamic firewall with zones and services to control inbound and outbound
-                network traffic. It is <strong>not active by default</strong>.
-              </p>
-              <p>
-                Use it to restrict access to your hosted websites, SSH, and other services, ensuring that
-                only allowed connections reach your desktop.
-              </p>
+            
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>
+                  firewalld provides a dynamic firewall with zones and services to control inbound and outbound
+                  network traffic. It is <strong>not active by default</strong>.
+                </p>
+                <p>
+                  Use it to restrict access to your hosted websites, SSH, and other services, ensuring that
+                  only allowed connections reach your desktop.
+                </p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
@@ -648,7 +770,7 @@
         </div>
 
         <!-- Installation Guide Button -->
-        <div style="margin-top: 3rem; text-align: center;">
+        <div class="show-installation-guide" style="margin-top: 3rem; text-align: center;">
           <button class="btn btn-secondary toggle-install" aria-expanded="false" style="font-size: 1.1rem; padding: 1rem 2rem;">
             <i class="fas fa-tools"></i> Installation Guide
           </button>
@@ -744,6 +866,12 @@
           </p>
         </div>
       </div>
+      <!-- Close Guide Button -->
+        <div style="margin-top: 3rem; text-align: center;">
+          <button class="btn btn-secondary toggle-install" aria-expanded="false" style="font-size: 1.1rem; padding: 1rem 2rem;">
+            <i class="fas fa-tools"></i> Close Guide
+          </button>
+        </div>
     </section>
 
 

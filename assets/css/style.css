@@ -426,6 +426,41 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  
+  /* Add flip animation properties */
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.feature-card.flipped .feature-card-front {
+  transform: rotateY(-180deg);
+}
+
+.feature-card.flipped .feature-card-back {
+  transform: rotateY(0deg);
+}
+
+.feature-card-front,
+.feature-card-back {
+  transition: transform 0.6s ease-in-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+.feature-card-front {
+  transform: rotateY(0deg);
+}
+
+.feature-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(180deg);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
 }
 
 .feature-card::before {
@@ -490,6 +525,10 @@ body {
   transform: translateY(-2px);
 }
 
+.feature-card-back .btn-more {
+  margin-top: 1.5rem;
+}
+
 .feature-details {
   margin-top: 1.5rem;
   line-height: 1.6;
@@ -516,6 +555,7 @@ body {
 .hidden {
   display: none;
 }
+
 
 /* Installation Section */
 .install-section {

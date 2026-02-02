@@ -118,33 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 
-  /* =====================================================
-     ✅ LEARN MORE (FIXED)
-  ===================================================== */
-  document.querySelectorAll('.btn-more').forEach(button => {
-    button.addEventListener('click', e => {
-      e.preventDefault();
-
-      const details = button.nextElementSibling;
-
-      if (!details || !details.classList.contains('feature-details')) {
-        console.error('feature-details not found for button', button);
-        return;
-      }
-
-      const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-      button.setAttribute('aria-expanded', String(!isOpen));
-      button.textContent = isOpen ? 'Learn More' : 'Show Less';
-      details.classList.toggle('hidden', isOpen);
-    });
-  });
 
 /* =====================================================
    INSTALLATION SECTION TOGGLE (FIXED)
 ===================================================== */
 const installSection = document.getElementById('installation');
 const installToggles = document.querySelectorAll('.toggle-install');
+const installetionGuideButtonSection = document.querySelector('.show-installation-guide');
 
 if (installSection && installToggles.length) {
   installToggles.forEach(button => {
@@ -152,7 +132,7 @@ if (installSection && installToggles.length) {
       e.preventDefault();
 
       const isOpen = !installSection.classList.toggle('hidden');
-
+      installetionGuideButtonSection.classList.toggle('hidden', isOpen);
       installToggles.forEach(btn => {
         btn.setAttribute('aria-expanded', String(isOpen));
         btn.innerHTML = isOpen
@@ -212,6 +192,29 @@ if (installSection && installToggles.length) {
         : img.addEventListener('load', () => img.classList.add('loaded'));
     });
   }
+
+/* ======================================================
+  Flip Animation
+  ======================================================= */
+
+document.querySelectorAll('.toggle-details').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const card = this.closest('.feature-card');
+    const isFlipped = card.classList.contains('flipped');
+    
+    card.classList.toggle('flipped');
+    // Text is already set in HTML
+    this.setAttribute('aria-expanded', String(!isFlipped));
+    
+    // Reset scroll position when flipping back to front
+    if (!card.classList.contains('flipped')) {
+      const back = card.querySelector('.feature-card-back');
+      if (back) back.scrollTop = 0;
+    }
+  });
+});
 
   /* =====================================================
      COPYRIGHT YEAR
