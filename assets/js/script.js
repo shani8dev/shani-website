@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 ===================================================== */
 const installSection = document.getElementById('installation');
 const installToggles = document.querySelectorAll('.toggle-install');
+const installetionGuideButtonSection = document.querySelector('.show-installation-guide');
 
 if (installSection && installToggles.length) {
   installToggles.forEach(button => {
@@ -131,7 +132,7 @@ if (installSection && installToggles.length) {
       e.preventDefault();
 
       const isOpen = !installSection.classList.toggle('hidden');
-
+      installetionGuideButtonSection.classList.toggle('hidden', isOpen);
       installToggles.forEach(btn => {
         btn.setAttribute('aria-expanded', String(isOpen));
         btn.innerHTML = isOpen
