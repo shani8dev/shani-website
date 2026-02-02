@@ -213,6 +213,28 @@ if (installSection && installToggles.length) {
     });
   }
 
+  /* ======================================================
+    Flip Animation
+  ========================================================= */
+
+  document.querySelectorAll('.toggle-details').forEach(button => {
+  button.addEventListener('click', function() {
+    const details = this.nextElementSibling;
+    
+    if (details.classList.contains('hidden')) {
+      details.classList.remove('hidden');
+      details.classList.add('flipped');
+      this.textContent = 'Show Less';
+      this.setAttribute('aria-expanded', 'true');
+    } else {
+      details.classList.add('hidden');
+      details.classList.remove('flipped');
+      this.textContent = 'Learn More';
+      this.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
   /* =====================================================
      COPYRIGHT YEAR
   ===================================================== */
