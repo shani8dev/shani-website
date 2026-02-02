@@ -213,24 +213,25 @@ if (installSection && installToggles.length) {
     });
   }
 
-  /* ======================================================
-    Flip Animation
-  ========================================================= */
+/* ======================================================
+  Flip Animation
+========================================================= */
 
-  document.querySelectorAll('.toggle-details').forEach(button => {
-  button.addEventListener('click', function() {
-    const details = this.nextElementSibling;
+document.querySelectorAll('.toggle-details').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
     
-    if (details.classList.contains('hidden')) {
-      details.classList.remove('hidden');
-      details.classList.add('flipped');
-      this.textContent = 'Show Less';
-      this.setAttribute('aria-expanded', 'true');
-    } else {
-      details.classList.add('hidden');
-      details.classList.remove('flipped');
-      this.textContent = 'Learn More';
-      this.setAttribute('aria-expanded', 'false');
+    const card = this.closest('.feature-card');
+    const isFlipped = card.classList.contains('flipped');
+    
+    card.classList.toggle('flipped');
+    // Text is already set in HTML
+    this.setAttribute('aria-expanded', String(!isFlipped));
+    
+    // Reset scroll position when flipping back to front
+    if (!card.classList.contains('flipped')) {
+      const back = card.querySelector('.feature-card-back');
+      if (back) back.scrollTop = 0;
     }
   });
 });
