@@ -494,15 +494,23 @@ body {
   margin-top: 1.5rem;
   line-height: 1.6;
   font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
   border-radius: 0.75rem;
   text-align: left;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  background: rgba(255, 255, 255, 0.05);
   border-left: 3px solid var(--primary);
+}
+
+.feature-details.flipped {
+  transform: rotateY(180deg);
 }
 
 .feature-details p {
   margin-bottom: 1rem;
+  backface-visibility: hidden;
 }
 
 .feature-details p:last-child {
