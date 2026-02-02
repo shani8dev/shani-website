@@ -118,27 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 
-  /* =====================================================
-     ✅ LEARN MORE (FIXED)
-  ===================================================== */
-  document.querySelectorAll('.btn-more').forEach(button => {
-    button.addEventListener('click', e => {
-      e.preventDefault();
-
-      const details = button.nextElementSibling;
-
-      if (!details || !details.classList.contains('feature-details')) {
-        console.error('feature-details not found for button', button);
-        return;
-      }
-
-      const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-      button.setAttribute('aria-expanded', String(!isOpen));
-      button.textContent = isOpen ? 'Learn More' : 'Show Less';
-      details.classList.toggle('hidden', isOpen);
-    });
-  });
 
 /* =====================================================
    INSTALLATION SECTION TOGGLE (FIXED)
@@ -215,7 +194,7 @@ if (installSection && installToggles.length) {
 
 /* ======================================================
   Flip Animation
-========================================================= */
+  ======================================================= */
 
 document.querySelectorAll('.toggle-details').forEach(button => {
   button.addEventListener('click', function(e) {
