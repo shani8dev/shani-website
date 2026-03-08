@@ -214,7 +214,7 @@ body {
   border: none;
   display: none;
   cursor: pointer;
-  z-index: 1200;
+  z-index: 1300;
   padding: 0.5rem;
   position: relative;
 }
@@ -269,6 +269,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1050;
   -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
 }
 
 /* Mid-range nav: icon-only labels to prevent overflow */
@@ -319,8 +320,9 @@ body {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 
-    z-index: 1100;
+    z-index: 1200;
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -342,6 +344,9 @@ body {
     padding: 0.75rem 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
   }
 
   .nav-link i {
@@ -3186,9 +3191,8 @@ details.usecase-card[open] > summary h3::after {
 /* Improved section title underline accent */
 .section-title {
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  text-align: center;
 }
 
 .section-title::after {
@@ -3263,15 +3267,15 @@ img[loading="lazy"].loaded {
   }
 }
 
-/* Prevent section-title display block breaking inline behavior */
+/* section-title layout fix */
 .section-title {
   display: block;
-  transform: none;
+  position: relative;
   left: auto;
+  transform: none;
   text-align: center;
 }
 
-/* Override inline transform for section-title ::after centering */
 .section-title::after {
   margin: 0.65rem auto 0;
 }
