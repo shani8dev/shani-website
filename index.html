@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Shanios: The immutable Linux OS with atomic updates that never fail. Dual-image architecture, instant recovery, complete productivity suite included." />
+  <meta name="description" content="Shanios: An immutable Linux OS designed for reliability and security. Dual-image atomic updates, GPG-verified images, kernel security modules: Landlock, Lockdown, Yama, Integrity, AppArmor, BPF, Secure Boot, TPM2 auto-unlock, hibernation out-of-the-box, and instant rollback — built to stay stable and trustworthy." />
   <meta name="author" content="Shrinivas Vishnu Kumbhar" />
-  <meta name="keywords" content="Shanios, Immutable Linux, atomic updates, Waydroid, Podman, reliable OS, enterprise Linux, OEM ready" />
+  <meta name="keywords" content="Shanios, Immutable Linux, atomic updates, blue-green deployment, AppArmor, Landlock, Secure Boot, TPM2, LUKS2 argon2id, GPG verified, Waydroid, Podman, reliable OS, secure Linux, enterprise Linux, OEM ready, made in India Linux, no telemetry Linux, hibernation Linux, gaming Linux, VR Linux" />
   <meta name="robots" content="index, follow" />
-
   <link rel="canonical" href="https://shani.dev/" />
-
-  <meta property="og:title" content="Shanios - The Immutable Linux OS" />
-  <meta property="og:description" content="Atomic updates that never fail. Recovery in seconds. Built for reliability." />
-  <meta property="og:image" content="https://shani.dev/assets/images/os-screenshot.jpg" />
+  <meta property="og:title" content="Shanios — The Immutable Linux OS Built for Reliability" />
+  <meta property="og:description" content="Immutable Linux with atomic updates, GPG-verified images, 5 active kernel security modules, TPM2 auto-unlock, hibernation out-of-the-box, and instant rollback. Zero telemetry. Reliable and secure by default." />
+  <meta property="og:image" content="https://shani.dev/assets/images/gnome-screenshot.jpg" />
   <meta property="og:url" content="https://shani.dev/" />
+  <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-
+  <meta name="twitter:title" content="Shanios — The Immutable Linux OS Built for Reliability" />
+  <meta name="twitter:description" content="Immutable Linux with atomic updates, GPG-verified images, 5 active kernel security modules, TPM2 auto-unlock, hibernation out-of-the-box, and instant rollback. Zero telemetry. Reliable and secure by default." />
+  <meta name="twitter:image" content="https://shani.dev/assets/images/gnome-screenshot.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,23 +24,26 @@
     "name": "Shanios",
     "applicationCategory": "Operating System",
     "operatingSystem": "Linux",
-    "description": "Immutable Linux operating system with atomic updates and instant recovery",
+    "description": "Immutable Linux OS with atomic blue-green updates, GPG-verified images, kernel security modules: Landlock, Lockdown, Yama, Integrity, AppArmor, BPF, TPM2 auto-unlock, LUKS2 argon2id, Secure Boot, zero telemetry, hibernation out-of-the-box, and instant rollback. Built on Arch Linux."
     "url": "https://shani.dev",
     "logo": "https://shani.dev/assets/images/logo.svg",
+    "softwareVersion": "2026.01.18",
+    "datePublished": "2026-01-18",
+    "downloadUrl": "https://sourceforge.net/projects/shanios/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": {
       "@type": "Person",
-      "name": "Shrinivas Vishnu Kumbhar"
+      "name": "Shrinivas Vishnu Kumbhar",
+      "jobTitle": "PhD Scholar",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "Shivaji University, Kolhapur" },
+      "url": "https://github.com/Shrinivasvkumbhar"
     }
   }
   </script>
-
-<script src="assets/js/script.js"></script>
-
-  
+  <script src="assets/js/script.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png" />
@@ -48,90 +52,459 @@
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="assets/images/site.webmanifest" />
   <meta name="theme-color" content="#1a102f" />
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  
-  <title>Shanios - The Immutable Linux OS That Never Breaks</title>
+  <title>Shanios — The Immutable Linux OS Built for Reliability</title>
 </head>
 <body>
   <div class="top-blessing" aria-label="Blessing">|| श्री ||</div>
-
   <a class="skip-link sr-only" href="#main-content">Skip to main content</a>
 
-  <header class="header">
-    <div class="container header-container">
-      <a href="/" class="logo" aria-label="Shanios Home">
-        <img src="assets/images/logo.svg" alt="Shanios" />
-      </a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="menu-icon"></span>
-      </button>
-      <nav class="nav" aria-label="Primary Navigation">
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
-          <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Download</a></li>
-          <li><a href="#support" class="nav-link"><i class="fas fa-hand-holding-heart"></i> Support</a></li>
-          <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
-          <li><a href="https://wiki.shani.dev" target="_blank" rel="noopener" class="nav-link"><i class="fas fa-book"></i> Wiki</a></li>
-          <li><a href="https://github.com/shani8dev" target="_blank" rel="noopener" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
-          <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener" class="nav-link"><i class="fab fa-telegram-plane"></i> Telegram</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="header">
+  <div class="container header-container">
+
+    <a href="/" class="logo" aria-label="Shanios Home">
+      <img src="assets/images/logo.svg" alt="Shanios">
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="menu-icon"></span>
+    </button>
+
+    <nav class="nav" aria-label="Primary Navigation">
+      <ul class="nav-list">
+
+        <li>
+          <a href="#hero" class="nav-link active">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#usecases" class="nav-link">
+            <i class="fas fa-users"></i> Use Cases
+          </a>
+        </li>
+
+        <li>
+          <a href="#how" class="nav-link">
+            <i class="fas fa-cogs"></i> How
+          </a>
+        </li>
+
+        <li>
+          <a href="#features" class="nav-link">
+            <i class="fas fa-star"></i> Features
+          </a>
+        </li>
+
+        <li>
+          <a href="#compare" class="nav-link">
+            <i class="fas fa-balance-scale"></i> Compare
+          </a>
+        </li>
+
+        <li>
+          <a href="#faq" class="nav-link">
+            <i class="fas fa-question-circle"></i> FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="#download" class="nav-link">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </li>
+
+        <li>
+          <a href="#support" class="nav-link">
+            <i class="fas fa-hand-holding-heart"></i> Support
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" class="nav-link">
+            <i class="fas fa-info-circle"></i> About
+          </a>
+        </li>
+
+        <!-- External Links -->
+
+        <li>
+          <a href="https://wiki.shani.dev" target="_blank" rel="noopener"
+             class="nav-link nav-icon-link" aria-label="Wiki">
+            <i class="fas fa-book"></i>
+            <span class="nav-icon-label">Wiki</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/shani8dev" target="_blank" rel="noopener"
+             class="nav-link nav-icon-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+            <span class="nav-icon-label">GitHub</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://t.me/shani8dev" target="_blank" rel="noopener"
+             class="nav-link nav-icon-link" aria-label="Telegram Community">
+            <i class="fab fa-telegram-plane"></i>
+            <span class="nav-icon-label">Community</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>
 
   <main id="main-content">
+
+    <!-- ===== HERO ===== -->
     <section id="hero" class="hero-section section">
       <div class="hero-content container">
-        <h1>The Immutable Linux OS That Never Breaks</h1>
+        <h1>The Linux OS Built<br>So You Can Stop Reinstalling</h1>
         <p class="hero-subtitle">
-          Revolutionary blue-green deployment with dual system images (@blue and @green). Atomic updates that always work. Instant rollback in under a minute. Zero downtime updates. The answer to "I updated and now my system won't boot." Enterprise-grade reliability meets cutting-edge performance.
+          Every Linux user has been there: one bad update, one wrong command, and suddenly you're reinstalling from scratch.
+          Shanios is built so that never has to happen again — or at worst, costs you one reboot.
+          Updates install on a standby copy of your system, GPG-verified before they ever go live.
+          If something goes wrong, one reboot takes you back — your files are untouched.
+          Built on Arch Linux. Zero telemetry. active kernel security modules, TPM2 auto-unlock, Secure Boot, firewall — hardened from first boot. Free to use. Built in India 🇮🇳
         </p>
         <div class="cta-group">
-          <a href="#download" class="btn btn-primary">
-            <i class="fas fa-cloud-download-alt"></i> Download Now
+          <a href="#how" class="btn btn-secondary">
+            <i class="fas fa-cogs"></i> How It Works
           </a>
-          <button class="btn btn-secondary toggle-install" aria-expanded="false">
-            <i class="fas fa-tools"></i> Installation Guide
-          </button>
+          <a href="#download" class="btn btn-primary">
+            <i class="fas fa-cloud-download-alt"></i> Download Free
+          </a>
+        </div>
+        <div class="hero-pain-strip">
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>Rollback is a reboot — not a recovery procedure. Your previous slot boots in the same time as any normal boot.</span></div>
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>Updates verified with SHA256 + GPG before touching your system — independently auditable</span></div>
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>Zero telemetry · Zero ads · 100% open source · Free to use</span></div>
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>Immutable root — even root cannot modify core OS files at runtime</span></div>
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>TPM2 auto-unlock · Hibernation out-of-the-box · Fingerprint login · All hardware configured at first boot</span></div>
+          <div class="pain-item"><i class="fas fa-check-circle pain-yes"></i> <span>kernel security modules (Landlock, Lockdown, Yama, AppArmor, BPF, Integrity)</span></div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section features-section">
+    <!-- ===== CREDIBILITY STRIP ===== -->
+    <div class="credibility-strip" aria-label="Project highlights">
       <div class="container">
-        <h2 class="section-title">Why Choose Shanios</h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem;">
-          A next-generation immutable operating system built on Arch Linux that truly never breaks. Revolutionary blue-green deployment with Btrfs subvolumes ensures atomic updates and instant rollback. The custom shani-deploy tool orchestrates updates with military precision—downloading verified images, applying configurations, generating unified kernel images, and validating everything before switching. Professional tools included, but the real innovation is the architecture that makes system failures literally impossible.
+        <div class="cred-items">
+          <div class="cred-item">
+            <i class="fab fa-github"></i>
+            <span>Fully open source — build system, deploy scripts &amp; GPG public key on keyservers</span>
+          </div>
+          <div class="cred-divider"></div>
+          <div class="cred-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Landlock, Lockdown, Yama, AppArmor, BPF, Integrity · LUKS2 argon2id · TPM2 auto-unlock · Secure Boot · Intel ME disabled</span>
+          </div>
+          <div class="cred-divider"></div>
+          <div class="cred-item">
+            <i class="fas fa-user-secret"></i>
+            <span>Zero telemetry · No ads · No tracking — ever</span>
+          </div>
+          <div class="cred-divider"></div>
+          <div class="cred-item">
+            <i class="fas fa-building"></i>
+            <span>OEM-ready · No reimaging on rollback · Hibernation auto-configured</span>
+          </div>
+          <div class="cred-divider"></div>
+          <div class="cred-item">
+            <i class="fas fa-sync-alt"></i>
+            <span>Update tooling updates itself — you never run outdated deployment scripts</span>
+          </div>
+          <div class="cred-divider"></div>
+          <div class="cred-item">
+            <i class="fas fa-flag"></i>
+            <span>Built in India 🇮🇳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="stats-bar" aria-label="Key numbers">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Always-ready OS slots — instant fallback guaranteed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Reboot to roll back — no reinstall, no recovery USB</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Telemetry, ads, or tracking of any kind</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Config lost on update — /etc changes, systemd units, SSH keys and service state all survive every OS update and rollback</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Container & VM runtimes — Podman, Distrobox, LXC, LXD, Apptainer, systemd-nspawn</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">App ecosystems — Flatpak, Snap, Nix, AppImage</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Open source — every build and deploy script public on GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== WHO IT'S FOR ===== -->
+    <section id="usecases" class="section usecases-section">
+      <div class="container">
+        <h2 class="section-title">Who Uses Shanios</h2>
+        <p class="section-intro">One OS, many audiences — each with something specific to gain.</p>
+        <div class="usecase-grid">
+
+          <div class="usecase-card usecase-card--featured">
+            <div class="usecase-icon"><i class="fas fa-building"></i></div>
+            <h3>The IT Admin / OEM</h3>
+            <p>Deploy from one identical, GPG-verified image. Roll back any machine — no reimaging required. Previous slot always available in the boot menu. No per-device package drift. No "works on some machines" support calls. Standardized, auditable, reproducible. Automatic rollback on boot failure without user intervention — the boot-counting pipeline handles it before anyone notices.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-code"></i></div>
+            <h3>The Developer</h3>
+            <p>Your dev environment lives in a Distrobox container — host OS updates atomically underneath it, the two never interfere. Use Ubuntu, Fedora, or any distro's toolchain in isolation. Test Android apps in hardware-accelerated Waydroid — a full Android stack, not a slow emulator, no physical device needed. Run HPC workloads in Apptainer. Corporate VPN, fingerprint login, FIDO2/YubiKey, and smart card auth all work at first boot. Fewer broken updates, fewer lost deadlines.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-flask"></i></div>
+            <h3>The Researcher</h3>
+            <p>Apptainer (the HPC standard) is pre-configured — submit reproducible environments to clusters, share exact setups with collaborators, run isolated GPU workloads. The host OS itself is a GPG-signed, verifiable artifact: your full stack from kernel to container is reproducible and auditable, not just the workload inside it. Pair with an immutable host for a research environment that stays exactly as configured, indefinitely.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-user-tired"></i></div>
+            <h3>The Tired Linux User</h3>
+            <p>You've reinstalled more times than you can count. You love Linux but you're done babysitting updates. Shanios gives you a rolling release's freshness with server-grade update reliability. When something goes wrong, you reboot — not reinstall. Browser profiles run from RAM (Profile Sync Daemon), McFly gives your shell history a neural-network brain, and Btrfs compression cuts disk usage 30–50%. The OS that earns trust by being boring.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-gamepad"></i></div>
+            <h3>The Linux Gamer</h3>
+            <p>Steam, Proton, Heroic, RetroArch, Bottles — all pre-installed on KDE Plasma. NVIDIA drivers configured at first boot. MangoHud, GameScope, vkBasalt, OpenRGB, AntiMicroX — the full stack without setup pain. GameMode runs globally so every game benefits automatically. Kernel tuned for gaming: low-latency scheduler, 3072 Hz timers, expanded memory maps. Racing wheels (Logitech, Thrustmaster, Fanatec), VR headsets (HTC Vive, Valve Index, PSVR) — all pre-configured. An OS update never costs you a gaming session.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-briefcase"></i></div>
+            <h3>The Corporate Laptop User</h3>
+            <p>Fingerprint login, smart card, YubiKey/FIDO2, and NFC auth all work at first boot. Full enterprise VPN suite (WireGuard, OpenVPN, Cisco AnyConnect-compatible, Fortinet, IPsec), printers, scanners — no setup required. Secure Boot, TPM2 auto-unlock, and LUKS2 argon2id full-disk encryption for compliance. Hibernation works out of the box. An immutable, GPG-verified OS that IT can audit. Everything a work machine needs, nothing to configure after imaging.</p>
+          </div>
+
+          <div class="usecase-card">
+            <div class="usecase-icon"><i class="fas fa-school"></i></div>
+            <h3>School Labs &amp; Family Computers</h3>
+            <p>Kids can install games, change settings, and browse freely — but they cannot accidentally break the OS itself. A reboot always brings it back to a known-good state. School labs can stop reimaging between terms — no summer overtime for your IT coordinator. Family computers stay stable no matter what a teenager does.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOUND FAMILIAR ===== -->
+    <section id="why" class="section pain-section">
+      <div class="container">
+        <h2 class="section-title">Sound Familiar?</h2>
+        <p class="section-intro">These aren't edge cases. They happen to experienced Linux users every week. Shanios is built specifically to make them stop happening.</p>
+        <div class="pain-grid">
+          <div class="pain-card">
+            <div class="pain-quote">"I did <code>pacman -Syu</code> and now my system won't boot."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> Shanios deploys updates to your inactive slot — your running system is never touched. If the new slot won't boot, your previous one is still in the boot menu. Rollback is a reboot, not a recovery procedure.</div>
+          </div>
+          <div class="pain-card">
+            <div class="pain-quote">"I updated and now my dev tools are broken. I have a deadline tomorrow."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> Your dev environment lives in an isolated container. The host OS updates atomically underneath it. The two are designed not to interfere. Your deadline is safe.</div>
+          </div>
+          <div class="pain-card">
+            <div class="pain-quote">"My system has been running 3 years and is accumulating weird issues."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> Every update is a fresh, complete, verified image — not packages layered on packages. There is no accumulation. Every user on the same channel runs the identical image.</div>
+          </div>
+          <div class="pain-card">
+            <div class="pain-quote">"I opened too many tabs and my whole system locked up. Had to hard reset."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> Shanios runs <strong>systemd-oomd</strong> system-wide. Under memory pressure it selectively terminates low-priority background processes — your active work stays running. The system stays responsive instead of freezing solid.</div>
+          </div>
+          <div class="pain-card">
+            <div class="pain-quote">"I'm worried an update will break something. I'll just skip it for now."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> Update when you're ready — rollback is always one command away. Your previous OS slot stays intact until the next update cycle. Not ready to commit? <code>sudo shani-deploy --dry-run</code> simulates the full update without changing a single file.</div>
+          </div>
+          <div class="pain-card">
+            <div class="pain-quote">"My laptop froze during an update. Now I'm not sure what state it's in."</div>
+            <div class="pain-solution"><i class="fas fa-arrow-right"></i> <code>systemd-inhibit</code> blocks sleep and shutdown during an update. If power is cut anyway, the active slot is completely untouched — the update was in the inactive slot. Boot normally; your running system is exactly as you left it.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how" class="section how-section">
+      <div class="container">
+        <h2 class="section-title">How Blue-Green Updates Work</h2>
+        <p class="section-intro">
+          Shanios always maintains two complete system images — <strong>@blue</strong> and <strong>@green</strong>.
+          You run on one while the other is updated, verified, and staged in the background.
+          No in-place modification. No half-updated state. Always a working fallback.
+          <br><br>
+          Shanios never touches your running slot at all.
+          The new OS is fully verified and extracted into the inactive slot before it ever boots.
+          Your running slot is read-only and physically untouched from the first byte to the last.
         </p>
 
-        <!-- CORE ARCHITECTURE -->
-        <h3 class="group-title">Core Architecture - The Foundation</h3>
+        <div class="how-diagram">
+
+          <!-- LEFT: RUNNING SLOT -->
+          <div class="how-slot active-slot">
+            <span class="slot-badge running">● Running Now</span>
+            <div class="slot-name">@blue slot</div>
+            <div class="slot-desc">Your active system. Read-only. <strong>Never touched</strong> during any update, deployment, or rollback operation — not even by root.</div>
+            <div class="slot-files">
+              <div class="slot-file">/  (read-only root, immutable)</div>
+              <div class="slot-file">/etc  (OverlayFS — your changes in @data)</div>
+              <div class="slot-file">/home  (your files — @home subvolume)</div>
+              <div class="slot-file">/var  (volatile + persistent bind mounts)</div>
+            </div>
+          </div>
+
+          <!-- CENTRE: ARROWS -->
+          <div class="how-arrow">
+            <div style="display:flex; flex-direction:column; gap:1.5rem; align-items:center; width:100%;">
+
+              <!-- Update arrow: left to right -->
+              <div style="display:flex; flex-direction:column; align-items:center; width:100%; gap:0.35rem;">
+                <span style="font-size:0.65rem; opacity:0.5; text-transform:uppercase; letter-spacing:1px; white-space:nowrap;">Update</span>
+                <div style="display:flex; align-items:center; width:100%;">
+                  <div style="flex:1; height:2px; background:linear-gradient(90deg, var(--secondary), var(--primary));"></div>
+                  <span style="color:var(--primary); font-size:0.8rem;">▶</span>
+                </div>
+                <span style="font-size:0.62rem; opacity:0.45; text-align:center; line-height:1.4; white-space:nowrap;">staged here — running slot never touched</span>
+              </div>
+
+              <!-- Rollback arrow: right to left -->
+              <div style="display:flex; flex-direction:column; align-items:center; width:100%; gap:0.35rem;">
+                <span style="font-size:0.65rem; opacity:0.5; text-transform:uppercase; letter-spacing:1px; white-space:nowrap;">Rollback</span>
+                <div style="display:flex; align-items:center; width:100%;">
+                  <span style="color:var(--secondary); font-size:0.8rem;">◀</span>
+                  <div style="flex:1; height:2px; background:linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                </div>
+                <span style="font-size:0.62rem; opacity:0.45; text-align:center; line-height:1.4; white-space:nowrap;">restored from @green_backup_{timestamp}</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: CANDIDATE SLOT -->
+          <div class="how-slot standby-slot">
+            <span class="slot-badge updating">↻ Staging Update</span>
+            <div class="slot-name">@green slot</div>
+            <div class="slot-desc">New image extracted and staged here. A timestamped backup snapshot is taken <em>before</em> any write begins. The old candidate is only deleted <em>after</em> extraction succeeds.</div>
+            <div class="slot-files">
+              <div class="slot-file highlight">① snapshot @green → @green_backup_{timestamp}</div>
+              <div class="slot-file highlight">② extract new image (SHA256 + GPG verified)</div>
+              <div class="slot-file highlight">③ delete old @green only after ② succeeds</div>
+              <div class="slot-file">④ generate UKI in chroot · update boot entries</div>
+              <div class="slot-file highlight">@green_backup_{timestamp} kept for rollback</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STEPS -->
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-step-num">1</div>
+            <h4>Script Self-Updates First</h4>
+            <p>Before doing anything else, <code>shani-deploy</code> downloads the latest version of itself from GitHub. If updated, it re-executes immediately with the new version — so you always run current deployment logic, no matter how long ago you installed.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">2</div>
+            <h4>System Inhibit</h4>
+            <p><code>systemd-inhibit</code> blocks sleep, shutdown, suspend, hibernate, and lid-close events for the entire deployment. If the system is somehow powered off mid-update, the <strong>deployment pending flag</strong> (<code>/data/deployment_pending</code>) is detected on next boot — the interrupted update is cleaned up before your desktop ever loads.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">3</div>
+            <h4>Slot Validation</h4>
+            <p>The script confirms which slot you are actually booted into by reading <code>/proc/cmdline</code> and the <code>/data/current-slot</code> marker. A mismatch (e.g. a staged update pending reboot) is detected and reported rather than silently proceeding — preventing accidental double-deploys.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">4</div>
+            <h4>Download &amp; Verify</h4>
+            <p>The image is fetched from the primary R2 server with multi-connection resume support. If R2 is unavailable, a SourceForge mirror is discovered automatically. SHA256 and GPG signature are both verified against the public key on keyservers before the image is ever extracted. A tampered or incomplete image is rejected outright — the update aborts, nothing changes.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">5</div>
+            <h4>Snapshot Candidate, Then Extract</h4>
+            <p>The inactive slot is snapshotted as <code>@{slot}_backup_{timestamp}</code> <strong>before</strong> any write begins. The new image is then extracted via <code>zstd | btrfs receive</code> into a temporary subvolume. The old candidate is deleted <strong>only after extraction succeeds</strong>. A power cut during extraction leaves your running slot and the snapshot both intact.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">6</div>
+            <h4>UKI Generation &amp; Boot Entry</h4>
+            <p>A Unified Kernel Image (UKI) is generated by running <code>gen-efi</code> inside a chroot of the new candidate slot. The systemd-boot entry is updated and the <strong>candidate slot is set as the new default boot target</strong>. Your currently running slot's boot entry is preserved as the fallback. Nothing on your live system changes until you reboot.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">7</div>
+            <h4>You Decide When to Reboot</h4>
+            <p>Reboot on your schedule — immediately or days later. The pending update sits in the inactive slot. The deployment pending flag is cleared on successful finalization. Your currently running slot boots normally until you choose to switch.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">8</div>
+            <h4>Rollback Anytime — Run From the Slot You Want to Keep</h4>
+            <p>Run <code>sudo shani-deploy --rollback</code> from the slot you want to <strong>keep</strong>. The script detects your booted slot, restores the other from its most recent backup snapshot, regenerates its UKI, and updates boot entries — all without touching your running slot. If the new slot fails to boot, the boot-counting pipeline automatically reverts to the previous slot before you even see an error. Use <code>--dry-run</code> to simulate any operation without making changes.</p>
+          </div>
+        </div>
+
+        <p class="how-note">
+          <i class="fas fa-info-circle"></i>&nbsp;
+          Your <code>/home</code>, app data (Flatpak, Snap, Nix, AppImage, containers, Waydroid), and <code>/etc</code> config are in separate subvolumes — independent of which OS slot is active. Rolling back the OS never touches your personal data or installed apps. Your <code>/etc</code> customisations — systemd units, network configs, SSH keys — survive both updates and rollbacks unchanged via OverlayFS backed by <code>@data</code>.
+          <code>/var</code> uses <code>systemd.volatile=state</code> at runtime; important service state (NetworkManager, Bluetooth, audio, printers, TPM2, fingerprint, colord profiles, Tailscale) is preserved via bind mounts from <code>@data</code> and survives every reboot unchanged.
+          A dedicated <code>@swap</code> Btrfs subvolume (CoW disabled) is sized to your RAM at first boot so hibernation works out of the box.
+          Two update channels are available: <strong>stable</strong> (default — tested builds, released approximately monthly) and <strong>latest</strong> (most recent image, released more frequently). Switch with <code>sudo shani-deploy -t latest</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <h2 class="section-title">Everything Shanios Brings</h2>
+        <p class="section-intro">From the update engine and security stack to gaming, containers, and developer tools — here is what you actually get, explained honestly.</p>
+
+        <!-- GROUP: CORE ARCHITECTURE — 3 cards -->
+        <h3 class="group-title">Core Architecture</h3>
         <div class="feature-grid">
+
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-sync-alt feature-icon"></i>
-              <h3>Blue-Green Deployment</h3>
-              <p class="feature-snippet">
-                Two complete system images (@blue and @green) using Btrfs subvolumes. Updates apply to the inactive image while you work. DevOps-proven strategy adapted for desktop use.
-              </p>
+              <h3>Atomic Blue-Green Updates</h3>
+              <p class="feature-snippet">Updates deploy to your inactive slot — your running system is never touched. Reboot to switch. Previous slot stays ready. Completely power-failure safe. Desktop notification when updates are available.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  Shanios uses <strong>blue-green deployment architecture</strong> with two complete system images (@blue and @green) implemented as Btrfs subvolumes. While you use one image, updates install to the other. After verification, a simple reboot switches to the updated image atomically.
-                </p>
-                <p>
-                  The custom <strong>shani-deploy tool</strong> orchestrates the entire process—downloading verified images, applying configurations via overlays, generating new unified kernel images, updating the bootloader, and validating everything before switching. Updates are applied to the inactive system copy, meaning your current working environment is never at risk.
-                </p>
-                <p>
-                  This dual-image design eliminates mid-update failures entirely. If verification fails, the update never applies. Your active system remains untouched and fully functional throughout the entire update process. This brings datacenter-grade reliability to the desktop.
-                </p>
+                <p><strong>shani-deploy</strong> prepares the inactive slot: downloads the image with multi-connection resume support, verifies SHA256 + GPG signature, snapshots the candidate first, extracts the new image, generates a Unified Kernel Image (UKI), and updates systemd-boot.</p>
+                <p>The old candidate is deleted only <em>after</em> extraction succeeds. <code>systemd-inhibit</code> blocks sleep and shutdown for the duration. A power cut mid-update leaves your current system completely untouched.</p>
+                <p>Two channels: <strong>stable</strong> (default, tested and validated builds — new images released approximately monthly) and <strong>latest</strong> (newest available image, released more frequently, closer to cutting edge). Switch with <code>-t latest</code>. <strong>shani-deploy updates itself</strong> from GitHub before every run — improvements reach you automatically.</p>
+                <p><strong>Desktop update notifications</strong> — when a new image is available, you get a GUI notification on your desktop. No need to remember to check; you decide when to run the update.</p>
+                <p><strong>Deployment pending flag</strong> — prevents data loss on power failure mid-update. If deployment was interrupted, the flag is detected on next boot and the update is safely resumed or cleaned up before the system reaches your desktop.</p>
+                <p><strong>Always recoverable:</strong> your previous OS slot stays intact after every update. If the new slot doesn't work for you, <code>sudo shani-deploy --rollback</code> restores it — no recovery media, no reinstall.</p>
+                <p>Background deduplication via <code>beesd</code> ensures shared data between @blue and @green is stored only once — keeping two system copies costs far less than double the space. See Performance &amp; Storage Efficiency for full details.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -140,24 +513,18 @@
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-layer-group feature-icon"></i>
-              <h3>Intelligent Layering System</h3>
-              <p class="feature-snippet">
-                Sophisticated architecture balancing immutability and flexibility. Read-only root with smart overlays for configuration persistence.
-              </p>
+              <h3>Immutable Root, Flexible You</h3>
+              <p class="feature-snippet">The core OS is read-only so it stays exactly as shipped. Your config, files, and services live separately and are yours to change freely — and they survive every OS update.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Immutable system core:</strong> Root filesystem (/) mounted read-only, preventing system corruption, malware modifications, and configuration drift while maintaining maximum performance. The system partition ensures absolute stability.
-                </p>
-                <p>
-                  <strong>/etc as overlay filesystem:</strong> Persistent configuration changes without breaking immutability. <strong>/var managed with systemd.volatile=state</strong> for optimized state management. <strong>User applications via Flatpak</strong> for complete isolation. <strong>Mutable /home</strong> for user data and configurations.
-                </p>
-                <p>
-                  This sophisticated architecture provides the perfect balance of immutability and flexibility, allowing necessary customization while keeping the core system protected and reliable.
-                </p>
+                <p><strong>Immutable root (<code>/</code>)</strong> — mounted read-only at runtime. Even a process running as root cannot modify core system files during a live session. The system that passed QA is the system that runs.</p>
+                <p><strong><code>/etc</code> as OverlayFS</strong> — your config changes live in <code>@data/overlay/etc/upper</code>, layered over the read-only root. Changes survive updates and slot switches.</p>
+                <p><strong>Services you enable persist.</strong> At boot, overlays mount first, then <code>systemd daemon-reload</code> runs — so any unit you've enabled via <code>systemctl enable</code> survives every OS update exactly as expected.</p>
+                <p><strong><code>/home</code> and <code>/root</code></strong> live in dedicated Btrfs subvolumes — fully writable, shared between both OS images, unaffected by updates or rollbacks.</p>
+                <p><strong>Selective <code>/var</code> management</strong> — transient runtime state is cleared on reboot to reduce unnecessary writes and extend SSD lifespan. Important persistent state (NetworkManager, Bluetooth, printers, audio, Tailscale, fingerprint, TPM2 data, colord profiles) is preserved via bind mounts from <code>@data</code> and survives reboots unchanged.</p>
+                <p><strong><code>@nix</code> subvolume</strong> — the Nix store is shared between both OS slots. Nix packages survive both updates and rollbacks, with no re-download required after switching slots.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -166,80 +533,141 @@
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-undo feature-icon"></i>
-              <h3>Instant Recovery & Zero Downtime</h3>
-              <p class="feature-snippet">
-                Rollback in under a minute. System updates happen in the background. If anything goes wrong, reboot to instantly return to your previous working state.
-              </p>
+              <h3>Your Always-Available Fallback</h3>
+              <p class="feature-snippet">Kernel panic. Bad driver. Ransomware attempt. Your previous verified system is one reboot away. No recovery media. No reinstall. No planning required. Boot failure triggers automatic rollback.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  Both system images (blue and green) remain intact and bootable at all times. If anything goes wrong after an update, select the previous image from the boot menu. The switch is instant—rollback completes in under a minute, just a reboot away.
-                </p>
-                <p>
-                  <strong>Zero downtime updates:</strong> System updates happen in the background on the inactive partition. Reboot to switch partitions, and if anything goes wrong, reboot again to instantly return to your previous working state. No interruption to your workflow.
-                </p>
-                <p>
-                  Your personal files, settings, and applications persist across both images using shared storage. Only the system core rolls back, giving you the best of both worlds: instant recovery without losing your work or data.
-                </p>
+                <p>Before writing to the inactive slot, shani-deploy snapshots it as <code>@{slot}_backup_{timestamp}</code>. If the update fails at any point, an emergency rollback restores the candidate automatically.</p>
+                <p><strong>Automatic boot failure detection</strong> — a boot-counting pipeline (mark-boot-in-progress → bless-boot → mark-boot-success → check-boot-failure → startup-check dialog) detects if a new slot fails to boot successfully. If the new slot can't boot, systemd-boot automatically reverts to the previous slot — without requiring any user action or recovery media.</p>
+                <p>Manual rollback: <code>sudo shani-deploy --rollback</code> from the slot you want to keep. Detects your active slot, restores the other from its latest snapshot, regenerates its UKI, and updates boot entries — without touching your running system.</p>
+                <p><strong>For OEM:</strong> rollback never requires reimaging. The previous slot is always in the systemd-boot menu — no recovery media, no dispatch.</p>
+                <p>Your <code>/home</code>, apps, containers, and <code>/etc</code> config live in separate subvolumes — OS rollback never touches them.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
-        <!-- SYSTEM FOUNDATION -->
+        <!-- GROUP: SECURITY & PRIVACY — 3 cards -->
+        <h3 class="group-title">Security &amp; Privacy</h3>
+        <div class="feature-grid">
+
+          <article class="feature-card accent-green">
+            <div class="feature-card-front">
+              <i class="fas fa-shield-alt feature-icon"></i>
+              <h3>Defence-in-Depth Security Stack</h3>
+              <p class="feature-snippet">6 Linux Security Modules simultaneously (Landlock, Lockdown, Yama, Integrity, AppArmor, BPF), LUKS2 argon2id, TPM2 auto-unlock, Secure Boot, Intel ME disabled, firewalld — all on by default. No manual setup.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p><strong>Immutable root</strong> — even root cannot modify core OS files at runtime, limiting the blast radius of malware and misconfiguration. Full details in the Core Architecture section.</p>
+                <p><strong>6 Linux Security Modules active simultaneously</strong> — Shanios sets <code>lsm=landlock,lockdown,yama,integrity,apparmor,bpf</code> in the kernel command line. Most Linux distributions enable one or two; Shanios runs all of them concurrently:
+                  <br>• <strong>AppArmor</strong> — mandatory access control, confines processes to files and capabilities they legitimately need
+                  <br>• <strong>Landlock</strong> — filesystem sandboxing at the process level
+                  <br>• <strong>Lockdown</strong> — restricts the kernel from modifications even by root
+                  <br>• <strong>Yama</strong> — restricts ptrace scope and other process tracing
+                  <br>• <strong>Integrity (IMA/EVM)</strong> — runtime file integrity measurement
+                  <br>• <strong>BPF LSM</strong> — eBPF-based policy hooks for dynamic security enforcement
+                </p>
+                <p><strong>LUKS2 with argon2id</strong> — full-disk encryption with a modern memory-hard key derivation function. Argon2id is specifically designed to resist GPU and ASIC brute-force attacks. Optional at install, strongly recommended for laptops.</p>
+                <p><strong>TPM2 auto-unlock</strong> — sealed LUKS keys tied to PCR (Platform Configuration Register) state. The disk unlocks automatically on trusted hardware without requiring a passphrase at every boot, while remaining locked against physical disk removal or hardware tampering. TPM data persists across blue/green slot switches.</p>
+                <p><strong>Secure Boot</strong> via <code>shim-signed</code>, <code>sbctl</code>, <code>mokutil</code> — verifies bootloader and kernel haven't been tampered with before the system starts.</p>
+                <p><strong>Intel ME disabled</strong> — the Intel Management Engine kernel modules (<code>mei</code>, <code>mei_me</code>) are blacklisted by default, removing Intel's remote management interface from the attack surface. This is a genuine privacy and security differentiator that most distributions do not do.</p>
+                <p><strong>firewalld</strong> — active from first boot. Zone-based firewall blocking all unsolicited inbound connections.</p>
+                <p><strong>Flatpak sandboxing</strong> — user apps get only the permissions they explicitly declare. No silent access to your home directory or system services.</p>
+                <p><strong>Hardware security keys &amp; smart cards</strong> — FIDO2/U2F keys (libfido2), smart cards (opensc, ccid), and NFC (libnfc) all work out of the box. Use a YubiKey or similar for login and sudo authentication without any setup.</p>
+                <p><strong>fwupd via LVFS</strong> — keeps BIOS, NVMe, and peripheral firmware current. Outdated firmware is a major attack vector. Full details in the Hardware Support card.</p>
+                <p><em>No OS eliminates all risk. Network threats, zero-days in running services, and social engineering are outside what OS architecture alone can solve.</em></p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+
+          <article class="feature-card accent-blue">
+            <div class="feature-card-front">
+              <i class="fas fa-user-secret feature-icon"></i>
+              <h3>Zero Telemetry. Zero Ads.</h3>
+              <p class="feature-snippet">Shanios collects no usage data, sends no telemetry, and shows no advertising — ever. Intel ME disabled by default. Your machine is yours. No opt-outs required, nothing phoning home in the background.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>Many operating systems — including some Linux distributions — include opt-out telemetry, crash reporters, or usage analytics that run by default. Shanios has none of this.</p>
+                <p>No background services report your hardware, software usage, or system behaviour to any server. No identifiers are generated or transmitted. No crash data is collected without your explicit action.</p>
+                <p><strong>Intel ME disabled</strong> — the Intel Management Engine modules (<code>mei</code>, <code>mei_me</code>) are blacklisted, removing the low-level hardware management channel that operates independently of the OS. See the Security card for full details.</p>
+                <p>The update tool (<strong>shani-deploy</strong>) connects to download servers to fetch images — but sends only what any standard HTTP download requires. No system fingerprints, hardware IDs, or usage statistics are transmitted.</p>
+                <p>Because the entire codebase is <a href="https://github.com/shani8dev" target="_blank" rel="noopener">public on GitHub</a>, these claims are verifiable. You can read every script that runs on your system. No black box, no trust-us.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-lock feature-icon"></i>
+              <h3>Supply Chain Integrity</h3>
+              <p class="feature-snippet">Every image is SHA256 + GPG verified before deployment. The build system and deploy toolchain are public on GitHub, and the public GPG key is on public keyservers. Audit the entire chain of trust yourself — no black box, no trust required.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p>Supply chain attacks — where malicious code is injected between a trusted source and the end user — are one of the most serious threats facing software today. Shanios's update model is designed with this in mind.</p>
+                <p>Every OS image is GPG-signed before distribution. Before shani-deploy extracts a new image, it verifies both the SHA256 checksum and the GPG signature. A tampered or corrupted image is rejected outright — the update aborts, nothing changes.</p>
+                <p>The build system and deploy toolchain are public on GitHub. The public GPG verification key is on public keyservers. You can verify that the image you receive was produced by the published build process and signed by the correct key — without trusting any single party's word.</p>
+                <p>Downloads come from the primary R2 server (<code>downloads.shani.dev</code>) with multi-connection resume support. If R2 is unavailable, the script automatically discovers a SourceForge mirror.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- GROUP: SYSTEM FOUNDATION — 3 cards -->
         <h3 class="group-title">System Foundation</h3>
         <div class="feature-grid">
+
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-server feature-icon"></i>
-              <h3>Arch Linux Foundation</h3>
-              <p class="feature-snippet">
-                Built on Arch Linux with bleeding-edge software, cutting-edge tools and libraries, combined with image-based stability traditional distributions can't match.
-              </p>
+              <h3>Arch Linux Rolling Base</h3>
+              <p class="feature-snippet">Always-current software, latest kernels, newest compiler toolchains — with immutable deployment providing the stability that rolling release normally sacrifices. Zsh + Starship + McFly neural-network shell history pre-configured.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Arch Linux default kernel</strong> for maximum stability and hardware compatibility. Access to the latest software and libraries through Arch's rolling release model, but with the safety of immutable deployment.
-                </p>
-                <p>
-                  <strong>Developer friendly:</strong> Cutting-edge tools and libraries from Arch repositories, combined with image-based system stability that traditional package-managed distributions can't match. Get the best of both worlds—newest software with bulletproof reliability.
-                </p>
-                <p>
-                  The comprehensive container support makes it perfect for multi-distribution development workflows, allowing developers to work in any environment they need without compromising the host system.
-                </p>
+                <p>Shanios runs the <strong>Arch Linux default kernel</strong> for broad hardware compatibility and up-to-date driver support. The Arch ecosystem delivers the newest compilers, runtimes, and developer tools without a fixed release cycle — new drivers and kernels land before any fixed-release distro, without the manual maintenance Arch normally requires.</p>
+                <p>The immutable deployment layer gives rolling-release updates a verification step before they touch your active system — significantly reducing the chance a broken upgrade reaches your running OS.</p>
+                <p><strong>Default shell is Zsh with Starship prompt</strong> — a fast, informative terminal prompt that shows git branch, exit codes, and environment context at a glance. Fish and Bash are also available.</p>
+                <p><strong>McFly</strong> replaces standard shell history search with a neural network — see the CLI &amp; Developer Toolchain card for full details.</p>
+                <p>Pre-configured runtimes with isolated Btrfs subvolumes: Podman, Distrobox, LXC, LXD, Flatpak, Snap, Nix, Apptainer — each isolated, each persistent across OS updates.</p>
+                <p><strong>Avahi</strong> active by default — machine reachable as <code>hostname.local</code> from first boot. See Networking for details.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card accent-orange">
             <div class="feature-card-front">
               <i class="fas fa-tachometer-alt feature-icon"></i>
-              <h3>Battle-Tested Optimizations</h3>
-              <p class="feature-snippet">
-                Advanced performance optimizations that squeeze every drop of performance from your hardware. Years of Linux optimization experience built in.
-              </p>
+              <h3>Performance &amp; Storage Efficiency</h3>
+              <p class="feature-snippet">Btrfs zstd compression (30–50% disk savings), Profile Sync Daemon (browser from RAM), zram swap, low-latency scheduler, MGLRU memory reclaim, continuous deduplication — two OS slots cost far less than you'd expect.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Filesystem optimizations:</strong> Btrfs with zstd compression for optimal storage efficiency and speed. Intelligent subvolume management for snapshots and rollbacks without performance penalty.
-                </p>
-                <p>
-                  <strong>Memory management tweaks:</strong> zram for compressed swap in RAM, transparent hugepages for reduced memory overhead. <strong>Custom-configured schedulers</strong> and <strong>I/O optimizations</strong> for responsive multitasking and low latency.
-                </p>
-                <p>
-                  <strong>Gaming optimizations:</strong> Pre-configured with custom kernel parameters for low latency, proper Vulkan/OpenGL setup, and system-wide performance tuning that benefits both work and play.
-                </p>
+                <p><strong>Btrfs with zstd compression</strong> — typically reduces disk usage by 30–50% on all subvolumes including OS images. Fast decompression at read time means no perceptible performance penalty. The dual-image architecture adds significantly less overhead than double the space, thanks to Btrfs zstd compression and continuous deduplication via beesd.</p>
+                <p><strong>Profile Sync Daemon (psd)</strong> — browser profiles (Chrome, Firefox, Vivaldi, and others) run from RAM rather than disk. Web pages open faster, history loads instantly, and SSD write wear from day-to-day browsing is substantially reduced. Changes are synced back to persistent storage periodically and on shutdown.</p>
+                <p><strong>zram compressed swap</strong> — keeps the system responsive under memory pressure without touching the SSD. Compressed RAM swap is faster than disk swap by several orders of magnitude.</p>
+                <p><strong>beesd deduplication</strong> runs as a systemd service, continuously deduplicating the entire <code>shani_root</code> filesystem. Shared data between @blue and @green is stored only once on disk.</p>
+                <p><strong>MGLRU (Multi-Generational LRU)</strong> — enabled with aggressive settings. The kernel's improved page reclaim algorithm makes better decisions about which memory pages to evict under pressure, significantly reducing stutter and swap thrashing on memory-constrained systems.</p>
+                <p><strong>Volatile <code>/var</code></strong> — runtime state not worth preserving is cleared on reboot, reducing unnecessary disk writes. Important state is preserved via bind mounts from <code>@data</code> (see Immutable Root card for details).</p>
+                <p><strong>CPU + I/O schedulers</strong> tuned for low-latency multitasking. Transparent hugepages (set to <code>madvise</code>) reduce memory management overhead for workloads that benefit from them without forcing it on all allocations.</p>
+                <p><strong>systemd-oomd</strong> — system-wide OOM daemon. Selectively terminates low-priority background processes under memory pressure, keeping your active work running instead of freezing the system.</p>
+                <p><strong>Automated Btrfs maintenance</strong> — monthly scrub (data integrity), periodic balance, defragmentation, and TRIM all run on systemd timers in the background. Your filesystem stays healthy without manual intervention.</p>
+                <p><strong>Hibernation support</strong> — a swapfile sized to your RAM is automatically created in a dedicated <code>@swap</code> Btrfs subvolume (Copy-on-Write disabled, as required for swap on Btrfs) during first deployment. Hibernate works out of the box on supported hardware — no manual setup required.</p>
+                <p><strong>systemd socket activation</strong> — services like CUPS, Avahi, GPS daemon, and SANE start on-demand when first accessed rather than at boot. Faster boot, lower idle resource usage.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -247,58 +675,49 @@
 
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-shield-alt feature-icon"></i>
-              <h3>Multi-Layered Security</h3>
-              <p class="feature-snippet">
-                Enterprise-grade security with hardened kernel, AppArmor profiles, firewall protection, and full-disk encryption. Immutable design prevents many attack vectors.
-              </p>
+              <i class="fas fa-microchip feature-icon"></i>
+              <h3>Hardware Support &amp; Firmware Updates</h3>
+              <p class="feature-snippet">Graphics, printers, scanners, Wi-Fi, Bluetooth, fingerprint, FIDO2 keys, smart cards, NFC, Thunderbolt, iOS — all pre-configured. Firmware updates via fwupdmgr/LVFS without Windows or USB drives.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Security layers:</strong> Immutable core prevents persistent malware, <strong>hardened kernel</strong> with security patches, <strong>AppArmor profiles</strong> for mandatory access control, <strong>firewalld configurations</strong> for network protection, optional <strong>LUKS full-disk encryption</strong>, and sandboxed applications via Flatpak.
-                </p>
-                <p>
-                  The read-only root filesystem prevents tampering. Even with administrative access, core files cannot be modified during operation. Both system images mount as read-only, preventing corruption and persistent malware attacks.
-                </p>
-                <p>
-                  Security updates apply safely and atomically with instant rollback capability. The immutable design inherently prevents many attack vectors that traditional distributions are vulnerable to. User data remains writable, ensuring both safety and flexibility.
-                </p>
+                <p><strong>Graphics:</strong> Intel, AMD, and NVIDIA drivers pre-installed and configured with full Vulkan support. All major Vulkan drivers included: Intel (ANV), AMD (RADV), NVIDIA open, nouveau, software (lavapipe), virtio-GPU, DirectX (dzn), and more. Works at first boot.</p>
+                <p><strong>Printers &amp; Scanners:</strong> CUPS with manufacturer-specific drivers, SANE for scanners with broad auto-detection support. Plug in and print.</p>
+                <p><strong>Firmware updates via LVFS:</strong> <code>fwupdmgr</code> is included and configured for the Linux Vendor Firmware Service. Update BIOS, NVMe firmware, SSD controllers, keyboard firmware, and other hardware supported by LVFS with <code>fwupdmgr update</code> — no manufacturer tools, no Windows, no USB boot drive required. Outdated firmware is a major security attack vector; Shanios makes keeping it current trivial.</p>
+                <p><strong>Fingerprint readers (fprintd)</strong> — biometric login and sudo authentication work at first boot on supported hardware. No setup required.</p>
+                <p><strong>FIDO2/U2F hardware keys (libfido2)</strong> — YubiKey and similar hardware security keys work for login, sudo, and web authentication without any configuration.</p>
+                <p><strong>Smart cards (opensc + ccid)</strong> and <strong>NFC (libnfc)</strong> — enterprise authentication methods work at first boot.</p>
+                <p><strong>Thunderbolt 3 (bolt authorization)</strong> — Thunderbolt device authorization is pre-configured. Connect Thunderbolt peripherals and docks without manual kernel parameter changes.</p>
+                <p><strong>iOS devices (usbmuxd)</strong> — iPhone and iPad file transfer and tethering work out of the box.</p>
+                <p><strong>5G modems (ModemManager)</strong> — mobile broadband connections via USB and PCIe modems are supported and managed through NetworkManager.</p>
+                <p><strong>Hybrid GPU laptops</strong> — nvidia-prime and switcheroo-control are pre-installed for systems with both integrated and discrete GPUs.</p>
+                <p><strong>Hardware groups automatic:</strong> every user account is automatically added to all relevant groups — containers, VMs, printing, scanning, and Nix all work without manual permission setup.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
-        <!-- DESKTOP EXPERIENCE -->
-        <h3 class="group-title">Desktop Experience</h3>
+        <!-- GROUP: DESKTOP & PRODUCTIVITY — 3 cards -->
+        <h3 class="group-title">Desktop &amp; Productivity</h3>
         <div class="feature-grid">
+
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-palette feature-icon"></i>
-              <h3>Choice of Desktop</h3>
-              <p class="feature-snippet">
-                GNOME or KDE Plasma—heavily optimized builds with custom theming, performance tweaks, and carefully curated applications. Choose your workflow before download.
-              </p>
+              <i class="fas fa-th-large feature-icon"></i>
+              <h3>GNOME Edition — Clean &amp; OEM-Ready</h3>
+              <p class="feature-snippet">Streamlined, distraction-free desktop for focused work and professional deployment. OEM Initial Setup wizard, Plymouth BGRT manufacturer logo, GNOME Boxes for VMs, Rygel DLNA media server. Both editions ship Vivaldi Browser + OnlyOffice.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>GNOME:</strong> Clean, distraction-free interface ideal for productivity, enterprise, and OEM deployments. Streamlined workflow with essential tools.
-                </p>
-                <p>
-                  <strong>KDE Plasma:</strong> Highly customizable desktop with advanced features for power users. Comes with Steam, Heroic Games Launcher (for Epic Games Store and GOG), and RetroArch (for retro gaming emulation) pre-installed and ready to play.
-                </p>
-                <p>
-                  Both editions support professional deployment with branding, custom configurations, and enterprise tooling. <strong>OEM Initial Setup:</strong> Professional OEM-style first-boot configuration experience that allows users to personalize their system (language, timezone, user accounts, preferences) on first launch, making Shanios perfect for pre-installed systems and enterprise deployment.
-                </p>
-                <p>
-                  Pre-configured applications, network settings, and security policies ensure systems are ready at scale and remain stable over time.
-                </p>
+                <p>A clean, distraction-free workflow built for productivity, business deployment, and OEM use. Streamlined application set, professional defaults.</p>
+                <p><strong>OEM Initial Setup wizard</strong> — first-boot experience that walks users through language, timezone, accounts, and preferences. Every device ships in an identical, known-good state. Pair with the immutable image model for fleet deployments with zero per-device configuration drift.</p>
+                <p><strong>Plymouth BGRT boot theme</strong> — the boot screen displays the device manufacturer's logo (from the UEFI BGRT table), then a clean password prompt for LUKS if encryption is enabled. Seamless firmware-to-desktop transition — no technical messages, no blank screens. Ideal for OEM deployments where brand consistency matters.</p>
+                <p><strong>GNOME Boxes</strong> (pre-installed as Flatpak) — clean, minimal VM manager. VM disk images are sandboxed and unaffected by OS updates or rollbacks.</p>
+                <p><strong>Rygel DLNA/UPnP media server</strong> — stream media from your GNOME desktop to TVs and other DLNA-capable devices on your local network.</p>
+                <p><em>Both editions include: Vivaldi Browser, OnlyOffice, OEM Initial Setup wizard, Waydroid, all security features, and the full container/networking stack.</em></p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -306,28 +725,20 @@
 
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-desktop feature-icon"></i>
-              <h3>Everything Just Works</h3>
-              <p class="feature-snippet">
-                Complete hardware support from first boot. No hunting for drivers—printers, scanners, graphics, networking, and peripherals work immediately.
-              </p>
+              <i class="fas fa-sliders-h feature-icon"></i>
+              <h3>KDE Plasma Edition — Power &amp; Gaming</h3>
+              <p class="feature-snippet">Deeply customizable desktop with the full gaming stack pre-installed. virt-manager + QEMU extension, BoxBuddy GUI, Pods GUI, Bottles. Kernel tuned for gaming with 3072 Hz timers and GameMode globally active. Both editions ship Vivaldi Browser + OnlyOffice.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Graphics:</strong> Intel, AMD, and NVIDIA open drivers pre-installed with proper Vulkan/OpenGL configuration for optimal performance and compatibility.
-                </p>
-                <p>
-                  <strong>Printers & Scanners:</strong> Complete printer driver support with CUPS and manufacturer-specific drivers. Scanner support via SANE with auto-detection. Just plug in and print or scan.
-                </p>
-                <p>
-                  <strong>Peripherals:</strong> Audio, video, GPS, fingerprint readers, game controllers, consoles, batteries, and UPS—all peripheral drivers pre-configured and ready to use.
-                </p>
-                <p>
-                  <strong>Connectivity:</strong> Wi-Fi, Bluetooth, and network tools fully configured for immediate use. No manual driver installation required.
-                </p>
+                <p>A deeply customizable desktop for power users. Panels, themes, shortcuts, widgets — tune everything without touching the immutable OS.</p>
+                <p><strong>Full gaming stack pre-installed:</strong> Steam with Proton,Heroic Games Launcher (for Epic Games Store, GOG and Amazon Games), RetroArch, Bottles for Windows titles, MangoHud, GameScope, vkBasalt.</p>
+                <p><strong>Kernel gaming optimisations:</strong> HPET/RTC timers at 3072 Hz, custom CFS scheduler slices (3000 μs), expanded PID limits, memory maps, inotify watches. <strong>GameMode</strong> switches the CPU governor to performance on every game launch globally. Full details in the Gaming Performance card.</p>
+                <p><strong>Ananicy-cpp</strong> background process priority manager — automatically deprioritises background tasks the moment a game goes active. See Gaming Performance for full details.</p>
+                <p><strong>virt-manager + QEMU extension</strong> (Flatpak) — full VM lifecycle: networking, snapshots, storage pools, hardware passthrough. No system-level libvirt packages needed.</p>
+                <p><strong>Bottles</strong> for Windows app compatibility. <strong>BoxBuddy GUI</strong> for Distrobox. <strong>Pods GUI</strong> for Podman.</p>
+                <p><em>Both editions include: Vivaldi Browser, OnlyOffice, OEM Initial Setup wizard, Waydroid, all security features, and the full container/networking stack.</em></p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -337,53 +748,38 @@
             <div class="feature-card-front">
               <i class="fas fa-globe feature-icon"></i>
               <h3>True Internationalization</h3>
-              <p class="feature-snippet">
-                Comprehensive font support for global users. Indian language fonts, CJK (Chinese, Japanese, Korean), emojis, and IBus input method pre-configured.
-              </p>
+              <p class="feature-snippet">Indian scripts (Devanagari, Tamil, Telugu + more), full CJK, emoji, and IBus multi-language input — all pre-configured. Designed in from day one, not bolted on.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Comprehensive font support:</strong> Indian language fonts for Devanagari, Tamil, Telugu, and more. Complete CJK (Chinese, Japanese, Korean) font coverage for proper text rendering. Full emoji support for modern communication.
-                </p>
-                <p>
-                  <strong>IBus as default input method:</strong> Seamless multilingual input with support for dozens of languages and input methods. Switch between languages effortlessly while typing.
-                </p>
-                <p>
-                  <strong>Accessibility & Language Support:</strong> Screen readers, multiple input languages, proper text rendering across all supported scripts. Shanios is ready for users worldwide, ensuring diverse linguistic needs are met from day one.
-                </p>
+                <p><strong>Font coverage:</strong> Indian scripts (Devanagari, Tamil, Telugu, and more), full CJK (Chinese, Japanese, Korean) rendering, complete emoji support — every script renders correctly without hunting for font packages.</p>
+                <p><strong>IBus</strong> is the default input method — seamless switching between dozens of languages and input methods while typing. Localized layouts and screen reader support included.</p>
+                <p>Indian language support is designed in from the start, not added as an afterthought. This is an intentional focus of the project, reflecting its origin in India — where users shouldn't have to do extra work to use their native scripts on their OS.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
-        <!-- PRODUCTIVITY & APPLICATIONS -->
-        <h3 class="group-title">Productivity & Applications</h3>
+        <!-- GROUP: GAMING — 3 cards -->
+        <h3 class="group-title">Gaming</h3>
+        <p class="group-note">All gaming tools on the KDE Plasma edition. The same immutable reliability means an OS update gone wrong never interrupts your gaming — rollback in one reboot. Kernel tuned with 3072 Hz timers, custom CFS slices, and expanded system limits for competitive gaming responsiveness.</p>
         <div class="feature-grid">
+
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-briefcase feature-icon"></i>
-              <h3>Productivity Suite Included</h3>
-              <p class="feature-snippet">
-                Vivaldi Browser, OnlyOffice, and essential productivity tools pre-installed. Start working immediately without hunting for software.
-              </p>
+              <i class="fas fa-gamepad feature-icon"></i>
+              <h3>Gaming Platforms</h3>
+              <p class="feature-snippet">Steam + Proton, Heroic (Epic, GOG &amp; Amazon), RetroArch, Bottles for Windows titles — all pre-installed on KDE Plasma. Start playing from first boot. Android games via Waydroid are covered in the App Ecosystem section.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Apps Included:</strong> Vivaldi Browser for web browsing with advanced features and privacy controls. OnlyOffice for full-featured document editing compatible with Microsoft Office formats. Essential productivity tools ready from first boot.
-                </p>
-                <p>
-                  <strong>Professional workflow:</strong> Pre-configured applications and tools for immediate productivity. No time wasted on setup—everything you need to work is already installed and configured.
-                </p>
-                <p>
-                  Everything works out-of-the-box so you can start using your system immediately—no setup required. Focus on your work, not on configuring your operating system.
-                </p>
+                <p><strong>Steam with Proton</strong> — play your Linux and Windows game library through Valve's compatibility layer. Pre-installed and configured.</p>
+                <p><strong>Heroic Games Launcher</strong> — access Epic Games Store, GOG, and Amazon Games libraries on Linux. Pre-installed.</p>
+                <p><strong>RetroArch</strong> — emulate classic systems from NES to PlayStation. Pre-installed with cores ready to download.</p>
+                <p><strong>Bottles</strong> — Windows app and game compatibility via Wine, with per-app prefixes, DXVK, VKD3D, esync/fsync, and snapshots. Installed as a Flatpak, fully sandboxed.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -391,25 +787,81 @@
 
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-box-open feature-icon"></i>
-              <h3>Flatpak & AppImage</h3>
-              <p class="feature-snippet">
-                Install applications via Flatpak (sandboxed) or AppImage (portable). Neither can compromise the immutable core. Install, remove, experiment freely.
-              </p>
+              <i class="fas fa-chart-line feature-icon"></i>
+              <h3>Gaming Performance Tools</h3>
+              <p class="feature-snippet">MangoHud + GOverlay, vkBasalt, GameScope (VRR/HDR), GameMode globally active, Ananicy-cpp background process manager, low-latency kernel tuning with 3072 Hz timers. All included, all pre-configured.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Flatpak</strong> provides sandboxed applications with controlled permissions—apps cannot modify system files. Complete isolation ensures security while maintaining functionality.
-                </p>
-                <p>
-                  <strong>Gear Lever</strong> manages AppImages with automatic desktop integration. Portable applications that run without installation, perfect for trying new software without system changes.
-                </p>
-                <p>
-                  This separation between OS and applications is fundamental to Shanios's reliability. Install, remove, experiment—your system core stays perfect. No dependency conflicts, no system bloat, no breakage.
-                </p>
+                <p><strong>Kernel gaming tuning</strong> — HPET and RTC hardware timers set to 3072 Hz (default is 64 Hz). This dramatically reduces input latency and frame timing jitter — a meaningful competitive advantage in fast-paced games. CFS scheduler time slices (3000 μs), expanded PID limits, memory maps, and inotify watches are all configured for gaming workloads.</p>
+                <p><strong>MangoHud + GOverlay</strong> — overlay your FPS, GPU/CPU temps, VRAM usage, and frame times in-game. GOverlay gives you a GUI to manage MangoHud and vkBasalt profiles.</p>
+                <p><strong>vkBasalt</strong> — Vulkan post-processing layer. Apply sharpening (CAS, DLS), FXAA, or SMAA to any Vulkan game without modifying the game.</p>
+                <p><strong>GameScope</strong> — Valve's micro-compositor. Improves frame pacing and frame limiting. Supports adaptive sync (VRR/FreeSync) and HDR output — HDR support is experimental, works best on AMD.</p>
+                <p><strong>GameMode</strong> — Feral's GameMode daemon runs globally. When a game launches, it switches the CPU governor to performance, raises process priority, and adjusts I/O scheduling. Works with Steam, Heroic, Lutris, and any launcher that supports it — no per-game setup required.</p>
+                <p><strong>Ananicy-cpp</strong> — background process priority manager running at all times. The moment a game goes active, background tasks are automatically deprioritised. Your foreground stays smooth without manual nice/renice commands.</p>
+                <p><strong>NVIDIA, AMD, Intel drivers</strong> pre-installed with Vulkan and OpenGL configured. Vulkan validation tools and Mesa utils included.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-keyboard feature-icon"></i>
+              <h3>Gaming Peripherals</h3>
+              <p class="feature-snippet">Racing wheels (Logitech G-series, Thrustmaster, Fanatec) with force feedback, VR headsets (HTC Vive, Valve Index, PSVR), Piper for gaming mice, OpenRGB, AntiMicroX — all pre-configured, all working at first boot.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p><strong>Racing wheels with force feedback</strong> — Logitech wheels (G25, G27, G29, G920, G923, G PRO and more) are fully supported via in-kernel modules. Thrustmaster (T150, T300RS, T500RS, T248) and Fanatec wheels have udev rules and deadzone removal pre-configured. Force feedback works at first boot — plug in and race.</p>
+                <p><strong>Flight sticks &amp; HOTAS</strong> — Oversteer supports flight sticks and HOTAS controllers. Configure axis curves, deadzones, and force feedback profiles through a clean GUI.</p>
+                <p><strong>VR headsets</strong> — udev rules for HTC Vive, PlayStation VR, and Valve Index / SteamVR devices are pre-configured. Hardware access is available from first boot. VR is ready for SteamVR without additional setup.</p>
+                <p><strong>Piper + libratbag</strong> — configure gaming mice (DPI profiles, buttons, macros, LEDs) via a clean GTK interface. Works with all libratbag-supported mice — Logitech G-series, Razer, SteelSeries, Roccat, and many more.</p>
+                <p><strong>AntiMicroX</strong> — map controller buttons and axes to keyboard/mouse inputs. Essential for games that don't natively support controllers, and useful as an accessibility tool.</p>
+                <p><strong>OpenRGB</strong> — control RGB lighting across motherboards, RAM, fans, keyboards, mice, and peripherals. Vendor-neutral, no manufacturer software required.</p>
+                <p>All hardware groups (<code>input</code>, <code>realtime</code>, <code>video</code>) are pre-configured so controllers and peripherals work immediately — no permission issues.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- GROUP: APP ECOSYSTEM — 3 cards -->
+        <h3 class="group-title">Application Ecosystem</h3>
+        <p class="group-note">Multiple ways to install software — all isolated from the OS core, all persisting in their own dedicated subvolumes. An OS update or rollback never breaks your installed apps.</p>
+        <div class="feature-grid">
+
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-box-open feature-icon"></i>
+              <h3>Flatpak &amp; Snap</h3>
+              <p class="feature-snippet">Thousands of sandboxed apps from Flathub and the Snap Store — both isolated in their own Btrfs subvolumes, both surviving every OS update. Flatpak auto-updates every 12 hours.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p><strong>Flatpak</strong> — sandboxed apps with controlled permissions. Install from Flathub — the largest curated Linux app store. Apps live in a dedicated <code>@flatpak</code> Btrfs subvolume shared between both OS slots. <strong>Auto-updates every 12 hours</strong> via two independent timers (system-level and per-user), including unused runtime cleanup and automatic repair. Update manually: <code>flatpak update</code></p>
+                <p><strong>Snap</strong> — snapd included and auto-enabled, backed by its own <code>@snapd</code> subvolume. Full Snap Store library alongside Flathub. Update: <code>snap refresh</code></p>
+                <p>Both keep OS and apps in completely separate layers — an OS update or rollback never affects your installed software.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-file-archive feature-icon"></i>
+              <h3>Nix &amp; AppImage</h3>
+              <p class="feature-snippet">Nix for reproducible, conflict-free environments — packages survive OS updates via the shared <code>@nix</code> subvolume. AppImages are self-contained portable executables that run directly without installation; Gear Lever is an optional GUI to manage them. Both persist across OS updates and rollbacks.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p><strong>Nix</strong> — reproducible package manager with daemon auto-enabled at boot. Isolates by environment rather than sandboxing — apps share no conflicting dependencies. The Nix store lives in a dedicated <code>@nix</code> subvolume <strong>shared between both OS slots</strong>. This means your Nix packages survive both updates and rollbacks — no re-download when switching slots. Update: <code>nix-env -u</code> or <code>nix flake update</code></p>
+                <p><strong>AppImages</strong> are self-contained portable executables — every dependency is bundled inside a single file. No package manager, no installation, no modifications to the immutable OS root. Just download and run directly.</p>
+                <p><strong>Gear Lever</strong> is an optional GUI for managing AppImages — it is not required to use them. Use it to add desktop shortcuts, set launch-at-login, track updates, and remove AppImages cleanly. AppImage state is stored in a dedicated persistent bind-mount, surviving every OS update and rollback.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -418,194 +870,106 @@
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-mobile-alt feature-icon"></i>
-              <h3>Android Apps & Windows Compatibility</h3>
-              <p class="feature-snippet">
-                Run Android applications with Waydroid (full hardware acceleration) and Windows apps with Bottles. Mobile development, testing, or daily use—all supported.
-              </p>
+              <h3>Android &amp; Windows Apps</h3>
+              <p class="feature-snippet">Run Android apps natively with Waydroid (hardware-accelerated on Intel/AMD, service enabled at boot, ARM translation included) or Windows apps through Bottles — available on both editions, both persistent across updates.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Waydroid:</strong> Run Android applications directly using containerization with full hardware acceleration—no emulation overhead. Desktop integration and Google Play Store access (after setup) for thousands of Android apps.
-                </p>
-                <p>
-                  Perfect for mobile development, testing, or accessing Android-exclusive apps while maintaining system immutability. Native performance with complete isolation from the host system.
-                </p>
-                <p>
-                  <strong>Bottles:</strong> Advanced Windows application compatibility layer using Wine. Run Windows applications and games with easy prefix management, dependency installation, and per-application configurations in sandboxed environments.
-                </p>
-                <p>
-                  Supports DXVK, VKD3D, esync/fsync, and snapshots. Installed via Flatpak, Bottles runs completely sandboxed, ensuring Windows apps never affect the immutable system core. Each bottle is isolated for maximum stability.
-                </p>
+                <p><strong>Waydroid</strong> — full Android container available on both GNOME and KDE editions. Hardware-accelerated on Intel and AMD GPUs; NVIDIA GPUs use software rendering. Service enabled at boot. System images and user data in a dedicated <code>@waydroid</code> Btrfs subvolume, preserved across OS switches. ARM translation included via the pre-installed waydroid-helper — run ARM-only Android apps without needing a compatible device.</p>
+                <p><strong>For Android developers:</strong> Waydroid is a full, hardware-accelerated Android stack — not a slow AVD. Test your apps on real hardware-accelerated Android without a separate device.</p>
+                <p><strong>Bottles</strong> — Windows application compatibility via Wine, per-app prefix management, DXVK, VKD3D, esync/fsync, and snapshots. Installed as a Flatpak — Windows apps isolated from the system and from each other. Available on both editions.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
-        <!-- GAMING, DEVELOPMENT & CONTAINERS -->
-        <h3 class="group-title">Gaming, Development & Containers</h3>
+        <!-- GROUP: CONTAINERS & VMs — 3 cards -->
+        <h3 class="group-title">Containers &amp; Virtualization</h3>
+        <p class="group-note">All container and VM storage in dedicated Btrfs subvolumes — completely separate from the OS. Updates and rollbacks never touch your containers or VMs.</p>
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-card-front">
-              <i class="fas fa-gamepad feature-icon"></i>
-              <h3>Complete Gaming Setup</h3>
-              <p class="feature-snippet">
-                Pre-configured gaming optimizations with Steam, Heroic, Bottles, and RetroArch. Performance tools like MangoHud and GameScope included for the best experience.
-              </p>
-              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            </div>
-            
-            <div class="feature-card-back">
-              <div class="feature-details">
-                <p>
-                  <strong>Gaming Platforms (KDE Plasma):</strong> Steam for native Linux and Windows games via Proton. Heroic Games Launcher for Epic Games Store and GOG titles. Bottles for Windows applications and games. RetroArch for retro gaming emulation—all pre-installed and ready to play.
-                </p>
-                <p>
-                  <strong>Gaming Peripherals:</strong> Configure racing wheels and flight sticks with Oversteer, remap controllers with AntiMicroX, and customize RGB lighting with OpenRGB and Piper—all included out of the box.
-                </p>
-                <p>
-                  <strong>Performance Tools:</strong> Monitor FPS and system stats with MangoHud and GOverlay, optimize visuals with vkBasalt post-processing, and run games in GameScope for better frame pacing and HDR support.
-                </p>
-                <p>
-                  <strong>Optimized for gaming:</strong> Custom kernel parameters for low latency, proper graphics driver setup, and system-wide performance tuning ensure responsive performance, smooth multitasking, and lag-free gameplay.
-                </p>
-              </div>
-              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
-            </div>
-          </article>
 
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-cubes feature-icon"></i>
-              <h3>Professional Container Technologies</h3>
-              <p class="feature-snippet">
-                Comprehensive container support: Podman, LXC, systemd-nspawn, Distrobox with BoxBuddy GUI. Run any Linux distribution safely.
-              </p>
+              <h3>Dev Containers — Distrobox &amp; Podman</h3>
+              <p class="feature-snippet">Distrobox + BoxBuddy GUI, Podman + Pods GUI, systemd-nspawn — run any distro's toolchain without touching the host. Every container survives every OS update. Rootless by default.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  <strong>Podman with pods GUI:</strong> Docker-compatible, rootless container runtime for application containers. Run containerized apps without root privileges or compromising security.<strong>Pods:</strong> GUI for easy container management.
-                </p>
-                <p>
-                  <strong>LXC:</strong> System containers for running complete Linux distributions. <strong>systemd-nspawn:</strong> Lightweight containerization for isolated environments. 
-                </p>
-                <p>
-                  <strong>Distrobox with BoxBuddy GUI:</strong> Desktop-integrated container environments with an intuitive graphical interface. Run any Linux distribution, access distribution-specific software, or create isolated development environments without compromising the immutable host.
-                </p>
-                <p>
-                  Perfect for developers needing multiple distribution environments, testing software, or accessing packages not available as Flatpaks. Complete isolation keeps your system safe.
-                </p>
+                <p><strong>Distrobox + BoxBuddy GUI</strong> — run any Linux distribution in a desktop-integrated container. Ubuntu toolchain and Fedora toolchain side by side, no host modification. BoxBuddy provides a clean GUI for creating, managing, and entering containers. Containers survive OS updates untouched.</p>
+                <p><strong>Podman + Pods GUI</strong> — Docker-compatible, rootless container runtime, socket enabled at boot. Includes <code>podman-compose</code>, <code>buildah</code>, <code>skopeo</code>, <code>podman-docker</code>. The Pods app provides visual image and container management. Storage in <code>@containers</code> subvolume. Update: <code>podman auto-update</code></p>
+                <p><strong>systemd-nspawn</strong> — lightweight OS containers managed via <code>machinectl</code>. Images stored in <code>@machines</code> subvolume. Ideal for testing OS configs or running isolated system services without a full VM's overhead.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
-          
-          <!-- CLI, Scripting & System Tools -->
+
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-terminal feature-icon"></i>
-              <h3>CLI, Scripting & System Tools</h3>
-              <p class="feature-snippet">
-                Zsh as the default shell, with pre-installed editors, networking tools, and essential utilities—ready for developers and sysadmins out of the box.
-              </p>
+              <i class="fas fa-server feature-icon"></i>
+              <h3>LXC/LXD &amp; Apptainer</h3>
+              <p class="feature-snippet">LXC/LXD for full system containers (auto-enabled at boot), Apptainer for HPC and scientific workloads. Both pre-configured with persistent storage subvolumes. Pair with the immutable host for a fully auditable research stack.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <h4>Shells & Search</h4>
-                <p>
-                  Zsh (default, with Starship), Bash, Fish; Zsh plugins for autosuggestions, completions, syntax highlighting, and history substring search; Bash completion; McFly; FZF.
-                </p>
+                <p><strong>LXC + LXD</strong> — system containers for running full Linux distributions. LXD socket auto-enabled at boot alongside <code>lxcfs</code>. Persistent subvolumes (<code>@lxc</code>, <code>@lxd</code>). Run a complete Ubuntu or Debian server environment on your Arch desktop without a full VM.</p>
+                <p><strong>Apptainer</strong> (formerly Singularity) — the HPC and scientific computing standard. Submit reproducible environments to clusters, share exact environments with collaborators, run GPU workloads in isolation. Pre-configured on Shanios — pair with the immutable host OS for a fully reproducible research stack where both container and host are verifiable artifacts.</p>
+              </div>
+              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
+            </div>
+          </article>
 
-                <h4>Editors</h4>
-                <p>Vim, Vi, Nano, Micro, Tmux, Ed, Less</p>
-
-                <h4>Core CLI Utilities</h4>
-                <p>Coreutils, Findutils, Grep, Gawk, BC, Diffutils, Patch, Time, Which</p>
-
-                <h4>System & Monitoring Tools</h4>
-                <p>Words, BSD-games, Man-db, Gnupg, Plocate, Inxi, Dmidecode, Strace, Lsof, Ncdu, Sysstat, Cronie, PV, JQ, Expect, Dialog</p>
-
-                <h4>Version Control</h4>
-                <p>Git, Subversion, Mercurial</p>
-
-                <h4>Networking Tools</h4>
-                <p>Iftop, Ethtool, Net-tools, Nmap, Traceroute, Tcpdump, Wireless Tools, Inetutils, USB Utilities, Bridge-utils, OpenBSD Netcat, Nbd, Zsync, Rsync, Iperf3, MTR, Tailscale, Cloudflared, Caddy</p>
-
-                <h4>Internet Utilities</h4>
-                <p>Curl, Wget, Aria2, Bind, Whois</p>
+          <article class="feature-card">
+            <div class="feature-card-front">
+              <i class="fas fa-hdd feature-icon"></i>
+              <h3>Virtual Machines</h3>
+              <p class="feature-snippet">GNOME Boxes on GNOME, virt-manager + QEMU extension on KDE Plasma — both pre-installed as Flatpaks. Full VM management, sandboxed, VM disk images unaffected by OS updates or rollbacks.</p>
+              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
+            </div>
+            <div class="feature-card-back">
+              <div class="feature-details">
+                <p><strong>GNOME Boxes</strong> (GNOME edition) — clean, minimal VM interface. Runs fully sandboxed as a Flatpak; no system QEMU or libvirt required.</p>
+                <p><strong>virt-manager + QEMU extension</strong> (KDE Plasma edition) — full VM lifecycle: networking, snapshots, storage pools, hardware passthrough. Both installed as Flatpaks, fully sandboxed.</p>
+                <p>VM disk images are stored within the Flatpak sandbox data directory and are unaffected by OS updates or rollbacks.</p>
+                <p>All relevant groups are pre-configured — VMs work at first boot assuming hardware virtualization (Intel VT-x / AMD-V) is enabled in BIOS.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
-        <!-- SELF-HOSTING & NETWORKING -->
-        <h3 class="group-title">Desktop Web Hosting & Secure Access</h3>
-
-        <p class="group-note">
-          Shani OS lets you host websites and services directly from your desktop or laptop —
-          even on home internet connections without a static IP.
-          All tools listed here are <strong>installed for convenience</strong> and are
-          <strong>not enabled or running by default</strong>.
-        </p>
-
+        <!-- GROUP: DEV, NETWORKING, BACKUP — 3 cards -->
+        <h3 class="group-title">Developer Tools, Networking &amp; Backup</h3>
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-card-front">
-              <i class="fas fa-server feature-icon"></i>
-              <h3>Caddy Web Server</h3>
-              <p class="feature-snippet">
-                Modern, lightweight web server for hosting websites or services from your desktop
-                with automatic HTTPS.
-              </p>
-              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            </div>
-            
-            <div class="feature-card-back">
-              <div class="feature-details">
-                <p>
-                  Caddy makes it easy to host personal websites, dashboards, or file servers with
-                  automatic HTTPS. It is <strong>not active by default</strong> and runs only when you
-                  start and configure it.
-                </p>
-                <p>
-                  Ideal for self-hosting directly from your desktop, without needing a dedicated server.
-                </p>
-              </div>
-              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
-            </div>
-          </article>
 
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-cloud feature-icon"></i>
-              <h3>Cloudflared</h3>
-              <p class="feature-snippet">
-                Securely expose locally hosted websites to the internet —
-                no static IP, no port forwarding.
-              </p>
+              <i class="fas fa-terminal feature-icon"></i>
+              <h3>CLI &amp; Developer Toolchain</h3>
+              <p class="feature-snippet">Zsh + Starship (default), Fish, Bash — with autosuggestions, FZF, and McFly neural-network history. Git, Subversion, Mercurial, and a complete suite of system, diagnostic, and network tools.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  Cloudflared creates an encrypted tunnel to Cloudflare, allowing public HTTPS access
-                  to services running on your desktop. It is <strong>disabled by default</strong> and
-                  requires manual setup.
-                </p>
-                <p>
-                  Perfect for hosting websites on home connections or behind NAT and CGNAT,
-                  without exposing your real IP address.
-                </p>
+                <h4>Shells &amp; Search</h4>
+                <p>Zsh (default, with Starship prompt — shows git branch, exit codes, and environment context at a glance), Bash, Fish. Plugins: autosuggestions, syntax highlighting, history substring search, FZF.</p>
+                <p><strong>McFly neural-network shell history</strong> — replaces standard Ctrl+R with a neural network that learns from your patterns. Surfaces the most relevant commands based on current directory, recent activity, and exit codes. The longer you use it, the better it gets at predicting what you need.</p>
+                <h4>Editors</h4>
+                <p>Vim, Vi, Nano, Micro, Tmux, Ed, Less, Lynx</p>
+                <h4>Core Utilities</h4>
+                <p>Coreutils, Findutils, Grep, Gawk, BC, Diffutils, Patch, Time, Which, Texinfo</p>
+                <h4>System &amp; Monitoring</h4>
+                <p>Htop, Fastfetch, Tree, Inxi, Dmidecode, Strace, Lsof, Ncdu, Sysstat, Smartmontools, Cronie, Logrotate, PV, JQ, Expect, Dialog</p>
+                <h4>Version Control</h4>
+                <p>Git, Subversion, Mercurial</p>
+                <h4>Archive &amp; Compression</h4>
+                <p>7zip, Arj, Unrar, Unarchiver, Unzip, Zip, Lrzip, Lzop</p>
+                <h4>GPU &amp; Hardware Diagnostics</h4>
+                <p>Vulkan-tools, Mesa-utils, Clinfo, Android-tools</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -614,23 +978,23 @@
           <article class="feature-card">
             <div class="feature-card-front">
               <i class="fas fa-network-wired feature-icon"></i>
-              <h3>Tailscale</h3>
-              <p class="feature-snippet">
-                Private, secure access to your self-hosted services across your own devices.
-              </p>
+              <h3>Networking &amp; Self-Hosting</h3>
+              <p class="feature-snippet">Tailscale, Caddy, Cloudflared, OpenSSH, Fail2ban, Samba, NFS, dnsmasq, firewalld — pre-installed, none active by default. Enable exactly what you need, nothing else exposed. All state persists across OS updates.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  Tailscale creates a private encrypted network between your devices using WireGuard.
-                  It is <strong>not active unless you sign in and enable it</strong>.
-                </p>
-                <p>
-                  Use it to access your hosted websites and services privately,
-                  without making them public on the internet.
-                </p>
+                <p><strong>firewalld</strong> — active by default from first boot. Zone-based firewall blocking all unsolicited inbound connections.</p>
+                <p><strong>Enterprise VPN suite</strong> — OpenVPN, WireGuard, L2TP, PPTP, strongSwan (IPsec), OpenConnect (Cisco AnyConnect-compatible), SSTP, and Fortinet (openfortivpn) are all pre-installed. Connect to any corporate network without hunting for packages.</p>
+                <p><strong>Tailscale</strong> — private WireGuard mesh network. Access your services privately across devices without public exposure. Activate on sign-in.</p>
+                <p><strong>Caddy</strong> — modern web server with automatic HTTPS. Host sites or dashboards locally or over Tailscale. Not active by default.</p>
+                <p><strong>Cloudflared</strong> — encrypted Cloudflare tunnel. HTTPS access to local services without a static IP or exposing your real address.</p>
+                <p><strong>OpenSSH</strong> — encrypted remote access. Not enabled by default. Recommended to run over Tailscale rather than publicly exposed.</p>
+                <p><strong>Fail2ban</strong> — automatic IP banning for repeated auth failures. Recommended alongside public-facing SSH. Not active by default.</p>
+                <p><strong>Samba + NFS</strong> — file sharing to Windows/macOS (SMB) and Linux/Unix (NFS). Both pre-installed; neither runs by default. All state persists across blue/green OS switches via bind mounts.</p>
+                <p><strong>dnsmasq</strong> — lightweight DNS forwarder, DHCP server, and split-DNS resolver. Configure local DNS for your home or office network — point internal hostnames to local IPs, route only certain domains through VPN. Not active by default.</p>
+                <p><strong>Avahi</strong> — mDNS/DNS-SD active by default. Your machine is reachable as <code>hostname.local</code> from any device on the local network from first boot — no router configuration, no DNS setup needed.</p>
+                <p><strong>Network tools pre-installed:</strong> Nmap, Iftop, Bandwhich, Nethogs, Tcpdump, Traceroute, Rsync, Iperf3, MTR, Socat, OpenBSD Netcat, Curl, Wget, Aria2, Bind, Whois.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
@@ -638,110 +1002,285 @@
 
           <article class="feature-card">
             <div class="feature-card-front">
-              <i class="fas fa-terminal feature-icon"></i>
-              <h3>OpenSSH</h3>
-              <p class="feature-snippet">
-                Secure remote access for managing your hosted services when you choose to enable it.
-              </p>
+              <i class="fas fa-database feature-icon"></i>
+              <h3>Backup &amp; Cloud Sync</h3>
+              <p class="feature-snippet">Restic for encrypted, deduplicated backups. Rclone for syncing to 70+ cloud providers. Firmware updates via fwupdmgr/LVFS. All backup state persists across OS updates.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
-            
             <div class="feature-card-back">
               <div class="feature-details">
-                <p>
-                  OpenSSH provides industry-standard encrypted remote access and file transfer
-                  (SSH, SCP, SFTP). The SSH server is <strong>not enabled by default</strong>.
-                </p>
-                <p>
-                  Useful for managing your desktop-hosted websites locally, over Tailscale,
-                  or through secure tunnels.
-                </p>
-              </div>
-              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
-            </div>
-          </article>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-card-front">
-              <i class="fas fa-shield-alt feature-icon"></i>
-              <h3>Fail2ban</h3>
-              <p class="feature-snippet">
-                Optional intrusion protection for exposed services and remote access.
-              </p>
-              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            </div>
-            
-            <div class="feature-card-back">
-              <div class="feature-details">
-                <p>
-                  Fail2ban monitors authentication logs and temporarily blocks abusive IP addresses
-                  using firewall rules. It is <strong>not enabled by default</strong>.
-                </p>
-                <p>
-                  Recommended when exposing services such as SSH or web applications to the public,
-                  adding an extra layer of protection.
-                </p>
-              </div>
-              <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-card-front">
-              <i class="fas fa-fire feature-icon"></i>
-              <h3>firewalld</h3>
-              <p class="feature-snippet">
-                Manage network traffic and secure your desktop-hosted services with an easy firewall.
-              </p>
-              <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
-            </div>
-            
-            <div class="feature-card-back">
-              <div class="feature-details">
-                <p>
-                  firewalld provides a dynamic firewall with zones and services to control inbound and outbound
-                  network traffic. It is <strong>not active by default</strong>.
-                </p>
-                <p>
-                  Use it to restrict access to your hosted websites, SSH, and other services, ensuring that
-                  only allowed connections reach your desktop.
-                </p>
+                <p><strong>Restic</strong> — encrypted, deduplicated backups to local drives, SFTP servers, S3-compatible storage, and more. Backup repository metadata stored in a persistent bind mount — backup history preserved across OS updates.</p>
+                <p><strong>Rclone</strong> — sync files to 70+ cloud providers (Google Drive, S3, Backblaze, OneDrive, and more). Remote config and mount state persist across blue/green switches so configured remotes remain available.</p>
+                <p><strong>fwupdmgr + LVFS</strong> — update BIOS, NVMe controllers, SSD firmware, keyboard firmware, and other hardware via the Linux Vendor Firmware Service with <code>fwupdmgr update</code>. Full details in the Hardware Support card.</p>
               </div>
               <button class="toggle-details btn-more" aria-expanded="true">Show Less</button>
             </div>
           </article>
         </div>
 
+      </div>
+    </section>
 
+    <!-- ===== COMPARE ===== -->
+    <section id="compare" class="section compare-section">
+      <div class="container">
+        <h2 class="section-title">How Shanios Compares</h2>
+        <p class="compare-intro">
+          An honest look at how Shanios sits alongside the most widely used alternatives. We highlight where others genuinely win — the goal is to help you pick the right tool, not just to sell Shanios.
+        </p>
+
+        <div class="compare-scroll-wrapper">
+          <table class="compare-table" aria-label="Linux distribution comparison">
+            <thead>
+              <tr>
+                <th class="compare-feature-col">Feature / Criteria</th>
+                <th class="compare-col col-shanios">
+                  <span class="col-badge">Shanios</span>
+                  <span class="col-sub">Arch · Blue-Green</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">Traditional Linux</span>
+                  <span class="col-sub">Ubuntu / Arch / Fedora</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">Fedora Silverblue</span>
+                  <span class="col-sub">OSTree · rpm-ostree</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">Bazzite</span>
+                  <span class="col-sub">Fedora Atomic · Gaming</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">SteamOS 3</span>
+                  <span class="col-sub">Arch · Valve · Handheld</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">Vanilla OS 2</span>
+                  <span class="col-sub">Debian Sid · ABRoot</span>
+                </th>
+                <th class="compare-col">
+                  <span class="col-label">NixOS</span>
+                  <span class="col-sub">Declarative · Nix</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="compare-feature-col"><strong>Update mechanism</strong></td>
+                <td class="col-shanios"><span class="cv-good">Full image swap</span><small>Blue/green dual-slot — running system never touched</small></td>
+                <td><span class="cv-bad">Package layering</span><small>Modifies live system directly</small></td>
+                <td><span class="cv-mid">OSTree commits</span><small>rpm-ostree layering possible, adds complexity</small></td>
+                <td><span class="cv-mid">OSTree + layering</span><small>Pre-layered gaming packages on Fedora Atomic</small></td>
+                <td><span class="cv-mid">Full image swap</span><small>A/B partition, Valve-controlled, Steam Deck optimised</small></td>
+                <td><span class="cv-mid">OCI image swap</span><small>ABRoot v2 transacts between two root partitions</small></td>
+                <td><span class="cv-mid">Generation switch</span><small>Declarative rebuild via Nix</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Instant rollback</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Always available</span><small>Previous slot untouched; one reboot — same speed as normal boot. Automatic on boot failure.</small></td>
+                <td><span class="cv-bad">✗ No rollback</span><small>Manual fix or reinstall</small></td>
+                <td><span class="cv-good">✓ OSTree history</span><small>Previous commit in boot menu</small></td>
+                <td><span class="cv-good">✓ OSTree history</span><small>Up to 90 days of deployments</small></td>
+                <td><span class="cv-good">✓ A/B partition</span><small>Previous slot in boot menu</small></td>
+                <td><span class="cv-good">✓ ABRoot rollback</span><small>abroot rollback to previous OCI image</small></td>
+                <td><span class="cv-good">✓ Boot generation</span><small>Switch generations at boot</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Zero telemetry / no ads</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Verified — codebase is public</span><small>No tracking, no crash reports, no analytics — ever. Intel ME disabled by default.</small></td>
+                <td><span class="cv-mid">Varies by distro</span><small>Ubuntu has had opt-out telemetry; others vary</small></td>
+                <td><span class="cv-good">✓ Minimal</span><small>Fedora opt-in countme data only</small></td>
+                <td><span class="cv-good">✓ No telemetry</span><small>Inherits Fedora Atomic defaults</small></td>
+                <td><span class="cv-bad">Steam analytics</span><small>Steam hardware survey and usage data by default</small></td>
+                <td><span class="cv-good">✓ No telemetry</span><small>Open source, no analytics</small></td>
+                <td><span class="cv-good">✓ No telemetry</span><small>Community project, no analytics</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Cryptographic image verification</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ SHA256 + GPG, public key on keyservers</span><small>Every image verified before deployment — independently auditable</small></td>
+                <td><span class="cv-bad">✗ Package checksums only</span><small>No full-image GPG signing</small></td>
+                <td><span class="cv-mid">OSTree signing</span><small>Content-addressed commits</small></td>
+                <td><span class="cv-mid">Signed container images</span><small>Inherited from Universal Blue / Fedora Atomic</small></td>
+                <td><span class="cv-mid">Valve-signed images</span><small>Closed signing, not independently auditable</small></td>
+                <td><span class="cv-mid">OCI image integrity</span><small>FsGuard checks binary integrity at boot</small></td>
+                <td><span class="cv-mid">Nix store hashes</span><small>Reproducible builds, content-addressed</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Active kernel security modules</strong></td>
+                <td class="col-shanios"><span class="cv-good">6 simultaneously active</span><small>lsm=landlock,lockdown,yama,integrity,apparmor,bpf — all enabled by default</small></td>
+                <td><span class="cv-mid">1–2 typically</span><small>AppArmor (Ubuntu/Debian) or SELinux (Fedora/RHEL); rarely combined</small></td>
+                <td><span class="cv-mid">SELinux</span><small>One LSM; strong but not combined</small></td>
+                <td><span class="cv-mid">SELinux + Secure Boot</span><small>Inherits Fedora Atomic security defaults</small></td>
+                <td><span class="cv-mid">Limited</span><small>Valve-managed; user-configurable security is restricted</small></td>
+                <td><span class="cv-mid">FsGuard</span><small>Boot-time integrity; no kernel LSM stack by default</small></td>
+                <td><span class="cv-mid">Configurable</span><small>None by default; can be added via Nix config</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>TPM2 auto-unlock + Secure Boot</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Both included &amp; configured</span><small>TPM2 with PCR binding for passwordless LUKS unlock on trusted hardware; Secure Boot via shim/sbctl</small></td>
+                <td><span class="cv-mid">Manual setup</span><small>Possible but requires significant manual work</small></td>
+                <td><span class="cv-mid">Secure Boot ✓, TPM2 manual</span><small>Secure Boot supported; TPM2 auto-unlock requires manual setup</small></td>
+                <td><span class="cv-good">✓ Both supported</span><small>Pre-configured on Bazzite</small></td>
+                <td><span class="cv-mid">Limited</span><small>Valve-managed; limited user control</small></td>
+                <td><span class="cv-mid">Secure Boot ✓</span><small>LUKS2 at install; TPM2 integration varies</small></td>
+                <td><span class="cv-mid">Configurable</span><small>Possible via Nix options; not default</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>OEM &amp; deployment</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Core design goal</span><small>GPG-verified images, automatic boot-failure rollback, no-reimaging rollback, OEM wizard, BGRT boot logo</small></td>
+                <td><span class="cv-bad">✗ Per-device drift</span><small>No standardised image model</small></td>
+                <td><span class="cv-bad">✗ Not a focus</span><small>No OEM tooling or deployment story</small></td>
+                <td><span class="cv-bad">✗ Gaming consumer focus</span><small>Not designed for enterprise or OEM deployment</small></td>
+                <td><span class="cv-mid">Partial</span><small>Valve expanding to select OEM handhelds — not general PC OEM</small></td>
+                <td><span class="cv-mid">OEM first-setup present</span><small>Setup wizard</small></td>
+                <td><span class="cv-mid">Reproducible configs</span><small>Possible via NixOps / deploy-rs; steep setup</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Software base / release cycle</strong></td>
+                <td class="col-shanios"><span class="cv-good">Arch Linux — rolling</span><small>Always-current packages, latest kernels and drivers — no 6-month wait</small></td>
+                <td><span class="cv-mid">Varies</span><small>Rolling (Arch) or fixed release (Ubuntu/Fedora)</small></td>
+                <td><span class="cv-mid">Fedora ~6-month cycle</span><small>Fixed release cadence</small></td>
+                <td><span class="cv-mid">Fedora Atomic ~6-month</span><small>Gaming layer updated more frequently</small></td>
+                <td><span class="cv-mid">Arch — Valve-curated</span><small>Slow to land on non-Deck PC hardware</small></td>
+                <td><span class="cv-mid">Debian Sid (near-rolling)</span><small>Debian unstable branch</small></td>
+                <td><span class="cv-mid">NixOS stable / unstable</span><small>Stable = fixed; unstable = rolling</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>NVIDIA support</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Works at first boot</span><small>Drivers pre-installed; Vulkan/OpenGL included</small></td>
+                <td><span class="cv-mid">Varies</span><small>Often manual driver install needed</small></td>
+                <td><span class="cv-mid">Supported</span><small>akmod-nvidia; can be tricky on rpm-ostree</small></td>
+                <td><span class="cv-good">✓ Pre-installed</span><small>Proprietary NVIDIA drivers included and tested</small></td>
+                <td><span class="cv-bad">✗ No official support</span><small>NVIDIA not officially supported on non-Deck hardware</small></td>
+                <td><span class="cv-mid">✓ Detected at install</span><small>Installer proposes NVIDIA OCI image if GPU detected</small></td>
+                <td><span class="cv-mid">Available</span><small>nixos.config.hardware.nvidia; manual but reproducible</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Gaming stack included</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ KDE edition</span><small>Steam, Heroic, RetroArch, Bottles, MangoHud, GameScope, vkBasalt, peripherals, VR, racing wheels, kernel tuned with 3072 Hz timers</small></td>
+                <td><span class="cv-bad">✗ Manual setup</span><small>Install and configure everything yourself</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>Install via Flatpak manually</small></td>
+                <td><span class="cv-good">✓ Primary focus</span><small>Steam Gaming Mode, handheld-optimised, HDR, VRR</small></td>
+                <td><span class="cv-good">✓ Deepest integration</span><small>Valve's Proton, Gamescope, Steam Deck hardware-optimised</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>Install via Flatpak; no gaming defaults</small></td>
+                <td><span class="cv-bad">✗ Manual setup</span><small>Possible, no gaming defaults</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Container runtimes pre-configured</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Full ecosystem with GUIs</span><small>Podman+Pods, Distrobox+BoxBuddy, LXC/LXD, Apptainer, systemd-nspawn, Nix — each with own subvolume. Plus Flatpak, Snap, AppImage for app ecosystems.</small></td>
+                <td><span class="cv-mid">Partial</span><small>Install individually as needed</small></td>
+                <td><span class="cv-mid">Toolbox / Distrobox</span><small>Podman included; others manual</small></td>
+                <td><span class="cv-mid">Distrobox + Podman</span><small>Some extras via ujust scripts</small></td>
+                <td><span class="cv-mid">Distrobox + Podman</span><small>Pre-installed from SteamOS 3.5+</small></td>
+                <td><span class="cv-mid">APX subsystems</span><small>Distrobox-based multi-distro containers via APX GUI</small></td>
+                <td><span class="cv-mid">Nix-native</span><small>Docker/Podman via config; no UI defaults</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Android apps (Waydroid)</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Pre-configured</span><small>Intel/AMD hardware-accelerated, service enabled at boot, dedicated subvolume, ARM translation included</small></td>
+                <td><span class="cv-mid">Manual install</span><small>Possible, no defaults</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+                <td><span class="cv-good">✓ Available</span><small>Setup guide; ARM translation included</small></td>
+                <td><span class="cv-bad">✗ Not available</span><small>Gaming-focused, no Android layer</small></td>
+                <td><span class="cv-good">✓ Via VSO v2</span><small>Waydroid + F-Droid, experimental</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Hibernation out of the box</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Auto-configured</span><small>Swap subvolume (CoW disabled) sized to RAM at first deployment — hibernation works without any manual setup</small></td>
+                <td><span class="cv-mid">Varies</span><small>Usually manual swapfile or partition setup required</small></td>
+                <td><span class="cv-bad">✗ Manual setup</span><small>Not configured by default</small></td>
+                <td><span class="cv-mid">Partial</span><small>Gaming-focused; hibernation not a priority</small></td>
+                <td><span class="cv-bad">✗ Not supported</span><small>Steam Deck uses suspend, not hibernate</small></td>
+                <td><span class="cv-mid">Partial</span><small>Depends on OCI image; not guaranteed</small></td>
+                <td><span class="cv-mid">Configurable</span><small>Possible via Nix options; not default</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Profile Sync Daemon (browser from RAM)</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Pre-configured</span><small>Browser profiles run from tmpfs — faster page loads, less SSD wear, syncs back on shutdown</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>Manual setup required</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+                <td><span class="cv-bad">✗ Not included</span><small>—</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Indian language support</strong></td>
+                <td class="col-shanios"><span class="cv-good">✓ Designed in from day one</span><small>Devanagari, Tamil, Telugu + more; IBus pre-configured</small></td>
+                <td><span class="cv-mid">Available</span><small>Add-on; quality varies by distro</small></td>
+                <td><span class="cv-mid">Available</span><small>Install separately</small></td>
+                <td><span class="cv-mid">Available</span><small>Install separately</small></td>
+                <td><span class="cv-bad">Not a focus</span><small>Gaming-oriented; no i18n defaults</small></td>
+                <td><span class="cv-mid">Available</span><small>Install separately</small></td>
+                <td><span class="cv-mid">Available</span><small>Configure via Nix options</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Price</strong></td>
+                <td class="col-shanios"><span class="cv-good">Free to use</span><small>No trial, no subscription, no enterprise tier — open source, funded by community donations</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+                <td><span class="cv-good">Free</span><small>—</small></td>
+              </tr>
+              <tr>
+                <td class="compare-feature-col"><strong>Setup complexity</strong></td>
+                <td class="col-shanios"><span class="cv-good">Low — works out of the box</span><small>OEM wizard, all hardware configured, no post-install tuning</small></td>
+                <td><span class="cv-mid">Low to High</span><small>Depends heavily on chosen distro</small></td>
+                <td><span class="cv-mid">Moderate</span><small>New paradigm; good docs; Fedora familiarity helps</small></td>
+                <td><span class="cv-good">Low</span><small>Designed for approachable gaming setup</small></td>
+                <td><span class="cv-mid">Low (supported hardware)</span><small>Seamless on Steam Deck; PC install is community-only</small></td>
+                <td><span class="cv-mid">Moderate</span><small>New tooling (ABRoot, APX, VSO); docs maturing</small></td>
+                <td><span class="cv-bad">High</span><small>Declarative config, unique paradigm, steep curve</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="compare-caveats">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <p>This table reflects publicly documented behaviour as of early 2026. Every project evolves — always check each project's current documentation before deciding.</p>
+            <p><strong>Where others genuinely win:</strong> <strong>Bazzite</strong> and <strong>SteamOS</strong> are the strongest choice for Steam Deck and handheld gaming — deepest hardware integration for that form factor. <strong>NixOS</strong> is unmatched for declarative reproducibility if you're willing to learn it. <strong>Vanilla OS 2</strong> has a strong multi-distro container story. <strong>Fedora Silverblue</strong> carries Red Hat's community weight and documentation depth.</p>
+            <p>Shanios is the right fit when you need a rolling-release immutable base that works on general hardware out of the box, deploys identically and handles NVIDIA at first boot, includes a full container ecosystem with GUIs, 6 active kernel security modules, TPM2 auto-unlock, hibernation out of the box, and collects zero telemetry.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem; text-align:center;">
+          <a href="#download" class="btn btn-primary"><i class="fas fa-cloud-download-alt"></i> Download Shanios Free</a>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.7;">Two editions · SHA256 + GPG signed · Zero telemetry · Free to use</p>
+        </div>
 
       </div>
     </section>
 
-    <!-- Download Section -->
+    <!-- ===== DOWNLOAD ===== -->
     <section id="download" class="section download-section">
       <div class="container">
         <h2 class="section-title">Download Shanios</h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem;">
-          Choose your edition based on desktop preference. Both feature the same bulletproof immutable architecture with atomic updates and instant recovery. Everything else is identical—complete application suite, hardware support, and professional tools included.
-        </p>
-        
+        <p class="section-intro">Two editions — one architecture. Same immutable core, same atomic update engine, same security stack, same zero-telemetry guarantee. Free to use — no trial, no subscription, no enterprise tier. open source. Choose your desktop environment.</p>
+
         <div class="download-options">
           <div class="download-card">
             <figure class="download-screenshot">
               <a href="assets/images/gnome-screenshot.jpg" target="_blank" rel="noopener">
                 <img src="assets/images/gnome-screenshot.jpg" alt="Shanios GNOME Edition desktop" loading="lazy">
               </a>
+              <figcaption class="sr-only">Shanios GNOME Edition desktop screenshot</figcaption>
             </figure>
             <h3>GNOME Edition</h3>
-            <p>Immutable OS with streamlined GNOME desktop. Focused productivity interface perfect for business deployment and enterprise use.</p>
-            <p>• <strong>OEM-Ready</strong> • <strong>Professional</strong> </p>
-            <a href="https://sourceforge.net/projects/shanios/files/gnome/20260118/signed_shanios-gnome-2026.01.18-x86_64.iso/download" class="btn btn-download" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-download"></i> Download GNOME
+            <p>Streamlined, distraction-free desktop for focused work and professional deployment. OEM Initial Setup wizard, Plymouth BGRT manufacturer logo, GNOME Boxes (Flatpak) for VMs, Rygel DLNA media server. Both editions include Vivaldi Browser + OnlyOffice + Waydroid.</p>
+            <div class="edition-tags">
+              <span class="edition-tag">OEM-Ready</span>
+              <span class="edition-tag">Enterprise &amp; Professional</span>
+            </div>
+            <a href="https://sourceforge.net/projects/shanios/files/gnome/20260118/signed_shanios-gnome-2026.01.18-x86_64.iso/download"
+               class="btn btn-download" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i> Download GNOME Edition
             </a>
-            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-              Version: 2026.01.18 • ISO Size: ~5.5 GB
-            </p>
+            <p style="margin-top:1rem; font-size:0.88rem; opacity:0.75;">Version 2026.01.18 &nbsp;·&nbsp; ~5.5 GB &nbsp;·&nbsp; SHA256 + GPG signed</p>
           </div>
 
           <div class="download-card">
@@ -749,340 +1288,357 @@
               <a href="assets/images/plasma-screenshot.jpg" target="_blank" rel="noopener">
                 <img src="assets/images/plasma-screenshot.jpg" alt="Shanios KDE Plasma Edition desktop" loading="lazy">
               </a>
+              <figcaption class="sr-only">Shanios KDE Plasma Edition desktop screenshot</figcaption>
             </figure>
             <h3>KDE Plasma Edition</h3>
-            <p>Immutable OS with powerful KDE Plasma desktop. Highly customizable with gaming platforms pre-installed—Steam, Heroic, RetroArch ready to play. Bottles for Windows applications and games.Waydroid for android applications.</p>
-            <p>• <strong>OEM-Ready</strong> • <strong>Gaming Edition</strong></p>
-            <a href="https://sourceforge.net/projects/shanios/files/plasma/20260118/signed_shanios-plasma-2026.01.18-x86_64.iso/download" class="btn btn-download" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-download"></i> Download Plasma
+            <p>Deeply customizable desktop with the full gaming stack — Steam, Heroic, RetroArch, Bottles — plus kernel-level gaming tuning (3072 Hz timers, GameMode globally active), virt-manager, BoxBuddy GUI, Pods GUI. Both editions include Vivaldi Browser + OnlyOffice + Waydroid. Everything ready at first boot.</p>
+            <div class="edition-tags">
+              <span class="edition-tag">OEM-Ready</span>
+              <span class="edition-tag">Power User &amp; Gaming</span>
+            </div>
+            <a href="https://sourceforge.net/projects/shanios/files/plasma/20260118/signed_shanios-plasma-2026.01.18-x86_64.iso/download"
+               class="btn btn-download" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i> Download KDE Edition
             </a>
-            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-              Version: 2026.01.18 • ISO Size: ~7.3 GB
-            </p>
+            <p style="margin-top:1rem; font-size:0.88rem; opacity:0.75;">Version 2026.01.18 &nbsp;·&nbsp; ~7.3 GB &nbsp;·&nbsp; SHA256 + GPG signed</p>
           </div>
         </div>
 
-        <div style="margin-top: 3rem; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-          <p style="font-size: 0.95rem; opacity: 0.9;">
-            All downloads are cryptographically signed. Check 
-            <a href="https://wiki.shani.dev" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">documentation</a> for SHA256 checksums and verification.
+        <div style="margin-top:2rem; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">
+          <p style="font-size:0.9rem; opacity:0.85; line-height:1.8;">
+            Download the ISO, write it to a USB drive with Balena Etcher, and boot from it. Full step-by-step instructions below.
           </p>
         </div>
 
-        <!-- Installation Guide Button -->
-        <div class="show-installation-guide" style="margin-top: 3rem; text-align: center;">
-          <button class="btn btn-secondary toggle-install" aria-expanded="false" style="font-size: 1.1rem; padding: 1rem 2rem;">
+        <div style="margin-top:1.5rem; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">
+          <p style="font-size:0.9rem; opacity:0.85; line-height:1.8;">
+            All downloads are cryptographically signed with SHA256 + GPG.
+            Checksums and verification instructions are in the
+            <a href="https://wiki.shani.dev" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:underline;">verification guide on wiki.shani.dev</a>.
+            The build system, deploy scripts, and full signing workflow are documented
+            <a href="https://github.com/shani8dev" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:underline;">on GitHub</a>
+            — the public GPG verification key is on public keyservers. Every step of how this image was produced is auditable.
+          </p>
+        </div>
+
+        <div class="show-installation-guide" style="margin-top:3rem; text-align:center;">
+          <button class="btn btn-secondary toggle-install" aria-expanded="false" style="font-size:1.05rem; padding:1rem 2rem;">
             <i class="fas fa-tools"></i> Installation Guide
           </button>
-          <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">
-            Complete step-by-step instructions to get Shanios running on your system
-          </p>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.7;">Complete step-by-step instructions including BIOS setup, update commands, and rollback</p>
         </div>
       </div>
     </section>
 
-    <!-- Installation Section -->
-    <section id="installation" class="section install-section hidden">
+    <!-- ===== INSTALLATION ===== -->
+    <section id="installation" class="section install-section hidden" style="display:none;">
       <div class="container">
         <h2 class="section-title">Installation Guide</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
-          Installing Shanios takes about 20 minutes. Everything you need to know is here.
-        </p>
-        
+        <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">Installing Shanios takes about 20 minutes. Everything you need is below.</p>
+
         <div class="install-content">
           <h3>System Requirements</h3>
           <ul>
-            <li><strong>Storage:</strong> 32 GB minimum for blue-green dual-image architecture (64 GB recommended)</li>
+            <li><strong>Storage:</strong> 32 GB minimum (64 GB recommended) — dual-image architecture keeps two complete system copies. Btrfs zstd compression and continuous deduplication keep the real overhead well below double the single-image size.</li>
             <li><strong>Memory:</strong> 4 GB RAM minimum (8 GB recommended)</li>
             <li><strong>Processor:</strong> 64-bit x86 CPU with virtualization support (Intel VT-x or AMD-V)</li>
-            <li><strong>Graphics:</strong> Intel, AMD, or NVIDIA (all drivers included)</li>
-            <li><strong>Installation Media:</strong> 8 GB or larger USB drive</li>
+            <li><strong>Graphics:</strong> Intel, AMD, or NVIDIA (all drivers included and configured at first boot)</li>
+            <li><strong>Installation Media:</strong> 8 GB+ USB drive</li>
           </ul>
-          <p><em>Note: The blue-green architecture requires two complete system images, which is why minimum storage is higher than typical Linux distributions. This dual-image design is what makes atomic updates and instant recovery possible.</em></p>
 
           <h3>Pre-Installation: BIOS/UEFI Setup</h3>
-          <p>Configure firmware before installing (access via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
+          <p>Configure before installing (usually via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
           <ul>
             <li>Disable Fast Boot</li>
-            <li>Disable Secure Boot (required for installation—can be re-enabled after enrolling Shanios keys)</li>
+            <li>Disable Secure Boot (re-enable after enrolling Shanios MOK key post-install)</li>
             <li>Set SATA mode to AHCI</li>
             <li>Enable UEFI boot (disable legacy/CSM)</li>
             <li>Enable virtualization (Intel VT-x or AMD-V)</li>
+            <li>Enable TPM 2.0 if present (for passwordless LUKS unlock via TPM2 auto-unlock)</li>
           </ul>
-          <p><em>Note: If you want to use Secure Boot, you can re-enable it after installation and enroll the Shanios signing key using MOK (Machine Owner Key) management.</em></p>
 
           <h3>Creating Installation Media</h3>
-          <p>Write ISO to USB using <strong>Balena Etcher</strong> (recommended, cross-platform), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/Mac).</p>
-          <p><strong>Important:</strong> Do not use Ventoy—it has known compatibility issues with Shanios's immutable architecture and bootloader configuration.</p>
+          <p>Write the ISO using <strong>Balena Etcher</strong> (recommended), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/macOS).</p>
+          <p><strong>Important:</strong> Do not use Ventoy — it has known compatibility issues with Shanios's bootloader.</p>
 
           <h3>Installation Steps</h3>
           <ol>
-            <li>Boot from USB (press <kbd>F12</kbd>, <kbd>F2</kbd>, or <kbd>Del</kbd> during startup)</li>
-            <li>Select "Install Shanios" from boot menu</li>
+            <li>Boot from USB (<kbd>F12</kbd>, <kbd>F2</kbd>, or <kbd>Del</kbd> at startup)</li>
+            <li>Select "Install Shanios" from the boot menu</li>
             <li>Choose language, timezone, and keyboard layout</li>
-            <li>Select disk and partitioning scheme (automatic recommended)</li>
-            <li>Enable LUKS2 full-disk encryption if desired (recommended for laptops)</li>
-            <li>Wait for installation to complete (10-15 minutes)</li>
-            <li>Reboot when prompted (remove USB drive)</li>
+            <li>Select disk and partitioning (automatic recommended)</li>
+            <li>Enable LUKS2 full-disk encryption if desired (strongly recommended for laptops — uses argon2id key derivation)</li>
+            <li>Wait for installation to complete (~10–15 minutes)</li>
+            <li>Reboot when prompted and remove the USB drive</li>
           </ol>
-          <p><em>Note: Desktop environment (GNOME or KDE Plasma) is determined by which ISO you downloaded.</em></p>
 
-          <h3>Initial Setup (First Boot)</h3>
-          <p>On first boot, the <strong>Initial Setup wizard</strong> will guide you through:</p>
-          <ul>
-            <li>Creating your user account (username and password)</li>
-            <li>Configuring network connections</li>
-            <li>Setting up privacy and location services</li>
-            <li>Finalizing system preferences</li>
-          </ul>
-          <p>This approach allows the base system to install quickly while personalizing your setup on first boot.</p>
+          <h3>First Boot &amp; Initial Deployment</h3>
+          <p>On first boot after installation, Shanios automatically runs the initial deployment: subvolumes are created, the swap file is sized to your RAM and configured for hibernation (with CoW disabled on the <code>@swap</code> subvolume as required), and both OS slots are prepared. This happens once in the background and takes a few minutes. After it completes, your system is fully configured and ready — no manual steps required.</p>
 
-          <h3>System Updates</h3>
-          <p><strong>Immutable system updates:</strong></p>
-          <pre><code>sudo shani-deploy</code></pre>
-          <p>Updates apply atomically to the inactive image. After reboot, you boot into the updated system. If needed, you can select the previous image from the boot menu.</p>
+          <h3>OS Updates</h3>
+          <pre><code>sudo shani-deploy                  # Update (stable channel, default)
+sudo shani-deploy --rollback       # Roll back to previous OS slot immediately
+sudo shani-deploy -t latest        # Switch to latest channel for this run
+sudo shani-deploy --dry-run        # Simulate the full update without making changes
+sudo shani-deploy --cleanup        # Remove old slot backups and cached downloads (safe anytime)
+sudo shani-deploy --storage-info   # Show subvolume disk usage and compression stats
+sudo shani-deploy --optimize       # Run on-demand block-level deduplication
+sudo shani-deploy --force          # Redeploy even if already on latest version</code></pre>
 
-          <p><strong>Application updates:</strong></p>
-          <pre><code>flatpak update</code></pre>
+          <h3>Updating Apps &amp; Package Ecosystems</h3>
+          <pre><code>flatpak update        # Flatpak apps (also auto-updates every 12 hours)
+snap refresh          # Snap packages
+nix-env -u            # Nix packages (imperative)
+nix flake update      # Nix packages (flake-based)
+podman auto-update    # Podman container images
+fwupdmgr update       # Hardware firmware via LVFS (BIOS, NVMe, SSD controllers, etc.)</code></pre>
+          <p><em><strong>Important:</strong> Always use <code>shani-deploy</code> for OS updates — do not run <code>pacman</code> directly, as it bypasses the immutable deployment system.</em></p>
 
-          <p><strong>Firmware updates:</strong></p>
-          <pre><code>fwupdmgr update</code></pre>
-          <p>Delivered via LVFS using <code>fwupd</code>.</p>
-          <p><strong>Important:</strong> Always use <code>shani-deploy</code> for system updates to preserve immutability.</p>
+          <h3>Post-Install: Re-enable Secure Boot</h3>
+          <p>Enroll the Shanios MOK key. When prompted enter password: <code>shanios</code>. Full instructions in the <a href="https://wiki.shani.dev/#secure-boot" target="_blank" rel="noopener">Secure Boot enrollment guide on wiki.shani.dev</a>.</p>
 
           <h3>Important Notes</h3>
           <ul>
-            <li><strong>Dual booting:</strong> Not recommended—other OSes may break the bootloader</li>
-            <li><strong>Package management:</strong> Use Flatpak, containers, or AppImages</li>
-            <li><strong>System modifications:</strong> Root filesystem is immutable—use proper channels</li>
-            <li><strong>Secure Boot:</strong> Can be enabled after installation by enrolling MOK keys (password: <code>shanios</code>)</li>
+            <li><strong>Dual booting:</strong> Not recommended — other OS bootloaders may interfere</li>
+            <li><strong>Installing software:</strong> Use Flatpak, Snap, Nix, AppImages, or containers — all persist across updates in dedicated subvolumes</li>
+            <li><strong>Disk space:</strong> At least 10 GB free is needed to run an update. Use <code>sudo shani-deploy --cleanup</code> to remove old slot backups and cached downloads when disk space is low — safe to run at any time without affecting your running system.</li>
+            <li><strong>TPM2 auto-unlock:</strong> If TPM 2.0 is present and enabled in BIOS, LUKS2 disk encryption can be configured to unlock automatically using TPM PCR binding — no passphrase required at boot on trusted hardware. See the <a href="https://wiki.shani.dev/#tpm-encryption" target="_blank" rel="noopener">TPM encryption guide on wiki.shani.dev</a> for setup details.</li>
           </ul>
 
-
           <h3>Need Help?</h3>
-          <p>
-            Visit <a href="https://wiki.shani.dev" target="_blank" rel="noopener">comprehensive documentation</a> or join 
-            <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram community</a> for support.
-          </p>
+          <p>Visit the <a href="https://wiki.shani.dev" target="_blank" rel="noopener">full documentation on wiki.shani.dev</a> or join the <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram community</a>.</p>
         </div>
       </div>
-      <!-- Close Guide Button -->
-        <div style="margin-top: 3rem; text-align: center;">
-          <button class="btn btn-secondary toggle-install" aria-expanded="false" style="font-size: 1.1rem; padding: 1rem 2rem;">
-            <i class="fas fa-tools"></i> Close Guide
-          </button>
-        </div>
+      <div style="margin-top:3rem; text-align:center;">
+        <button class="btn btn-secondary toggle-install" aria-expanded="false">
+          <i class="fas fa-times"></i> Close Guide
+        </button>
+      </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section faq-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-intro">The questions people ask most before trying Shanios, answered directly.</p>
+        <div class="faq-grid">
 
+          <details class="faq-item" id="faq-install-software">
+            <summary><i class="fas fa-box"></i> Can I install software? The root is read-only.</summary>
+            <div class="faq-body">Yes — just not into the OS root, which is intentional. Use <strong>Flatpak</strong> (Flathub, sandboxed), <strong>Snap</strong>, <strong>Nix</strong>, <strong>AppImages</strong> (via Gear Lever), or any <strong>container</strong> via Distrobox, Podman, or LXC. All persist across OS updates in their own dedicated storage subvolumes. The <code>@nix</code> subvolume is shared between both OS slots, so Nix packages survive both updates and rollbacks. The point is that your apps and your OS are separate concerns — an OS update can't break your apps, and your apps can't corrupt the OS.</div>
+          </details>
 
-<!-- ================= SUPPORT SECTION ================= -->
-<section id="support" class="section support-section">
-  <div class="container">
+          <details class="faq-item" id="faq-telemetry">
+            <summary><i class="fas fa-user-secret"></i> Does Shanios collect any telemetry or usage data?</summary>
+            <div class="faq-body">No. Shanios collects zero telemetry, sends no crash reports, and has no analytics of any kind. The update tool (<code>shani-deploy</code>) connects to download servers to fetch images — but only transmits what any standard HTTP download requires. No hardware fingerprints, no system IDs, no usage statistics are sent. Intel ME is disabled by default, removing the low-level hardware management channel. Because the entire codebase is public on GitHub, this is verifiable — you can read every script that runs on your system.</div>
+          </details>
 
-    <h2 class="section-title">Support Development</h2>
-    <p class="section-subtitle">
-      Your support helps build a truly reliable immutable operating system.
-      Every contribution strengthens development, infrastructure, and long-term sustainability.
-    </p>
+          <details class="faq-item" id="faq-storage">
+            <summary><i class="fas fa-hdd"></i> Why does it need 32 GB minimum? That's more than most distros.</summary>
+            <div class="faq-body">Shanios maintains two complete, bootable system copies at all times — that's the mechanism behind instant rollback. Each image is roughly 5–7 GB. Btrfs zstd compression typically reduces disk usage by 30–50%, and continuous background deduplication via <code>beesd</code> means shared data between the two slots is stored only once on disk. The real overhead versus a single-image system is roughly 18% — not double. 64 GB gives comfortable headroom for apps, containers, and updates. At least 10 GB free disk space is required to stage an update.</div>
+          </details>
 
-    <div class="support-grid">
+          <details class="faq-item" id="faq-update-failure">
+            <summary><i class="fas fa-bomb"></i> What happens if an update fails mid-way?</summary>
+            <div class="faq-body">Nothing happens to your running system — it's in a separate slot and is never touched during an update. Before writing to the inactive slot, <code>shani-deploy</code> takes a timestamped snapshot. If the update fails at any point (network drop, power cut, verification failure), the script automatically restores the inactive slot from that snapshot. A deployment pending flag ensures that if power is lost mid-update, the issue is detected on next boot. If you ever want to undo a completed update, <code>sudo shani-deploy --rollback</code> handles it immediately.</div>
+          </details>
 
-      <!-- Donate -->
-      <div class="support-card">
-        <div class="support-icon">
-          <i class="fas fa-heart"></i>
+          <details class="faq-item" id="faq-hardware">
+            <summary><i class="fas fa-microchip"></i> Does it work on my hardware? NVIDIA? Older machines?</summary>
+            <div class="faq-body">Shanios includes Intel, AMD, and NVIDIA drivers pre-installed and configured including full Vulkan support. Printers, scanners, Bluetooth, Wi-Fi, game controllers, fingerprint readers, FIDO2/YubiKey, smart cards, NFC, Thunderbolt, iOS devices, and 5G modems are all pre-configured. It runs the standard Arch Linux kernel with broad hardware support. Firmware updates via fwupdmgr/LVFS keep BIOS and peripheral firmware current. Minimum: 64-bit x86 CPU, 4 GB RAM, 32 GB storage.</div>
+          </details>
+
+          <details class="faq-item" id="faq-updates">
+            <summary><i class="fas fa-sync-alt"></i> How do I keep everything updated — OS, apps, containers?</summary>
+            <div class="faq-body">Each layer has its own command: OS with <code>sudo shani-deploy</code>, Flatpak with <code>flatpak update</code> (also auto-updates every 12 hours), Snap with <code>snap refresh</code>, Nix with <code>nix-env -u</code>, Podman containers with <code>podman auto-update</code>, firmware with <code>fwupdmgr update</code>. These are completely independent — updating apps doesn't touch the OS, and vice versa. Desktop notifications alert you when OS updates are available so you don't need to check manually.</div>
+          </details>
+
+          <details class="faq-item" id="faq-rollback">
+            <summary><i class="fas fa-undo"></i> How do I roll back if the new OS doesn't work for me?</summary>
+            <div class="faq-body">From the slot you want to keep, run <code>sudo shani-deploy --rollback</code>. It restores the other slot from its most recent backup, regenerates the UKI, and updates the bootloader — without touching your running system. If a new slot fails to boot at all, the boot-counting pipeline detects the failure and automatically reverts to the previous slot — no user action required. Your personal files, Flatpak apps, containers, Nix packages, and settings are in separate subvolumes and are completely unaffected by any OS rollback.</div>
+          </details>
+
+          <details class="faq-item" id="faq-laptop">
+            <summary><i class="fas fa-laptop"></i> Is it good for laptops? Battery life? Hibernation?</summary>
+            <div class="faq-body">Yes. <strong>Fingerprint login works at first boot</strong> on supported hardware — no setup. <strong>Hibernation works out of the box</strong> — the <code>@swap</code> subvolume is automatically sized to your RAM and configured at first deployment, with Copy-on-Write disabled as required for Btrfs swap. No manual setup needed. <strong>TPM2 auto-unlock</strong> lets you use LUKS2 full-disk encryption without typing a passphrase at every boot — the key is sealed to your hardware's TPM state. Profile Sync Daemon runs browser profiles from RAM, substantially reducing SSD write wear from daily browsing. The volatile <code>/var</code> design further reduces unnecessary disk writes. LUKS2 argon2id and Secure Boot are fully supported.</div>
+          </details>
+
+          <details class="faq-item" id="faq-security">
+            <summary><i class="fas fa-lock"></i> Is it secure? What exactly is protected?</summary>
+            <div class="faq-body">The system root is read-only — even root can't modify core OS files at runtime. Updates are verified SHA256 + GPG before deployment. Six Linux Security Modules run simultaneously: Landlock, Lockdown, Yama, Integrity, AppArmor, and BPF LSM. LUKS2 with argon2id (memory-hard KDF) encrypts data at rest. TPM2 auto-unlock ties LUKS keys to hardware state. Secure Boot verifies the bootloader and kernel before the system starts. Intel ME is disabled by default. Flatpak sandboxes user apps. firewalld blocks unsolicited inbound connections from first boot. Zero telemetry means no analytics attack surface. That said — no OS eliminates all risk. Network threats, zero-days, and social engineering are outside what OS architecture alone can solve.</div>
+          </details>
+
+          <details class="faq-item" id="faq-open-source">
+            <summary><i class="fas fa-code-branch"></i> Is it really open source? Can I verify how updates work?</summary>
+            <div class="faq-body">Fully. The build system, <code>shani-deploy</code> scripts, and every tool that runs on your system are public on <a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a>. The public GPG verification key is on public keyservers. In an era of supply chain attacks, that isn't a nice-to-have — it's the point. You don't have to trust claims. You can read the code, verify the key, and reproduce the build. Full technical documentation is at <a href="https://wiki.shani.dev" target="_blank" rel="noopener">wiki.shani.dev</a>.</div>
+          </details>
+
+          <details class="faq-item" id="faq-who-built">
+            <summary><i class="fas fa-users"></i> Who built this and why should I trust it?</summary>
+            <div class="faq-body">Shanios is built by Shrinivas Vishnu Kumbhar with a background in large-scale Arch-based distribution development and DevOps. The project emerged from research at Shivaji University into applying production deployment patterns to the everyday desktop. Trust is earned through transparency — everything is public and auditable, not claimed and closed. Questions before you commit? <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Join the community on Telegram</a> — the developer is active in the channel.</div>
+          </details>
+
         </div>
-        <h3>Financial Support</h3>
-        <p>
-          Help fund development, CI infrastructure, testing hardware,
-          and long-term maintenance of Shanios.
-        </p>
-        <!-- Two donate buttons stacked -->
-        <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
-          <a href="https://razorpay.me/@shanios"
-             target="_blank" rel="noopener"
-             style="width: 100%; padding: 0.75rem 2rem; border: 2px solid #0D94FB; border-radius: 999px; font-weight: 600; font-size: 0.90rem; font-family: 'Poppins', sans-serif; background: rgba(255,255,255,0.04); color: #0D94FB; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: background 0.2s, color 0.2s; text-decoration: none; box-sizing: border-box;"
-             onmouseover="this.style.background='#0D94FB';this.style.color='#fff'"
-             onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='#0D94FB'">
-            <i class="fas fa-rupee-sign"></i> Donate via Razorpay
-          </a>
-          <form action="https://www.paypal.com/ncp/payment/MAFZ3KEE2DSQQ" method="post" target="_blank" style="width: 100%;">
-            <button type="submit"
-                    style="width: 100%; padding: 0.75rem 2rem; border: 2px solid #FFD140; border-radius: 999px; font-weight: 600; font-size: 0.85rem; font-family: 'Poppins', sans-serif; background: rgba(255,255,255,0.04); color: #FFD140; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: background 0.2s, color 0.2s;"
-                    onmouseover="this.style.background='#FFD140';this.style.color='#111'"
-                    onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='#FFD140'">
-              <i class="fas fa-dollar-sign"></i> Donate via PayPal
-            </button>
-          </form>
+
+        <div style="margin-top:3rem; text-align:center;">
+          <a href="#download" class="btn btn-primary"><i class="fas fa-cloud-download-alt"></i> Download Free</a>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.7;">Free to use · No account · No telemetry</p>
         </div>
       </div>
+    </section>
 
+    <!-- ===== SUPPORT ===== -->
+    <section id="support" class="section support-section">
+      <div class="container">
+        <h2 class="section-title">Support the Project</h2>
+        <p class="section-subtitle">Shanios is built by one developer as an open-source project. Your support funds development, CI infrastructure, testing hardware, and long-term maintenance.</p>
 
-      <!-- Contribute -->
-      <div class="support-card">
-        <div class="support-icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <h3>Contribute Code</h3>
-        <p>
-          Report bugs, propose features, improve documentation,
-          or contribute directly to the source code.
-          Whether you are a developer, tester, designer, or writer —
-          your contribution matters.
-        </p>
-        <a href="https://github.com/shani8dev"
-           class="btn btn-support secondary"
-           target="_blank"
-           rel="noopener">
-          Get Involved
-        </a>
-      </div>
-
-      <!-- Telegram Support -->
-      <div class="support-card">
-        <div class="support-icon">
-          <i class="fab fa-telegram-plane"></i>
-        </div>
-        <h3>Join Telegram</h3>
-        <p>
-          Connect with the Shanios community for real-time OS support,
-          updates, tips, and discussions.
-        </p>
-        <a href="https://t.me/shani8dev"
-           class="btn btn-support tertiary"
-           target="_blank"
-           rel="noopener">
-          Join Now
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= ABOUT SECTION ================= -->
-<section id="about" class="section about-section">
-  <div class="container">
-
-    <h2 class="section-title">About Shanios</h2>
-    <p class="section-subtitle">
-      Shanios is an immutable Linux OS built to eliminate broken updates,
-      system failures, and update anxiety.
-    </p>
-
-    <div class="about-grid">
-
-      <!-- Core philosophy -->
-      <div class="about-card">
-        <div class="about-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Reliable by Design</h3>
-        <p>
-          Dual immutable system images allow instant, reversible updates.
-          Enterprise-grade reliability meets user-friendly design.
-        </p>
-      </div>
-
-      <!-- History -->
-      <div class="about-card">
-        <div class="about-icon">
-          <i class="fas fa-history"></i>
-        </div>
-        <h3>Our Journey</h3>
-        <p>
-          Created by <strong>Shrinivas Vishnu Kumbhar</strong> during M.Tech research
-          at <a href="https://www.walchandsangli.ac.in" target="_blank" rel="noopener">
-          Walchand College of Engineering, Sangli</a>.
-          Experience from co-founding <a href="https://garudalinux.org" target="_blank" rel="noopener">
-          Garuda Linux</a> and DevOps work inspired Shanios.
-        </p>
-      </div>
-
-      <!-- Philosophy -->
-      <div class="about-card">
-        <div class="about-icon">
-          <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3>Core Philosophy</h3>
-        <p>
-          Shanios is built with a simple belief:
-          <strong>your operating system should never break.</strong> It should be your most reliable tool — not a source of anxiety.
-          Shanios proves that security, usability, and reliability can coexist.
-        </p>
-      </div>
-
-    </div>
-
-
-    <!-- Connect & Footer -->
-    <div class="about-connect-footer">
-
-    <!-- Footer with Founder + LinkedIn -->
-    <div class="support-footer">
-      <div class="founder">    
-
-        <!-- Header: Role + Icon -->
-        <div class="founder-header">
-          <i class="fas fa-code founder-icon"></i>
-          <div>
-            <h2>Creator</h2>
-            <span class="role">Lead Developer</span>
+        <div class="donation-banner">
+          <div class="donation-banner-text">
+            <i class="fas fa-heart" style="color:#ff6b6b;"></i>
+            <div>
+              <strong>Shanios is built by one person, in their spare time, for the community.</strong>
+              <span>If it saves you a reinstall — or saves your system from a reimaging — consider supporting the project.</span>
+            </div>
+          </div>
+          <div class="donation-banner-actions">
+            <a href="https://razorpay.me/@shanios" target="_blank" rel="noopener" class="btn-donate razorpay">
+              <i class="fas fa-rupee-sign"></i> Razorpay
+            </a>
+            <a href="https://paypal.me/shrinivasvkumbhar" target="_blank" rel="noopener" class="btn-donate paypal">
+              <i class="fab fa-paypal"></i> PayPal
+            </a>
           </div>
         </div>
 
-        <!-- Founder Name -->
-        <div class="founder-name">
-          <i class="fas fa-user-astronaut"></i>
-          <strong>Shrinivas Vishnu Kumbhar</strong>
+        <div class="support-grid">
+          <div class="support-card">
+            <div class="support-icon"><i class="fas fa-bullhorn"></i></div>
+            <h3>Spread the Word</h3>
+            <p>Star the project on GitHub, share it with admins and developers who are tired of reinstalling, or write about your experience. Word of mouth is how small open-source projects grow.</p>
+            <a href="https://github.com/shani8dev" class="btn btn-support secondary" target="_blank" rel="noopener">Star on GitHub</a>
+          </div>
+          <div class="support-card">
+            <div class="support-icon"><i class="fab fa-github"></i></div>
+            <h3>Contribute</h3>
+            <p>Report bugs, propose features, improve documentation, or contribute code. Whether you're a developer, tester, designer, or technical writer — every contribution matters.</p>
+            <a href="https://github.com/shani8dev" class="btn btn-support secondary" target="_blank" rel="noopener">Get Involved</a>
+          </div>
+          <div class="support-card">
+            <div class="support-icon"><i class="fab fa-telegram-plane"></i></div>
+            <h3>Join the Community</h3>
+            <p>Real-time support, announcements, tips, and discussion on Telegram. The developer is active in the channel.</p>
+            <a href="https://t.me/shani8dev" class="btn btn-support tertiary" target="_blank" rel="noopener">Join Telegram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About Shanios</h2>
+        <p class="section-subtitle">The story behind the project — where it came from, what drives it, and who built it.</p>
+
+        <div class="about-grid">
+
+          <div class="about-card">
+            <div class="about-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3>The Problem We Solved</h3>
+            <p>Server infrastructure has used blue-green deployments, image-based delivery, and cryptographic verification for years. Desktop Linux has not — and users pay for it with reinstalls, broken updates, and accumulated system debt. Shanios applied those server-grade patterns to the everyday desktop, without requiring users to understand the infrastructure underneath. The result: rollback in one reboot, six active security modules, TPM2 auto-unlock, and hibernation out of the box — as defaults, not add-ons.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon"><i class="fas fa-history"></i></div>
+            <h3>Research Made Real</h3>
+            <p>Shanios was created from research at Shivaji University into applying production deployment patterns to the desktop. Years of large-scale Linux distribution development and DevOps experience shaped the architecture. The result is a system that feels ordinary to use while making catastrophic update failures recoverable instead of terminal.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon"><i class="fab fa-github"></i></div>
+            <h3>Radical Transparency</h3>
+            <p>Every build script, deploy tool, and signing workflow is public on <a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a>. The GPG signing key is on public keyservers. Supply chain attacks succeed when users have to take someone's word for it. With Shanios, you don't — you can verify the full chain yourself, end to end.</p>
+          </div>
+
+          <div class="about-card made-in-india">
+            <div class="about-icon"><i class="fas fa-flag"></i></div>
+            <h3>Built in India 🇮🇳</h3>
+            <p>Shanios is built in India — with Indian-language support (Devanagari, Tamil, Telugu, and more) designed in from the start, not added as an afterthought. Indian scripts render correctly on first boot, no packages to hunt for. IBus multi-language input is pre-configured. This is an intentional first-class feature, not an afterthought.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3>Honest About Tradeoffs</h3>
+            <p>Shanios is not the right tool for everyone. For the deepest Steam Deck integration, use Bazzite or SteamOS. For full declarative reproducibility, use NixOS. The compare table on this page tells you where others genuinely win. We'd rather you pick the right tool than be oversold on the wrong one.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon"><i class="fas fa-heart"></i></div>
+            <h3>Core Philosophy</h3>
+            <p><strong>Your OS should be your most reliable tool — not a source of anxiety.</strong> The best OS is the one you stop thinking about. Reliability and security shouldn't require expertise to configure. Zero telemetry shouldn't require an opt-out. Hibernation and TPM2 auto-unlock shouldn't require a wiki deep-dive. Shanios aims to deliver all of this as sensible defaults, for everyone, with nothing hidden. The OS that earns trust by being boring.</p>
+          </div>
+
         </div>
 
-        <!-- LinkedIn inside founder -->
-        <div class="founder-connect">
-          <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/"
-             class="social-link"
-             target="_blank"
-             rel="noopener"
-             aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i> Connect
-          </a>
-          <a href="https://github.com/Shrinivasvkumbhar"
-             class="social-link github"
-             target="_blank"
-             rel="noopener"
-             aria-label="GitHub Profile">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://paypal.me/shrinivasvkumbhar"
-             class="social-link"
-             target="_blank"
-             rel="noopener"
-             aria-label="Support on PayPal"
-             style="background: rgba(255, 209, 64, 0.1); color: #FFD140;">
-            <i class="fab fa-paypal"></i> Support
-          </a>
+        <div style="margin-top:2.5rem; text-align:center;">
+          <a href="#download" class="btn btn-primary"><i class="fas fa-cloud-download-alt"></i> Download Free</a>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.7;">Free to use · Open source · Built in India 🇮🇳</p>
         </div>
 
-  </div>
-</section>
+        <div class="about-connect-footer">
+          <div class="support-footer">
+            <div class="founder">
+              <div class="founder-header">
+                <i class="fas fa-code founder-icon"></i>
+                <div>
+                  <h2>Creator</h2>
+                  <span class="role">PhD Scholar · Lead Developer</span>
+                </div>
+              </div>
+              <div class="founder-name">
+                <i class="fas fa-user-astronaut"></i>
+                <strong>Shrinivas Vishnu Kumbhar</strong>
+              </div>
+              <div class="founder-connect">
+                <a href="https://www.linkedin.com/in/Shrinivasvkumbhar/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i> Connect
+                </a>
+                <a href="https://github.com/Shrinivasvkumbhar" class="social-link github" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://paypal.me/shrinivasvkumbhar" class="social-link" target="_blank" rel="noopener" aria-label="Support on PayPal"
+                   style="background:rgba(255,209,64,0.1); color:#FFD140;">
+                  <i class="fab fa-paypal"></i> Support
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <!-- Footer -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/images/about.svg" alt="Shanios" width="100" height="40" />
-          <p>The Immutable Operating System That Never Breaks</p>
+          <p>The Immutable Linux OS Built for Reliability &amp; Security</p>
+          <p style="font-size:0.78rem; opacity:0.55; margin-top:0.4rem;">Open Source · Zero Telemetry · No Ads · Free to Use · Built in India 🇮🇳</p>
         </div>
         <div class="footer-links">
           <div class="footer-group">
             <h4>Get Started</h4>
             <ul>
               <li><a href="#download">Download</a></li>
+              <li><a href="#how">How It Works</a></li>
               <li><a href="#features">Features</a></li>
+              <li><a href="#compare">Compare</a></li>
+              <li><a href="#usecases">Who It's For</a></li>
+              <li><a href="#faq">FAQ</a></li>
               <li><a href="#support">Support</a></li>
             </ul>
           </div>
@@ -1092,19 +1648,20 @@
               <li><a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram</a></li>
               <li><a href="https://wiki.shani.dev" target="_blank" rel="noopener">Documentation</a></li>
+              <li><a href="https://sourceforge.net/projects/shanios/" target="_blank" rel="noopener">SourceForge</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="copyright-year"></span> Shanios Project. Open Source & Immutable.</p>
+        <p>&copy; <span id="copyright-year">2026</span> Shanios Project · Open Source · Zero Telemetry · No Ads · Free to Use</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top -->
   <a href="#hero" class="back-to-top" aria-label="Back to top">
     <i class="fas fa-chevron-up"></i>
   </a>
+
 </body>
 </html>

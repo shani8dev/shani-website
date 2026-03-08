@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================
-     MOBILE MENU
-  ===================================================== */
+   *  MOBILE MENU
+   * ==================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
   const navList = document.querySelector('.nav-list');
 
@@ -53,20 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-  // Back to Top
-  const backToTop = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      document.body.classList.add('scrolled');
-    } else {
-      document.body.classList.remove('scrolled');
-    }
-  });
-
   /* =====================================================
-     SMOOTH SCROLL WITH HEADER OFFSET
-  ===================================================== */
+   *  SMOOTH SCROLL WITH HEADER OFFSET
+   * ==================================================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const href = anchor.getAttribute('href');
@@ -81,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const blessing = document.querySelector('.top-blessing');
 
       const offset =
-        (header?.offsetHeight || 0) +
-        (blessing?.offsetHeight || 0);
+      (header?.offsetHeight || 0) +
+      (blessing?.offsetHeight || 0);
 
       window.scrollTo({
         top: target.offsetTop - offset - 10,
@@ -92,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* =====================================================
-     ACTIVE NAV LINK (INTERSECTION OBSERVER)
-  ===================================================== */
+   *  ACTIVE NAV LINK (INTERSECTION OBSERVER)
+   * ==================================================== */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
@@ -118,49 +107,69 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 
+  /* =====================================================
+   *  INSTALLATION SECTION TOGGLE
+   *
+   *  FIX: The section had both class="hidden" AND
+   *  style="display:none". Toggling the class alone
+   *  never overrode the inline style. Now we drive
+   *  visibility entirely through inline style and keep
+   *  the class only as a state marker.
+   * ==================================================== */
+  const installSection = document.getElementById('installation');
+  const installToggles = document.querySelectorAll('.toggle-install');
+  const installButtonSection = document.querySelector('.show-installation-guide');
 
-/* =====================================================
-   INSTALLATION SECTION TOGGLE (FIXED)
-===================================================== */
-const installSection = document.getElementById('installation');
-const installToggles = document.querySelectorAll('.toggle-install');
-const installetionGuideButtonSection = document.querySelector('.show-installation-guide');
+  if (installSection && installToggles.length) {
+    // Ensure the section starts hidden via inline style (authoritative)
+    installSection.style.display = 'none';
+    installSection.classList.add('hidden');
 
-if (installSection && installToggles.length) {
-  installToggles.forEach(button => {
-    button.addEventListener('click', e => {
-      e.preventDefault();
+    installToggles.forEach(button => {
+      button.addEventListener('click', e => {
+        e.preventDefault();
 
-      const isOpen = !installSection.classList.toggle('hidden');
-      installetionGuideButtonSection.classList.toggle('hidden', isOpen);
-      installToggles.forEach(btn => {
-        btn.setAttribute('aria-expanded', String(isOpen));
-        btn.innerHTML = isOpen
-          ? '<i class="fas fa-times"></i> Close Guide'
-          : '<i class="fas fa-tools"></i> Installation Guide';
-      });
+        const currentlyHidden = installSection.style.display === 'none';
 
-      if (isOpen) {
-        const header = document.querySelector('.header');
-        const blessing = document.querySelector('.top-blessing');
+        if (currentlyHidden) {
+          // Open
+          installSection.style.display = '';
+          installSection.classList.remove('hidden');
+          if (installButtonSection) installButtonSection.classList.add('hidden');
 
-        const offset =
+          installToggles.forEach(btn => {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.innerHTML = '<i class="fas fa-times"></i> Close Guide';
+          });
+
+          const header = document.querySelector('.header');
+          const blessing = document.querySelector('.top-blessing');
+          const offset =
           (header?.offsetHeight || 0) +
           (blessing?.offsetHeight || 0);
 
-        window.scrollTo({
-          top: installSection.offsetTop - offset - 10,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-}
+          window.scrollTo({
+            top: installSection.offsetTop - offset - 10,
+            behavior: 'smooth'
+          });
+        } else {
+          // Close
+          installSection.style.display = 'none';
+          installSection.classList.add('hidden');
+          if (installButtonSection) installButtonSection.classList.remove('hidden');
 
+          installToggles.forEach(btn => {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '<i class="fas fa-tools"></i> Installation Guide';
+          });
+        }
+      });
+    });
+  }
 
   /* =====================================================
-     SCROLL EFFECTS (HEADER SHADOW + BACK TO TOP)
-  ===================================================== */
+   *  SCROLL EFFECTS (HEADER SHADOW + BACK TO TOP)
+   * ==================================================== */
   const header = document.querySelector('.header');
   let scrollTimeout;
 
@@ -169,9 +178,9 @@ if (installSection && installToggles.length) {
 
     if (header) {
       header.style.boxShadow =
-        window.scrollY > 50
-          ? '0 4px 12px rgba(0,0,0,.15)'
-          : '0 2px 8px rgba(0,0,0,.1)';
+      window.scrollY > 50
+      ? '0 4px 12px rgba(0,0,0,.15)'
+      : '0 2px 8px rgba(0,0,0,.1)';
     }
   };
 
@@ -183,45 +192,42 @@ if (installSection && installToggles.length) {
   onScroll();
 
   /* =====================================================
-     LAZY IMAGE FADE-IN
-  ===================================================== */
+   *  LAZY IMAGE FADE-IN
+   * ==================================================== */
   if ('loading' in HTMLImageElement.prototype) {
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
       img.complete
-        ? img.classList.add('loaded')
-        : img.addEventListener('load', () => img.classList.add('loaded'));
+      ? img.classList.add('loaded')
+      : img.addEventListener('load', () => img.classList.add('loaded'));
     });
   }
 
-/* ======================================================
-  Flip Animation
-  ======================================================= */
+  /* =====================================================
+   *  FEATURE CARD FLIP ANIMATION
+   * ==================================================== */
+  document.querySelectorAll('.toggle-details').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
 
-document.querySelectorAll('.toggle-details').forEach(button => {
-  button.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const card = this.closest('.feature-card');
-    const isFlipped = card.classList.contains('flipped');
-    
-    card.classList.toggle('flipped');
-    // Text is already set in HTML
-    this.setAttribute('aria-expanded', String(!isFlipped));
-    
-    // Reset scroll position when flipping back to front
-    if (!card.classList.contains('flipped')) {
-      const back = card.querySelector('.feature-card-back');
-      if (back) back.scrollTop = 0;
-    }
+      const card = this.closest('.feature-card');
+      const isFlipped = card.classList.contains('flipped');
+
+      card.classList.toggle('flipped');
+      this.setAttribute('aria-expanded', String(!isFlipped));
+
+      // Reset scroll position when flipping back to front
+      if (!card.classList.contains('flipped')) {
+        const back = card.querySelector('.feature-card-back');
+        if (back) back.scrollTop = 0;
+      }
+    });
   });
-});
 
   /* =====================================================
-     COPYRIGHT YEAR
-  ===================================================== */
+   *  COPYRIGHT YEAR
+   * ==================================================== */
   const year = document.getElementById('copyright-year');
   if (year) year.textContent = new Date().getFullYear();
 
   console.log('%cShanios – Immutable by Design', 'font-size:20px;color:#ff7f50');
 });
-
