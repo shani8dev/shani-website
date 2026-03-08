@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', 'false');
       menuOverlay.style.display = 'none';
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
 
     const openMenu = () => {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', 'true');
       menuOverlay.style.display = 'block';
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
       const firstFocusable = navList.querySelector('a, button');
       if (firstFocusable) firstFocusable.focus();
     };
@@ -40,59 +42,56 @@ document.addEventListener('DOMContentLoaded', () => {
       navList.classList.contains('active') ? closeMenu() : openMenu();
 
       menuToggle.addEventListener('click', toggleMenu);
-      menuOverlay.addEventListener('click', closeMenu);
 
-      // Close on any internal nav-link click
-      navList.addEventListener('click', e => {
-        if (e.target.closest('.nav-link')) closeMenu();
+      menuOverlay.addEventListener('click', e => {
+        if (!navList.contains(e.target)) closeMenu();
       });
 
-        // Close on Escape, return focus to toggle
-        document.addEventListener('keydown', e => {
-          if (e.key === 'Escape' && navList.classList.contains('active')) {
-            closeMenu();
-            menuToggle.focus();
-          }
+        // Close on any internal nav-link click
+        navList.addEventListener('click', e => {
+          if (e.target.closest('.nav-link')) closeMenu();
         });
 
-        // Live focus trap (handles dynamically shown/hidden items)
-        const getFocusables = () =>
-        [...navList.querySelectorAll('a, button')].filter(
-          el => !el.hasAttribute('disabled') && el.offsetParent !== null
-        );
+          // Close on Escape, return focus to toggle
+          document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && navList.classList.contains('active')) {
+              closeMenu();
+              menuToggle.focus();
+            }
+          });
 
-        navList.addEventListener('keydown', e => {
-          if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
-          const focusables = getFocusables();
-          if (!focusables.length) return;
-          const first = focusables[0];
-          const last  = focusables[focusables.length - 1];
+          // Live focus trap
+          const getFocusables = () =>
+          [...navList.querySelectorAll('a, button')].filter(
+            el => !el.hasAttribute('disabled') && el.offsetParent !== null
+          );
 
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
-        });
+          navList.addEventListener('keydown', e => {
+            if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
+            const focusables = getFocusables();
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last  = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          });
   }
 
   /* =====================================================
    *  SMOOTH SCROLL WITH HEADER OFFSET
-   *  Uses getBoundingClientRect for accuracy after
-   *  dynamic content (install section) opens/closes.
    * ==================================================== */
   document.addEventListener('click', e => {
     const anchor = e.target.closest('a[href^="#"]');
     if (!anchor) return;
-
     const href = anchor.getAttribute('href');
     if (!href || href === '#' || href === '#!') return;
-
     const target = document.querySelector(href);
     if (!target) return;
-
     e.preventDefault();
     window.scrollTo({
       top: target.getBoundingClientRect().top + window.scrollY - getStickyOffset(),
@@ -108,31 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (sections.length && navLinks.length) {
     let lastActiveId = null;
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const id = entry.target.id;
         if (lastActiveId === id) return;
         lastActiveId = id;
-
         navLinks.forEach(link =>
         link.classList.toggle('active', link.getAttribute('href') === `#${id}`)
         );
       });
-    }, {
-      rootMargin: '-25% 0px -65% 0px',
-      threshold: 0,
-    });
-
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
     sections.forEach(s => observer.observe(s));
   }
 
   /* =====================================================
    *  INSTALLATION SECTION TOGGLE
-   *
-   *  Drives visibility through inline style (authoritative).
-   *  class="hidden" kept only as a state marker.
    * ==================================================== */
   const installSection       = document.getElementById('installation');
   const installToggles       = document.querySelectorAll('.toggle-install');
@@ -146,17 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', e => {
         e.preventDefault();
         const isHidden = installSection.style.display === 'none';
-
         if (isHidden) {
           installSection.style.display = '';
           installSection.classList.remove('hidden');
           if (installButtonSection) installButtonSection.classList.add('hidden');
-
           installToggles.forEach(btn => {
             btn.setAttribute('aria-expanded', 'true');
             btn.innerHTML = '<i class="fas fa-times"></i> Close Guide';
           });
-
           window.scrollTo({
             top: installSection.getBoundingClientRect().top + window.scrollY - getStickyOffset(),
                           behavior: 'smooth',
@@ -165,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
           installSection.style.display = 'none';
           installSection.classList.add('hidden');
           if (installButtonSection) installButtonSection.classList.remove('hidden');
-
           installToggles.forEach(btn => {
             btn.setAttribute('aria-expanded', 'false');
             btn.innerHTML = '<i class="fas fa-tools"></i> Installation Guide';
@@ -176,9 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-   *  SCROLL EFFECTS — rAF throttled (replaces setTimeout)
-   *  • body.scrolled triggers the FAB group via CSS
-   *  • header shadow deepens on scroll
+   *  SCROLL EFFECTS — rAF throttled
    * ==================================================== */
   const header = document.querySelector('.header');
   let rafPending = false;
@@ -186,9 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const onScroll = () => {
     rafPending = false;
     const y = window.scrollY;
-
     document.body.classList.toggle('scrolled', y > 300);
-
     if (header) {
       header.style.boxShadow = y > 50
       ? '0 4px 12px rgba(0,0,0,.18)'
@@ -202,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(onScroll);
   }, { passive: true });
 
-  onScroll(); // run once on load
+  onScroll();
 
   /* =====================================================
    *  LAZY IMAGE FADE-IN
@@ -213,67 +195,111 @@ document.addEventListener('DOMContentLoaded', () => {
         img.classList.add('loaded');
       } else {
         img.addEventListener('load',  () => img.classList.add('loaded'));
-        img.addEventListener('error', () => img.classList.add('loaded')); // prevent stuck fade
+        img.addEventListener('error', () => img.classList.add('loaded'));
       }
     });
   }
 
   /* =====================================================
    *  FEATURE CARD FLIP ANIMATION
+   *  — pointer-events toggled so hidden face never blocks clicks
+   *  — works on desktop (3D flip) and mobile (show/hide)
    * ==================================================== */
-  document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
 
-      const card = this.closest('.feature-card');
-      if (!card) return;
-
-      const isFlipped = card.classList.contains('flipped');
-      card.classList.toggle('flipped');
-      this.setAttribute('aria-expanded', String(!isFlipped));
-
-      // Reset back-face scroll when closing
-      if (isFlipped) {
-        const back = card.querySelector('.feature-card-back');
-        if (back) back.scrollTop = 0;
-      }
-    });
+  // Initialise: back faces must not intercept clicks at load
+  document.querySelectorAll('.feature-card').forEach(card => {
+    const back = card.querySelector('.feature-card-back');
+    if (back) back.style.pointerEvents = 'none';
   });
 
+    document.querySelectorAll('.toggle-details').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-  /* =====================================================
-   *  SCROLL REVEAL
-   *  Adds .reveal to sections and grid cards,
-   *  then uses IntersectionObserver to add .visible
-   * ==================================================== */
-  const revealTargets = [
-    ...document.querySelectorAll('.section'),
-                          ...document.querySelectorAll('.feature-card, .usecase-card, .pain-card, .support-card, .about-card, .download-card, .how-step, .faq-item, .stat-item'),
-  ];
+        const card = this.closest('.feature-card');
+        if (!card) return;
 
-  revealTargets.forEach(el => el.classList.add('reveal'));
+        const isFlipped = card.classList.contains('flipped');
+        card.classList.toggle('flipped');
 
-  // Stagger siblings inside grids
-  document.querySelectorAll('.feature-grid, .usecase-grid, .support-grid, .about-grid, .how-steps').forEach(grid => {
-    [...grid.children].forEach((child, i) => child.style.setProperty('--i', i));
-  });
+        const front = card.querySelector('.feature-card-front');
+        const back  = card.querySelector('.feature-card-back');
+        if (front && back) {
+          if (!isFlipped) {
+            // Now showing back
+            front.style.pointerEvents = 'none';
+            back.style.pointerEvents  = 'auto';
+          } else {
+            // Now showing front
+            front.style.pointerEvents = 'auto';
+            back.style.pointerEvents  = 'none';
+            back.scrollTop = 0;
+          }
+        }
 
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target); // fire once
-      }
+        this.setAttribute('aria-expanded', String(!isFlipped));
+      });
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  revealTargets.forEach(el => revealObserver.observe(el));
+    /* =====================================================
+     *  SCROLL REVEAL
+     *  — Only cards/items get .reveal, NOT parent sections.
+     *    Sections being opacity:0 would hide headings too.
+     *  — Includes ALL card types site-wide for consistency.
+     * ==================================================== */
+    const revealTargets = [
+      ...document.querySelectorAll([
+        '.feature-card',
+        '.usecase-card',
+        '.pain-card',
+        '.support-card',
+        '.about-card',
+        '.download-card',
+        '.how-step',
+        '.faq-item',
+        '.stat-item',
+        '.roadmap-card',
+        '.opportunity-card',
+        '.pricing-card',
+      ].join(', ')),
+    ];
 
-  /* =====================================================
-   *  COPYRIGHT YEAR
-   * ==================================================== */
-  const yearEl = document.getElementById('copyright-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    revealTargets.forEach(el => el.classList.add('reveal'));
 
-  console.log('%cShanios – Immutable by Design', 'font-size:20px;color:#ff7f50');
+    // Set stagger index --i for grids
+    const staggerGrids = [
+      '.feature-grid',
+      '.usecase-grid',
+      '.support-grid',
+      '.about-grid',
+      '.how-steps',
+      '.roadmap-grid',
+      '.opportunity-grid',
+      '.pricing-grid',
+      '.stats-grid',
+      '.pain-grid',
+    ];
+    document.querySelectorAll(staggerGrids.join(', ')).forEach(grid => {
+      [...grid.children].forEach((child, i) => child.style.setProperty('--i', i));
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+
+    /* =====================================================
+     *  COPYRIGHT YEAR
+     * ==================================================== */
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    console.log('%cShanios – Immutable by Design', 'font-size:20px;color:#ff7f50');
 });
