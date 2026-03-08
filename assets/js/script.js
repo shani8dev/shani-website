@@ -1,82 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================
+   *  UTILITY — shared sticky offset calculation
+   * ==================================================== */
+  const getStickyOffset = () => {
+    const header   = document.querySelector('.header');
+    const blessing = document.querySelector('.top-blessing');
+    return (header?.offsetHeight || 0) + (blessing?.offsetHeight || 0) + 10;
+  };
+
+  /* =====================================================
    *  MOBILE MENU
    * ==================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
-  const navList = document.querySelector('.nav-list');
+  const navList    = document.querySelector('.nav-list');
 
   if (menuToggle && navList) {
     const menuOverlay = document.createElement('div');
     menuOverlay.className = 'menu-overlay';
     document.body.appendChild(menuOverlay);
 
-    const toggleMenu = () => {
-      const isOpen = navList.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuOverlay.style.display = isOpen ? 'block' : 'none';
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+    const closeMenu = () => {
+      navList.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuOverlay.style.display = 'none';
+      document.body.style.overflow = '';
     };
 
-    menuToggle.addEventListener('click', toggleMenu);
-    menuOverlay.addEventListener('click', toggleMenu);
+    const openMenu = () => {
+      navList.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuOverlay.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      const firstFocusable = navList.querySelector('a, button');
+      if (firstFocusable) firstFocusable.focus();
+    };
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navList.classList.contains('active')) toggleMenu();
+      const toggleMenu = () =>
+      navList.classList.contains('active') ? closeMenu() : openMenu();
+
+      menuToggle.addEventListener('click', toggleMenu);
+      menuOverlay.addEventListener('click', closeMenu);
+
+      // Close on any internal nav-link click
+      navList.addEventListener('click', e => {
+        if (e.target.closest('.nav-link')) closeMenu();
       });
-    });
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && navList.classList.contains('active')) {
-        toggleMenu();
-      }
-    });
+        // Close on Escape, return focus to toggle
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && navList.classList.contains('active')) {
+            closeMenu();
+            menuToggle.focus();
+          }
+        });
 
-    // Focus trap
-    const focusables = navList.querySelectorAll('a, button');
-    if (focusables.length) {
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
+        // Live focus trap (handles dynamically shown/hidden items)
+        const getFocusables = () =>
+        [...navList.querySelectorAll('a, button')].filter(
+          el => !el.hasAttribute('disabled') && el.offsetParent !== null
+        );
 
-      navList.addEventListener('keydown', e => {
-        if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
+        navList.addEventListener('keydown', e => {
+          if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
+          const focusables = getFocusables();
+          if (!focusables.length) return;
+          const first = focusables[0];
+          const last  = focusables[focusables.length - 1];
 
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      });
-    }
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        });
   }
 
   /* =====================================================
    *  SMOOTH SCROLL WITH HEADER OFFSET
+   *  Uses getBoundingClientRect for accuracy after
+   *  dynamic content (install section) opens/closes.
    * ==================================================== */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#' || href === '#!') return;
+  document.addEventListener('click', e => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
 
-      const target = document.querySelector(href);
-      if (!target) return;
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#' || href === '#!') return;
 
-      e.preventDefault();
+    const target = document.querySelector(href);
+    if (!target) return;
 
-      const header = document.querySelector('.header');
-      const blessing = document.querySelector('.top-blessing');
-
-      const offset =
-      (header?.offsetHeight || 0) +
-      (blessing?.offsetHeight || 0);
-
-      window.scrollTo({
-        top: target.offsetTop - offset - 10,
-        behavior: 'smooth'
-      });
+    e.preventDefault();
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - getStickyOffset(),
+                    behavior: 'smooth',
     });
   });
 
@@ -87,52 +107,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
   if (sections.length && navLinks.length) {
+    let lastActiveId = null;
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-
         const id = entry.target.id;
-        navLinks.forEach(link => {
-          link.classList.toggle(
-            'active',
-            link.getAttribute('href') === `#${id}`
-          );
-        });
+        if (lastActiveId === id) return;
+        lastActiveId = id;
+
+        navLinks.forEach(link =>
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`)
+        );
       });
     }, {
-      rootMargin: '-30% 0px -60% 0px',
-      threshold: 0.1
+      rootMargin: '-25% 0px -65% 0px',
+      threshold: 0,
     });
 
-    sections.forEach(section => observer.observe(section));
+    sections.forEach(s => observer.observe(s));
   }
 
   /* =====================================================
    *  INSTALLATION SECTION TOGGLE
    *
-   *  FIX: The section had both class="hidden" AND
-   *  style="display:none". Toggling the class alone
-   *  never overrode the inline style. Now we drive
-   *  visibility entirely through inline style and keep
-   *  the class only as a state marker.
+   *  Drives visibility through inline style (authoritative).
+   *  class="hidden" kept only as a state marker.
    * ==================================================== */
-  const installSection = document.getElementById('installation');
-  const installToggles = document.querySelectorAll('.toggle-install');
+  const installSection       = document.getElementById('installation');
+  const installToggles       = document.querySelectorAll('.toggle-install');
   const installButtonSection = document.querySelector('.show-installation-guide');
 
   if (installSection && installToggles.length) {
-    // Ensure the section starts hidden via inline style (authoritative)
     installSection.style.display = 'none';
     installSection.classList.add('hidden');
 
     installToggles.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
+        const isHidden = installSection.style.display === 'none';
 
-        const currentlyHidden = installSection.style.display === 'none';
-
-        if (currentlyHidden) {
-          // Open
+        if (isHidden) {
           installSection.style.display = '';
           installSection.classList.remove('hidden');
           if (installButtonSection) installButtonSection.classList.add('hidden');
@@ -142,18 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = '<i class="fas fa-times"></i> Close Guide';
           });
 
-          const header = document.querySelector('.header');
-          const blessing = document.querySelector('.top-blessing');
-          const offset =
-          (header?.offsetHeight || 0) +
-          (blessing?.offsetHeight || 0);
-
           window.scrollTo({
-            top: installSection.offsetTop - offset - 10,
-            behavior: 'smooth'
+            top: installSection.getBoundingClientRect().top + window.scrollY - getStickyOffset(),
+                          behavior: 'smooth',
           });
         } else {
-          // Close
           installSection.style.display = 'none';
           installSection.classList.add('hidden');
           if (installButtonSection) installButtonSection.classList.remove('hidden');
@@ -168,37 +176,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-   *  SCROLL EFFECTS (HEADER SHADOW + BACK TO TOP)
+   *  SCROLL EFFECTS — rAF throttled (replaces setTimeout)
+   *  • body.scrolled triggers the FAB group via CSS
+   *  • header shadow deepens on scroll
    * ==================================================== */
   const header = document.querySelector('.header');
-  let scrollTimeout;
+  let rafPending = false;
 
   const onScroll = () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 300);
+    rafPending = false;
+    const y = window.scrollY;
+
+    document.body.classList.toggle('scrolled', y > 300);
 
     if (header) {
-      header.style.boxShadow =
-      window.scrollY > 50
-      ? '0 4px 12px rgba(0,0,0,.15)'
+      header.style.boxShadow = y > 50
+      ? '0 4px 12px rgba(0,0,0,.18)'
       : '0 2px 8px rgba(0,0,0,.1)';
     }
   };
 
   window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(onScroll, 50);
-  });
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(onScroll);
+  }, { passive: true });
 
-  onScroll();
+  onScroll(); // run once on load
 
   /* =====================================================
    *  LAZY IMAGE FADE-IN
    * ==================================================== */
   if ('loading' in HTMLImageElement.prototype) {
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-      img.complete
-      ? img.classList.add('loaded')
-      : img.addEventListener('load', () => img.classList.add('loaded'));
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load',  () => img.classList.add('loaded'));
+        img.addEventListener('error', () => img.classList.add('loaded')); // prevent stuck fade
+      }
     });
   }
 
@@ -206,28 +222,58 @@ document.addEventListener('DOMContentLoaded', () => {
    *  FEATURE CARD FLIP ANIMATION
    * ==================================================== */
   document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
 
       const card = this.closest('.feature-card');
-      const isFlipped = card.classList.contains('flipped');
+      if (!card) return;
 
+      const isFlipped = card.classList.contains('flipped');
       card.classList.toggle('flipped');
       this.setAttribute('aria-expanded', String(!isFlipped));
 
-      // Reset scroll position when flipping back to front
-      if (!card.classList.contains('flipped')) {
+      // Reset back-face scroll when closing
+      if (isFlipped) {
         const back = card.querySelector('.feature-card-back');
         if (back) back.scrollTop = 0;
       }
     });
   });
 
+
+  /* =====================================================
+   *  SCROLL REVEAL
+   *  Adds .reveal to sections and grid cards,
+   *  then uses IntersectionObserver to add .visible
+   * ==================================================== */
+  const revealTargets = [
+    ...document.querySelectorAll('.section'),
+                          ...document.querySelectorAll('.feature-card, .usecase-card, .pain-card, .support-card, .about-card, .download-card, .how-step, .faq-item, .stat-item'),
+  ];
+
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  // Stagger siblings inside grids
+  document.querySelectorAll('.feature-grid, .usecase-grid, .support-grid, .about-grid, .how-steps').forEach(grid => {
+    [...grid.children].forEach((child, i) => child.style.setProperty('--i', i));
+  });
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target); // fire once
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+
   /* =====================================================
    *  COPYRIGHT YEAR
    * ==================================================== */
-  const year = document.getElementById('copyright-year');
-  if (year) year.textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   console.log('%cShanios – Immutable by Design', 'font-size:20px;color:#ff7f50');
 });
