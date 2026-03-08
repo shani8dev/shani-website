@@ -269,7 +269,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1050;
   -webkit-tap-highlight-color: transparent;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 /* Mid-range nav: icon-only labels to prevent overflow */
@@ -341,12 +341,17 @@ body {
     width: 100%;
     justify-content: flex-start;
     font-size: 1rem;
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1rem;
+    min-height: 48px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     pointer-events: auto;
     position: relative;
-    z-index: 1;
+    z-index: 1201;
+    display: flex;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   .nav-link i {

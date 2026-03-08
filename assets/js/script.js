@@ -16,14 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList    = document.querySelector('.nav-list');
 
   if (menuToggle && navList) {
-    const menuOverlay = document.createElement('div');
-    menuOverlay.className = 'menu-overlay';
-    document.body.appendChild(menuOverlay);
+
+    // Backdrop — purely visual, no pointer events so links are never blocked
+    const backdrop = document.createElement('div');
+    backdrop.className = 'menu-overlay';
+    backdrop.style.pointerEvents = 'none';
+    document.body.appendChild(backdrop);
 
     const closeMenu = () => {
       navList.classList.remove('active');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuOverlay.style.display = 'none';
+      backdrop.style.display = 'none';
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
     };
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenu = () => {
       navList.classList.add('active');
       menuToggle.setAttribute('aria-expanded', 'true');
-      menuOverlay.style.display = 'block';
+      backdrop.style.display = 'block';
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
       const firstFocusable = navList.querySelector('a, button');
@@ -41,45 +44,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const toggleMenu = () =>
       navList.classList.contains('active') ? closeMenu() : openMenu();
 
-      menuToggle.addEventListener('click', toggleMenu);
-
-      menuOverlay.addEventListener('click', e => {
-        if (!navList.contains(e.target)) closeMenu();
+      menuToggle.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleMenu();
       });
 
-        // Close on any internal nav-link click
-        navList.addEventListener('click', e => {
-          if (e.target.closest('.nav-link')) closeMenu();
-        });
+      // Close when tapping outside nav panel — direct document listener, no overlay needed
+      const outsideTap = e => {
+        if (!navList.classList.contains('active')) return;
+        if (navList.contains(e.target) || menuToggle.contains(e.target)) return;
+        closeMenu();
+      };
+      document.addEventListener('touchstart', outsideTap, { passive: true });
+      document.addEventListener('click', outsideTap);
 
-          // Close on Escape, return focus to toggle
-          document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && navList.classList.contains('active')) {
-              closeMenu();
-              menuToggle.focus();
-            }
-          });
+      // Close on any nav-link tap
+      navList.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => closeMenu());
+        link.addEventListener('touchend', () => closeMenu());
+      });
 
-          // Live focus trap
-          const getFocusables = () =>
-          [...navList.querySelectorAll('a, button')].filter(
-            el => !el.hasAttribute('disabled') && el.offsetParent !== null
-          );
+      // Close on Escape
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && navList.classList.contains('active')) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
 
-          navList.addEventListener('keydown', e => {
-            if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
-            const focusables = getFocusables();
-            if (!focusables.length) return;
-            const first = focusables[0];
-            const last  = focusables[focusables.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-            }
-          });
+      // Focus trap
+      const getFocusables = () =>
+      [...navList.querySelectorAll('a, button')].filter(
+        el => !el.hasAttribute('disabled') && el.offsetParent !== null
+      );
+
+      navList.addEventListener('keydown', e => {
+        if (e.key !== 'Tab' || !navList.classList.contains('active')) return;
+        const focusables = getFocusables();
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last  = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
   }
 
   /* =====================================================
