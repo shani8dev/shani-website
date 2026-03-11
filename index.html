@@ -1520,72 +1520,7 @@
           </div>
         </div>
 
-        <!-- ===== WHAT HAPPENS NEXT ===== -->
-        <div class="next-steps">
-          <h3 class="next-steps-title"><i class="fas fa-circle-arrow-right"></i> Got the ISO? Here's what to do next.</h3>
-          <ol class="next-steps-list">
-            <li>
-              <span class="step-num">1</span>
-              <div class="step-body">
-                <strong>Verify &amp; write to USB</strong>
-                <p>On Linux — verify first:<br>
-                <code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso</code><br>
-                Compare against the checksum on <a href="https://wiki.shani.dev" target="_blank" rel="noopener">wiki.shani.dev</a>. Then find your USB drive with <code>lsblk</code> and write:<br>
-                <code>sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso of=/dev/sdX status=progress oflag=sync</code><br>
-                Replace <code>/dev/sdX</code> with your actual USB drive (e.g. <code>/dev/sdb</code>) — double-check with <code>lsblk</code> first. On Windows use <a href="https://etcher.balena.io" target="_blank" rel="noopener">Balena Etcher</a> or Rufus. Min 8 GB USB. <em>Do not use Ventoy — conflicts with Shanios's bootloader.</em></p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">2</span>
-              <div class="step-body">
-                <strong>Quick BIOS check (before booting USB)</strong>
-                <p>Disable Fast Boot · Disable Secure Boot (re-enable after install by enrolling MOK key — <strong>password: <code>shanios</code></strong>) · Set SATA → AHCI · <strong>UEFI mode required — disable legacy/CSM</strong> · TPM 2.0 on if present. Access BIOS with <kbd>F2</kbd>, <kbd>F10</kbd>, or <kbd>Del</kbd> at startup. <em>Most modern laptops only need Fast Boot and Secure Boot changed — the rest are already correct.</em></p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">3</span>
-              <div class="step-body">
-                <strong>Boot from USB &amp; install</strong>
-                <p>Hit <kbd>F12</kbd> / <kbd>F2</kbd> / <kbd>Del</kbd> at startup → select your USB → choose "Install Shanios" → follow the installer (~10–15 min). <strong>The installer uses the entire selected drive</strong> — back up any data on it first and use a dedicated drive.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">4</span>
-              <div class="step-body">
-                <strong>First boot — automatic setup</strong>
-                <p>Shanios configures everything automatically: disk layout, hibernation swap, both OS copies, and all hardware. Takes a few minutes. No commands needed — just wait for your desktop to appear.</p>
-              </div>
-            </li>
-            <li>
-              <span class="step-num">5</span>
-              <div class="step-body">
-                <strong>Keep it updated</strong>
-                <p>One command: <code>sudo shani-deploy</code>. Downloads and verifies the new OS, prepares it in the background, then asks if you want to reboot. Your running system is never touched during this process.</p>
-              </div>
-            </li>
-          </ol>
 
-          <div class="next-steps-footer">
-            <div class="next-steps-footer-item">
-              <i class="fas fa-shield-halved"></i>
-              <span>All ISOs are SHA256 + GPG signed. <a href="https://wiki.shani.dev" target="_blank" rel="noopener">Checksums &amp; GPG key on wiki.shani.dev</a> — verify before writing.</span>
-            </div>
-            <div class="next-steps-footer-item">
-              <i class="fas fa-book"></i>
-              <span><a href="https://wiki.shani.dev" target="_blank" rel="noopener">Full documentation</a> including TPM2, Secure Boot, and post-install setup</span>
-            </div>
-            <div class="next-steps-footer-item">
-              <i class="fab fa-telegram"></i>
-              <span>Stuck? <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Ask in the Telegram community</a> — developer is active and responds personally</span>
-            </div>
-          </div>
-
-          <div class="show-installation-guide" style="margin-top:2rem; text-align:center;">
-            <button class="btn btn-secondary toggle-install" aria-expanded="false">
-              <i class="fas fa-screwdriver-wrench"></i> Full Installation Guide — BIOS setup, all update commands, rollback, TPM2, Secure Boot
-            </button>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1597,7 +1532,11 @@
 
         <div class="hti-warning">
           <i class="fas fa-triangle-exclamation"></i>
-          <div><strong>Dual-boot is not supported.</strong> The installer uses the entire selected drive — use a dedicated drive. If you need to keep Windows, install Shanios on a separate physical drive and switch between them using BIOS boot selection (<kbd>F12</kbd>).</div>
+          <div>
+            <strong>Shanios needs its own dedicated drive — it cannot share a drive with Windows or another OS.</strong><br>
+            The installer will erase the entire selected drive and set it up automatically. It creates a small boot area and uses the rest of the drive for the OS, your files, and apps — all managed for you. You don't need to partition anything yourself.<br><br>
+            <span style="opacity:0.85;">Need to keep Windows? Use a <strong>second drive</strong> for Shanios. At startup, press <kbd>F12</kbd> (or your laptop's boot key) to choose which drive to boot from.</span>
+          </div>
         </div>
 
         <div class="hti-steps">
@@ -1606,8 +1545,9 @@
             <div class="hti-step-num">1</div>
             <div class="hti-step-body">
               <h3>Download &amp; verify the ISO</h3>
-              <p>Download the GNOME or KDE edition from the <a href="#download">Download section</a>. Verify the SHA256 checksum before writing — the link is next to each download button.</p>
+              <p>Download the GNOME or KDE edition from the <a href="#download">Download section</a>. Before writing to USB, verify the file wasn't corrupted in transit — the verify link is next to each download button. On Linux:</p>
               <pre><code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso</code></pre>
+              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">Compare the output against the checksum on <a href="https://wiki.shani.dev" target="_blank" rel="noopener">wiki.shani.dev</a>. If they match, the file is intact.</p>
             </div>
           </div>
 
