@@ -28,6 +28,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Global link colour — no browser-default blue anywhere */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--secondary);
+}
+
 /* Accessibility */
 .sr-only,
 .visually-hidden {
@@ -194,6 +204,7 @@ body {
 
   opacity: 0;
   pointer-events: none;
+  z-index: 2000;
 
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -275,17 +286,94 @@ body {
 /* Mid-range nav: icon-only labels to prevent overflow */
 @media (max-width: 1200px) and (min-width: 901px) {
   .nav-link {
-    font-size: 0;          /* hide text */
+    font-size: 0.82rem;
     padding: clamp(0.3rem, 0.6vw, 0.45rem) 0.55rem;
-    gap: 0;
   }
   .nav-link i {
-    font-size: 1rem;
-    margin-right: 0;
+    font-size: 0.9rem;
+    margin-right: 0.3rem;
   }
   .nav-list {
-    gap: 0.25rem;
+    gap: 0.2rem;
   }
+}
+
+/* ── Dropdown ─────────────────────────────────────── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-more-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  gap: 0.35rem;
+}
+
+.nav-chevron {
+  font-size: 0.65rem !important;
+  margin-right: 0 !important;
+  transition: transform 0.2s ease;
+}
+
+.nav-more-btn[aria-expanded="true"] .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 190px;
+  background: #1e1535;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  z-index: 1400;
+}
+
+.nav-dropdown-menu.open {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.nav-dropdown-item i {
+  width: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Divider between text links and icon links */
+.nav-divider-item {
+  width: 1px;
+  height: 1.4rem;
+  background: rgba(255,255,255,0.18);
+  margin: 0 0.25rem;
+  align-self: center;
 }
 
 /* Mobile Navigation */
@@ -300,28 +388,26 @@ body {
     top: 0;
     right: 0;
     height: 100dvh;
-    width: min(80%, 320px);
+    width: min(80%, 300px);
     background: #1e1535;
 
     flex-direction: column;
     align-items: stretch;
-    gap: 0.25rem;
+    gap: 0.15rem;
 
-    padding: 5rem 1.5rem 2rem;
+    padding: 5rem 1rem 2rem;
     margin: 0;
 
-    /* Use transform instead of right for smooth, blur-free animation */
     transform: translateX(100%);
     transition: transform var(--transition);
     will-change: transform;
 
-    /* Force GPU layer — keeps text and edges sharp on mobile */
     -webkit-transform: translateX(100%);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 
     z-index: 1200;
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.5);
     pointer-events: auto;
 
     overflow-y: auto;
@@ -340,8 +426,8 @@ body {
   .nav-link {
     width: 100%;
     justify-content: flex-start;
-    font-size: 1rem;
-    padding: 0.9rem 1rem;
+    font-size: 0.97rem;
+    padding: 0.8rem 0.9rem;
     min-height: 48px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -360,16 +446,61 @@ body {
     margin-right: 0.75rem;
   }
 
+  /* Dropdown becomes inline accordion on mobile */
+  .nav-dropdown { width: 100%; }
+
+  .nav-more-btn {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 0.97rem;
+    padding: 0.8rem 0.9rem;
+    min-height: 48px;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid rgba(255,255,255,0.12);
+    border-radius: 0;
+    background: transparent;
+    padding: 0 0 0 1.25rem;
+    margin-left: 0.9rem;
+  }
+
+  .nav-dropdown-menu.open { display: block; }
+
+  .nav-dropdown-item {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.75rem;
+    min-height: 44px;
+  }
+
   .nav-icon-link {
     width: 100%;
     display: flex;
     align-items: center;
   }
 
-  /* Show labels again in mobile */
+  /* Show labels in mobile */
   .nav-icon-label {
     display: inline;
     margin-left: 0.5rem;
+  }
+
+  /* Hide vertical divider on mobile */
+  .nav-divider-item { display: none; }
+
+  /* Download Free pill — full width in mobile drawer */
+  .nav-download-cta {
+    border-radius: 0.5rem !important;
+    margin-left: 0 !important;
+    text-align: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    font-size: 0.97rem !important;
+    padding: 0.8rem 0.9rem !important;
   }
 
 }
@@ -404,11 +535,40 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Hero sub-headline — sits inside h1 as a second line */
+.hero-sub {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.45rem);
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Hero tagline row — small badge inside subtitle */
+.hero-tagline-row {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Hero tagline — badge-row below h1 */
+.hero-tagline {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  font-weight: 500;
+  opacity: 0.65;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.75rem;
+  margin-top: -0.75rem;
+}
+
 .hero-subtitle {
-  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   margin-bottom: 2.5rem;
-  opacity: 0.95;
-  max-width: 800px;
+  opacity: 0.85;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
@@ -472,6 +632,55 @@ body {
 
 /* Sections */
 .section { padding: 5rem 0; }
+
+/* =====================================================
+ * SCROLL OFFSET — compensate for sticky blessing bar + sticky header
+ * blessing ~34px + header ~66px ≈ 100px desktop
+ * ===================================================== */
+section[id],
+div[id] {
+  scroll-margin-top: 108px;
+}
+
+@media (max-width: 768px) {
+  section[id],
+  div[id] {
+    scroll-margin-top: 92px;
+  }
+}
+
+@media (max-width: 480px) {
+  section[id],
+  div[id] {
+    scroll-margin-top: 80px;
+  }
+}
+/* =====================================================
+ * SCROLL OFFSET — compensate for sticky blessing bar + sticky header
+ * blessing ~34px + header ~66px = 100px desktop
+ * ===================================================== */
+:target,
+section[id],
+div[id] {
+  scroll-margin-top: 108px;
+}
+
+@media (max-width: 768px) {
+  :target,
+  section[id],
+  div[id] {
+    scroll-margin-top: 92px;
+  }
+}
+
+@media (max-width: 480px) {
+  :target,
+  section[id],
+  div[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
 
 .section-title {
   font-size: clamp(1.6rem, 4vw, 2.5rem);
@@ -566,46 +775,54 @@ body {
 
 .feature-card {
   background: rgba(255, 255, 255, 0.05);
-  padding: 2.5rem 2rem;
   border-radius: 1rem;
   text-align: left;
-  transition: all var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  overflow: hidden;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  min-height: 280px;
+  overflow: visible; /* must NOT be hidden — clips the rotated back face */
+  perspective: 1200px;
+  min-height: 320px;
 }
 
-.feature-card-front {
-  text-align: center;
-  transform: rotateY(0deg);
-}
-
+/* Both faces share a 3D flip context via the card's perspective */
 .feature-card-front,
 .feature-card-back {
-  transition: transform 0.6s ease-in-out;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
   will-change: transform;
+}
+
+/* Front face sits naturally, fills the card */
+.feature-card-front {
+  position: relative;
+  transform: rotateY(0deg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+/* Back face is absolutely positioned over the front */
+.feature-card-back {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  pointer-events: none;
+  text-align: left;
+  /* Clip overflow within the rounded card border */
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .feature-card.flipped .feature-card-front { transform: rotateY(-180deg); }
 .feature-card.flipped .feature-card-back  {
   transform: rotateY(0deg);
   pointer-events: auto;
-}
-
-.feature-card-back {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  transform: rotateY(180deg);
-  padding: 2.5rem 2rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  pointer-events: none;
-  text-align: left;
 }
 
 .feature-card::before {
@@ -615,11 +832,13 @@ body {
   height: 4px;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   transform: scaleX(0);
+  transform-origin: left;
   transition: transform var(--transition);
+  border-radius: 1rem 1rem 0 0;
+  z-index: 1;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-lg);
 }
@@ -1315,62 +1534,52 @@ body {
 /* How steps expand/collapse toggle */
 .how-steps-expand {
   margin-top: 2.5rem;
+  text-align: center;
 }
 
-.how-steps-expand > summary {
-  list-style: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+/* Toggle button */
+.how-steps-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0 auto;
-  padding: 0.55rem 1.4rem;
+  gap: 0.55rem;
+  padding: 0.55rem 1.6rem;
   border-radius: 2rem;
   border: 1px solid rgba(255,255,255,0.18);
   font-size: 0.88rem;
   font-weight: 500;
+  font-family: inherit;
   color: rgba(255,255,255,0.65);
   background: rgba(255,255,255,0.04);
-  transition: all 0.2s ease;
-  width: 100%;
-  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.how-steps-expand > summary::-webkit-details-marker { display: none; }
+.how-steps-toggle:hover,
+.how-steps-toggle[aria-expanded="true"] {
+  border-color: rgba(255,127,80,0.45);
+  color: var(--primary);
+  background: rgba(255,127,80,0.07);
+}
 
-.how-steps-expand > summary::after {
-  content: '\f078';
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
+.how-steps-chevron {
   font-size: 0.65rem;
-  opacity: 0.5;
+  opacity: 0.55;
   transition: transform 0.25s ease;
 }
 
-.how-steps-expand > summary:hover {
-  border-color: rgba(255,127,80,0.4);
-  color: var(--primary);
-  background: rgba(255,127,80,0.06);
-}
-
-.how-steps-expand[open] > summary {
-  border-color: rgba(255,127,80,0.3);
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-
-.how-steps-expand[open] > summary::after {
+.how-steps-toggle[aria-expanded="true"] .how-steps-chevron {
   transform: rotate(180deg);
 }
 
-.how-steps-expand[open] > summary span::before {
-  content: 'Hide';
+/* Collapsible content */
+.how-steps-content {
+  margin-top: 2rem;
 }
 
-.how-steps-expand > summary span::before {
-  content: 'Show';
+.how-steps-content[hidden] {
+  display: none;
 }
 
 /* =====================================================
@@ -1404,6 +1613,7 @@ body {
   gap: 0.75rem;
   user-select: none;
   transition: background var(--transition);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -1414,7 +1624,25 @@ body {
   flex-shrink: 0;
 }
 
+/* Chevron indicator — shows item is expandable */
+.faq-item summary::after {
+  content: '\f078'; /* fa-chevron-down */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.65rem;
+  opacity: 0.4;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+  opacity: 0.75;
+}
+
 .faq-item summary:hover { background: rgba(255, 255, 255, 0.04); }
+.faq-item summary:hover::after { opacity: 0.7; }
 
 .faq-item[open] summary {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -2140,6 +2368,23 @@ a.fab-kde:hover {
   color: var(--light);
 }
 
+
+/* compare-col: base column header style */
+.compare-col {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--light);
+  padding: 0.85rem 1rem;
+}
+
+/* compare-col: shared base for all comparison table header cells */
+.compare-col {
+  text-align: center;
+  vertical-align: bottom;
+  padding-bottom: 0.65rem;
+}
+
 .col-label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem; color: var(--light); }
 .col-sub   { display: block; font-size: 0.72rem; opacity: 0.55; font-weight: 400; }
 
@@ -2210,22 +2455,28 @@ thead .col-shanios {
 
   /* Feature cards: disable 3D flip on mobile */
   .feature-card {
-    overflow: visible;
+    overflow: hidden; /* restore clip on mobile since back is display:none */
     perspective: none;
-    transform-style: flat;
     min-height: unset;
   }
-  .feature-card-front { transform: none !important; text-align: center; }
+  .feature-card-front {
+    transform: none !important;
+    text-align: center;
+    position: relative; /* already relative */
+  }
   .feature-card-back {
     position: static;
     transform: none !important;
-    padding: 0 0 1rem;
+    padding: 0 1.5rem 1.25rem;
     overflow-y: visible;
+    overflow-x: visible;
     display: none;
     pointer-events: none;
     text-align: left;
+    background: transparent;
+    border-radius: 0;
   }
-  .feature-card.flipped .feature-card-front { transform: none; }
+  .feature-card.flipped .feature-card-front { transform: none !important; }
   .feature-card.flipped .feature-card-back  {
     display: block;
     pointer-events: auto;
@@ -2268,7 +2519,7 @@ thead .col-shanios {
   .about-card    { padding: 2rem 1.5rem; }
   .support-footer { margin-top: 2rem; }
 
-  .feature-card:hover { transform: none; box-shadow: none; }
+  .feature-card:hover { box-shadow: none; }
 
   .install-content pre { font-size: 0.78rem; padding: 0.75rem 1rem; }
 }
@@ -2543,13 +2794,15 @@ details.usecase-card[open] > summary::after {
  * ===================================================== */
 
 /* Nav Download pill — stands out from all other nav links */
+/* Download Free nav pill — primary user acquisition CTA */
 .nav-download-cta {
   background: var(--primary) !important;
   color: #fff !important;
   border-radius: 20px;
-  padding: 0.35rem 1rem !important;
-  font-weight: 600;
+  padding: 0.4rem 1.1rem !important;
+  font-weight: 700;
   border: 2px solid var(--primary);
+  box-shadow: 0 2px 10px rgba(255,127,80,0.35);
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 .nav-download-cta:hover,
@@ -2559,6 +2812,18 @@ details.usecase-card[open] > summary::after {
   box-shadow: 0 0 0 2px var(--primary);
   transform: translateY(-1px);
 }
+
+/* Hero Installation Guide button */
+.btn-hero-install {
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* nav-cta-pill removed — Get in Touch moved out of nav */
+
+/* Enterprise nav link — moved to More dropdown, no special styling needed */
+
 
 /* Hero download button — larger, more weight than secondary */
 .btn-hero-download {
@@ -2761,6 +3026,21 @@ details.usecase-card[open] > summary::after {
   font-size: 0.88rem;
   opacity: 0.7;
   text-align: center;
+}
+
+/* Release notes link below download buttons */
+.release-notes-link {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  white-space: nowrap;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+.release-notes-link:hover {
+  opacity: 1;
+  color: var(--secondary);
 }
 
 /* ── Download card "What's included" expand ── */
@@ -3435,4 +3715,170 @@ img[loading="lazy"].loaded {
 .new-to-linux-callout a {
   color: var(--primary);
   text-decoration: underline;
+}
+
+
+/* Contact form styles removed — forms replaced with Telegram/Email buttons */
+
+
+/* =====================================================
+ *  MOBILE VIEW IMPROVEMENTS
+ * ==================================================== */
+
+/* Hero — tighten on small screens */
+@media (max-width: 480px) {
+  .hero-content { padding: 1.25rem 0; }
+  .hero-content h1 { font-size: clamp(1.5rem, 7vw, 2rem); margin-bottom: 1rem; }
+  .hero-subtitle { font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .cta-group { flex-direction: column; align-items: center; gap: 0.6rem; }
+  .cta-group .btn { width: 100%; max-width: 280px; justify-content: center; }
+  .hero-pain-strip { gap: 0.6rem 0.5rem; margin-top: 1.5rem; padding-top: 1.25rem; }
+  .pain-item { font-size: 0.8rem; }
+}
+
+/* Stats bar — 2-col on mobile, tighter text */
+@media (max-width: 480px) {
+  .stats-bar { padding: 1.5rem 0; }
+  .stat-label { font-size: 0.68rem; }
+  .stat-number { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+}
+
+/* Sections — reduce vertical padding on mobile */
+@media (max-width: 600px) {
+  .section { padding: 3rem 0; }
+  .section-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+  .section-intro { font-size: 0.9rem; margin-bottom: 2rem; }
+  .group-title { font-size: 1rem; margin: 2rem 0 1.25rem; letter-spacing: 0.08em; }
+}
+
+/* Compare table — hint at scroll on mobile */
+@media (max-width: 768px) {
+  .compare-scroll-wrapper {
+    border-radius: 8px;
+    /* Gradient fade on right edge hints at scrollability */
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+  .compare-scroll-wrapper:hover,
+  .compare-scroll-wrapper:focus-within {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .compare-table { font-size: 0.78rem; }
+  .compare-table th,
+  .compare-table td { padding: 0.65rem 0.6rem; }
+  .compare-feature-col { min-width: 120px; font-size: 0.75rem; }
+}
+
+/* Pain cards — full width on mobile */
+@media (max-width: 560px) {
+  .pain-card { padding: 1.25rem; }
+  .pain-quote { font-size: 0.92rem; }
+}
+
+/* Feature cards — disable flip, show both faces stacked on small mobile */
+@media (max-width: 480px) {
+  .feature-card { min-height: unset; padding: 0; }
+  .feature-card-front { padding: 1.5rem 1.25rem; }
+  .feature-card-back { padding: 0 1.25rem 1rem; }
+  .feature-details { font-size: 0.85rem; }
+}
+
+/* Download cards — stack buttons vertically */
+@media (max-width: 480px) {
+  .download-card { padding: 1.5rem 1rem; }
+  .download-card .btn { width: 100%; margin-bottom: 0.5rem; text-align: center; }
+}
+
+/* FAQ — tighter on mobile */
+@media (max-width: 560px) {
+  .faq-item summary { font-size: 0.92rem; padding: 0.9rem 1rem; }
+  .faq-body { font-size: 0.88rem; padding: 0.75rem 1rem 1rem; }
+}
+
+/* Footer — stack on mobile */
+@media (max-width: 600px) {
+  .footer-content { flex-direction: column; gap: 2rem; }
+  .footer-links { flex-direction: column; gap: 1.5rem; }
+  .footer-bottom { font-size: 0.75rem; text-align: center; }
+}
+
+/* FAB group — smaller on mobile */
+@media (max-width: 480px) {
+  a.fab { width: 42px; height: 42px; font-size: 0.9rem; }
+  a.fab i { width: 42px; }
+  .fab-label { display: none; }
+}
+
+/* Opportunity / enterprise cards — single col on mobile */
+@media (max-width: 480px) {
+  .opportunity-grid { grid-template-columns: 1fr !important; }
+  .opportunity-card { padding: 1.25rem; }
+}
+
+/* Roadmap — single col on small mobile */
+@media (max-width: 400px) {
+  .roadmap-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Vendor / pricing section cards */
+@media (max-width: 480px) {
+  .pricing-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+}
+
+/* Top blessing bar */
+@media (max-width: 360px) {
+  .top-blessing { font-size: 0.72rem; padding: 0.2rem 0; }
+}
+
+/* Prevent horizontal overflow globally on small screens */
+@media (max-width: 600px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+
+/* ── Functional / semantic section classes ── */
+/* features-section and vendor-section: inherit .section styles, no extra needed */
+.features-section,
+.vendor-section {
+  /* intentionally inherits from .section */
+}
+
+/* nav element base reset */
+nav.nav {
+  /* inherits from header context */
+}
+
+/* show-installation-guide wrapper */
+.show-installation-guide {
+  /* layout handled inline; no additional styles needed */
+}
+
+/* toggle-details / toggle-install: inherit .btn-more / .btn styles */
+.toggle-details,
+.toggle-install {
+  /* inherits from .btn-more / .btn */
+}
+
+
+/* =====================================================
+ * CONTACT CTA WRAP — replaces old contact-form-wrap
+ * Simple centred card for Telegram/Email buttons
+ * ===================================================== */
+.contact-cta-wrap {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1rem;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .contact-cta-wrap { padding: 1.25rem 1rem; }
+  .contact-cta-wrap [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
