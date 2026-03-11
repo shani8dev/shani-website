@@ -27,8 +27,8 @@
     "description": "Enterprise-grade immutable Linux platform with atomic blue-green updates, zero-touch OEM deployment, GPG-verified images, 6 kernel security modules, TPM2 auto-unlock, LUKS2 argon2id, Secure Boot, zero telemetry, and instant rollback. Built on Arch Linux. Made in India.",
     "url": "https://shani.dev",
     "logo": "https://shani.dev/assets/images/logo.svg",
-    "softwareVersion": "2026.01.18",
-    "datePublished": "2026-01-18",
+    "softwareVersion": "2026.03.10",
+    "datePublished": "2026-03-10",
     "downloadUrl": "https://sourceforge.net/projects/shanios/",
     "offers": [
       { "@type": "Offer", "name": "Community Edition", "price": "0", "priceCurrency": "USD" },
@@ -1452,7 +1452,7 @@
                 <i class="fas fa-shield-alt"></i> Verify SHA256
               </a>
             </div>
-            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-gnome-2026.01.18-x86_64.iso</code></p>
+            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-gnome-2026.03.10-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">Clean, focused desktop — best for work, students, and Windows/Mac switchers. Browser, office suite, calendar, notes, media apps, VMs (GNOME Boxes), Waydroid, OnlyOffice, Vivaldi — all pre-installed, nothing to configure. <a href="#features">Full feature list →</a></p>
@@ -1484,7 +1484,7 @@
                 <i class="fas fa-shield-alt"></i> Verify SHA256
               </a>
             </div>
-            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-plasma-2026.01.18-x86_64.iso</code></p>
+            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-plasma-2026.03.10-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">🎮 Best for gamers and power users. Steam, Heroic, Lutris, RetroArch, Bottles, GameMode — all pre-installed. NVIDIA configured at first boot. Full KDE productivity suite, Waydroid, OnlyOffice, Vivaldi — everything ready at first boot. <a href="#features">Full feature list →</a></p>
@@ -1529,9 +1529,9 @@
               <div class="step-body">
                 <strong>Verify &amp; write to USB</strong>
                 <p>On Linux — verify first:<br>
-                <code>sha256sum signed_shanios-gnome-2026.01.18-x86_64.iso</code><br>
+                <code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso</code><br>
                 Compare against the checksum on <a href="https://wiki.shani.dev" target="_blank" rel="noopener">wiki.shani.dev</a>. Then find your USB drive with <code>lsblk</code> and write:<br>
-                <code>sudo dd bs=4M if=signed_shanios-gnome-2026.01.18-x86_64.iso of=/dev/sdX status=progress oflag=sync</code><br>
+                <code>sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso of=/dev/sdX status=progress oflag=sync</code><br>
                 Replace <code>/dev/sdX</code> with your actual USB drive (e.g. <code>/dev/sdb</code>) — double-check with <code>lsblk</code> first. On Windows use <a href="https://etcher.balena.io" target="_blank" rel="noopener">Balena Etcher</a> or Rufus. Min 8 GB USB. <em>Do not use Ventoy — conflicts with Shanios's bootloader.</em></p>
               </div>
             </li>
@@ -1620,8 +1620,8 @@
           <h3>Creating Installation Media</h3>
           <p>Write the ISO using <strong>Balena Etcher</strong> (recommended), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/macOS).</p>
           <p><strong>On Linux with dd</strong> — find your USB drive first (<code>lsblk</code>), then:</p>
-          <pre><code>sha256sum signed_shanios-gnome-2026.01.18-x86_64.iso    # verify checksum first
-sudo dd bs=4M if=signed_shanios-gnome-2026.01.18-x86_64.iso of=/dev/sdX status=progress oflag=sync
+          <pre><code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso    # verify checksum first
+sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso of=/dev/sdX status=progress oflag=sync
 sync</code></pre>
           <p>Replace <code>/dev/sdX</code> with your actual USB device (e.g. <code>/dev/sdb</code>). Use the KDE filename for the Plasma edition.</p>
           <p><strong>Important:</strong> Do not use Ventoy — its ISO mounting method conflicts with Shanios's bootloader. Use Balena Etcher or Rufus instead.</p>
@@ -2279,13 +2279,13 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
 
   <!-- ===== FAB GROUP ===== -->
   <div class="fab-group" aria-label="Quick actions">
-    <a href="https://sourceforge.net/projects/shanios/files/gnome/20260118/signed_shanios-gnome-2026.01.18-x86_64.iso/download"
+    <a href="https://sourceforge.net/projects/shanios/files/gnome/20260310/signed_shanios-gnome-2026.03.10-x86_64.iso/download"
        class="fab fab-gnome" target="_blank" rel="noopener noreferrer"
        aria-label="Download GNOME Edition">
       <i class="fas fa-cloud-arrow-down"></i>
       <span class="fab-label">GNOME Edition</span>
     </a>
-    <a href="https://sourceforge.net/projects/shanios/files/plasma/20260118/signed_shanios-plasma-2026.01.18-x86_64.iso/download"
+    <a href="https://sourceforge.net/projects/shanios/files/plasma/20260310/signed_shanios-plasma-2026.03.10-x86_64.iso/download"
        class="fab fab-kde" target="_blank" rel="noopener noreferrer"
        aria-label="Download KDE Edition">
       <i class="fas fa-cloud-arrow-down"></i>
