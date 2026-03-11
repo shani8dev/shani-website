@@ -1387,7 +1387,7 @@
               </tr>
               <tr>
                 <td class="compare-feature-col"><strong>Price</strong></td>
-                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="mailto:shrinivas.v.kumbhar@gmail.com" style="color:var(--primary);">shrinivas.v.kumbhar@gmail.com</a></small></td>
+                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="/cdn-cgi/l/email-protection#03706b716a6d6a7562702d752d68766e616b627143646e626a6f2d606c6e" style="color:var(--primary);"><span class="__cf_email__" data-cfemail="26554e544f484f5047550850084d534b444e475466414b474f4a0845494b">[email&#160;protected]</span></a></small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
@@ -1589,6 +1589,86 @@
       </div>
     </section>
 
+    <!-- ===== HOW TO INSTALL — always visible ===== -->
+    <section id="how-to-install" class="section how-to-install-section">
+      <div class="container">
+        <h2 class="section-title">How to Install Shanios</h2>
+        <p class="section-intro">Five steps. About 15 minutes. No Linux experience required.</p>
+
+        <div class="hti-warning">
+          <i class="fas fa-triangle-exclamation"></i>
+          <div><strong>Dual-boot is not supported.</strong> The installer uses the entire selected drive — use a dedicated drive. If you need to keep Windows, install Shanios on a separate physical drive and switch between them using BIOS boot selection (<kbd>F12</kbd>).</div>
+        </div>
+
+        <div class="hti-steps">
+
+          <div class="hti-step">
+            <div class="hti-step-num">1</div>
+            <div class="hti-step-body">
+              <h3>Download &amp; verify the ISO</h3>
+              <p>Download the GNOME or KDE edition from the <a href="#download">Download section</a>. Verify the SHA256 checksum before writing — the link is next to each download button.</p>
+              <pre><code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso</code></pre>
+            </div>
+          </div>
+
+          <div class="hti-step">
+            <div class="hti-step-num">2</div>
+            <div class="hti-step-body">
+              <h3>Write to USB (8 GB+)</h3>
+              <p><strong>Windows:</strong> use <a href="https://etcher.balena.io" target="_blank" rel="noopener">Balena Etcher</a> or Rufus.<br>
+              <strong>Linux:</strong></p>
+              <pre><code>sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso \
+  of=/dev/sdX status=progress oflag=sync</code></pre>
+              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.5rem;">Replace <code>/dev/sdX</code> with your USB drive — confirm with <code>lsblk</code> first. <strong>Do not use Ventoy.</strong></p>
+            </div>
+          </div>
+
+          <div class="hti-step">
+            <div class="hti-step-num">3</div>
+            <div class="hti-step-body">
+              <h3>Quick BIOS check</h3>
+              <p>Access BIOS with <kbd>F2</kbd>, <kbd>Del</kbd>, or <kbd>F10</kbd> at startup:</p>
+              <ul>
+                <li>Disable <strong>Fast Boot</strong></li>
+                <li>Disable <strong>Secure Boot</strong> (re-enable after install)</li>
+                <li>Set boot mode to <strong>UEFI</strong> — legacy/CSM not supported</li>
+                <li>Set SATA to <strong>AHCI</strong></li>
+                <li>Enable <strong>Virtualization</strong> (Intel VT-x / AMD-V)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hti-step">
+            <div class="hti-step-num">4</div>
+            <div class="hti-step-body">
+              <h3>Boot from USB &amp; install</h3>
+              <p>Press <kbd>F12</kbd> at startup → select your USB → choose <strong>Install Shanios</strong> → follow the installer (~10–15 min). Select your target drive — <strong>it will be fully wiped.</strong></p>
+              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">Optional: enable LUKS2 full-disk encryption during install (recommended for laptops).</p>
+            </div>
+          </div>
+
+          <div class="hti-step">
+            <div class="hti-step-num">5</div>
+            <div class="hti-step-body">
+              <h3>First boot &amp; updates</h3>
+              <p>Shanios configures everything automatically on first boot — hardware, drivers, hibernation. Just wait for your desktop to appear.</p>
+              <p>To update the OS anytime:</p>
+              <pre><code>sudo shani-deploy</code></pre>
+              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">A desktop notification tells you when an update is ready. Your running system is never touched during the update.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:2.5rem;text-align:center;">
+          <button class="btn btn-secondary toggle-install" aria-expanded="false">
+            <i class="fas fa-screwdriver-wrench"></i> Full Installation Guide — BIOS details, all commands, TPM2, Secure Boot
+          </button>
+          <p style="margin-top:0.75rem;font-size:0.82rem;opacity:0.5;">Stuck? <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Ask in the Telegram community</a> — developer responds personally.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== INSTALLATION ===== -->
     <section id="installation" class="section install-section hidden" style="display:none;">
       <div class="container">
@@ -1664,6 +1744,16 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
           <p>Enroll the Shanios MOK key. When prompted enter password: <code>shanios</code>. Full instructions in the <a href="https://wiki.shani.dev/#secure-boot" target="_blank" rel="noopener">Secure Boot enrollment guide on wiki.shani.dev</a>.</p>
 
           <h3>Important Notes</h3>
+
+          <div class="install-dualboot-warning">
+            <div class="install-dualboot-warning__icon"><i class="fas fa-triangle-exclamation"></i></div>
+            <div>
+              <strong>Dual-boot on the same drive is not supported.</strong><br>
+              Shanios uses its own partitioning — the installer wipes the entire selected drive and creates its own layout (a 1 GB EFI partition + a single Btrfs root partition). There is no option to shrink or share partitions with an existing OS. Custom partition tables are not supported.<br><br>
+              <strong>To dual-boot with Windows or another OS:</strong> install Shanios on a <em>separate physical drive</em>. Both drives coexist without interfering. At startup, press <kbd>F12</kbd> (or your motherboard's boot selection key) to choose which drive to boot from. Shanios uses systemd-boot and will only show its own entries — it will not auto-detect other drives.
+            </div>
+          </div>
+
           <ul>
             <li><strong>Dedicated drive required:</strong> The Shanios installer uses the entire selected drive — it creates two partitions: a 1 GB EFI partition (FAT32) and a single Btrfs root partition that contains everything else. The two OS copies (@blue/@green) are Btrfs subvolumes inside that root partition, not separate partitions. Dual-booting on the same drive is not supported. If you need to keep another OS, install Shanios on a separate physical drive and use BIOS boot selection (<kbd>F12</kbd>) to choose.</li>
             <li><strong>Installing software:</strong> Use Flatpak, Snap, Nix, AppImages, or containers — all persist across updates in dedicated subvolumes. Note: Nix requires adding a channel once before first use (<code>nix-channel --add</code>)</li>
@@ -2022,7 +2112,7 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
                 <a href="https://github.com/Shrinivasvkumbhar" class="social-link github" target="_blank" rel="noopener" aria-label="GitHub Profile">
                   <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="mailto:shrinivas.v.kumbhar@gmail.com" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
+                <a href="/cdn-cgi/l/email-protection#81f2e9f3e8efe8f7e0f2aff7afeaf4ece3e9e0f3c1e6ece0e8edafe2eeec" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
                   <i class="fas fa-envelope"></i> Contact
                 </a>
               </div>
@@ -2267,11 +2357,11 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
             <a href="https://t.me/shrinivasvkumbhar" class="btn btn-primary" target="_blank" rel="noopener">
               <i class="fab fa-telegram"></i> Message on Telegram
             </a>
-            <a href="mailto:shrinivas.v.kumbhar@gmail.com" class="btn btn-secondary">
+            <a href="/cdn-cgi/l/email-protection#dfacb7adb6b1b6a9beacf1a9f1b4aab2bdb7bead9fb8b2beb6b3f1bcb0b2" class="btn btn-secondary">
               <i class="fas fa-envelope"></i> Email Directly
             </a>
           </div>
-          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;">shrinivas.v.kumbhar@gmail.com · Community edition is always free.</p>
+          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe8d968c979097889f8dd088d0958b939c969f8cbe99939f9792d09d9193">[email&#160;protected]</a> · Community edition is always free.</p>
         </div>
 
       </div>
@@ -2343,7 +2433,7 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024–2026 Shrinivas Vishnu Kumbhar · Shanios · Open Source · Made in India 🇮🇳</p>
+        <p>© 2024–<span id="copyright-year"></span> Shrinivas Vishnu Kumbhar · Shanios · Open Source · Made in India 🇮🇳</p>
         <p style="margin-top:0.35rem; font-size:0.78rem; opacity:0.55;">Community edition is and will always be free. No ads, no tracking, no telemetry.</p>
       </div>
     </div>
