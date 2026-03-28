@@ -1387,7 +1387,7 @@
               </tr>
               <tr>
                 <td class="compare-feature-col"><strong>Price</strong></td>
-                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="mailto:librewish@gmail.com" style="color:var(--primary);">librewish@gmail.com</a></small></td>
+                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="/cdn-cgi/l/email-protection#026e6b607067756b716a42656f636b6e2c616d6f" style="color:var(--primary);"><span class="__cf_email__" data-cfemail="204c494252455749534860474d41494c0e434f4d">[email&#160;protected]</span></a></small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
@@ -1449,10 +1449,20 @@
               <a href="#" data-download="gnome:sha256"
                 target="_blank" rel="noopener"
                 class="release-notes-link" title="SHA256 checksum">
-                <i class="fas fa-shield-alt"></i> Verify SHA256
+                <i class="fas fa-shield-alt"></i> SHA256
+              </a>
+              <a href="#" data-download="gnome:asc"
+                target="_blank" rel="noopener"
+                class="release-notes-link" title="GPG signature">
+                <i class="fas fa-key"></i> GPG sig
+              </a>
+              <a href="#" data-download="gnome:torrent"
+                target="_blank" rel="noopener"
+                class="release-notes-link" title="Torrent (R2 + SourceForge webseeds)">
+                <i class="fas fa-magnet"></i> Torrent
               </a>
             </div>
-            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-gnome-2026.03.10-x86_64.iso</code></p>
+            <p class="dl-meta">Version <span data-version>2026.03.10</span> &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="gnome">signed_shanios-gnome-2026.03.10-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">Clean, focused desktop — best for work, students, and Windows/Mac switchers. Browser, office suite, calendar, notes, media apps, VMs (GNOME Boxes), Waydroid, OnlyOffice, Vivaldi — all pre-installed, nothing to configure. <a href="#features">Full feature list →</a></p>
@@ -1481,10 +1491,20 @@
               <a href="#" data-download="plasma:sha256"
                 target="_blank" rel="noopener"
                 class="release-notes-link" title="SHA256 checksum">
-                <i class="fas fa-shield-alt"></i> Verify SHA256
+                <i class="fas fa-shield-alt"></i> SHA256
+              </a>
+              <a href="#" data-download="plasma:asc"
+                target="_blank" rel="noopener"
+                class="release-notes-link" title="GPG signature">
+                <i class="fas fa-key"></i> GPG sig
+              </a>
+              <a href="#" data-download="plasma:torrent"
+                target="_blank" rel="noopener"
+                class="release-notes-link" title="Torrent (R2 + SourceForge webseeds)">
+                <i class="fas fa-magnet"></i> Torrent
               </a>
             </div>
-            <p class="dl-meta">Version 2026.03.10 &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;">signed_shanios-plasma-2026.03.10-x86_64.iso</code></p>
+            <p class="dl-meta">Version <span data-version>2026.03.10</span> &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="plasma">signed_shanios-plasma-2026.03.10-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">🎮 Best for gamers and power users. Steam, Heroic, Lutris, RetroArch, Bottles, GameMode — all pre-installed. NVIDIA configured at first boot. Full KDE productivity suite, Waydroid, OnlyOffice, Vivaldi — everything ready at first boot. <a href="#features">Full feature list →</a></p>
@@ -1546,8 +1566,13 @@
             <div class="hti-step-body">
               <h3>Download &amp; verify the ISO</h3>
               <p>Download the GNOME or KDE edition from the <a href="#download">Download section</a>. Before writing to USB, verify the file wasn't corrupted in transit — the verify link is next to each download button. On Linux:</p>
-              <pre><code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso</code></pre>
-              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">Compare the output against the checksum on <a href="https://wiki.shani.dev" target="_blank" rel="noopener">wiki.shani.dev</a>. If they match, the file is intact.</p>
+              <pre><code data-cmd="verify:gnome"># Verify checksum
+sha256sum -c signed_shanios-gnome-2026.03.10-x86_64.iso.sha256
+
+# Optionally verify GPG signature (import key once)
+gpg --keyserver keys.openpgp.org --recv-keys 7B927BFFD4A9EAAA8B666B77DE217F3DA8014792
+gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome-2026.03.10-x86_64.iso</code></pre>
+              <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">SHA256 and GPG signature files are linked next to the download button. If checksum matches, the file is intact. GPG verification confirms it was signed by the Shanios project key.</p>
             </div>
           </div>
 
@@ -1557,7 +1582,7 @@
               <h3>Write to USB (8 GB+)</h3>
               <p><strong>Windows:</strong> use <a href="https://etcher.balena.io" target="_blank" rel="noopener">Balena Etcher</a> or Rufus.<br>
               <strong>Linux:</strong></p>
-              <pre><code>sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso \
+              <pre><code data-cmd="dd:gnome">sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso \\
   of=/dev/sdX status=progress oflag=sync</code></pre>
               <p style="font-size:0.82rem;opacity:0.65;margin-top:0.5rem;">Replace <code>/dev/sdX</code> with your USB drive — confirm with <code>lsblk</code> first. <strong>Do not use Ventoy.</strong></p>
             </div>
@@ -1598,6 +1623,21 @@
             </div>
           </div>
 
+          <div class="hti-step">
+            <div class="hti-step-num">6</div>
+            <div class="hti-step-body">
+              <h3>Re-enable Secure Boot <span style="font-weight:400;opacity:0.6;">(optional — only needed if your PC has Secure Boot)</span></h3>
+              <p>If your PC had Secure Boot turned on, you disabled it before installing (Step 3). This step lets you turn it back on safely. It only needs to happen once — the enrolled key survives all future OS updates.</p>
+              <p>On the first boot from the USB, a key enrollment screen appears automatically.</p>
+              <ol style="margin:0.5rem 0 0.75rem 1.25rem; line-height:1.8;">
+                <li>Select <strong>"Enroll key from disk"</strong></li>
+                <li>The security key file is at the root of the EFI partition — select it</li>
+                <li>Confirm and reboot, then go back into BIOS and re-enable Secure Boot</li>
+              </ol>
+              <p style="font-size:0.82rem;opacity:0.65;">Missed the prompt? You can enroll from the installed system instead — see the full installation guide below. Skip entirely if you're happy leaving Secure Boot disabled — Shanios works either way.</p>
+            </div>
+          </div>
+
         </div>
 
         <div style="margin-top:2.5rem;text-align:center;">
@@ -1630,7 +1670,7 @@
           <p>Configure before installing (usually via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
           <ul>
             <li>Disable Fast Boot</li>
-            <li>Disable Secure Boot for installation — re-enable it after install by enrolling the Shanios MOK key (<code>mokutil</code> — full steps on wiki.shani.dev). The enrolled key persists across all future updates.</li>
+            <li>Disable <strong>Secure Boot</strong> for installation — re-enable it after install (the USB will guide you through a one-time key enrollment on first boot). The enrolled key persists across all future updates.</li>
             <li>Set SATA mode to AHCI</li>
             <li>Enable UEFI boot — <strong>legacy/CSM BIOS mode is not supported.</strong> Shanios requires a UEFI system.</li>
             <li>Enable virtualization (Intel VT-x or AMD-V) — required for VMs (GNOME Boxes, virt-manager) and hardware-accelerated containers such as Waydroid, both pre-installed</li>
@@ -1640,7 +1680,7 @@
           <h3>Creating Installation Media</h3>
           <p>Write the ISO using <strong>Balena Etcher</strong> (recommended), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/macOS).</p>
           <p><strong>On Linux with dd</strong> — find your USB drive first (<code>lsblk</code>), then:</p>
-          <pre><code>sha256sum signed_shanios-gnome-2026.03.10-x86_64.iso    # verify checksum first
+          <pre><code data-cmd="dd-verify:gnome">sha256sum -c signed_shanios-gnome-2026.03.10-x86_64.iso.sha256  # verify checksum first
 sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso of=/dev/sdX status=progress oflag=sync
 sync</code></pre>
           <p>Replace <code>/dev/sdX</code> with your actual USB device (e.g. <code>/dev/sdb</code>). Use the KDE filename for the Plasma edition.</p>
@@ -1666,7 +1706,6 @@ sudo shani-deploy --rollback       # Roll back — run from the OS copy you want
 sudo shani-deploy -t latest        # Switch to latest channel for this run
 sudo shani-deploy --dry-run        # Simulate the full update without making changes
 sudo shani-deploy --cleanup        # Remove old OS copy backups and cached downloads (safe anytime)
-sudo shani-deploy --storage-info   # Show subvolume disk usage and compression stats
 sudo shani-deploy --optimize       # Run on-demand block-level deduplication
 sudo shani-deploy --force          # Redeploy even if already on latest version</code></pre>
 
@@ -1681,7 +1720,49 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
           <p><em><strong>Important:</strong> Always use <code>shani-deploy</code> for OS updates — do not run <code>pacman</code> directly, as it bypasses the immutable deployment system.</em></p>
 
           <h3>Post-Install: Re-enable Secure Boot</h3>
-          <p>Enroll the Shanios MOK key. When prompted enter password: <code>shanios</code>. Full instructions in the <a href="https://wiki.shani.dev/#secure-boot" target="_blank" rel="noopener">Secure Boot enrollment guide on wiki.shani.dev</a>.</p>
+          <p>If your PC has Secure Boot, you turned it off before installing. This step lets you turn it back on. It only needs to be done once — the enrolled key survives all future OS updates automatically.</p>
+
+          <p>There are two separate keys and two separate scenarios depending on where you are in the process:</p>
+
+          <p><strong>During install — from the live USB:</strong> on the first boot from the USB, a key enrollment screen appears automatically. The key is at the root of the EFI partition on the USB.</p>
+          <ol>
+            <li>Select <strong>"Enroll key from disk"</strong></li>
+            <li>The key file is at the root of the EFI partition on the USB — select it</li>
+            <li>Confirm and reboot, then go into BIOS and re-enable Secure Boot</li>
+          </ol>
+
+          <p><strong>After installation — from the installed system:</strong> if you missed the prompt during install, you can enroll from your running Shanios desktop. The installed system's key is at a different path.</p>
+
+          <details class="card-expand" style="margin-top:1rem;">
+            <summary style="font-size:0.85rem;">Technical details — for advanced users</summary>
+            <div style="margin-top:0.75rem; font-size:0.875rem; line-height:1.7;">
+              <p>Shanios uses two separate <strong>MOK keys</strong> (Machine Owner Keys) depending on the context:</p>
+              <ul style="margin:0.4rem 0 0.75rem 1.25rem; line-height:1.8;">
+                <li><strong>ISO / live USB:</strong> <code>MOK.der</code> is at the <strong>EFI partition root</strong> (<code>/</code>) — placed there by the ISO build so MokManager can find it on first boot from the USB</li>
+                <li><strong>Installed system:</strong> <code>MOK.der</code> is at <code>/boot/efi/EFI/BOOT/MOK.der</code>; the private key is at <code>/etc/secureboot/keys/MOK.key</code> — never written to the EFI partition. The installer places these alongside shim and MokManager.</li>
+              </ul>
+              <p>Modern UEFI Secure Boot normally only trusts keys from Microsoft and your motherboard manufacturer. Shim (<code>BOOTX64.EFI</code>, pre-signed by Microsoft) always loads, then checks for your enrolled MOK to verify the Shanios bootloader and kernel before launching them.</p>
+
+              <p><strong>Option A — enroll from the live ISO at first boot (recommended)</strong><br>
+              UEFI loads <code>BOOTX64.EFI</code> (shim). Shim detects the key is not yet enrolled and launches <strong>MokManager</strong> (<code>mmx64.efi</code>) automatically:</p>
+              <ol style="margin:0.4rem 0 0.75rem 1.25rem; line-height:1.8;">
+                <li>Select <strong>"Enroll key from disk"</strong></li>
+                <li>Navigate to the EFI partition root (<code>/</code>) and select <code>MOK.der</code></li>
+                <li>Confirm enrollment and reboot — all subsequent boots proceed silently through shim → signed bootloader → signed kernel</li>
+              </ol>
+
+              <p><strong>Option B — enroll from the running installed system using <code>gen-efi</code></strong><br>
+              Use this if you missed the MokManager prompt. <code>gen-efi enroll-mok</code> re-signs all EFI binaries on the ESP with the system's MOK key, copies <code>MOK.der</code> to the ESP, and stages enrollment via <code>mokutil</code> — all in one step:</p>
+              <pre><code>sudo gen-efi enroll-mok</code></pre>
+              <p>Reboot — MokManager appears automatically. Confirm with password <code>shanios</code>. After confirming, clean up any stale keys left over from the ISO:</p>
+              <pre><code>sudo gen-efi cleanup-mok</code></pre>
+              <pre><code># Verify the key is enrolled
+mokutil --list-enrolled | grep -i shani</code></pre>
+              <p style="margin-top:0.5rem;"><em>Note: <code>gen-efi enroll-mok</code> requires keys to already exist at <code>/etc/secureboot/keys/</code>. If they are missing (e.g. on a custom image), run <code>sudo gen-efi configure &lt;slot&gt;</code> first — it generates the keys and rebuilds the UKI. Then run <code>enroll-mok</code>. Must run on the live booted system, not inside a chroot.</em></p>
+              <p style="margin-top:0.75rem;">After enrolling via either option, go back into BIOS/UEFI and set Secure Boot to <strong>Enabled</strong>. If your firmware has a "Custom" or "User" mode option, select that — it allows enrolled MOK keys alongside the factory Microsoft keys.</p>
+              <p style="font-size:0.82rem;opacity:0.65;">Trouble? See the <a href="https://wiki.shani.dev/#secure-boot" target="_blank" rel="noopener">full Secure Boot enrollment guide on wiki.shani.dev</a> or ask in the <a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram community</a>.</p>
+            </div>
+          </details>
 
           <h3>Important Notes</h3>
 
@@ -1698,7 +1779,7 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
             <li><strong>Dedicated drive required:</strong> The Shanios installer uses the entire selected drive — it creates two partitions: a 1 GB EFI partition (FAT32) and a single Btrfs root partition that contains everything else. The two OS copies (@blue/@green) are Btrfs subvolumes inside that root partition, not separate partitions. Dual-booting on the same drive is not supported. If you need to keep another OS, install Shanios on a separate physical drive and use BIOS boot selection (<kbd>F12</kbd>) to choose.</li>
             <li><strong>Installing software:</strong> Use Flatpak, Snap, Nix, AppImages, or containers — all persist across updates in dedicated subvolumes. Note: Nix requires adding a channel once before first use (<code>nix-channel --add</code>)</li>
             <li><strong>Disk space:</strong> At least 10 GB free is needed to run an update. Use <code>sudo shani-deploy --cleanup</code> to remove old OS copy backups and cached downloads when disk space is low — safe to run at any time without affecting your running system.</li>
-            <li><strong>TPM2 auto-unlock:</strong> If TPM 2.0 is present and enabled in BIOS, LUKS2 disk encryption can be configured to unlock automatically using TPM PCR binding — no passphrase required at boot on trusted hardware. See the <a href="https://wiki.shani.dev/#tpm-encryption" target="_blank" rel="noopener">TPM encryption guide on wiki.shani.dev</a> for setup details.</li>
+            <li><strong>TPM2 auto-unlock:</strong> If TPM 2.0 is present and enabled in BIOS, LUKS2 disk encryption can be configured to unlock automatically using TPM2 PCR binding — no passphrase required at boot on trusted hardware. Run <code>sudo gen-efi enroll-tpm2</code> after installation. Re-enroll after any firmware update, Secure Boot change, or MOK rotation (<code>gen-efi enroll-tpm2</code> again, then <code>gen-efi cleanup-tpm2</code> to remove stale slots). See the <a href="https://wiki.shani.dev/#tpm-encryption" target="_blank" rel="noopener">TPM2 enrollment guide on wiki.shani.dev</a> for full details.</li>
           </ul>
 
           <h3>Need Help?</h3>
@@ -2052,7 +2133,7 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
                 <a href="https://github.com/Shrinivasvkumbhar" class="social-link github" target="_blank" rel="noopener" aria-label="GitHub Profile">
                   <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="mailto:librewish@gmail.com" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
+                <a href="/cdn-cgi/l/email-protection#b2dedbd0c0d7c5dbc1daf2d5dfd3dbde9cd1dddf" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
                   <i class="fas fa-envelope"></i> Contact
                 </a>
               </div>
@@ -2297,11 +2378,11 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
             <a href="https://t.me/shrinivasvkumbhar" class="btn btn-primary" target="_blank" rel="noopener">
               <i class="fab fa-telegram"></i> Message on Telegram
             </a>
-            <a href="mailto:librewish@gmail.com" class="btn btn-secondary">
+            <a href="/cdn-cgi/l/email-protection#5d31343f2f382a342e351d3a303c3431733e3230" class="btn btn-secondary">
               <i class="fas fa-envelope"></i> Email Directly
             </a>
           </div>
-          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;"><a href="mailto:librewish@gmail.com">librewish@gmail.com</a> · Community edition is always free.</p>
+          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;"><a href="/cdn-cgi/l/email-protection#f39f9a918196849a809bb3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="8be7e2e9f9eefce2f8e3cbece6eae2e7a5e8e4e6">[email&#160;protected]</span></a> · Community edition is always free.</p>
         </div>
 
       </div>
@@ -2367,7 +2448,7 @@ fwupdmgr update       # Hardware firmware (BIOS, NVMe, SSD, peripherals — via 
               <li><a href="https://wiki.shani.dev" target="_blank" rel="noopener">Documentation</a></li>
               <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram Community</a></li>
               <li><a href="https://t.me/shrinivasvkumbhar" target="_blank" rel="noopener">Contact Founder</a></li>
-              <li><a href="mailto:librewish@gmail.com">Email</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#cda1a4afbfa8baa4bea58daaa0aca4a1e3aea2a0">Email</a></li>
             </ul>
           </div>
         </div>

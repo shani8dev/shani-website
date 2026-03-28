@@ -2674,6 +2674,51 @@ body.scrolled .top-blessing {
 
 
 
+/* Links inside card-expand content */
+.card-expand a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card-expand a:hover {
+  color: var(--secondary);
+}
+
+/* "Technical details" toggle — standalone use outside feature cards */
+.install-content .card-expand,
+.hti-step-body .card-expand {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.6rem;
+  background: rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+.install-content .card-expand > summary,
+.hti-step-body .card-expand > summary {
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  border-radius: 0.6rem;
+  transition: background 0.2s;
+}
+
+.install-content .card-expand > summary:hover,
+.hti-step-body .card-expand > summary:hover {
+  background: rgba(255,127,80,0.08);
+}
+
+.install-content .card-expand[open] > summary,
+.hti-step-body .card-expand[open] > summary {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.install-content .card-expand > div,
+.hti-step-body .card-expand > div {
+  padding: 1rem 1rem 0.75rem;
+}
+
 /* Expanded detail text */
 .card-detail {
   font-size: 0.875rem;
