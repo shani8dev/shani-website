@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
    *  only. All download URLs, filenames, and version
    *  strings displayed on the page update automatically.
    * ==================================================== */
-  const VERSION = '2026.03.28';          // e.g. '2026.06.01'
-  const DATE    = '20260328';            // e.g. '20260601'
+  const VERSION = '2026.04.01';          // e.g. '2026.06.01'
+  const DATE    = '20260401';            // e.g. '20260601'
 
   const sf  = (ed, ext) =>
   `https://sourceforge.net/projects/shanios/files/${ed}/${DATE}/signed_shanios-${ed}-${VERSION}-x86_64.iso${ext}/download`;

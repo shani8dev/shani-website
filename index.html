@@ -27,8 +27,8 @@
     "description": "Enterprise-grade immutable Linux platform with atomic blue-green updates, zero-touch OEM deployment, GPG-verified images, 6 kernel security modules, TPM2 auto-unlock, LUKS2 argon2id, Secure Boot, zero telemetry, and instant rollback. Built on Arch Linux. Made in India.",
     "url": "https://shani.dev",
     "logo": "https://shani.dev/assets/images/logo.svg",
-    "softwareVersion": "2026.03.10",
-    "datePublished": "2026-03-10",
+    "softwareVersion": "2026.04.01",
+    "datePublished": "2026-04-01",
     "downloadUrl": "https://sourceforge.net/projects/shanios/",
     "offers": [
       { "@type": "Offer", "name": "Community Edition", "price": "0", "priceCurrency": "USD" },
@@ -1387,7 +1387,7 @@
               </tr>
               <tr>
                 <td class="compare-feature-col"><strong>Price</strong></td>
-                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="/cdn-cgi/l/email-protection#026e6b607067756b716a42656f636b6e2c616d6f" style="color:var(--primary);"><span class="__cf_email__" data-cfemail="204c494252455749534860474d41494c0e434f4d">[email&#160;protected]</span></a></small></td>
+                <td class="col-shanios"><span class="cv-good">Community: free</span><small>Enterprise &amp; OEM licensing available — <a href="mailto:librewish@gmail.com" style="color:var(--primary);">librewish@gmail.com</a></small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
                 <td><span class="cv-good">Free</span><small>—</small></td>
@@ -1462,7 +1462,7 @@
                 <i class="fas fa-magnet"></i> Torrent
               </a>
             </div>
-            <p class="dl-meta">Version <span data-version>2026.03.10</span> &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="gnome">signed_shanios-gnome-2026.03.10-x86_64.iso</code></p>
+            <p class="dl-meta">Version <span data-version>2026.04.01</span> &nbsp;·&nbsp; ~5.4 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="gnome">signed_shanios-gnome-2026.04.01-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">Clean, focused desktop — best for work, students, and Windows/Mac switchers. Browser, office suite, calendar, notes, media apps, VMs (GNOME Boxes), Waydroid, OnlyOffice, Vivaldi — all pre-installed, nothing to configure. <a href="#features">Full feature list →</a></p>
@@ -1504,7 +1504,7 @@
                 <i class="fas fa-magnet"></i> Torrent
               </a>
             </div>
-            <p class="dl-meta">Version <span data-version>2026.03.10</span> &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="plasma">signed_shanios-plasma-2026.03.10-x86_64.iso</code></p>
+            <p class="dl-meta">Version <span data-version>2026.04.01</span> &nbsp;·&nbsp; ~7.6 GB &nbsp;·&nbsp; SHA256 + GPG signed &nbsp;·&nbsp; Actively maintained<br><code style="font-size:0.72rem;opacity:0.55;" data-filename="plasma">signed_shanios-plasma-2026.04.01-x86_64.iso</code></p>
             <details class="card-expand dl-detail">
               <summary>What's included</summary>
               <p class="card-detail">🎮 Best for gamers and power users. Steam, Heroic, Lutris, RetroArch, Bottles, GameMode — all pre-installed. NVIDIA configured at first boot. Full KDE productivity suite, Waydroid, OnlyOffice, Vivaldi — everything ready at first boot. <a href="#features">Full feature list →</a></p>
@@ -1567,11 +1567,11 @@
               <h3>Download &amp; verify the ISO</h3>
               <p>Download the GNOME or KDE edition from the <a href="#download">Download section</a>. Before writing to USB, verify the file wasn't corrupted in transit — the verify link is next to each download button. On Linux:</p>
               <pre><code data-cmd="verify:gnome"># Verify checksum
-sha256sum -c signed_shanios-gnome-2026.03.10-x86_64.iso.sha256
+sha256sum -c signed_shanios-gnome-2026.04.01-x86_64.iso.sha256
 
 # Optionally verify GPG signature (import key once)
 gpg --keyserver keys.openpgp.org --recv-keys 7B927BFFD4A9EAAA8B666B77DE217F3DA8014792
-gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome-2026.03.10-x86_64.iso</code></pre>
+gpg --verify signed_shanios-gnome-2026.04.01-x86_64.iso.asc signed_shanios-gnome-2026.04.01-x86_64.iso</code></pre>
               <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">SHA256 and GPG signature files are linked next to the download button. If checksum matches, the file is intact. GPG verification confirms it was signed by the Shanios project key.</p>
             </div>
           </div>
@@ -1582,7 +1582,7 @@ gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome
               <h3>Write to USB (8 GB+)</h3>
               <p><strong>Windows:</strong> use <a href="https://etcher.balena.io" target="_blank" rel="noopener">Balena Etcher</a> or Rufus.<br>
               <strong>Linux:</strong></p>
-              <pre><code data-cmd="dd:gnome">sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso \\
+              <pre><code data-cmd="dd:gnome">sudo dd bs=4M if=signed_shanios-gnome-2026.04.01-x86_64.iso \\
   of=/dev/sdX status=progress oflag=sync</code></pre>
               <p style="font-size:0.82rem;opacity:0.65;margin-top:0.5rem;">Replace <code>/dev/sdX</code> with your USB drive — confirm with <code>lsblk</code> first. <strong>Do not use Ventoy.</strong></p>
             </div>
@@ -1595,7 +1595,7 @@ gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome
               <p>Access BIOS with <kbd>F2</kbd>, <kbd>Del</kbd>, or <kbd>F10</kbd> at startup:</p>
               <ul>
                 <li>Disable <strong>Fast Boot</strong></li>
-                <li>Disable <strong>Secure Boot</strong> (re-enable after install)</li>
+                <li>Disable <strong>Secure Boot</strong> (optional — re-enable after install if desired)</li>
                 <li>Set boot mode to <strong>UEFI</strong> — legacy/CSM not supported</li>
                 <li>Set SATA to <strong>AHCI</strong></li>
                 <li>Enable <strong>Virtualization</strong> (Intel VT-x / AMD-V)</li>
@@ -1670,7 +1670,7 @@ gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome
           <p>Configure before installing (usually via <kbd>F2</kbd>, <kbd>F10</kbd>, <kbd>Del</kbd>, or <kbd>Esc</kbd> at startup):</p>
           <ul>
             <li>Disable Fast Boot</li>
-            <li>Disable <strong>Secure Boot</strong> for installation — re-enable it after install (the USB will guide you through a one-time key enrollment on first boot). The enrolled key persists across all future updates.</li>
+            <li>Disable <strong>Secure Boot</strong> for installation (optional — re-enable it after install if desired; the USB will guide you through a one-time key enrollment on first boot). The enrolled key persists across all future updates.</li>
             <li>Set SATA mode to AHCI</li>
             <li>Enable UEFI boot — <strong>legacy/CSM BIOS mode is not supported.</strong> Shanios requires a UEFI system.</li>
             <li>Enable virtualization (Intel VT-x or AMD-V) — required for VMs (GNOME Boxes, virt-manager) and hardware-accelerated containers such as Waydroid, both pre-installed</li>
@@ -1680,8 +1680,8 @@ gpg --verify signed_shanios-gnome-2026.03.10-x86_64.iso.asc signed_shanios-gnome
           <h3>Creating Installation Media</h3>
           <p>Write the ISO using <strong>Balena Etcher</strong> (recommended), <strong>Rufus</strong> (Windows), or <strong>dd</strong> (Linux/macOS).</p>
           <p><strong>On Linux with dd</strong> — find your USB drive first (<code>lsblk</code>), then:</p>
-          <pre><code data-cmd="dd-verify:gnome">sha256sum -c signed_shanios-gnome-2026.03.10-x86_64.iso.sha256  # verify checksum first
-sudo dd bs=4M if=signed_shanios-gnome-2026.03.10-x86_64.iso of=/dev/sdX status=progress oflag=sync
+          <pre><code data-cmd="dd-verify:gnome">sha256sum -c signed_shanios-gnome-2026.04.01-x86_64.iso.sha256  # verify checksum first
+sudo dd bs=4M if=signed_shanios-gnome-2026.04.01-x86_64.iso of=/dev/sdX status=progress oflag=sync
 sync</code></pre>
           <p>Replace <code>/dev/sdX</code> with your actual USB device (e.g. <code>/dev/sdb</code>). Use the KDE filename for the Plasma edition.</p>
           <p><strong>Important:</strong> Do not use Ventoy — its ISO mounting method conflicts with Shanios's bootloader. Use Balena Etcher or Rufus instead.</p>
@@ -2133,7 +2133,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
                 <a href="https://github.com/Shrinivasvkumbhar" class="social-link github" target="_blank" rel="noopener" aria-label="GitHub Profile">
                   <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="/cdn-cgi/l/email-protection#b2dedbd0c0d7c5dbc1daf2d5dfd3dbde9cd1dddf" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
+                <a href="mailto:librewish@gmail.com" class="social-link" style="background:rgba(255,127,80,0.12); color:var(--primary);" aria-label="Email">
                   <i class="fas fa-envelope"></i> Contact
                 </a>
               </div>
@@ -2378,11 +2378,11 @@ mokutil --list-enrolled | grep -i shani</code></pre>
             <a href="https://t.me/shrinivasvkumbhar" class="btn btn-primary" target="_blank" rel="noopener">
               <i class="fab fa-telegram"></i> Message on Telegram
             </a>
-            <a href="/cdn-cgi/l/email-protection#5d31343f2f382a342e351d3a303c3431733e3230" class="btn btn-secondary">
+            <a href="mailto:librewish@gmail.com" class="btn btn-secondary">
               <i class="fas fa-envelope"></i> Email Directly
             </a>
           </div>
-          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;"><a href="/cdn-cgi/l/email-protection#f39f9a918196849a809bb3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="8be7e2e9f9eefce2f8e3cbece6eae2e7a5e8e4e6">[email&#160;protected]</span></a> · Community edition is always free.</p>
+          <p style="text-align:center; font-size:0.78rem; opacity:0.45; margin-top:0.75rem;"><a href="mailto:librewish@gmail.com">librewish@gmail.com</a> · Community edition is always free.</p>
         </div>
 
       </div>
@@ -2448,7 +2448,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
               <li><a href="https://wiki.shani.dev" target="_blank" rel="noopener">Documentation</a></li>
               <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram Community</a></li>
               <li><a href="https://t.me/shrinivasvkumbhar" target="_blank" rel="noopener">Contact Founder</a></li>
-              <li><a href="/cdn-cgi/l/email-protection#cda1a4afbfa8baa4bea58daaa0aca4a1e3aea2a0">Email</a></li>
+              <li><a href="mailto:librewish@gmail.com">Email</a></li>
             </ul>
           </div>
         </div>
