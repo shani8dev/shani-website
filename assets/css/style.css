@@ -2198,18 +2198,6 @@ a.fab-kde:hover {
   transform: translateY(-3px);
 }
 
-/* Download COSMIC */
-a.fab-cosmic {
-  background: linear-gradient(135deg, #b5541a, #e07b3d);
-  color: #fff;
-}
-
-a.fab-cosmic:hover {
-  background: linear-gradient(135deg, #cc6522, #f28f4f);
-  box-shadow: 0 6px 20px rgba(181, 84, 26, 0.45);
-  transform: translateY(-3px);
-}
-
 @media (max-width: 480px) {
   .fab-group { bottom: 18px; right: 16px; gap: 0.5rem; }
   a.fab { height: 42px; width: 42px; padding: 0; }
