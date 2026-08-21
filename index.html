@@ -482,8 +482,8 @@
           </div>
           <div class="how-step">
             <div class="how-step-num">7</div>
-            <h4>You decide when to switch — no forced reboots</h4>
-            <p>Reboot on your schedule — immediately, or days later. The pending update waits in the background. Your currently running OS boots exactly as normal until you choose to switch. Once you reboot and the new OS starts up cleanly, everything is finalised automatically.</p>
+            <h4>Reboots automatically 60 seconds later — or you hold it off</h4>
+            <p>Once the update finishes, Shanios arms a 60-second countdown and reboots on its own — no update nagging you for days, no dialog to babysit. In the middle of something? Cancel the countdown with one command (<code>sudo systemctl stop shanios-auto-reboot.timer</code>) or disable it for a single run entirely. Either way, your currently running OS stays untouched until the moment it actually reboots — and once it starts up cleanly, everything is finalised automatically.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">8</div>
@@ -1044,7 +1044,7 @@
             <div class="feature-card-front">
               <i class="fas fa-network-wired feature-icon"></i>
               <h3>Networking &amp; Self-Hosting</h3>
-              <p class="feature-snippet">Tailscale, Caddy, Cloudflared, OpenSSH, Fail2ban, Samba, NFS, dnsmasq, firewalld — pre-installed, none active by default. Enable exactly what you need, nothing else exposed. All state persists across OS updates.</p>
+              <p class="feature-snippet">Tailscale, Caddy, Cloudflared, OpenSSH, Samba, NFS, dnsmasq — pre-installed, inactive until you enable them. Firewalld and Fail2ban are the exception: both are active from first boot. Enable exactly what else you need, nothing else exposed. All state persists across OS updates.</p>
               <button class="toggle-details btn-more" aria-expanded="false">Learn More</button>
             </div>
             <div class="feature-card-back">
@@ -1055,7 +1055,7 @@
                 <p><strong>Caddy</strong> — modern web server with automatic HTTPS. Host sites or dashboards locally or over Tailscale. Not active by default.</p>
                 <p><strong>Cloudflared</strong> — encrypted Cloudflare tunnel. HTTPS access to local services without a static IP or exposing your real address.</p>
                 <p><strong>OpenSSH</strong> — encrypted remote access. Not enabled by default. Recommended to run over Tailscale rather than publicly exposed.</p>
-                <p><strong>Fail2ban</strong> — automatic IP banning for repeated auth failures. Recommended alongside public-facing SSH. Not active by default.</p>
+                <p><strong>Fail2ban</strong> — automatic IP banning for repeated auth failures. Active from first boot, alongside Firewalld — the only two services here that are.</p>
                 <p><strong>Samba + NFS</strong> — file sharing to Windows/macOS (SMB) and Linux/Unix (NFS). Both pre-installed; neither runs by default. All state persists across blue/green OS switches via bind mounts.</p>
                 <p><strong>dnsmasq</strong> — lightweight DNS forwarder, DHCP server, and split-DNS resolver. Configure local DNS for your home or office network — point internal hostnames to local IPs, route only certain domains through VPN. Not active by default.</p>
                 <p><strong>Avahi</strong> — mDNS/DNS-SD active by default. Your machine is reachable as <code>hostname.local</code> from any device on the local network from first boot — no router configuration, no DNS setup needed.</p>
@@ -1850,7 +1850,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
 
           <details class="faq-item" id="faq-storage">
             <summary><i class="fas fa-hard-drive"></i> Why does it need 32 GB minimum? That's more than most distros.</summary>
-            <div class="faq-body">Shanios keeps two complete, bootable OS copies at all times — that's how instant rollback works. The GNOME edition ISO is ~2.3 GB; the KDE Plasma edition is ~2.8 GB. The filesystem uses Btrfs zstd compression (typically cutting OS size 30–50%) and continuous background deduplication via <code>beesd</code>, so content shared between the two copies is stored only once. In practice the real extra overhead is well below double a single-copy OS. 64 GB gives comfortable room for apps, containers, and updates. You'll need at least 10 GB free to stage an update.</div>
+            <div class="faq-body">Shanios keeps two complete, bootable OS copies at all times — that's how instant rollback works. The GNOME edition ISO is ~5.4 GB; the KDE Plasma edition is ~7.6 GB. The filesystem uses Btrfs zstd compression (typically cutting OS size 30–50%) and continuous background deduplication via <code>beesd</code>, so content shared between the two copies is stored only once. In practice the real extra overhead is well below double a single-copy OS. 64 GB gives comfortable room for apps, containers, and updates. You'll need at least 10 GB free to stage an update.</div>
           </details>
 
           <details class="faq-item" id="faq-update-failure">
