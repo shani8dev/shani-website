@@ -5,21 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
    *  To release a new version: update VERSION and DATE
    *  only. All download URLs, filenames, and version
    *  strings displayed on the page update automatically.
+   *
+   *  Canonical pointers (verified 2026-08-28):
+   *    https://downloads.shani.dev/<ed>/iso-latest.txt
+   *    https://downloads.shani.dev/<ed>/iso-stable.txt
+   *  Both currently return 20260518 → VERSION below matches.
+   *  NOTE: SourceForge mirrors base images (.zst), NOT signed
+   *  ISOs — SF links therefore point at the project files page.
    * ==================================================== */
   const VERSION = '2026.05.18';          // e.g. '2026.06.01'
   const DATE    = '20260518';            // e.g. '20260601'
 
-  const sf  = (ed, ext) =>
-  `https://sourceforge.net/projects/shanios/files/${ed}/${DATE}/signed_shanios-${ed}-${VERSION}-x86_64.iso${ext}/download`;
+  // SF does not mirror signed ISOs — fall back to the edition's file browser
+  const sf  = (ed) =>
+  `https://sourceforge.net/projects/shanios/files/${ed}/`;
 
   const r2  = (ed, ext) =>
   `https://downloads.shani.dev/${ed}/${DATE}/signed_shanios-${ed}-${VERSION}-x86_64.iso${ext}`;
 
   const DOWNLOADS = {
     gnome:  { iso: r2('gnome',''),  sha256: r2('gnome','.sha256'),  asc: r2('gnome','.asc'),  torrent: r2('gnome','.torrent'),
-      iso_sf: sf('gnome',''), sha256_sf: sf('gnome','.sha256'), asc_sf: sf('gnome','.asc'), torrent_sf: sf('gnome','.torrent') },
+      iso_sf: sf('gnome'), sha256_sf: sf('gnome'), asc_sf: sf('gnome'), torrent_sf: sf('gnome') },
                           plasma: { iso: r2('plasma',''), sha256: r2('plasma','.sha256'), asc: r2('plasma','.asc'), torrent: r2('plasma','.torrent'),
-                            iso_sf: sf('plasma',''), sha256_sf: sf('plasma','.sha256'), asc_sf: sf('plasma','.asc'), torrent_sf: sf('plasma','.torrent') },
+                            iso_sf: sf('plasma'), sha256_sf: sf('plasma'), asc_sf: sf('plasma'), torrent_sf: sf('plasma') },
   };
 
   /* Wire all [data-download] links — R2 primary, SourceForge fallback */

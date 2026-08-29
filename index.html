@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.classList.add("js")</script>
+
   <meta name="description" content="Bad update? One reboot back — no reinstall ever. Immutable Linux, atomic updates, instant rollback, zero telemetry. Free. Built on Arch Linux. Made in India." />
   <meta name="author" content="Shrinivas Vishnu Kumbhar" />
   <meta name="keywords" content="Shanios, Immutable Linux, atomic updates, blue-green deployment, AppArmor, Landlock, Secure Boot, TPM2, LUKS2 argon2id, GPG verified, Waydroid, Podman, reliable OS, secure Linux, enterprise Linux, OEM ready, made in India Linux, no telemetry Linux, hibernation Linux, gaming Linux, VR Linux" />
   <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self'; connect-src 'self' https://downloads.shani.dev" />
   <link rel="canonical" href="https://shani.dev/" />
   <meta property="og:title" content="Shanios — Two OS copies. One always safe. Bad update? One reboot back." />
   <meta property="og:description" content="The OS that always has your back. Bad update? One reboot rolls it back. Immutable root, atomic updates, zero telemetry. Built on Arch Linux. Free, open source. Made in India 🇮🇳" />
@@ -39,9 +42,31 @@
       "name": "Shrinivas Vishnu Kumbhar",
       "jobTitle": "Founder & Lead Developer",
       "affiliation": { "@type": "CollegeOrUniversity", "name": "Shivaji University, Kolhapur" },
-      "url": "https://github.com/Shrinivasvkumbhar"
+      "url": "https://github.com/Shrinivasvkumbhar",
+      "sameAs": [
+        "https://github.com/Shrinivasvkumbhar",
+        "https://www.linkedin.com/in/Shrinivasvkumbhar/"
+      ]
     },
     "keywords": "immutable Linux, atomic updates, blue-green deployment, enterprise Linux, OEM Linux, Made in India Linux, AppArmor, Secure Boot, TPM2, zero telemetry"
+  }
+  </script>
+  <!-- FAQPage schema — mechanically generated from the 18 <details class="faq-item">
+       entries below via a one-off script (this repo has no build step, so this
+       block is NOT auto-regenerated — if the FAQ section's questions/answers
+       change, this JSON-LD must be updated by hand to match; see AGENTS.md). -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to know Linux to use Shanios?", "acceptedAnswer": {"@type": "Answer", "text": "No — not for everyday use. Both GNOME and KDE editions have full graphical interfaces for everything from settings to app installation. You do not need to open a terminal to browse, write documents, play games, or install apps. You will need one terminal command to update the OS: sudo shani-deploy — that's it. If you want to go deeper (containers, Nix, custom configurations), Shanios gives you full access. If you don't, it stays out of your way. New to Linux? Start with the getting-started guide and feel free to ask questions in the Telegram community."}}, {"@type": "Question", "name": "I'm coming from Windows. Will my apps work? Is this beginner-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — your familiar apps are here and the switch is more manageable than most expect. See the Windows or Mac Switcher section for a full rundown of app equivalents and what changes. Not sure it's right for you? Ask in the Telegram community before you install — fast, friendly answers."}}, {"@type": "Question", "name": "I'm coming from Mac. What changes? What stays the same?", "acceptedAnswer": {"@type": "Answer", "text": "What stays the same: The terminal works exactly as you'd expect — bash or zsh, standard UNIX commands, familiar tools. Your browser (Firefox, Vivaldi pre-installed — or install Chrome via Flatpak), office documents (OnlyOffice opens .docx/.xlsx/.pptx natively), and media files all transfer directly. Homebrew can be installed and works just as it does on macOS — see the Homebrew section on docs.shani.dev for setup details. Nix is also pre-installed — it's a declarative, reproducible package manager (a different mental model from Homebrew, not a replacement) that keeps packages conflict-free and surviving OS updates; requires adding a channel once before use. What's better: No Apple ID required. No iCloud. No subscription for basic features like iCloud Drive or full OS backups. No planned obsolescence — hardware Apple stopped supporting in 2019 runs Shanios fine today. Bad update? One reboot back — macOS has no equivalent. Full-disk encryption with no Apple key escrow. What's different: Software comes from Flatpak (like an App Store, but open) rather than .dmg files. The update command is one terminal line: sudo shani-deploy. You have root access — something macOS increasingly restricts. Some Mac-exclusive apps (Final Cut Pro, Logic Pro, Xcode) have no Linux equivalent — check beforehand if these are essential to your workflow."}}, {"@type": "Question", "name": "Can I install software? How does app installation work?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the app store works exactly as you'd expect. Flatpak (via Flathub) is the main app store, with thousands of apps including all the popular ones. There's also Snap, portable AppImages, and for power users: Nix environments and containers via Distrobox. All persist across OS updates in their own dedicated storage — completely separate from the OS itself. Nix packages live in their own dedicated storage shared between both OS copies, so they survive updates and rollbacks. Note: Nix requires adding a channel once before first use — see docs.shani.dev for the one-line setup. The point is that your apps and your OS are separate concerns — an OS update can't break your apps, and your apps can't corrupt the OS."}}, {"@type": "Question", "name": "Does Shanios need an account? Does it collect any data about me?", "acceptedAnswer": {"@type": "Answer", "text": "No account needed, no email, no registration — just download and install. Shanios collects zero telemetry, sends no crash reports, and has no analytics of any kind. The update tool (shani-deploy) connects to download servers to fetch images — but only transmits what any standard HTTP download requires. No hardware fingerprints, no system IDs, no usage statistics are sent. Intel Management Engine kernel modules (mei, mei_me) are blacklisted by default, disabling the OS-level communication channel and removing a known attack surface. Because the entire codebase is public on GitHub, this is verifiable — you can read every script that runs on your system."}}, {"@type": "Question", "name": "Why does it need 32 GB minimum? That's more than most distros.", "acceptedAnswer": {"@type": "Answer", "text": "Shanios keeps two complete, bootable OS copies at all times — that's how instant rollback works. The GNOME edition ISO is ~5.4 GB; the KDE Plasma edition is ~7.6 GB. The filesystem uses Btrfs zstd compression (typically cutting OS size 30–50%) and continuous background deduplication via beesd, so content shared between the two copies is stored only once. In practice the real extra overhead is well below double a single-copy OS. 64 GB gives comfortable room for apps, containers, and updates. You'll need at least 10 GB free to stage an update."}}, {"@type": "Question", "name": "What happens if an update fails mid-way?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing happens to your running system — it's in a completely separate copy and is never touched during an update. Before any writing begins, a timestamped backup of the standby copy is taken automatically. If the update fails for any reason (network drop, power cut, verification failure), the standby copy is restored from that backup. If power is lost mid-update, a deployment-pending flag is detected the next time you run shani-deploy — it will prompt you to run --rollback to restore a clean state. To undo a completed update: sudo shani-deploy --rollback."}}, {"@type": "Question", "name": "Does it work on my hardware? NVIDIA? Older machines?", "acceptedAnswer": {"@type": "Answer", "text": "Shanios includes Intel, AMD, and NVIDIA drivers pre-installed and configured including full Vulkan support. Printers, scanners, Bluetooth, Wi-Fi, game controllers, fingerprint readers, FIDO2/YubiKey, smart cards, NFC, Thunderbolt, iOS devices, and 5G modems are all pre-configured. It runs the standard Arch Linux kernel with broad hardware support. Firmware updates (BIOS, NVMe, SSD, keyboard controllers) are handled automatically via the Linux Vendor Firmware Service — no manufacturer tools or USB drives needed. Minimum: 64-bit x86 CPU, 4 GB RAM, 32 GB storage."}}, {"@type": "Question", "name": "How do I keep everything updated — OS, apps, containers?", "acceptedAnswer": {"@type": "Answer", "text": "Each layer has its own command: OS with sudo shani-deploy, Flatpak with flatpak update (also auto-updates every 12 hours), Snap with snap refresh, Nix with nix-env -u, Podman containers with podman auto-update, firmware with fwupdmgr update. These are completely independent — updating apps doesn't touch the OS, and vice versa. Desktop notifications tell you when a new OS update is ready, so you never need to remember to check."}}, {"@type": "Question", "name": "How do I roll back if the new OS doesn't work for me?", "acceptedAnswer": {"@type": "Answer", "text": "From the OS copy you want to keep, run sudo shani-deploy --rollback. Shanios restores the other copy from its most recent backup and updates the boot menu — without touching your running system. If a new OS ever fails to boot at all, it's detected automatically and the previous one takes over — no action needed from you. Your personal files, apps, and settings live in completely separate storage and are never affected by any OS rollback."}}, {"@type": "Question", "name": "Is it good for laptops? Battery life? Hibernation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fingerprint login works at first boot on supported hardware — no setup required. Hibernation works out of the box — a swapfile sized to your RAM is created during installation, nothing to configure. TPM2 auto-unlock means you can use full-disk encryption without typing a password at every boot — the disk unlocks automatically on your own trusted hardware. Power Profiles Daemon is pre-installed — switch between balanced, performance, and power-saver modes directly from the system settings in both GNOME and KDE. Your browser profile runs from memory (RAM) rather than writing constantly to your SSD, which measurably extends SSD life. Full-disk encryption (LUKS2) and Secure Boot are both fully supported."}}, {"@type": "Question", "name": "Is it secure? What exactly is protected?", "acceptedAnswer": {"@type": "Answer", "text": "The system root is read-only — even root can't modify core OS files at runtime. Updates are verified SHA256 + GPG before deployment. Six Linux Security Modules run simultaneously: Landlock, Lockdown, Yama, Integrity, AppArmor, and BPF LSM. Full-disk encryption protects all your data at rest using a modern, attack-resistant key algorithm (LUKS2 argon2id). TPM2 auto-unlock ties LUKS keys to hardware state. Secure Boot verifies the bootloader and kernel before the system starts. Intel ME kernel modules blacklisted by default, removing the OS-level communication channel to ME. Flatpak sandboxes user apps. firewalld blocks unsolicited inbound connections from first boot. Zero telemetry means no analytics attack surface. That said — no OS eliminates all risk. Network threats, zero-days, and social engineering are outside what OS architecture alone can solve."}}, {"@type": "Question", "name": "Is it really open source? Can I verify how updates work?", "acceptedAnswer": {"@type": "Answer", "text": "Fully. The build system, shani-deploy scripts, and every tool that runs on your system are public on GitHub. The GPG signing key is publicly registered so anyone can verify OS images independently. In an era of supply chain attacks, that isn't a nice-to-have — it's the point. You don't have to trust claims. You can read the code, verify the key, and reproduce the build. Full technical documentation is at docs.shani.dev."}}, {"@type": "Question", "name": "Does every update download the full 2–3 GB image?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — shani-deploy downloads a full OS image each time. This is the trade-off of the blue-green model: instead of incremental package patches (which can drift, conflict, and accumulate), you get a complete, verified, identical image every time. Downloads are resumable — a dropped connection picks up where it left off. On a typical broadband connection it takes a few minutes. The previous OS copy is kept until your next update, so you can always roll back. If bandwidth is a genuine constraint, the stable channel ships roughly monthly — you're not downloading 3 GB every day. To preview what would happen without downloading anything, run sudo shani-deploy --dry-run."}}, {"@type": "Question", "name": "I already use Linux. Does my knowledge transfer? What about pacman and the AUR?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Shanios is standard Arch Linux under the hood. systemd works exactly as you know it: systemctl enable/disable/start/stop, user services, timers, all of it. /etc is fully writable via an overlay mount — config files, service overrides, and custom unit files all persist across updates and rollbacks. cron (via cronie, pre-installed), user crontabs, and systemd timers all work. Shell: bash and zsh pre-installed; fish available via Flatpak, Distrobox, or Nix. Everything else — networking, firewall, SSH, VMs, containers, kernel parameters — works exactly as you expect on Arch. The one thing that changes: pacman -S won't work on the live root — it's read-only by design, and package changes wouldn't survive an update anyway. Use Flatpak for user-facing apps, Distrobox for a full mutable Arch container with pacman + AUR helpers (survives updates in its own subvolume), Nix for reproducible per-environment packages, or AppImages for portable binaries. This is intentional — keeping the OS clean and verified is what makes rollback reliable."}}, {"@type": "Question", "name": "Who built this, and what happens if development stops?", "acceptedAnswer": {"@type": "Answer", "text": "Shanios is built by Shrinivas Vishnu Kumbhar — a developer and researcher from Shivaji University, Kolhapur, India. The project grew from research into why server deployments stay reliable while desktop OS updates so often fail, and applies those same techniques to the everyday desktop. It's currently a one-person project — a fair thing to ask about. The entire codebase — build scripts, deploy tooling, signing workflow — is public on GitHub under a free software licence. If development stopped, anyone could fork it and continue. shani-deploy is a standalone script, not a proprietary service. The goal is to grow into a sustainable team as enterprise licensing generates revenue. Until then: transparent, forkable, and not dependent on any closed infrastructure. Full background in the About section →"}}, {"@type": "Question", "name": "I'm a PC manufacturer or vendor. What does OEM licensing actually include?", "acceptedAnswer": {"@type": "Answer", "text": "OEM licensing covers a private GPG-signed update channel, Plymouth BGRT brand logo at boot, image customisation, SLA support, and fleet management tooling. The community edition base is always open source — licensing covers the private infrastructure and customisation layer on top. Full details, pricing, and pilot enquiries: Enterprise & Partners section or Telegram."}}, {"@type": "Question", "name": "Can I dual-boot with Windows or another OS?", "acceptedAnswer": {"@type": "Answer", "text": "No — the Shanios installer writes to the entire selected drive. It creates two partitions: a 1 GB EFI partition (FAT32) and a single Btrfs root partition. The two OS copies that make rollback possible are Btrfs subvolumes (@blue/@green) inside that single root partition — not separate partitions. There is no option to install alongside an existing OS on the same drive. If you need to keep Windows, use a separate physical drive for Shanios and select which OS to boot via BIOS boot selection (usually F12 at startup) — both drives coexist without interfering. Note: Shanios uses systemd-boot, which only shows Shanios boot entries — it will not auto-detect other drives. Use BIOS boot selection (F12) to switch between drives. If you need Windows apps, Bottles (Wine-based, pre-installed on KDE; available on Flathub for GNOME) handles many Windows applications without needing Windows at all."}}]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Shanios",
+    "url": "https://shani.dev",
+    "logo": "https://shani.dev/assets/images/logo.svg",
+    "sameAs": [
+      "https://github.com/shani8dev",
+      "https://t.me/shani8dev"
+    ]
   }
   </script>
   <script src="assets/js/script.js" defer></script>
@@ -56,8 +81,8 @@
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="assets/images/site.webmanifest" />
   <meta name="theme-color" content="#1a102f" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Shanios — Immutable Linux | Atomic Updates &amp; Instant Rollback</title>
 </head>
@@ -122,6 +147,14 @@
              class="nav-link nav-icon-link" aria-label="Docs">
             <i class="fas fa-book"></i>
             <span class="nav-icon-label">Docs</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://wiki.shani.dev" target="_blank" rel="noopener"
+             class="nav-link nav-icon-link" aria-label="Wiki">
+            <i class="fas fa-book-open"></i>
+            <span class="nav-icon-label">Wiki</span>
           </a>
         </li>
 
@@ -1430,7 +1463,10 @@
           <div class="download-card">
             <figure class="download-screenshot">
               <a href="assets/images/gnome-screenshot.jpg" target="_blank" rel="noopener">
-                <img src="assets/images/gnome-screenshot.jpg" alt="Shanios GNOME Edition desktop" loading="lazy">
+                <picture>
+                  <source srcset="assets/images/gnome-screenshot.webp" type="image/webp">
+                  <img src="assets/images/gnome-screenshot.jpg" alt="Shanios GNOME Edition desktop" loading="lazy">
+                </picture>
               </a>
               <figcaption class="sr-only">Shanios GNOME Edition desktop screenshot</figcaption>
             </figure>
@@ -1472,7 +1508,10 @@
           <div class="download-card">
             <figure class="download-screenshot">
               <a href="assets/images/plasma-screenshot.jpg" target="_blank" rel="noopener">
-                <img src="assets/images/plasma-screenshot.jpg" alt="Shanios KDE Plasma Gaming Edition desktop" loading="lazy">
+                <picture>
+                  <source srcset="assets/images/plasma-screenshot.webp" type="image/webp">
+                  <img src="assets/images/plasma-screenshot.jpg" alt="Shanios KDE Plasma Gaming Edition desktop" loading="lazy">
+                </picture>
               </a>
               <figcaption class="sr-only">Shanios KDE Plasma Gaming Edition desktop screenshot</figcaption>
             </figure>
@@ -1826,7 +1865,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
 
           <details class="faq-item" id="faq-telemetry">
             <summary><i class="fas fa-user-secret"></i> Does Shanios need an account? Does it collect any data about me?</summary>
-            <div class="faq-body">No account needed, no email, no registration — just download and install. Shanios collects zero telemetry, sends no crash reports, and has no analytics of any kind. The update tool (<code>shani-deploy</code>) connects to download servers to fetch images — but only transmits what any standard HTTP download requires. No hardware fingerprints, no system IDs, no usage statistics are sent. Intel Management Engine — a low-level chip-level background process on Intel hardware — is disabled by default, removing a known surveillance and attack surface. Because the entire codebase is public on GitHub, this is verifiable — you can read every script that runs on your system.</div>
+            <div class="faq-body">No account needed, no email, no registration — just download and install. Shanios collects zero telemetry, sends no crash reports, and has no analytics of any kind. The update tool (<code>shani-deploy</code>) connects to download servers to fetch images — but only transmits what any standard HTTP download requires. No hardware fingerprints, no system IDs, no usage statistics are sent. Intel Management Engine kernel modules (<code>mei</code>, <code>mei_me</code>) are blacklisted by default, disabling the OS-level communication channel and removing a known attack surface. Because the entire codebase is public on GitHub, this is verifiable — you can read every script that runs on your system.</div>
           </details>
 
           <details class="faq-item" id="faq-storage">
@@ -2117,7 +2156,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
               <div class="founder-header">
                 <i class="fas fa-code founder-icon"></i>
                 <div>
-                  <h2>Founder</h2>
+                  <h3>Founder</h3>
                   <span class="role">Founder · Lead Developer</span>
                 </div>
               </div>
@@ -2435,6 +2474,7 @@ mokutil --list-enrolled | grep -i shani</code></pre>
           <div class="footer-group">
             <h4>Platform</h4>
             <ul>
+              <li><a href="mailto:librewish@gmail.com">Email</a></li>
               <li><a href="#enterprise">Enterprise / OEM &amp; Vendors</a></li>
               <li><a href="#roadmap">Roadmap</a></li>
               <li><a href="#about">About</a></li>
@@ -2447,8 +2487,6 @@ mokutil --list-enrolled | grep -i shani</code></pre>
               <li><a href="https://github.com/shani8dev" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://docs.shani.dev" target="_blank" rel="noopener">Documentation</a></li>
               <li><a href="https://t.me/shani8dev" target="_blank" rel="noopener">Telegram Community</a></li>
-              <li><a href="https://t.me/shrinivasvkumbhar" target="_blank" rel="noopener">Contact Founder</a></li>
-              <li><a href="mailto:librewish@gmail.com">Email</a></li>
             </ul>
           </div>
         </div>

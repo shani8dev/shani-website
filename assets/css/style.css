@@ -508,7 +508,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: linear-gradient(rgba(26, 16, 47, 0.8), rgba(26, 16, 47, 0.8)),
-  url('../images/saturn-x.png') center/cover no-repeat;
+  url('../images/saturn-x.webp') center/cover no-repeat;
   background-attachment: fixed;
 }
 
@@ -1924,7 +1924,7 @@ details.about-card > summary h3 {
   margin-bottom: 0.5rem;
 }
 
-.founder-header h2 { margin: 0; font-size: 1.8rem; font-weight: 600; }
+.founder-header h3 { margin: 0; font-size: 1.8rem; font-weight: 600; }
 
 .role { font-size: 0.9rem; color: #94a3b8; }
 
@@ -2553,7 +2553,9 @@ thead .col-shanios {
 /* =====================================================
  * SCROLL REVEAL — sections and cards fade in gently
  * ===================================================== */
-.reveal {
+/* Gated behind html.js (set inline in <head>): without JS everything is
+   visible immediately — AI parsers and no-JS users never see blank sections. */
+.js .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.55s ease, transform 0.55s ease;
@@ -3707,7 +3709,7 @@ details.usecase-card[open] > summary::after {
 .footer-brand img:hover { opacity: 1; }
 
 /* Smooth image loading */
-img[loading="lazy"] {
+.js img[loading="lazy"] {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -4117,5 +4119,49 @@ nav.nav {
   .contact-cta-wrap { padding: 1.25rem 1rem; }
   .contact-cta-wrap [style*="grid-template-columns:1fr 1fr"] {
     grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ── Accessibility: reduced motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ── Accessibility: keyboard focus & selection parity ────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--primary, #ff7f50);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+::selection {
+  background: var(--primary, #ff7f50);
+  color: #1a102f;
+}
+
+
+/* ── Mobile hardening ────────────────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+* { -webkit-tap-highlight-color: transparent; }
+img, video, iframe, svg { max-width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+  .comparison-table table, table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
