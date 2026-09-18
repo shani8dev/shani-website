@@ -87,6 +87,8 @@ to stay in lockstep and nothing currently checks that automatically.
   - **`sameAs` added to the existing `SoftwareApplication.author` Person entity** (LinkedIn + personal GitHub) and **a new standalone `Organization` JSON-LD block added** (project GitHub org + Telegram community as `sameAs`) — neither existed before; both are real profile links already linked from the page itself (footer/founder-connect section), not invented.
   - Verified all of the above by actually parsing every `<script type="application/ld+json">` block in the file with Python's `json.loads()` (3 blocks: `SoftwareApplication`, `FAQPage` with 18 `mainEntity` entries, `Organization` — 0 parse errors) and re-running the full-file `html5lib` strict parse this repo's own rule requires (0 errors), not just visual inspection.
 
+- **Independent re-verification pass (2026-09-18) — all clean, no regressions.** Re-ran every check this file's known-issues entries claim, from scratch, not by trusting the prior entries: `html5lib` strict parse (0 errors), live SRI fetch+hash of the Font Awesome CDN link (matches), all 3 JSON-LD blocks parse with `json.loads()`, `node --check assets/js/script.js` (syntax OK), and the version-lockstep grep (`2026.05.18` appears 11x in `index.html` + once as `script.js`'s real `VERSION` constant — the `2026.06.01` string also in `script.js` is only an inline comment example, not a second live version, confirmed by line-level grep before treating it as a drift). No uncommitted work was sitting in the working tree. Nothing to fix this pass.
+
 ## If you have Superpowers / oh-my-opencode / ultrawork / similar available
 
 If your environment provides Claude Code's **Superpowers** plugin, OpenCode's
