@@ -86,12 +86,17 @@ grep -o "2026\.[0-9.]*" index.html assets/js/script.js ../RELEASES.md
   closed. Not a unique outlier, one of a real cluster. Needs
   the maintainer to pick what license this content is under, not
   something to guess and add.
-- **Version string lockstep — corrected, a prior entry named a file that
-  doesn't exist.** The old note here said this must match a root
-  `RELEASES.md` — verified via `find`/`git log --all` that no such file
-  exists anywhere in this repo or its history; likely a stray/hallucinated
-  reference from an earlier pass, not a real cross-check. The actual
-  lockstep is `assets/js/script.js`'s `VERSION = '2026.05.18'` against the
+- **Version string lockstep — the top-level `RELEASES.md` reference IS
+  real, corrected back after two separate passes wrongly debunked it.**
+  Both earlier "no such file exists" claims ran `find`/`git log --all`
+  scoped to *this* git repo only — `RELEASES.md` lives one directory up,
+  at `/home/shrinivaskumbhar/Documents/shani/RELEASES.md` (the workspace
+  root that holds this repo as a sibling checkout, not inside it), so a
+  repo-scoped search would never find it. Confirmed live:
+  `../RELEASES.md` exists and its "Signed ISOs (gnome + plasma)" row
+  reads `2026.05.18` — currently in lockstep with this repo's own
+  version string below. The actual lockstep is `assets/js/script.js`'s
+  `VERSION = '2026.05.18'` against the
   same literal string hardcoded in several places in `index.html`
   (JSON-LD `softwareVersion`/`datePublished`, both download-section
   version labels, and every `.iso`/`.sha256`/`.asc` filename in the
@@ -136,7 +141,7 @@ source alone.
 
 ## Cross-repo impact — check before calling a fix complete
 
-Brand CSS and related JS claims are the **opposite** here: this repo shares **no** `sw.js`, brand CSS, or nav/content-fetch JS with the other web repos (audit-verified 2026-09-17). This is a single-page marketing site; the "shared files across four web repos" concern does not apply — updates to those files in `shani-docs`/`shani-blog` do NOT need to be mirrored here. The only cross-repo sync surface is content-level (robots.txt/sitemap conventions) — there is no `RELEASES.md` anywhere in this ecosystem to keep in lockstep with (see "Audit-verified known issues" above; an earlier version of this section repeated that same debunked claim — the real lockstep is internal to this repo's own `index.html`/`script.js`, not cross-repo).
+Brand CSS and related JS claims are the **opposite** here: this repo shares **no** `sw.js`, brand CSS, or nav/content-fetch JS with the other web repos (audit-verified 2026-09-17). This is a single-page marketing site; the "shared files across four web repos" concern does not apply — updates to those files in `shani-docs`/`shani-blog` do NOT need to be mirrored here. The other cross-repo sync surface is the version string: this repo's `assets/js/script.js`/`index.html` version must stay in lockstep with the workspace-root `../RELEASES.md`'s "Signed ISOs" row (see "Audit-verified known issues" above — this really does exist one directory up, outside this git repo, which is why two earlier passes wrongly declared it missing).
 
 ## Where things are documented
 
