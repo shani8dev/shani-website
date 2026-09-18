@@ -34,6 +34,31 @@ If you touch the version string referenced in `assets/js/script.js`,
 confirm it still matches the top-level `RELEASES.md` — the two are meant
 to stay in lockstep and nothing currently checks that automatically.
 
+## Required verification for a change
+
+```bash
+# Serve locally and open in a browser; check the console for errors.
+python3 -m http.server 8000
+
+# Strict-parse every HTML page (catches malformed markup a browser
+# silently tolerates):
+python3 -c "
+import html5lib, pathlib
+for f in pathlib.Path('.').glob('*.html'):
+    html5lib.parse(f.read_text(), strict=True)
+print('all pages parse strict')
+"
+
+# Syntax-check any touched JS:
+node --check assets/js/script.js
+
+# If you touched a CDN <script>/<link> tag's integrity= hash:
+openssl dgst -sha384 -binary <file> | openssl base64 -A
+
+# If you touched the version string, confirm lockstep:
+grep -o "2026\.[0-9.]*" index.html assets/js/script.js ../RELEASES.md
+```
+
 ## Audit-verified known issues (confirmed present)
 
 - **`ads.txt` deleted — verified safe, but undocumented until now.**
