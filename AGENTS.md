@@ -11,6 +11,14 @@ The marketing site for Shanios (`shani.dev`) — plain HTML/CSS, no build
 step, no admin panel or paywall (unlike `shani-blog`/`shani-docs`). Lower
 attack surface, but still real, publicly-served content.
 
+## Empirical verification (mandatory)
+
+**Reading code is analysis; running code is verification.** A change is not
+verified by reading the diff, running `bash -n`, or confirming it "looks
+correct." It is verified by observing the actual behavior of the real
+thing in the real environment — built, served, deployed, signed, running.
+If you haven't seen it work (or fail) for real, it isn't verified.
+
 ## Rule: open it and actually check
 
 Don't consider a change to markup/CSS/JS done because it reads correctly —
