@@ -114,6 +114,18 @@ grep -o "2026\.[0-9.]*" index.html assets/js/script.js ../RELEASES.md
 
 - **Independent re-verification pass (2026-09-18) — all clean, no regressions.** Re-ran every check this file's known-issues entries claim, from scratch, not by trusting the prior entries: `html5lib` strict parse (0 errors), live SRI fetch+hash of the Font Awesome CDN link (matches), all 3 JSON-LD blocks parse with `json.loads()`, `node --check assets/js/script.js` (syntax OK), and the version-lockstep grep (`2026.05.18` appears 11x in `index.html` + once as `script.js`'s real `VERSION` constant — the `2026.06.01` string also in `script.js` is only an inline comment example, not a second live version, confirmed by line-level grep before treating it as a drift). No uncommitted work was sitting in the working tree. Nothing to fix this pass.
 
+## Boundaries
+
+- ✅ **Always**: html5lib strict-parse every touched page and re-fetch/hash
+  any CDN SRI link you change (see "Required verification" above) — a
+  silently-blocked resource shows nothing but a console error.
+- ⚠️ **Ask first**: adding a `LICENSE` file — needs the maintainer's actual
+  choice (see "Audit-verified known issues"), not a default guess.
+- 🚫 **Never**: re-add `ads.txt` or any AdSense script tag without also
+  updating the other — the deleted `ads.txt` was already safe because
+  nothing loads AdSense; wiring one back without the other creates a real,
+  silent mismatch.
+
 ## If you have Superpowers / oh-my-opencode / ultrawork / similar available
 
 If your environment provides Claude Code's **Superpowers** plugin, OpenCode's
@@ -124,9 +136,7 @@ source alone.
 
 ## Cross-repo impact — check before calling a fix complete
 
-Brand CSS and related JS claims are the **opposite** here: this repo shares **no** `sw.js`, brand CSS, or nav/content-fetch JS with the other web repos (audit-verified 2026-09-17). This is a single-page marketing site; the "shared files across four web repos" concern does not apply — updates to those files in `shani-docs`/`shani-blog` do NOT need to be mirrored here. The only cross-repo sync surfaces are content-level conventions (robots.txt/sitemap patterns). Also: this
-repo's version string must match the top-level `RELEASES.md` — a release
-bump that updates one without the other is a real, silent drift.
+Brand CSS and related JS claims are the **opposite** here: this repo shares **no** `sw.js`, brand CSS, or nav/content-fetch JS with the other web repos (audit-verified 2026-09-17). This is a single-page marketing site; the "shared files across four web repos" concern does not apply — updates to those files in `shani-docs`/`shani-blog` do NOT need to be mirrored here. The only cross-repo sync surface is content-level (robots.txt/sitemap conventions) — there is no `RELEASES.md` anywhere in this ecosystem to keep in lockstep with (see "Audit-verified known issues" above; an earlier version of this section repeated that same debunked claim — the real lockstep is internal to this repo's own `index.html`/`script.js`, not cross-repo).
 
 ## Where things are documented
 
@@ -198,6 +208,6 @@ Implementation priorities are per `../IMPLEMENTATION-ROADMAP.md` (master roadmap
 
 3. **Add LICENSE (P3, 5 min).** Master-roadmap item #31, not #26 (web-shared-components is #27; #26 is shani-gui welcome content). Match `shani-blog` — the only web sibling with a LICENSE, and it is **MIT** (audit-verified 2026-09-17), not GPL-3.0 — unless the maintainer decides web repos should follow the OS-side GPL-3.0 standard instead; this repo is one of the 4-repo cluster missing it.
 
-4. **CI workflow (P1).** Use `shani-ci-commons` templates (master-roadmap item #7) once they exist: verify HTML validity (html5lib strict parse), SRI hashes on CDN resources, and version lockstep between `assets/js/script.js`'s `VERSION` and the hardcoded strings in `index.html`.
+4. **CI workflow (P1).** `shani-ci-commons` now exists (master-roadmap item #7, closed) — wire `lint.yml`/`security.yml` in rather than hand-rolling: verify HTML validity (html5lib strict parse), SRI hashes on CDN resources, and version lockstep between `assets/js/script.js`'s `VERSION` and the hardcoded strings in `index.html`.
 
 5. **Conventional commits + minimal `renovate.json` (P1).** Ecosystem-wide commit convention (item #9) and Renovate config (item #8) — minimal for a static site with no build step and no runtime dependencies.
