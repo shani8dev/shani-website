@@ -34,12 +34,23 @@ Then open `http://localhost:8000` in your browser.
 ```
 shani-website/
   index.html            # Main landing page
+  CNAME                 # shani.dev (custom domain for GitHub Pages)
+  robots.txt            # Allows all crawlers; points to sitemap
+  sitemap.xml           # Auto-maintained single-page sitemap
+  SECURITY.md           # Security policy
+  renovate.json         # Dependency update config
+  README.md
   assets/
-    css/                # Stylesheets
+    css/
       style.css
     js/
       script.js         # Interactivity (version display, mobile nav, counters)
-  README.md
+    images/
+      saturn-x.png      # Hero background (webp conversion kept as design source)
+      gnome-screenshot.jpg / .webp
+      plasma-screenshot.jpg / .webp
+      logo.svg / about.svg / features.svg / og-image.svg
+      favicon-*.png / apple-touch-icon.png / favicon.ico
 ```
 
 ## Editing Content
@@ -47,6 +58,21 @@ shani-website/
 - Feature descriptions, download links, and comparison data live in `index.html`.
 - Styling changes go in `assets/css/`.
 - Interactive behaviour (mobile nav, counters, version display) lives in `assets/js/script.js`.
+
+## Conventions
+
+- **Version lockstep:** `assets/js/script.js`'s `VERSION` must match the version
+  strings hardcoded in `index.html` (JSON-LD `softwareVersion`/`datePublished`,
+  download labels, ISO/SHA256/ASC filenames) and the "Signed ISOs" row in
+  `../RELEASES.md`. Bump all at once — grep for the current version string,
+  don't assume.
+- **Images:** hero backgrounds and screenshots use `.webp`; favicons and PWA
+  icons stay `.png` (broad OS-level format support). Social-crawler meta tags
+  (`og:image`/`twitter:image`) deliberately keep `.jpg` — link-preview crawlers
+  don't content-negotiate the way browsers do.
+- **No ads:** the site contains no advertising. `ads.txt` was removed because
+  nothing loads an AdSense script. Do not re-add `ads.txt` without also wiring
+  an ad unit — the mismatch is silent.
 
 ## Deployment
 
