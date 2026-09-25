@@ -218,7 +218,7 @@ Implementation priorities are per `../IMPLEMENTATION-ROADMAP.md` (master roadmap
 
 2. ~~**Deploy the CSP meta tag (P1).**~~ **DONE — closed 2026-09-17.** The `<meta http-equiv="Content-Security-Policy">` in `index.html` is committed (`1608af6`) and pushed — `curl https://shani.dev/` confirms the live site ships the CSP meta tag. GitHub Pages can't add response headers, so the meta tag is the only mechanism, and it is deployed.
 
-3. **Add LICENSE (P3, 5 min).** Master-roadmap item #31, not #26 (web-shared-components is #27; #26 is shani-gui welcome content). Match `shani-blog` — the only web sibling with a LICENSE, and it is **MIT** (audit-verified 2026-09-17), not GPL-3.0 — unless the maintainer decides web repos should follow the OS-side GPL-3.0 standard instead; this repo is one of the 4-repo cluster missing it.
+3. **Add LICENSE (P3, 5 min).** Master-roadmap item #31, not #26 (web-shared-components is #27; #26 is shani-cassini welcome content). Match `shani-blog` — the only web sibling with a LICENSE, and it is **MIT** (audit-verified 2026-09-17), not GPL-3.0 — unless the maintainer decides web repos should follow the OS-side GPL-3.0 standard instead; this repo is one of the 4-repo cluster missing it.
 
 4. ~~**CI workflow (P1).**~~ ✅ DONE (2026-09-20) — `.github/workflows/ci.yml` now runs html5lib strict parse, SRI verification on every `integrity=` CDN resource, sitemap.xml well-formedness, and the version-lockstep check between `assets/js/script.js`'s `VERSION` and the hardcoded release strings in `index.html` (verified live: current tree is in sync at `2026.05.18`; simulating a `script.js` bump to `2026.06.01` makes the check fail as expected). Uses `shani-ci-commons` templates rather than hand-rolling.
 
