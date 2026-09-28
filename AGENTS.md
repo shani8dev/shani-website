@@ -5,6 +5,31 @@ This file applies to any AI coding assistant working in this repository
 before editing, and follow the verification steps before calling any change
 done.
 
+## Start here (fast path)
+
+This file holds both the rules you must follow and a dated record
+of past defects. Read what your change touches; don't page through
+the rest.
+
+**Always read these first:**
+- `Empirical verification (mandatory)`
+- `Rule: open it and actually check`
+- `Required verification for a change`
+- `Commit discipline`
+- `Boundaries`
+- `Cross-repo impact — check before calling a fix complete`
+
+**Read when your change touches them:**
+- `If you have Superpowers / oh-my-opencode / ultrawork / similar available`
+
+**On-demand reference — do not page through speculatively:**
+- `Audit-verified known issues (confirmed present)` — ~130 of this file's 226 lines
+- `Where things are documented`
+- `Garuda Cross-Reference Findings (added 2026-09-17)`
+
+This repo has no `AUDIT-HISTORY.md` yet, so the detail lives here. **Grep it for the subsystem you are changing**, then read
+the hits in full; skip the rest.
+
 ## What this repo is
 
 The marketing site for Shanios (`shani.dev`) — plain HTML/CSS, no build
