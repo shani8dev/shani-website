@@ -485,42 +485,42 @@
         <div class="how-steps">
           <div class="how-step">
             <div class="how-step-num">1</div>
-            <h4>The updater updates itself first</h4>
+            <h3>The updater updates itself first</h3>
             <p>Before doing anything else, <code>shani-deploy</code> downloads the latest version of itself from GitHub. A basic sanity check confirms the download is a valid script — if a newer version is found, it re-executes immediately — so you always run current deployment logic, no matter how long ago you installed.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">2</div>
-            <h4>Your system is protected during the update</h4>
+            <h3>Your system is protected during the update</h3>
             <p>Shanios blocks sleep, shutdown, and lid-close for the entire update — so nothing interrupts it. If the system is powered off mid-update anyway, a deployment-pending flag is detected on next run of <code>shani-deploy</code>, which reports the interrupted state and prompts you to use <code>--rollback</code> to restore a clean state before proceeding.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">3</div>
-            <h4>It checks which OS copy you're running</h4>
+            <h3>It checks which OS copy you're running</h3>
             <p>Before doing anything, the updater confirms exactly which OS copy you're running. If there's already a staged update waiting for a reboot, it reports that rather than proceeding — preventing any accidental double-deploy.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">4</div>
-            <h4>Download &amp; verify — tampered files are rejected</h4>
+            <h3>Download &amp; verify — tampered files are rejected</h3>
             <p>The update image is downloaded from Shanios's primary server with multi-connection resume support — so a slow connection or interrupted download picks up where it left off. If the primary server is unavailable, a SourceForge mirror is used automatically. SHA256 and GPG signature are both verified against the public key on keyservers before the image is ever extracted. A tampered or incomplete image is rejected outright — the update aborts, nothing changes.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">5</div>
-            <h4>A safety snapshot is taken before anything is written</h4>
+            <h3>A safety snapshot is taken before anything is written</h3>
             <p>Before writing anything, a timestamped backup of the inactive OS copy is taken. The new image is then extracted into it. The old copy is only removed <strong>after</strong> the new one is confirmed complete. If power is cut mid-extraction, both your running system and the backup are fully intact — nothing is lost.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">6</div>
-            <h4>The new OS copy is set up and boot is prepared</h4>
+            <h3>The new OS copy is set up and boot is prepared</h3>
             <p>The new OS copy is packaged into a single Unified Kernel Image (UKI — kernel, initrd, and cmdline bundled together) and registered as your next boot target. Your currently running OS remains the default until you choose to reboot — nothing changes on your live system until then.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">7</div>
-            <h4>Reboot whenever it suits you — no rush, nothing nagging</h4>
+            <h3>Reboot whenever it suits you — no rush, nothing nagging</h3>
             <p>The update is fully installed and ready the moment it finishes — your currently running OS stays untouched until you actually reboot, on your own schedule. Prefer a countdown instead? Opt in with one flag (<code>AUTO_REBOOT=yes</code>) and it reboots itself a set number of seconds later, cancellable anytime with <code>sudo systemctl stop shanios-auto-reboot.timer</code>. Either way, once it starts up cleanly, everything is finalised automatically.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">8</div>
-            <h4>Changed your mind? Roll back anytime with one command</h4>
+            <h3>Changed your mind? Roll back anytime with one command</h3>
             <p>Run <code>sudo shani-deploy --rollback</code> from the OS you want to keep. Shanios detects your active slot, restores the other copy from its last backup, regenerates its unified kernel image (UKI), updates the boot entries to point both slots correctly, and leaves your current system untouched. If a new OS ever fails to boot at all, systemd-boot detects the failure and reverts to the previous slot automatically — no action needed from you.</p>
           </div>
         </div>
@@ -1465,7 +1465,7 @@
               <a href="assets/images/gnome-screenshot.jpg" target="_blank" rel="noopener">
                 <picture>
                   <source srcset="assets/images/gnome-screenshot.webp" type="image/webp">
-                  <img src="assets/images/gnome-screenshot.jpg" alt="Shanios GNOME Edition desktop" loading="lazy">
+                  <img src="assets/images/gnome-screenshot.jpg" alt="Shanios GNOME Edition desktop" width="1920" height="1080" loading="lazy">
                 </picture>
               </a>
               <figcaption class="sr-only">Shanios GNOME Edition desktop screenshot</figcaption>
@@ -1510,7 +1510,7 @@
               <a href="assets/images/plasma-screenshot.jpg" target="_blank" rel="noopener">
                 <picture>
                   <source srcset="assets/images/plasma-screenshot.webp" type="image/webp">
-                  <img src="assets/images/plasma-screenshot.jpg" alt="Shanios KDE Plasma Gaming Edition desktop" loading="lazy">
+                  <img src="assets/images/plasma-screenshot.jpg" alt="Shanios KDE Plasma Gaming Edition desktop" width="1920" height="1080" loading="lazy">
                 </picture>
               </a>
               <figcaption class="sr-only">Shanios KDE Plasma Gaming Edition desktop screenshot</figcaption>

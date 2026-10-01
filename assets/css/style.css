@@ -1,5 +1,9 @@
 :root {
   --primary: #ff7f50;
+  /* text ON the coral: white is 2.50:1 there (WCAG 1.4.3 wants 4.5), this
+     is the brand's own dark-on-coral pairing, 7.3:1 (shani-testbed `web`
+     contrast check, 2026-10-01) */
+  --on-primary: #161514;
   --secondary: #7c3aed;
   --dark: #1a102f;
   --light: #f8f7fc;
@@ -57,7 +61,7 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.6rem 1.5rem;
@@ -633,6 +637,12 @@ a:hover {
  * SCROLL OFFSET — compensate for sticky blessing bar + sticky header
  * blessing ~34px + header ~66px ≈ 100px desktop
  * ===================================================== */
+/* the same offset for KEYBOARD focus: scroll-margin only moves anchor
+   targets, so a focused control scrolled into view could sit under the
+   sticky bars (WCAG 2.4.11; shani-testbed `web`, 2026-10-01) */
+html { scroll-padding-top: 108px; }
+@media (max-width: 768px) { html { scroll-padding-top: 92px; } }
+@media (max-width: 480px) { html { scroll-padding-top: 80px; } }
 section[id],
 div[id] {
   scroll-margin-top: 108px;
@@ -1215,6 +1225,11 @@ div[id] {
   }
 }
 
+/* grid items must be allowed below their content's width: a long <code> in
+   one card's quote made its 1fr column wider than the track, and its text ran
+   over the next card's (tablet, shani-testbed `web` text-overlap, 2026-10-01) */
+.pain-grid > * { min-width: 0; }
+.pain-quote code, .pain-solution code { overflow-wrap: anywhere; }
 .pain-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1483,7 +1498,7 @@ div[id] {
   flex-shrink: 0;
 }
 
-.how-step h4 {
+.how-step h3 {
   font-size: 0.92rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -2054,7 +2069,7 @@ details.about-card > summary h3 {
 
 .btn i { margin-right: 0.5rem; }
 
-.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
 
 .btn-primary:hover {
   background: transparent;
@@ -2082,7 +2097,7 @@ details.about-card > summary h3 {
 
 .btn-download:hover {
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
 }
@@ -2840,7 +2855,7 @@ details.usecase-card[open] > summary::after {
 /* Download Free nav pill — primary user acquisition CTA */
 .nav-download-cta {
   background: var(--primary) !important;
-  color: #fff !important;
+  color: var(--on-primary) !important;
   border-radius: 20px;
   padding: 0.4rem 1.1rem !important;
   font-weight: 700;
@@ -2886,7 +2901,7 @@ details.usecase-card[open] > summary::after {
   width: 100%;
   text-align: center;
   background: var(--primary) !important;
-  color: #fff !important;
+  color: var(--on-primary) !important;
   border-color: var(--primary) !important;
   font-size: 1.05rem;
   padding: 0.9rem 1.5rem;
@@ -3163,7 +3178,7 @@ details.usecase-card[open] > summary::after {
 
 .btn-donate-big.razorpay-big {
   background: #0D94FB;
-  color: #fff;
+  color: #161514;  /* 5.77:1 on Razorpay blue; white was 3.16:1 */
   border: 2px solid #0D94FB;
 }
 .btn-donate-big.razorpay-big:hover {
@@ -3860,6 +3875,12 @@ img[loading="lazy"].loaded {
   transition: background 0.2s;
 }
 .hti-step:last-child { border-bottom: none; }
+/* a flex item's min-width is auto: a wide <pre> in a step pushed the step
+   15px past .how-to-install's overflow:hidden edge, cut off and unreachable
+   (shani-testbed `web` clipped check, 2026-10-01). Let it shrink, and let
+   long command lines scroll inside their own box. */
+.hti-step-body { min-width: 0; flex: 1 1 auto; }
+.hti-step-body pre { max-width: 100%; overflow-x: auto; }
 .hti-step:hover { background: rgba(255, 127, 80, 0.03); }
 
 .hti-step-num {
